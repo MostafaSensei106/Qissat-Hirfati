@@ -19,6 +19,7 @@ dependencies:
   file_picker: ^10.1.9
   url_launcher: ^6.3.1
   intl: ^0.20.2
+  flutter_svg: ^2.1.0
 
   
   
@@ -37,7 +38,7 @@ flutter:
     - assets/images/
     - assets/animations/lottie/
     - assets/icons/icon/
-    - assets/icons/svg/
+    - assets/icons/svg/hirfatiLogo.svg
 
   fonts:
     - family: Rubik

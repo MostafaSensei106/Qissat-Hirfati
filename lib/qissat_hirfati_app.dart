@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/config/theme/colors/light_theme.dart';
 
 class QissatHirfatiApp extends StatelessWidget {
@@ -18,9 +20,9 @@ class QissatHirfatiApp extends StatelessWidget {
         title: 'قصة حرفتي',
         theme: lightTheme,
         home: LoginPage(),
-        locale: Locale('ar', 'SA'),
+        locale: Locale('ar', 'EG'),
         supportedLocales: const [
-          Locale('ar', 'SA'), // Arabic (Saudi Arabia)
+          Locale('ar', 'EG'), 
         ],
         localizationsDelegates: const [
           DefaultCupertinoLocalizations.delegate,
@@ -49,7 +51,11 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            FlutterLogo(size: 100),
+            SvgPicture.asset(
+              AppConst.appLogo,
+              width: 100.w,
+              height: 100.h,
+            ),
             const SizedBox(height: 40),
 
             // البريد الإلكتروني

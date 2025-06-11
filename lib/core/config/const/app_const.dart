@@ -16,6 +16,14 @@ class AppConst {
   static const String appStroreUrl =
       "https://www.figma.com/proto/kLBTeuwucCn4Zxn2n7F68k/%D9%82%D8%B5%D8%A9-%D8%AD%D8%B1%D9%81%D8%AA%D9%8A?node-id=29-48&starting-point-node-id=2%3A2";
 
+
+  static const String appLogo = "assets/icons/svg/hirfatiLogo.svg";
+  static const String facebookLogo = "assets/icons/svg/facebook.svg";
+  static const String instagramLogo = "assets/icons/svg/instagram.svg";
+  static const String twitterLogo = "assets/icons/svg/twitter.svg";
+  static const String whatsappLogo = "assets/icons/svg/whatsApp.svg";
+
+
   static const double padding = 8.0;
   static const double iconSize = 27.0;
   static const double margin = 8.0;
