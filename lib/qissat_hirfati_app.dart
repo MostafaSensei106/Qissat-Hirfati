@@ -36,9 +36,18 @@ class QissatHirfatiApp extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
         ],
+        localeListResolutionCallback: (locales, supportedLocales) =>
+            const Locale('ar', 'SA'), // Default to Arabic
+        builder: (context, child) {
+          return SafeArea(
+            top: false,
+            bottom: true,
+            left: false,
+            right: false,
+            child: child!,
+          );
+        },
       ),
     );
   }
 }
-
-

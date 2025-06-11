@@ -23,6 +23,7 @@ dependencies:
   
   flutter_localizations:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.4
 
   
   
@@ -41,7 +42,9 @@ flutter:
     - assets/images/
     - assets/animations/lottie/
     - assets/icons/icon/
-    - assets/icons/svg/hirfatiLogo.svg
+    - assets/icons/svg/
+    - assets/icons/app_icons/android/
+    - assets/icons/app_icons/ios/
 
   fonts:
     - family: Rubik

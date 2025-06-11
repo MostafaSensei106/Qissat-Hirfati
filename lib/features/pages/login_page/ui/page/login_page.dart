@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/features/pages/register_page/ui/page/register_page.dart';
@@ -21,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
 
     return CupertinoPageScaffold(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding:  EdgeInsets.symmetric(horizontal: AppConst.padding.w),
         child: Column(
           children: [
             Container(
