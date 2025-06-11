@@ -2,9 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
-import 'package:qissat_hirfati/core/widgets/cupertino_text_field_component/cupertino_text_field_component.dart';
+import 'package:qissat_hirfati/features/pages/register_page/ui/page/register_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
-import 'package:qissat_hirfati/qissat_hirfati_app.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
