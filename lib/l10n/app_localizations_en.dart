@@ -9,5 +9,74 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get someKey => 'someValue';
+  String get appTitle => 'Qissat Hirfati';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get rememberMe => 'Remember me';
+
+  @override
+  String get forgotPassword => 'Forgot password?';
+
+  @override
+  String get login => 'Login';
+
+  @override
+  String get orLoginWith => 'Or login with';
+
+  @override
+  String get google => 'Google';
+
+  @override
+  String get facebook => 'Facebook';
+
+  @override
+  String get noAccount => 'Don\'t have an account?';
+
+  @override
+  String get signUpHere => 'Sign up here';
+
+  @override
+  String get registerTitle => 'Create Account';
+
+  @override
+  String get registerHere => 'Register here';
+
+  @override
+  String get accountCreated => 'Account created successfully';
+
+  @override
+  String get phoneNumberPlaceholder => 'Enter your phone number';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get firstName => 'First Name';
+
+  @override
+  String get lastName => 'Last Name';
+
+  @override
+  String get phoneNumber => 'Saudi phone number (+966...)';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get register => 'Register';
+
+  @override
+  String get haveAccount => 'Already have an account?';
+
+  @override
+  String get loginNow => 'Login now';
+
+  @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
 }

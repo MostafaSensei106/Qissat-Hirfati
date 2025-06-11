@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
@@ -13,30 +14,22 @@ class QissatHirfatiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812), // iPhone 11 Pro Max size
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       child: CupertinoApp(
         debugShowCheckedModeBanner: false,
-        title: 'قصة حرفتي',
+        title: 'Qissat Hirfati',
         theme: lightTheme,
         home: LoginPage(),
-        locale: Locale('ar', 'SA'),
+        locale: const Locale('ar', 'SA'),
         supportedLocales: const [Locale('en', 'US'), Locale('ar', 'SA')],
         localizationsDelegates: const [
           AppLocalizations.delegate,
-          DefaultCupertinoLocalizations.delegate,
-          DefaultWidgetsLocalizations.delegate,
-          DefaultMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
         ],
-        // localeResolutionCallback: (locale, supportedLocales) {
-        //   for (var supportedLocale in supportedLocales) {
-        //     if (supportedLocale.languageCode == locale?.languageCode) {
-        //       return supportedLocale;
-        //     }
-        //   }
-        //   return supportedLocales.first;
-        // },
       ),
     );
   }
@@ -54,6 +47,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!;
+
     return CupertinoPageScaffold(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -65,23 +60,20 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const SizedBox(height: 40),
 
-            // البريد الإلكتروني
-            const CupertinoTextField(
-              placeholder: 'البريد الإلكتروني',
-              padding: EdgeInsets.all(16),
+            CupertinoTextField(
+              placeholder: tr.email,
+              padding: const EdgeInsets.all(16),
               keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 20),
 
-            // كلمة المرور
-            const CupertinoTextField(
-              placeholder: 'كلمة المرور',
-              padding: EdgeInsets.all(16),
+            CupertinoTextField(
+              placeholder: tr.password,
+              padding: const EdgeInsets.all(16),
               obscureText: true,
             ),
             const SizedBox(height: 10),
 
-            // تذكرني + نسيت كلمة المرور
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -95,31 +87,22 @@ class _LoginPageState extends State<LoginPage> {
                         });
                       },
                     ),
-                    const Text("تذكرني"),
+                    Text(tr.rememberMe),
                   ],
                 ),
                 CupertinoButton(
                   padding: EdgeInsets.zero,
-                  child: const Text("نسيت كلمة المرور؟"),
-                  onPressed: () {
-                    // منطق الاستعادة
-                  },
+                  child: Text(tr.forgotPassword),
+                  onPressed: () {},
                 ),
               ],
             ),
             const SizedBox(height: 20),
 
-            // زر تسجيل الدخول
-            CupertinoButton.filled(
-              child: const Text('تسجيل الدخول'),
-              onPressed: () {
-                // منطق تسجيل الدخول
-              },
-            ),
+            CupertinoButton.filled(child: Text(tr.login), onPressed: () {}),
             const SizedBox(height: 30),
 
-            // تسجيل الدخول بوسائل تواصل
-            const Text("أو سجل الدخول عبر", style: TextStyle(fontSize: 14)),
+            Text(tr.orLoginWith, style: const TextStyle(fontSize: 14)),
             const SizedBox(height: 10),
 
             Row(
@@ -128,41 +111,36 @@ class _LoginPageState extends State<LoginPage> {
                 CupertinoButton(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: Row(
-                    children: const [
-                      Icon(CupertinoIcons.person_crop_circle),
-                      SizedBox(width: 5),
-                      Text("Google"),
+                    children: [
+                      const Icon(CupertinoIcons.person_crop_circle),
+                      const SizedBox(width: 5),
+                      Text(tr.google),
                     ],
                   ),
-                  onPressed: () {
-                    // تسجيل دخول بـ Google
-                  },
+                  onPressed: () {},
                 ),
                 CupertinoButton(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: Row(
-                    children: const [
-                      Icon(CupertinoIcons.person_2_fill),
-                      SizedBox(width: 5),
-                      Text("Facebook"),
+                    children: [
+                      const Icon(CupertinoIcons.person_2_fill),
+                      const SizedBox(width: 5),
+                      Text(tr.facebook),
                     ],
                   ),
-                  onPressed: () {
-                    // تسجيل دخول بـ Facebook
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
             const Spacer(),
 
-            // ليس لديك حساب؟ سجل هنا
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("ليس لديك حساب؟ "),
+                Text(tr.noAccount),
                 CupertinoButton(
                   padding: EdgeInsets.zero,
-                  child: const Text("سجل هنا"),
+                  child: Text(tr.registerHere),
                   onPressed: () {
                     HapticFeedback.vibrate();
                     Navigator.push(
@@ -200,25 +178,28 @@ class _RegisterPageState extends State<RegisterPage> {
   String? _errorText;
 
   void _register() {
+    final tr = AppLocalizations.of(context)!;
+
     if (_passwordController.text != _confirmPasswordController.text) {
       setState(() {
-        _errorText = 'كلمتا المرور غير متطابقتين';
+        _errorText = tr.passwordsDoNotMatch;
       });
       return;
     }
 
-    // تنفيذ منطق التسجيل هنا
     setState(() {
       _errorText = null;
     });
 
-    print("تم تسجيل الحساب ✅");
+    print(tr.accountCreated);
   }
 
   @override
   Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!;
+
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(middle: Text("تسجيل حساب")),
+      navigationBar: CupertinoNavigationBar(middle: Text(tr.register)),
       child: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(8.0),
@@ -226,65 +207,56 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               const SizedBox(height: 20),
 
-              // الاسم الأول
               CupertinoTextField(
                 controller: _firstNameController,
-                placeholder: 'الاسم الأول',
+                placeholder: tr.firstName,
                 padding: const EdgeInsets.all(16),
               ),
               const SizedBox(height: 15),
 
-              // اسم العائلة
               CupertinoTextField(
                 controller: _lastNameController,
-                placeholder: 'اسم العائلة',
+                placeholder: tr.lastName,
                 padding: const EdgeInsets.all(16),
               ),
               const SizedBox(height: 15),
 
-              // رقم الجوال
               CupertinoTextField(
                 controller: _phoneController,
-                placeholder: 'رقم الجوال السعودي (+966...)',
+                placeholder: tr.phoneNumberPlaceholder,
                 keyboardType: TextInputType.phone,
                 padding: const EdgeInsets.all(16),
               ),
               const SizedBox(height: 15),
 
-              // البريد الإلكتروني
               CupertinoTextField(
                 controller: _emailController,
-                placeholder: 'البريد الإلكتروني',
+                placeholder: tr.email,
                 keyboardType: TextInputType.emailAddress,
                 padding: const EdgeInsets.all(16),
               ),
               const SizedBox(height: 15),
 
-              // كلمة المرور
               CupertinoTextField(
                 controller: _passwordController,
-                placeholder: 'كلمة المرور',
+                placeholder: tr.password,
                 obscureText: true,
                 padding: const EdgeInsets.all(16),
                 suffix: GestureDetector(
-                  onTap: () {
-                    // Logic to toggle password visibility
-                  },
-                  child: Icon(CupertinoIcons.eye),
+                  onTap: () {},
+                  child: const Icon(CupertinoIcons.eye),
                 ),
               ),
               const SizedBox(height: 15),
 
-              // تأكيد كلمة المرور
               CupertinoTextField(
                 controller: _confirmPasswordController,
-                placeholder: 'تأكيد كلمة المرور',
+                placeholder: tr.confirmPassword,
                 obscureText: true,
                 padding: const EdgeInsets.all(16),
               ),
               const SizedBox(height: 20),
 
-              // خطأ
               if (_errorText != null)
                 Text(
                   _errorText!,
@@ -293,22 +265,20 @@ class _RegisterPageState extends State<RegisterPage> {
 
               const SizedBox(height: 10),
 
-              // زر تسجيل حساب
               CupertinoButton.filled(
                 onPressed: _register,
-                child: const Text("تسجيل حساب"),
+                child: Text(tr.register),
               ),
 
               const SizedBox(height: 30),
 
-              // هل لديك حساب؟
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("هل لديك حساب؟ "),
+                  Text(tr.alreadyHaveAccount),
                   CupertinoButton(
                     padding: EdgeInsets.zero,
-                    child: const Text("سجّل دخولك"),
+                    child: Text(tr.loginNow),
                     onPressed: () {
                       HapticFeedback.vibrate();
                       Navigator.pop(context);

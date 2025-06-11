@@ -1,4 +1,26 @@
 {
-    "someKey": "someValue"
-
+  "appTitle": "Qissat Hirfati",
+  "email": "Email",
+  "password": "Password",
+  "rememberMe": "Remember me",
+  "forgotPassword": "Forgot password?",
+  "login": "Login",
+  "orLoginWith": "Or login with",
+  "google": "Google",
+  "facebook": "Facebook",
+  "noAccount": "Don't have an account?",
+  "signUpHere": "Sign up here",
+  "registerTitle": "Create Account",
+  "registerHere": "Register here",
+  "accountCreated": "Account created successfully",
+  "phoneNumberPlaceholder": "Enter your phone number",
+  "alreadyHaveAccount": "Already have an account?",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "phoneNumber": "Saudi phone number (+966...)",
+  "confirmPassword": "Confirm Password",
+  "register": "Register",
+  "haveAccount": "Already have an account?",
+  "loginNow": "Login now",
+  "passwordsDoNotMatch": "Passwords do not match"
 }

@@ -1,4 +1,26 @@
 {
-    "someKey": "someValue"
-
+  "appTitle": "قصة حرفتي",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "rememberMe": "تذكرني",
+  "forgotPassword": "هل نسيت كلمة المرور؟",
+  "login": "تسجيل الدخول",
+  "orLoginWith": "أو سجل الدخول عبر",
+  "google": "جوجل",
+  "facebook": "فيسبوك",
+  "noAccount": "ليس لديك حساب؟",
+  "signUpHere": "سجل هنا",
+  "registerTitle": "إنشاء حساب",
+  "registerHere": "سجل هنا",
+  "accountCreated": "تم إنشاء الحساب بنجاح",
+  "phoneNumberPlaceholder": "أدخل رقم هاتفك",
+  "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+  "firstName": "الاسم الأول",
+  "lastName": "اسم العائلة",
+  "phoneNumber": "رقم الجوال السعودي (+966...)",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "register": "تسجيل",
+  "haveAccount": "هل لديك حساب؟",
+  "loginNow": "سجّل الدخول الآن",
+  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين"
 }
