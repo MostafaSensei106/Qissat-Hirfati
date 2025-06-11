@@ -23,7 +23,16 @@ class QissatHirfatiApp extends StatelessWidget {
         theme: lightTheme,
         home: LoginPage(),
         locale: const Locale('ar', 'SA'),
-        supportedLocales: const [Locale('en', 'US'), Locale('ar', 'SA')],
+        supportedLocales: const [
+          Locale('en', 'US'),
+          Locale('ar', 'SA'),
+          Locale('fr', 'FR'),
+          Locale('es', 'ES'),
+          Locale('de', 'DE'),
+          Locale('zh', 'CN'),
+          Locale('ja', 'JP'),
+          Locale('ru', 'pk'),
+          ],
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,

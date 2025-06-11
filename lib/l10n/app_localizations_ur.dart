@@ -1,0 +1,82 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Urdu (`ur`).
+class AppLocalizationsUr extends AppLocalizations {
+  AppLocalizationsUr([String locale = 'ur']) : super(locale);
+
+  @override
+  String get appTitle => 'قصہ حرفتی';
+
+  @override
+  String get email => 'ای میل';
+
+  @override
+  String get password => 'پاس ورڈ';
+
+  @override
+  String get rememberMe => 'مجھے یاد رکھیں';
+
+  @override
+  String get forgotPassword => 'پاس ورڈ بھول گئے؟';
+
+  @override
+  String get login => 'لاگ ان کریں';
+
+  @override
+  String get orLoginWith => 'یا ان کے ذریعے لاگ ان کریں';
+
+  @override
+  String get google => 'گوگل';
+
+  @override
+  String get facebook => 'فیس بک';
+
+  @override
+  String get noAccount => 'کیا آپ کا اکاؤنٹ نہیں ہے؟';
+
+  @override
+  String get signUpHere => 'یہاں سائن اپ کریں';
+
+  @override
+  String get registerTitle => 'اکاؤنٹ بنائیں';
+
+  @override
+  String get registerHere => 'یہاں رجسٹر کریں';
+
+  @override
+  String get accountCreated => 'اکاؤنٹ کامیابی سے بن گیا';
+
+  @override
+  String get phoneNumberPlaceholder => 'اپنا فون نمبر درج کریں';
+
+  @override
+  String get alreadyHaveAccount => 'کیا پہلے سے اکاؤنٹ ہے؟';
+
+  @override
+  String get firstName => 'پہلا نام';
+
+  @override
+  String get lastName => 'آخری نام';
+
+  @override
+  String get phoneNumber => 'سعودی فون نمبر (+966...)';
+
+  @override
+  String get confirmPassword => 'پاس ورڈ کی تصدیق کریں';
+
+  @override
+  String get register => 'رجسٹر کریں';
+
+  @override
+  String get haveAccount => 'کیا پہلے سے اکاؤنٹ ہے؟';
+
+  @override
+  String get loginNow => 'ابھی لاگ ان کریں';
+
+  @override
+  String get passwordsDoNotMatch => 'پاس ورڈ مطابقت نہیں رکھتے';
+}
