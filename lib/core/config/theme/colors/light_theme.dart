@@ -12,24 +12,24 @@ final CupertinoThemeData lightTheme = CupertinoThemeData(
     textStyle: TextStyle(
       color: const Color(0xFF333333),
       fontSize: 16,
-      fontFamily: 'SF Pro', 
+      fontFamily: 'Rubik', 
     ),
     navTitleTextStyle: TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.bold,
       color: const Color(0xFF333333),
-      fontFamily: 'SF Pro',
+      fontFamily: 'Rubik',
     ),
     navLargeTitleTextStyle: TextStyle(
       fontSize: 32,
       fontWeight: FontWeight.bold,
       color: const Color(0xFF333333),
-      fontFamily: 'SF Pro',
+      fontFamily: 'Rubik',
     ),
     actionTextStyle: TextStyle(
       color: const Color(0xFF9D653B),
       fontSize: 16,
-      fontFamily: 'SF Pro',
+      fontFamily: 'Rubik',
     ),
   ),
 );
