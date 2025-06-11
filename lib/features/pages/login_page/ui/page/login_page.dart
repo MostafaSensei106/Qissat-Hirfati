@@ -21,14 +21,12 @@ class _LoginPageState extends State<LoginPage> {
     final tr = AppLocalizations.of(context)!;
 
     return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(middle: Text(tr.login)),
       child: Padding(
         padding:  EdgeInsets.symmetric(horizontal: AppConst.padding.w),
         child: Column(
           children: [
-            Container(
-              color: CupertinoColors.systemRed,
-              child: SvgPicture.asset(AppConst.appLogo),
-            ),
+            Image.asset(AppConst.appLogoPng, width: 100.w, height: 100.h),
             const SizedBox(height: 40),
 
             //CupertinoTextFieldComponent(placeholder: tr.phoneNumberPlaceholder,),
