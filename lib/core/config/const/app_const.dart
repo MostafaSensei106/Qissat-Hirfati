@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 class AppConst {
   static const String appName = "Qissat Hirfati";
   static const String appVersion = "1.0.0";
@@ -20,4 +22,7 @@ class AppConst {
 
   static const double inBorderRadius = 8.0;
   static const double outBorderRadius = inBorderRadius + padding;
+
+  static const Color primarySectionColor = Color(0xFFEFE7DE);
+  
 }
