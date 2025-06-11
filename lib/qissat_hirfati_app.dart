@@ -24,14 +24,14 @@ class QissatHirfatiApp extends StatelessWidget {
         home: LoginPage(),
         locale: const Locale('ar', 'SA'),
         supportedLocales: const [
-          Locale('en', 'US'),
-          Locale('ar', 'SA'),
-          Locale('fr', 'FR'),
-          Locale('es', 'ES'),
-          Locale('de', 'DE'),
-          Locale('zh', 'CN'),
-          Locale('ja', 'JP'),
-          Locale('ru', 'pk'),
+          Locale('en', 'US'), // English
+          Locale('ar', 'SA'), // Arabic
+          Locale('fr', 'FR'),// French
+          Locale('es', 'ES'),// Spanish
+          Locale('de', 'DE'),// German
+          Locale('zh', 'CN'),// Chinese
+          Locale('ja', 'JP'),// Japanese
+          Locale('ru', 'RU'),// Russian
           ],
         localizationsDelegates: const [
           AppLocalizations.delegate,
