@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/config/theme/colors/light_theme.dart';
+import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
 class QissatHirfatiApp extends StatelessWidget {
   const QissatHirfatiApp({super.key});
@@ -20,15 +21,22 @@ class QissatHirfatiApp extends StatelessWidget {
         title: 'قصة حرفتي',
         theme: lightTheme,
         home: LoginPage(),
-        locale: Locale('ar', 'EG'),
-        supportedLocales: const [
-          Locale('ar', 'EG'), 
-        ],
+        locale: Locale('ar', 'SA'),
+        supportedLocales: const [Locale('en', 'US'), Locale('ar', 'SA')],
         localizationsDelegates: const [
+          AppLocalizations.delegate,
           DefaultCupertinoLocalizations.delegate,
           DefaultWidgetsLocalizations.delegate,
           DefaultMaterialLocalizations.delegate,
         ],
+        // localeResolutionCallback: (locale, supportedLocales) {
+        //   for (var supportedLocale in supportedLocales) {
+        //     if (supportedLocale.languageCode == locale?.languageCode) {
+        //       return supportedLocale;
+        //     }
+        //   }
+        //   return supportedLocales.first;
+        // },
       ),
     );
   }
@@ -51,10 +59,9 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            SvgPicture.asset(
-              AppConst.appLogo,
-              width: 100.w,
-              height: 100.h,
+            Container(
+              color: CupertinoColors.systemRed,
+              child: SvgPicture.asset(AppConst.appLogo),
             ),
             const SizedBox(height: 40),
 
