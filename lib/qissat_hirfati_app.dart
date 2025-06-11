@@ -21,12 +21,7 @@ class QissatHirfatiApp extends StatelessWidget {
         supportedLocales: const [
           Locale('ar', 'SA'), // Arabic (Saudi Arabia)
         ],
-            localizationsDelegates: const [
-                  S.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
+    
 
       ),
     );
