@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/theme/colors/light_theme.dart';
@@ -21,8 +22,11 @@ class QissatHirfatiApp extends StatelessWidget {
         supportedLocales: const [
           Locale('ar', 'SA'), // Arabic (Saudi Arabia)
         ],
-    
-
+        localizationsDelegates: const [
+          DefaultCupertinoLocalizations.delegate,
+          DefaultWidgetsLocalizations.delegate,
+          DefaultMaterialLocalizations.delegate,
+        ],
       ),
     );
   }
@@ -181,8 +185,6 @@ class _RegisterPageState extends State<RegisterPage> {
   final _confirmPasswordController = TextEditingController();
 
   String? _errorText;
-
-
 
   void _register() {
     if (_passwordController.text != _confirmPasswordController.text) {
