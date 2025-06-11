@@ -1,15 +1,34 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qissat_hirfati/core/config/theme/colors/light_theme.dart';
 
 class QissatHirfatiApp extends StatelessWidget {
   const QissatHirfatiApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-      locale: Locale('ar', 'SA'),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812), // iPhone 11 Pro Max size
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: CupertinoApp(
+        debugShowCheckedModeBanner: false,
+        title: 'قصة حرفتي',
+        theme: lightTheme,
+        home: LoginPage(),
+        locale: Locale('ar', 'SA'),
+        supportedLocales: const [
+          Locale('ar', 'SA'), // Arabic (Saudi Arabia)
+        ],
+            localizationsDelegates: const [
+                  S.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+
+      ),
     );
   }
 }
