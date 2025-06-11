@@ -21,8 +21,9 @@ class QissatHirfatiApp extends StatelessWidget {
         home: LoginPage(),
         locale: const Locale('ar', 'SA'),
         supportedLocales: const [
-          Locale('en', 'US'), // English
           Locale('ar', 'SA'), // Arabic
+
+          Locale('en', 'US'), // English
           Locale('fr', 'FR'), // French
           Locale('es', 'ES'), // Spanish
           Locale('de', 'DE'), // German
@@ -37,7 +38,10 @@ class QissatHirfatiApp extends StatelessWidget {
           GlobalMaterialLocalizations.delegate,
         ],
         localeListResolutionCallback: (locales, supportedLocales) =>
-            const Locale('ar', 'SA'), // Default to Arabic
+            locales?.firstWhere(
+              (locale) => supportedLocales.contains(locale),
+              orElse: () => const Locale('ar', 'SA'),
+            ),
         builder: (context, child) {
           return SafeArea(
             top: false,
