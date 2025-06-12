@@ -29,9 +29,7 @@ class HomePage extends StatelessWidget {
 
       child: SingleChildScrollView(
         physics: const ScrollPhysics(),
-        child: Column(
-          children: [Landing(), TextSectionCom()],
-        ),
+        child: Column(children: [Landing(), TextSectionCom()]),
       ),
     );
   }
@@ -47,24 +45,29 @@ class TextSectionCom extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.all(AppConstants.padding),
+          color: AppConstants.primarySectionColor,
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'أيادٍ سعودية مبدعة،\nتنسج المستقبل بلمسات مستوحاة من التراث وعراقة الأصالة.',
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(fontSize: 20),
               ),
               const SizedBox(height: 16),
               SizedBox(
                 width: 0.90.sw,
                 child: Text(
                   'نسعى للارتقاء بمستقبل الحرف اليدوية السعودية، لتقديم إبداعات عصرية تنبض بروح التراث الأصيل.',
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 16),
                 ),
               ),
               const SizedBox(height: 35),
-              CupertinoButtonFilledComponent(onPressed: () {}, text: 'استكشف المزيد', ),
+              CupertinoButtonFilledComponent(
+                onPressed: () {},
+                text: 'استكشف المزيد',
+              ),
+              const SizedBox(height: 16),
             ],
           ),
         ),
@@ -91,10 +94,19 @@ class Landing extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
-      children: [Image.asset(AppConstants.landHomeGif, fit: BoxFit.cover ,),
+      children: [
+        Image.asset(
+          AppConstants.landHomeGif,
+          fit: BoxFit.cover,
+          width: double.infinity,
+        ),
         Text(
           'أيدٍ سعودية مبدعة.',
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold ,color: CupertinoColors.white),
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: CupertinoColors.white,
+          ),
         ),
       ],
     );

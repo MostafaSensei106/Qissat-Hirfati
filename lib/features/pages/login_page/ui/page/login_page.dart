@@ -15,7 +15,6 @@ import 'package:qissat_hirfati/l10n/app_localizations.dart';
 class LoginPage extends StatefulWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  
 
   LoginPage({super.key});
 
@@ -36,7 +35,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-
     final tr = AppLocalizations.of(context)!;
 
     return CupertinoPageScaffold(
@@ -46,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: ListView(
         physics: const ScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: AppConstants.padding.w),
+        padding: EdgeInsets.symmetric(horizontal: AppConstants.padding),
         semanticChildCount: 8,
         children: [
           Image.asset(AppConstants.appLogoPng, width: 150.w, height: 150.h),
@@ -79,6 +77,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           const SizedBox(height: 12),
           buildLoginRow(tr, context),
+          const SizedBox(height: 12),
           buildLoginButton(context, tr),
           const SizedBox(height: 32),
           LoginOption(tr: tr),
