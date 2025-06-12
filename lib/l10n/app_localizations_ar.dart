@@ -9,7 +9,7 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appTitle => 'قصة حرفتي';
+  String get appTitle => 'قصةُ حرفتي';
 
   @override
   String get email => 'البريد الإلكتروني';
@@ -78,22 +78,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get loginNow => 'سجّل الدخول الآن';
 
   @override
-  String get passwordsDoNotMatch => 'كلمتا المرور غير متطابقتين';
-
-  @override
   String get loginWithGoogle => 'تسجيل الدخول باستخدام جوجل';
 
   @override
   String get loginWithFacebook => 'تسجيل الدخول باستخدام فيسبوك';
 
   @override
+  String get passwordsDoNotMatch => 'كلمتا المرور غير متطابقتين';
+
+  @override
   String get info => 'معلومات';
 
   @override
   String get error => 'خطأ';
-
-  @override
-  String get warning => 'Warning';
 
   @override
   String get success => 'نجاح';
@@ -133,6 +130,57 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get ok => 'حسناً';
+
+  @override
+  String get settings => 'الإعدادات';
+
+  @override
+  String get language => 'اللغة';
+
+  @override
+  String get selectLanguage => 'اختر اللغة';
+
+  @override
+  String get arabic => 'العربية';
+
+  @override
+  String get english => 'الإنجليزية';
+
+  @override
+  String get french => 'الفرنسية';
+
+  @override
+  String get spanish => 'الإسبانية';
+
+  @override
+  String get german => 'الألمانية';
+
+  @override
+  String get italian => 'الإيطالية';
+
+  @override
+  String get portuguese => 'البرتغالية';
+
+  @override
+  String get chinese => 'الصينية';
+
+  @override
+  String get japanese => 'اليابانية';
+
+  @override
+  String get korean => 'الكورية';
+
+  @override
+  String get russian => 'الروسية';
+
+  @override
+  String get logout => 'تسجيل الخروج';
+
+  @override
+  String get logoutConfirmation => 'هل أنت متأكد أنك تريد تسجيل الخروج؟';
+
+  @override
+  String get logoutSuccess => 'تم تسجيل الخروج بنجاح';
 
   @override
   String get featureWillBeAvailableLater => 'هذه الميزة ستكون متاحة لاحقًا';

@@ -32,7 +32,10 @@ class _LoginPageState extends State<LoginPage> {
     final tr = AppLocalizations.of(context)!;
 
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(middle: Text(tr.login)),
+      navigationBar: CupertinoNavigationBar(
+        middle: Text(tr.login),
+        enableBackgroundFilterBlur: true,
+      ),
       child: ListView(
         physics: const ScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: AppConstants.padding.w),
@@ -54,7 +57,6 @@ class _LoginPageState extends State<LoginPage> {
             suffix: CupertinoButtonComponent(
               usePadding: false,
               onPressed: () {
-                HapticFeedback.vibrate();
                 setState(() {
                   showPassword = !showPassword;
                 });
@@ -67,17 +69,13 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-
           const SizedBox(height: 12),
-
           buildLoginRow(tr, context),
-
           buildLoginButton(context, tr),
           const SizedBox(height: 32),
           LoginOption(tr: tr),
           const SizedBox(height: 32),
           SocialMediaLoginForm(tr: tr),
-
           const SizedBox(height: 10),
           registrationRow(tr, context),
         ],
@@ -131,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
         CupertinoButtonComponent(
           text: tr.registerHere,
           onPressed: () {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               CupertinoPageRoute(builder: (context) => RegisterPage()),
             );
@@ -143,10 +141,7 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class SocialMediaLoginForm extends StatelessWidget {
-  const SocialMediaLoginForm({
-    super.key,
-    required this.tr,
-  });
+  const SocialMediaLoginForm({super.key, required this.tr});
 
   final AppLocalizations tr;
 

@@ -78,22 +78,19 @@ class AppLocalizationsJa extends AppLocalizations {
   String get loginNow => '今すぐログイン';
 
   @override
-  String get passwordsDoNotMatch => 'パスワードが一致しません';
-
-  @override
   String get loginWithGoogle => 'Login with Google';
 
   @override
   String get loginWithFacebook => 'Login with Facebook';
 
   @override
+  String get passwordsDoNotMatch => 'パスワードが一致しません';
+
+  @override
   String get info => 'Info';
 
   @override
   String get error => 'Error';
-
-  @override
-  String get warning => 'Warning';
 
   @override
   String get success => 'Success';
@@ -133,6 +130,57 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get ok => 'OK';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get selectLanguage => 'Select Language';
+
+  @override
+  String get arabic => 'Arabic';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get french => 'French';
+
+  @override
+  String get spanish => 'Spanish';
+
+  @override
+  String get german => 'German';
+
+  @override
+  String get italian => 'Italian';
+
+  @override
+  String get portuguese => 'Portuguese';
+
+  @override
+  String get chinese => 'Chinese';
+
+  @override
+  String get japanese => 'Japanese';
+
+  @override
+  String get korean => 'Korean';
+
+  @override
+  String get russian => 'Russian';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get logoutConfirmation => 'Are you sure you want to log out?';
+
+  @override
+  String get logoutSuccess => 'Logged out successfully';
 
   @override
   String get featureWillBeAvailableLater =>

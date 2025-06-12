@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Qissat Hirfati';
+  String get appTitle => 'The Tale of My Craft';
 
   @override
   String get email => 'Email';
@@ -18,16 +18,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password => 'Password';
 
   @override
-  String get rememberMe => 'Remember me';
+  String get rememberMe => 'Remember Me';
 
   @override
-  String get forgotPassword => 'Forgot password?';
+  String get forgotPassword => 'Forgot Password?';
 
   @override
   String get login => 'Login';
 
   @override
-  String get orLoginWith => 'Or login with';
+  String get orLoginWith => 'Or';
 
   @override
   String get google => 'Google';
@@ -63,7 +63,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lastName => 'Last Name';
 
   @override
-  String get phoneNumber => 'Saudi phone number (+966...)';
+  String get phoneNumber => 'Saudi Mobile Number (+966...)';
 
   @override
   String get confirmPassword => 'Confirm Password';
@@ -72,13 +72,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get register => 'Register';
 
   @override
-  String get haveAccount => 'Already have an account?';
+  String get haveAccount => 'Have an account?';
 
   @override
   String get loginNow => 'Login now';
-
-  @override
-  String get passwordsDoNotMatch => 'Passwords do not match';
 
   @override
   String get loginWithGoogle => 'Login with Google';
@@ -87,13 +84,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginWithFacebook => 'Login with Facebook';
 
   @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
+
+  @override
   String get info => 'Info';
 
   @override
   String get error => 'Error';
-
-  @override
-  String get warning => 'Warning';
 
   @override
   String get success => 'Success';
@@ -133,6 +130,57 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ok => 'OK';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get selectLanguage => 'Select Language';
+
+  @override
+  String get arabic => 'Arabic';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get french => 'French';
+
+  @override
+  String get spanish => 'Spanish';
+
+  @override
+  String get german => 'German';
+
+  @override
+  String get italian => 'Italian';
+
+  @override
+  String get portuguese => 'Portuguese';
+
+  @override
+  String get chinese => 'Chinese';
+
+  @override
+  String get japanese => 'Japanese';
+
+  @override
+  String get korean => 'Korean';
+
+  @override
+  String get russian => 'Russian';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get logoutConfirmation => 'Are you sure you want to log out?';
+
+  @override
+  String get logoutSuccess => 'Logged out successfully';
 
   @override
   String get featureWillBeAvailableLater =>
