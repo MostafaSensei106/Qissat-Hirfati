@@ -126,7 +126,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get networkError => 'خطأ في الشبكة، يرجى التحقق من الاتصال';
 
   @override
-  String get ok => 'حسنا';
+  String get ok => 'حسناً';
 
   @override
   String get featureWillBeAvailableLater => 'هذه الميزة ستكون متاحة لاحقًا';

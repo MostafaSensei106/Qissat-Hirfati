@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 CupertinoButtonComponent(
                   onPressed: () {
-                    FeatureWillBeAvailableLaterDilog();
+                    FeatureWillBeAvailableLaterDilog.show(context);
                   },
                   text: tr.forgotPassword,
                 ),

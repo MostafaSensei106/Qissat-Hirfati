@@ -2,25 +2,25 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
-class FeatureWillBeAvailableLaterDilog extends StatelessWidget {
-  const FeatureWillBeAvailableLaterDilog({super.key});
-
+class FeatureWillBeAvailableLaterDilog {
   @override
-  Widget build(BuildContext context) {
+  static Future<void> show(BuildContext context) async {
     final tr = AppLocalizations.of(context)!;
-
-    return CupertinoAlertDialog(
-      title: Text(tr.info),
-      content: Text(tr.featureWillBeAvailableLater),
-      actions: [
-        CupertinoDialogAction(
-          onPressed: () {
-            HapticFeedback.vibrate();
-            Navigator.of(context).pop();
-          },
-          child: Text(tr.ok),
-        ),
-      ],
+    await showCupertinoDialog<void>(
+      context: context,
+      builder: (context) => CupertinoAlertDialog(
+        title: Text(tr.info),
+        content: Text(tr.featureWillBeAvailableLater),
+        actions: [
+          CupertinoDialogAction(
+            onPressed: () {
+              HapticFeedback.vibrate();
+              Navigator.of(context).pop();
+            },
+            child: Text(tr.ok),
+          ),
+        ],
+      ),
     );
   }
 }
