@@ -79,4 +79,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get passwordsDoNotMatch => 'كلمتا المرور غير متطابقتين';
+
+  @override
+  String get ok => 'حسنا';
+
+  @override
+  String get featureWillBeAvailableLater => 'هذه الميزة ستكون متاحة لاحقًا';
 }

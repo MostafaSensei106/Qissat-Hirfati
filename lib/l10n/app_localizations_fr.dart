@@ -79,4 +79,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get passwordsDoNotMatch => 'Les mots de passe ne correspondent pas';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get featureWillBeAvailableLater =>
+      'This feature will be available later';
 }

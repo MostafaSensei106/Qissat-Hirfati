@@ -79,4 +79,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get passwordsDoNotMatch => 'Пароли не совпадают';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get featureWillBeAvailableLater =>
+      'This feature will be available later';
 }

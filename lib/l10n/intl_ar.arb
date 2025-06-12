@@ -22,5 +22,7 @@
   "register": "تسجيل",
   "haveAccount": "هل لديك حساب؟",
   "loginNow": "سجّل الدخول الآن",
-  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين"
+  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+  "ok": "حسنا",
+  "featureWillBeAvailableLater": "هذه الميزة ستكون متاحة لاحقًا"
 }

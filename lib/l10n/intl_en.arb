@@ -22,5 +22,7 @@
   "register": "Register",
   "haveAccount": "Already have an account?",
   "loginNow": "Login now",
-  "passwordsDoNotMatch": "Passwords do not match"
+  "passwordsDoNotMatch": "Passwords do not match",
+  "ok": "OK",
+  "featureWillBeAvailableLater": "This feature will be available later"
 }

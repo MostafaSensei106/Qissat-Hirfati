@@ -79,4 +79,11 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get passwordsDoNotMatch => 'پاس ورڈ مطابقت نہیں رکھتے';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get featureWillBeAvailableLater =>
+      'This feature will be available later';
 }

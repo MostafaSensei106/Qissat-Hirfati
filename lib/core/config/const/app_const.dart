@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-class AppConst {
+class AppConstants {
   static const String appName = "Qissat Hirfati";
   static const String appVersion = "1.0.0";
 

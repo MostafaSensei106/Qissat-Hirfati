@@ -255,6 +255,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Passwords do not match'**
   String get passwordsDoNotMatch;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// No description provided for @featureWillBeAvailableLater.
+  ///
+  /// In en, this message translates to:
+  /// **'This feature will be available later'**
+  String get featureWillBeAvailableLater;
 }
 
 class _AppLocalizationsDelegate
