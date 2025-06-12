@@ -15,19 +15,24 @@ class CupertinoButtonOutlineComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoButton(
-      onPressed: () {
-        HapticFeedback.vibrate();
-        onPressed();
-      },
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(width: 2.0),
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Icon(icon), const SizedBox(width: 8.0), Text(text ?? '')],
+    return SizedBox(
+      width: double.infinity,
+      child: CupertinoButton(
+        onPressed: () {
+          HapticFeedback.vibrate();
+          onPressed();
+        },
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          decoration: BoxDecoration(
+            border: Border.all(width: 2.0),
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 4.0,
+            children: [Icon(icon), Text(text ?? '')],
+          ),
         ),
       ),
     );

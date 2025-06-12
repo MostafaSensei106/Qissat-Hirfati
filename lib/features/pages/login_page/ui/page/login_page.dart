@@ -69,48 +69,13 @@ class _LoginPageState extends State<LoginPage> {
           ),
 
           const SizedBox(height: 12),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CupertinoCheckboxComponent(
-                value: rememberMe,
-                text: tr.rememberMe,
-                onChanged: (value) {
-                  setState(() {
-                    rememberMe = value;
-                  });
-                },
-              ),
 
-              CupertinoButtonComponent(
-                onPressed: () {
-                  CupertinoFeatureWillBeAvailableLaterDilog.show(context);
-                },
-                text: tr.forgotPassword,
-              ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          SizedBox(
-            width: double.infinity,
-            child: CupertinoButtonFilledComponent(
-              onPressed: () {
-                CupertinoFeatureWillBeAvailableLaterDilog.show(context);
-              },
-              text: tr.login,
-            ),
-          ),
-          const SizedBox(height: 16 + 16),
+          buildLoginRow(tr, context),
 
-          Row(
-            children: [
-              Expanded(child: AppDivider()),
-              Text(tr.orLoginWith, style: const TextStyle(fontSize: 14)),
-              Expanded(child: AppDivider()),
-            ],
-          ),
-
+          buildLoginButton(context, tr),
+          const SizedBox(height: 32),
+          LoginOption(tr: tr),
+          const SizedBox(height: 32),
           CupertinoButtonOutlineComponent(
             onPressed: () {
               CupertinoFeatureWillBeAvailableLaterDilog.show(context);
@@ -125,26 +90,83 @@ class _LoginPageState extends State<LoginPage> {
             text: tr.facebook,
             icon: CupertinoIcons.flag_circle,
           ),
-
           const SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(tr.noAccount),
-              const SizedBox(width: 8),
-              CupertinoButtonComponent(
-                text: tr.registerHere,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    CupertinoPageRoute(builder: (context) => RegisterPage()),
-                  );
-                },
-              ),
-            ],
-          ),
+          registrationRow(tr, context),
         ],
       ),
+    );
+  }
+
+  Row buildLoginRow(AppLocalizations tr, BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        CupertinoCheckboxComponent(
+          value: rememberMe,
+          text: tr.rememberMe,
+          onChanged: (value) {
+            setState(() {
+              rememberMe = value;
+            });
+          },
+        ),
+
+        CupertinoButtonComponent(
+          onPressed: () {
+            CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+          },
+          text: tr.forgotPassword,
+        ),
+      ],
+    );
+  }
+
+  SizedBox buildLoginButton(BuildContext context, AppLocalizations tr) {
+    return SizedBox(
+      width: double.infinity,
+      child: CupertinoButtonFilledComponent(
+        onPressed: () {
+          CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+        },
+        text: tr.login,
+      ),
+    );
+  }
+
+  Row registrationRow(AppLocalizations tr, BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(tr.noAccount),
+        const SizedBox(width: 8),
+        CupertinoButtonComponent(
+          text: tr.registerHere,
+          onPressed: () {
+            Navigator.push(
+              context,
+              CupertinoPageRoute(builder: (context) => RegisterPage()),
+            );
+          },
+        ),
+      ],
+    );
+  }
+}
+
+class LoginOption extends StatelessWidget {
+  const LoginOption({super.key, required this.tr});
+
+  final AppLocalizations tr;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(child: AppDivider()),
+        Text(tr.orLoginWith, style: const TextStyle(fontSize: 14)),
+        Expanded(child: AppDivider()),
+      ],
     );
   }
 }

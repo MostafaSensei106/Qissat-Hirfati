@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:qissat_hirfati/core/config/const/app_const.dart';
 
 class CupertinoTextFieldComponent extends StatelessWidget {
   final String placeholder;
