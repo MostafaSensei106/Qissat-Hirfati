@@ -15,6 +15,17 @@ class CupertinoCheckboxComponent extends StatelessWidget {
   final ValueChanged<bool> onChanged;
 
   @override
+  /// Build a [Row] containing a [CupertinoCheckbox] and a [CupertinoButton].
+  ///
+  /// The [CupertinoCheckbox] has its [CupertinoCheckbox.value] set to [value],
+  /// and its [CupertinoCheckbox.onChanged] set to [onChanged].
+  ///
+  /// The [CupertinoButton] has its [CupertinoButton.onPressed] set to a
+  /// callback that calls [onChanged] with the opposite of [value], and its
+  /// [CupertinoButton.child] set to a [Text] displaying [text].
+  ///
+  /// When the [CupertinoCheckbox] is tapped, this widget will call
+  /// [HapticFeedback.vibrate].
   Widget build(BuildContext context) {
     return Row(
       children: [
