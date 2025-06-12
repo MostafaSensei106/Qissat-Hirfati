@@ -81,6 +81,51 @@ class AppLocalizationsAr extends AppLocalizations {
   String get passwordsDoNotMatch => 'كلمتا المرور غير متطابقتين';
 
   @override
+  String get info => 'معلومات';
+
+  @override
+  String get error => 'خطأ';
+
+  @override
+  String get warning => 'Warning';
+
+  @override
+  String get success => 'نجاح';
+
+  @override
+  String get yes => 'نعم';
+
+  @override
+  String get no => 'لا';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get save => 'حفظ';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
+  String get search => 'بحث';
+
+  @override
+  String get loading => 'جاري التحميل...';
+
+  @override
+  String get noResultsFound => 'لم يتم العثور على نتائج';
+
+  @override
+  String get somethingWentWrong => 'حدث خطأ ما';
+
+  @override
+  String get networkError => 'خطأ في الشبكة، يرجى التحقق من الاتصال';
+
+  @override
   String get ok => 'حسنا';
 
   @override

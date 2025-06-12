@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 
 class CupertinoCheckboxComponent extends StatelessWidget {
@@ -21,6 +22,7 @@ class CupertinoCheckboxComponent extends StatelessWidget {
           value: value,
           activeColor: Theme.of(context).primaryColor,
           onChanged: (bool? value) {
+            HapticFeedback.vibrate();
             onChanged(value!);
           },
         ),

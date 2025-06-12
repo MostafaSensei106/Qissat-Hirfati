@@ -81,6 +81,51 @@ class AppLocalizationsUr extends AppLocalizations {
   String get passwordsDoNotMatch => 'پاس ورڈ مطابقت نہیں رکھتے';
 
   @override
+  String get info => 'Info';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get warning => 'Warning';
+
+  @override
+  String get success => 'Success';
+
+  @override
+  String get yes => 'Yes';
+
+  @override
+  String get no => 'No';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get update => 'Update';
+
+  @override
+  String get search => 'Search';
+
+  @override
+  String get loading => 'Loading...';
+
+  @override
+  String get noResultsFound => 'No results found';
+
+  @override
+  String get somethingWentWrong => 'Something went wrong';
+
+  @override
+  String get networkError => 'Network error, please check your connection';
+
+  @override
   String get ok => 'OK';
 
   @override
