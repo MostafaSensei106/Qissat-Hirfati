@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_filled_component/cupertino_button_filled_component.dart';
+import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_outline_component/cupertino_button_outline_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_checkbox_component/cupertino_checkbox_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_text_field_component/cupertino_text_field_component.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
@@ -58,7 +59,6 @@ class _LoginPageState extends State<LoginPage> {
                   showPassword = !showPassword;
                 });
               },
-              useInBorderRadius: true,
               child: Icon(
                 showPassword ? CupertinoIcons.eye : CupertinoIcons.eye_slash,
                 color: showPassword
@@ -110,51 +110,34 @@ class _LoginPageState extends State<LoginPage> {
               Expanded(child: AppDivider()),
             ],
           ),
-          const SizedBox(height: 10),
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CupertinoButton(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Row(
-                  children: [
-                    const Icon(CupertinoIcons.person_crop_circle),
-                    const SizedBox(width: 5),
-                    Text(tr.google),
-                  ],
-                ),
-                onPressed: () {},
-              ),
-              CupertinoButton(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Row(
-                  children: [
-                    const Icon(CupertinoIcons.person_2_fill),
-                    const SizedBox(width: 5),
-                    Text(tr.facebook),
-                  ],
-                ),
-                onPressed: () {},
-              ),
-            ],
+          CupertinoButtonOutlineComponent(
+            onPressed: () {
+              CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+            },
+            text: tr.google,
+            icon: CupertinoIcons.game_controller_solid,
           ),
-          const Spacer(),
+          CupertinoButtonOutlineComponent(
+            onPressed: () {
+              CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+            },
+            text: tr.facebook,
+            icon: CupertinoIcons.flag_circle,
+          ),
 
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(tr.noAccount),
-              CupertinoButton(
-                padding: EdgeInsets.zero,
-                child: Text(tr.registerHere),
+              const SizedBox(width: 8),
+              CupertinoButtonComponent(
+                text: tr.registerHere,
                 onPressed: () {
-                  HapticFeedback.vibrate();
                   Navigator.push(
                     context,
-                    CupertinoPageRoute(
-                      builder: (context) => const RegisterPage(),
-                    ),
+                    CupertinoPageRoute(builder: (context) => RegisterPage()),
                   );
                 },
               ),
