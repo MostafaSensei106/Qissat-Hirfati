@@ -1,11 +1,9 @@
 name: qissat_hirfati
 description: "A new Flutter project."
-
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none' 
 
 environment:
   sdk: ^3.8.1
-
 
 dependencies:
   flutter:
@@ -23,7 +21,6 @@ dependencies:
   
   flutter_localizations:
     sdk: flutter
-
 
 dev_dependencies:
   flutter_test:
@@ -66,4 +63,3 @@ flutter:
         - asset: assets/fonts/ar/Rubik/static/Rubik-ExtraBoldItalic.ttf
           weight: 800
           style: italic
-

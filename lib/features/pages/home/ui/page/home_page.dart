@@ -36,7 +36,9 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [Landing()],
+          children: [Landing(),
+          
+          ],
         ),
       ),
     );
@@ -50,9 +52,7 @@ class Landing extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
-      children: [
-        Image.asset(AppConstants.landHomeGif, width: 150, height: 150)
-        ],
+      children: [Image.asset(AppConstants.landHomeGif, fit: BoxFit.cover)],
     );
   }
 }

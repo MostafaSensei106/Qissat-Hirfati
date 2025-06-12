@@ -24,7 +24,7 @@ class AppConstants {
   static const String twitterLogo = "assets/icons/svg/twitter.svg";
   static const String whatsappLogo = "assets/icons/svg/whatsApp.svg";
 
-  static const String landHomeGif =  "assets/images/gif/landHome.gif";
+  static const String landHomeGif =  "assets/gif/landHome.gif";
 
 
   static const double padding = 8.0;
