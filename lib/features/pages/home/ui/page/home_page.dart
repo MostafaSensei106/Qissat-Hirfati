@@ -25,17 +25,34 @@ class HomePage extends StatelessWidget {
           },
         ),
         trailing: CupertinoButtonComponent(
-          icon: Icon(
-            CupertinoIcons.globe,
-            size: AppConstants.iconSize,
-          ),
+          icon: Icon(CupertinoIcons.globe, size: AppConstants.iconSize),
           onPressed: () {
             CupertinoFeatureWillBeAvailableLaterDilog.show(context);
           },
         ),
       ),
 
-      child: Center(child: Text('Home Page')),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [Landing()],
+        ),
+      ),
+    );
+  }
+}
+
+class Landing extends StatelessWidget {
+  const Landing({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Image.asset(AppConstants.landHomeGif, width: 150, height: 150)
+        ],
     );
   }
 }

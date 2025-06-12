@@ -24,8 +24,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -37,9 +36,9 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
-
   assets:
     - assets/images/
+    - assets/gif/
     - assets/animations/lottie/
     - assets/icons/icon/
     - assets/icons/svg/
