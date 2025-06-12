@@ -27,6 +27,9 @@ class AppConstants {
   static const String landHomeGif =  "assets/gif/landHome.gif";
 
 
+  static const String smallTreePNG = "assets/images/smallTree.png";
+
+
   static const double padding = 8.0;
   static const double iconSize = 27.0;
   static const double margin = 8.0;

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
@@ -16,6 +15,7 @@ import 'package:qissat_hirfati/l10n/app_localizations.dart';
 class LoginPage extends StatefulWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  
 
   LoginPage({super.key});
 
@@ -28,7 +28,15 @@ class _LoginPageState extends State<LoginPage> {
   bool showPassword = false;
 
   @override
+  void dispose() {
+    widget.emailController.dispose();
+    widget.passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+
     final tr = AppLocalizations.of(context)!;
 
     return CupertinoPageScaffold(
