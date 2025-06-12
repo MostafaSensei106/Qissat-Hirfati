@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
-class FeatureWillBeAvailableLaterDilog {
+class CupertinoFeatureWillBeAvailableLaterDilog {
   static Future<void> show(BuildContext context) async {
     final tr = AppLocalizations.of(context)!;
     await showCupertinoDialog<void>(

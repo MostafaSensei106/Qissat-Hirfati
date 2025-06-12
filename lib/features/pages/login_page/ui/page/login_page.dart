@@ -8,7 +8,7 @@ import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertin
 import 'package:qissat_hirfati/core/widgets/cupertino_checkbox_component/cupertino_checkbox_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_text_field_component/cupertino_text_field_component.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
-import 'package:qissat_hirfati/core/widgets/feature_will_be_available_later_dilog/feature_will_be_available_later_dilog.dart';
+import 'package:qissat_hirfati/core/widgets/cupertino_feature_will_be_available_later_dilog/cupertino_feature_will_be_available_later_dilog.dart';
 import 'package:qissat_hirfati/features/pages/register_page/ui/page/register_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
 
               CupertinoButtonComponent(
                 onPressed: () {
-                  FeatureWillBeAvailableLaterDilog.show(context);
+                  CupertinoFeatureWillBeAvailableLaterDilog.show(context);
                 },
                 text: tr.forgotPassword,
               ),
@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
             width: double.infinity,
             child: CupertinoButtonFilledComponent(
               onPressed: () {
-                FeatureWillBeAvailableLaterDilog.show(context);
+                CupertinoFeatureWillBeAvailableLaterDilog.show(context);
               },
               text: tr.login,
             ),
