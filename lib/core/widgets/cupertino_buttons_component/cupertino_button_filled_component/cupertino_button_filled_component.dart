@@ -35,9 +35,6 @@ class CupertinoButtonFilledComponent extends StatelessWidget {
   /// [AppConstants.outBorderRadius] value. The default value is false.
   Widget build(BuildContext context) {
     return CupertinoButton.filled(
-      borderRadius: useInBorderRadius
-          ? BorderRadius.circular(AppConstants.inBorderRadius)
-          : BorderRadius.circular(AppConstants.outBorderRadius),
       onPressed: () {
         HapticFeedback.vibrate();
         onPressed();
