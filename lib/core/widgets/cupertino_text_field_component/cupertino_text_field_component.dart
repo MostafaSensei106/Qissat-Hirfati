@@ -21,8 +21,8 @@ class CupertinoTextFieldComponent extends StatelessWidget {
     this.keyboardType,
     this.textInputAction,
     this.inputFormatters,
-    required this.autofocus,
-    required this.enabled,
+     this.autofocus = false,
+     this.enabled = true,
     this.prefix,
     this.suffix,
   });
@@ -40,6 +40,7 @@ class CupertinoTextFieldComponent extends StatelessWidget {
       obscureText: obscureText,
       autofocus: autofocus,
       enabled: enabled,
+      padding: const EdgeInsets.all(16),
     );
   }
 }

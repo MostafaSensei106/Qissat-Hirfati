@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
+import 'package:qissat_hirfati/core/widgets/cupertino_text_field_component/cupertino_text_field_component.dart';
 import 'package:qissat_hirfati/features/pages/register_page/ui/page/register_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -15,6 +17,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool rememberMe = false;
+  bool showPassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,27 +26,36 @@ class _LoginPageState extends State<LoginPage> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(middle: Text(tr.login)),
       child: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: AppConst.padding.w),
+        padding: EdgeInsets.symmetric(horizontal: AppConst.padding.w),
         child: Column(
           children: [
-            Image.asset(AppConst.appLogoPng, width: 100.w, height: 100.h),
-            const SizedBox(height: 40),
+            Image.asset(AppConst.appLogoPng, width: 120.w, height: 120.h),
+            const SizedBox(height: 8),
 
-            //CupertinoTextFieldComponent(placeholder: tr.phoneNumberPlaceholder,),
-
-            CupertinoTextField(
+            CupertinoTextFieldComponent(
               placeholder: tr.email,
-              padding: const EdgeInsets.all(16),
+              controller: widget.emailController,
               keyboardType: TextInputType.emailAddress,
             ),
-            const SizedBox(height: 20),
 
-            CupertinoTextField(
+            const SizedBox(height: 8),
+
+            CupertinoTextFieldComponent(
               placeholder: tr.password,
-              padding: const EdgeInsets.all(16),
-              obscureText: true,
+              controller: widget.passwordController,
+              obscureText: !showPassword,
+              keyboardType: TextInputType.visiblePassword,
+              suffix: CupertinoButton(
+                padding: EdgeInsets.zero,
+                child: Icon(showPassword ? CupertinoIcons.eye : CupertinoIcons.eye_slash),
+                onPressed: () {
+                  setState(() {
+                    showPassword = !showPassword;
+                  });
+                },
+              ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 8),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
