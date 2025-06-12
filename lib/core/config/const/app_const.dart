@@ -31,6 +31,7 @@ class AppConstants {
 
 
   static const double padding = 16.0;
+  static const double paddingHalf = padding / 2;
   static const double iconSize = 27.0;
   static const double margin = 8.0;
 

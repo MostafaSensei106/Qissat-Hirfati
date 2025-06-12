@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
+import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_filled_component/cupertino_button_filled_component.dart';
 import 'package:qissat_hirfati/features/pages/settings/ui/page/settings_page.dart';
@@ -29,7 +31,53 @@ class HomePage extends StatelessWidget {
 
       child: SingleChildScrollView(
         physics: const ScrollPhysics(),
-        child: Column(children: [Landing(), TextSectionCom()]),
+        child: Column(
+          children: [
+            Landing(),
+            TextSectionCom(),
+            ArticleSectionComponent(
+              title: 'قصائد القصص',
+              description:
+                  'التراث السعودي هو لوحة فنية تمتزج فيها أصالة الماضي بعراقة الحضارات القديمة التي ازدهرت على هذه الأرض. من شمال المملكة إلى جنوبها، ومن شرقها إلى غربها، تزخر السعودية بمواقع تاريخية وأثرية تحكي قصص أجيال مضت وتركت بصمتها في صفحات التاريخ.',
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ArticleSectionComponent extends StatelessWidget {
+  final String title;
+  final String description;
+  const ArticleSectionComponent({
+    super.key,
+    required this.title,
+    required this.description,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(AppConstants.paddingHalf),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 8,
+        children: [
+          Row(
+            spacing: 8,
+            children: [
+              Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+              const Expanded(child: AppDivider()),
+            ],
+          ),
+          Text(description),
+          const SizedBox(height: 8),
+          CupertinoButtonFilledComponent(
+            onPressed: () {},
+            text: 'تعرف على المزيد',
+          ),
+        ],
       ),
     );
   }
@@ -44,7 +92,7 @@ class TextSectionCom extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          padding: EdgeInsets.all(AppConstants.padding),
+          padding: EdgeInsets.all(AppConstants.paddingHalf),
           color: AppConstants.primarySectionColor,
           width: double.infinity,
           child: Column(
@@ -65,7 +113,7 @@ class TextSectionCom extends StatelessWidget {
               const SizedBox(height: 35),
               CupertinoButtonFilledComponent(
                 onPressed: () {},
-                text: 'استكشف المزيد',
+                text: 'نبذة عن قصة حرفتي',
               ),
               const SizedBox(height: 16),
             ],
