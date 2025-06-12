@@ -81,6 +81,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get passwordsDoNotMatch => '密码不匹配';
 
   @override
+  String get loginWithGoogle => 'Login with Google';
+
+  @override
+  String get loginWithFacebook => 'Login with Facebook';
+
+  @override
   String get info => 'Info';
 
   @override

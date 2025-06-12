@@ -23,6 +23,8 @@
   "haveAccount": "Already have an account?",
   "loginNow": "Login now",
   "passwordsDoNotMatch": "Passwords do not match",
+  "loginWithGoogle": "Login with Google",
+  "loginWithFacebook": "Login with Facebook",
   "info": "Info",
   "error": "Error",
   "warning": "Warning",

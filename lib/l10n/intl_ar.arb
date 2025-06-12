@@ -22,6 +22,8 @@
   "register": "تسجيل",
   "haveAccount": "هل لديك حساب؟",
   "loginNow": "سجّل الدخول الآن",
+  "loginWithGoogle": "تسجيل الدخول باستخدام جوجل",
+  "loginWithFacebook": "تسجيل الدخول باستخدام فيسبوك",
   "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
   "info": "معلومات",
   "error": "خطأ",

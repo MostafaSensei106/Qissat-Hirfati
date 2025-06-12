@@ -81,6 +81,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get passwordsDoNotMatch => 'كلمتا المرور غير متطابقتين';
 
   @override
+  String get loginWithGoogle => 'تسجيل الدخول باستخدام جوجل';
+
+  @override
+  String get loginWithFacebook => 'تسجيل الدخول باستخدام فيسبوك';
+
+  @override
   String get info => 'معلومات';
 
   @override

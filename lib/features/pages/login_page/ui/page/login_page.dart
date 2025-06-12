@@ -76,20 +76,8 @@ class _LoginPageState extends State<LoginPage> {
           const SizedBox(height: 32),
           LoginOption(tr: tr),
           const SizedBox(height: 32),
-          CupertinoButtonOutlineComponent(
-            onPressed: () {
-              CupertinoFeatureWillBeAvailableLaterDilog.show(context);
-            },
-            text: tr.google,
-            icon: CupertinoIcons.game_controller_solid,
-          ),
-          CupertinoButtonOutlineComponent(
-            onPressed: () {
-              CupertinoFeatureWillBeAvailableLaterDilog.show(context);
-            },
-            text: tr.facebook,
-            icon: CupertinoIcons.flag_circle,
-          ),
+          SocialMediaLoginForm(tr: tr),
+
           const SizedBox(height: 10),
           registrationRow(tr, context),
         ],
@@ -148,6 +136,38 @@ class _LoginPageState extends State<LoginPage> {
               CupertinoPageRoute(builder: (context) => RegisterPage()),
             );
           },
+        ),
+      ],
+    );
+  }
+}
+
+class SocialMediaLoginForm extends StatelessWidget {
+  const SocialMediaLoginForm({
+    super.key,
+    required this.tr,
+  });
+
+  final AppLocalizations tr;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      spacing: 8,
+      children: [
+        CupertinoButtonOutlineComponent(
+          onPressed: () {
+            CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+          },
+          text: tr.loginWithGoogle,
+          icon: CupertinoIcons.game_controller_solid,
+        ),
+        CupertinoButtonOutlineComponent(
+          onPressed: () {
+            CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+          },
+          text: tr.loginWithFacebook,
+          icon: CupertinoIcons.flag_circle,
         ),
       ],
     );

@@ -256,6 +256,18 @@ abstract class AppLocalizations {
   /// **'Passwords do not match'**
   String get passwordsDoNotMatch;
 
+  /// No description provided for @loginWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Login with Google'**
+  String get loginWithGoogle;
+
+  /// No description provided for @loginWithFacebook.
+  ///
+  /// In en, this message translates to:
+  /// **'Login with Facebook'**
+  String get loginWithFacebook;
+
   /// No description provided for @info.
   ///
   /// In en, this message translates to:
