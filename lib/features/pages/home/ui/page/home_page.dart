@@ -65,6 +65,7 @@ class HomePage extends StatelessWidget {
 
             ArticleSectionComponent(
               useChild: true,
+              color: AppConstants.primarySectionColor,
               title: 'اعمالنا',
               description:
                   'نصمم منتجات تنبض بعراقة التراث المتجذر في هويتنا، نستلهم منها ملامح الحاضر ونرسم بها ملامح المستقبل',
@@ -117,6 +118,39 @@ class HomePage extends StatelessWidget {
                       activeDotColor: Theme.of(context).primaryColor,
                     ),
                   ),
+
+                  SizedBox(height: 8),
+                  CupertinoButtonFilledComponent(
+                    onPressed: () {},
+                    child: Text('المزيد'),
+                  ),
+                  Row(
+                    spacing: 8,
+                    children: [
+                      Text(
+                        'شركاء النجاح',
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      const Expanded(child: AppDivider()),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 80,
+                    child: PageView(
+                      children: [
+                        Image.asset(
+                          AppConstants.trs2PNG,
+                          filterQuality: FilterQuality.high,
+                          fit: BoxFit.cover,
+                        ),
+                        Image.asset(
+                          AppConstants.trsPNG,
+                          filterQuality: FilterQuality.high,
+                          fit: BoxFit.cover,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -129,7 +163,7 @@ class HomePage extends StatelessWidget {
 
 class ArticleSectionComponent extends StatelessWidget {
   final String title;
-  final String description;
+  final String? description;
   final bool useChild;
   final bool useButton;
   final Widget? child;
@@ -138,7 +172,7 @@ class ArticleSectionComponent extends StatelessWidget {
   const ArticleSectionComponent({
     super.key,
     required this.title,
-    required this.description,
+    this.description,
     this.child,
     this.useChild = false,
     this.useButton = false,
@@ -165,7 +199,7 @@ class ArticleSectionComponent extends StatelessWidget {
                 const Expanded(child: AppDivider()),
               ],
             ),
-            Text(description),
+            Text(description ?? ''),
             const SizedBox(height: 8),
             useButton
                 ? CupertinoButtonFilledComponent(
