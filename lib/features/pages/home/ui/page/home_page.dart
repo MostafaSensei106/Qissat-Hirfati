@@ -33,10 +33,11 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Landing(),
-            TextSectionCom(),
+            OverviewSection(),
             ArticleSectionComponent(
               title: 'تراثنا',
               useChild: true,
+              useButton: true,
               description:
                   'التراث السعودي هو لوحة فنية تمتزج فيها أصالة الماضي بعراقة الحضارات القديمة التي ازدهرت على هذه الأرض. من شمال المملكة إلى جنوبها، ومن شرقها إلى غربها، تزخر السعودية بمواقع تاريخية وأثرية تحكي قصص أجيال مضت وتركت بصمتها في صفحات التاريخ.',
               child: Column(
@@ -57,6 +58,14 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+
+            ArticleSectionComponent(
+              useChild: true,
+              title: 'اعمالنا',
+              description:
+                  'نصمم منتجات تنبض بعراقة التراث المتجذر في هويتنا، نستلهم منها ملامح الحاضر ونرسم بها ملامح المستقبل',
+                  child: ,
+            ),
           ],
         ),
       ),
@@ -68,7 +77,9 @@ class ArticleSectionComponent extends StatelessWidget {
   final String title;
   final String description;
   final bool useChild;
+  final bool useButton;
   final Widget? child;
+  final Color? color;
 
   const ArticleSectionComponent({
     super.key,
@@ -76,38 +87,48 @@ class ArticleSectionComponent extends StatelessWidget {
     required this.description,
     this.child,
     this.useChild = false,
+    this.useButton = false,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(AppConstants.padding),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 8,
-        children: [
-          Row(
-            spacing: 8,
-            children: [
-              Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-              const Expanded(child: AppDivider()),
-            ],
-          ),
-          Text(description),
-          const SizedBox(height: 8),
-          CupertinoButtonFilledComponent(
-            onPressed: () {},
-            text: 'تعرف على المزيد',
-          ),
-          if (useChild && child != null) child!,
-        ],
+    return Container(
+      color: color ?? CupertinoColors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(AppConstants.padding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 8,
+          children: [
+            Row(
+              spacing: 8,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const Expanded(child: AppDivider()),
+              ],
+            ),
+            Text(description),
+            const SizedBox(height: 8),
+            useButton
+                ? CupertinoButtonFilledComponent(
+                    onPressed: () {},
+                    text: 'تعرف على المزيد',
+                  )
+                : const SizedBox.shrink(),
+            if (useChild && child != null) child!,
+          ],
+        ),
       ),
     );
   }
 }
 
-class TextSectionCom extends StatelessWidget {
-  const TextSectionCom({super.key});
+class OverviewSection extends StatelessWidget {
+  const OverviewSection({super.key});
 
   @override
   Widget build(BuildContext context) {
