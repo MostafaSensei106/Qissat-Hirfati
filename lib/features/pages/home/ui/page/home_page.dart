@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
@@ -36,9 +35,27 @@ class HomePage extends StatelessWidget {
             Landing(),
             TextSectionCom(),
             ArticleSectionComponent(
-              title: 'قصائد القصص',
+              title: 'تراثنا',
+              useChild: true,
               description:
                   'التراث السعودي هو لوحة فنية تمتزج فيها أصالة الماضي بعراقة الحضارات القديمة التي ازدهرت على هذه الأرض. من شمال المملكة إلى جنوبها، ومن شرقها إلى غربها، تزخر السعودية بمواقع تاريخية وأثرية تحكي قصص أجيال مضت وتركت بصمتها في صفحات التاريخ.',
+              child: Column(
+                spacing: 8,
+                children: [
+                  SizedBox(height: 8),
+                  AppDivider(),
+                  Text(
+                    'يُعد البشت رمز للفخامة والهوية السعودية، يزين القادة والملوك في المناسبات الرسمية، ويجسده ولي العهد الأمير محمد بن سلمان بأسلوب يجمع بين الأصالة والتحديث. لمعرفة قصته، اضغط على البشت في الصورة.',
+                  ),
+                  SizedBox(height: 4),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.outBorderRadius,
+                    ),
+                    child: Image.asset(AppConstants.mohammedbinSalmanAlSaudPNG),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -50,16 +67,21 @@ class HomePage extends StatelessWidget {
 class ArticleSectionComponent extends StatelessWidget {
   final String title;
   final String description;
+  final bool useChild;
+  final Widget? child;
+
   const ArticleSectionComponent({
     super.key,
     required this.title,
     required this.description,
+    this.child,
+    this.useChild = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(AppConstants.paddingHalf),
+      padding: const EdgeInsets.all(AppConstants.padding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 8,
@@ -77,6 +99,7 @@ class ArticleSectionComponent extends StatelessWidget {
             onPressed: () {},
             text: 'تعرف على المزيد',
           ),
+          if (useChild && child != null) child!,
         ],
       ),
     );
@@ -92,7 +115,7 @@ class TextSectionCom extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          padding: EdgeInsets.all(AppConstants.paddingHalf),
+          padding: EdgeInsets.all(AppConstants.padding),
           color: AppConstants.primarySectionColor,
           width: double.infinity,
           child: Column(

@@ -28,6 +28,7 @@ class AppConstants {
 
 
   static const String smallTreePNG = "assets/images/smallTree.png";
+  static const String mohammedbinSalmanAlSaudPNG = "assets/images/mohammedbinSalmanAlSaud.png";
 
 
   static const double padding = 16.0;
