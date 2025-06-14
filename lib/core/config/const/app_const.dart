@@ -30,6 +30,11 @@ class AppConstants {
   static const String smallTreePNG = "assets/images/smallTree.png";
   static const String mohammedbinSalmanAlSaudPNG = "assets/images/mohammedbinSalmanAlSaud.png";
 
+  static const String greenOrbPNG = "assets/images/greenOrb.png";
+  static const String lampPNG = "assets/images/lamp.png";
+  static const String treesPNG = "assets/images/trees.png";
+  static const String pathPNG = "assets/images/path.png";
+
 
   static const double padding = 16.0;
   static const double paddingHalf = padding / 2;

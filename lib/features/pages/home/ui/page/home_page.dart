@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
@@ -6,6 +7,7 @@ import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertin
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_filled_component/cupertino_button_filled_component.dart';
 import 'package:qissat_hirfati/features/pages/settings/ui/page/settings_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,6 +15,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
+    final PageController pageController = PageController();
+
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(tr.appTitle),
@@ -64,7 +68,57 @@ class HomePage extends StatelessWidget {
               title: 'اعمالنا',
               description:
                   'نصمم منتجات تنبض بعراقة التراث المتجذر في هويتنا، نستلهم منها ملامح الحاضر ونرسم بها ملامح المستقبل',
-                  child: ,
+              child: Column(
+                spacing: 8,
+                children: [
+                  SizedBox(width: 0.5.sw, child: AppDivider()),
+                  SizedBox(
+                    height: 280,
+                    child: PageView(
+                      controller: pageController,
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Column(
+                          spacing: 8,
+                          children: [
+                            Image.asset(AppConstants.greenOrbPNG),
+                            Text('Qissat Hirfati'),
+                          ],
+                        ),
+                        Column(
+                          spacing: 8,
+                          children: [
+                            Image.asset(AppConstants.treesPNG),
+                            Text('Mohammed bin Salman Al Saud'),
+                          ],
+                        ),
+                        Column(
+                          spacing: 8,
+                          children: [
+                            Image.asset(AppConstants.pathPNG),
+                            Text('Small Tree'),
+                          ],
+                        ),
+                        Column(
+                          spacing: 8,
+                          children: [
+                            Image.asset(AppConstants.lampPNG),
+                            Text('Qissat Hirfati'),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  SmoothPageIndicator(
+                    controller: pageController,
+                    count: 4,
+                    effect: WormEffect(
+                      activeDotColor: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
