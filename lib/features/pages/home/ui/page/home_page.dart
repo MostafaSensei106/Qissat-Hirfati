@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
@@ -42,6 +43,7 @@ class HomePage extends StatelessWidget {
               title: 'تراثنا',
               useChild: true,
               useButton: true,
+              onPressed: () {},
               description:
                   'التراث السعودي هو لوحة فنية تمتزج فيها أصالة الماضي بعراقة الحضارات القديمة التي ازدهرت على هذه الأرض. من شمال المملكة إلى جنوبها، ومن شرقها إلى غربها، تزخر السعودية بمواقع تاريخية وأثرية تحكي قصص أجيال مضت وتركت بصمتها في صفحات التاريخ.',
               child: Column(
@@ -67,6 +69,8 @@ class HomePage extends StatelessWidget {
               useChild: true,
               color: AppConstants.primarySectionColor,
               title: 'اعمالنا',
+              useButton: false,
+              onPressed: () => {},
               description:
                   'نصمم منتجات تنبض بعراقة التراث المتجذر في هويتنا، نستلهم منها ملامح الحاضر ونرسم بها ملامح المستقبل',
               child: Column(
@@ -168,6 +172,7 @@ class ArticleSectionComponent extends StatelessWidget {
   final bool useButton;
   final Widget? child;
   final Color? color;
+  final VoidCallback onPressed;
 
   const ArticleSectionComponent({
     super.key,
@@ -177,6 +182,7 @@ class ArticleSectionComponent extends StatelessWidget {
     this.useChild = false,
     this.useButton = false,
     this.color,
+    required this.onPressed,
   });
 
   @override
@@ -203,7 +209,10 @@ class ArticleSectionComponent extends StatelessWidget {
             const SizedBox(height: 8),
             useButton
                 ? CupertinoButtonFilledComponent(
-                    onPressed: () {},
+                    onPressed: () {
+                      HapticFeedback.vibrate();
+                      onPressed();
+                    },
                     text: 'تعرف على المزيد',
                   )
                 : const SizedBox.shrink(),
