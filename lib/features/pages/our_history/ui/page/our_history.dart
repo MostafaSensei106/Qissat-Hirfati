@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
+import 'package:qissat_hirfati/core/widgets/cupertino_feature_will_be_available_later_dilog/cupertino_feature_will_be_available_later_dilog.dart';
+import 'package:qissat_hirfati/features/pages/our_history/data/model/product_model.dart';
+import 'package:qissat_hirfati/features/pages/place_page/ui/page/place_page.dart';
 
 class OurHistory extends StatelessWidget {
   const OurHistory({super.key});
@@ -15,7 +18,9 @@ class OurHistory extends StatelessWidget {
         ),
         trailing: CupertinoButtonComponent(
           child: const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
-          onPressed: () {},
+          onPressed: () {
+            CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+          },
         ),
         backgroundColor: CupertinoColors.systemGroupedBackground,
         padding: const EdgeInsetsDirectional.only(end: 8.0),
@@ -27,12 +32,32 @@ class OurHistory extends StatelessWidget {
           ),
           child: Column(
             children: [
-              ProductCard(
+              PlaceCard(
+
+                
                 imagePath: AppConstants.handPNG,
                 title: 'محمد بن سلمان السعودي',
                 description:
                     'قصة حرفيون سعوديون يبدعون المستقبل بعبق التراث وعراقة الأصالة',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => PlacePage(
+                        place: PlaceModel(
+                          imagePath: AppConstants.handPNG,
+                          name: 'محمد بن سلمان السعودي',
+                          openInfo: '',
+                          description:
+                              'قصة حرفيون سعوديون يبدعون المستقبل بعبق التراث وعراقة الأصالة',
+                          location: '',
+                          rating: '',
+                          reviewCount: '',
+                        ),
+                      ),
+                    ),
+                  );
+                },
               ),
             ],
           ),
@@ -42,13 +67,13 @@ class OurHistory extends StatelessWidget {
   }
 }
 
-class ProductCard extends StatelessWidget {
+class PlaceCard extends StatelessWidget {
   final String imagePath;
   final String title;
   final String description;
   final VoidCallback onPressed;
 
-  const ProductCard({
+  const PlaceCard({
     super.key,
     required this.imagePath,
     required this.title,
@@ -67,7 +92,7 @@ class ProductCard extends StatelessWidget {
           Hero(
             tag: imagePath,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(AppConstants.outBorderRadius),
               child: Image.asset(
                 imagePath,
                 width: 100,

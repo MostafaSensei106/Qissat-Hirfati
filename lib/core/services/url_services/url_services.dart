@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UrlRunServices {
@@ -10,14 +11,14 @@ class UrlRunServices {
   /// If the launch fails, it will throw an [Exception].
   ///
   /// If an [Exception] is thrown, it will show a toast with the error message.
-   static Future<void> launchURL(String url) async {
+static Future<void> launchURL(String url) async {
     try {
-      final uri = Uri.parse(url);
+      final uri = Uri.parse(url.trim());
       if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-        throw Exception('Could not launch $url');
+        throw 'تعذر فتح الرابط: $url';
       }
     } catch (e) {
-      //AppToast.showErrorToast(e.toString());
+      debugPrint('Launch URL Error: $e');
     }
   }
 
