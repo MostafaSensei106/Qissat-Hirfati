@@ -6,7 +6,9 @@ import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_filled_component/cupertino_button_filled_component.dart';
+import 'package:qissat_hirfati/core/widgets/cupertino_feature_will_be_available_later_dilog/cupertino_feature_will_be_available_later_dilog.dart';
 import 'package:qissat_hirfati/features/pages/about_app/ui/page/about_app.dart';
+import 'package:qissat_hirfati/features/pages/our_history/ui/page/our_history.dart';
 import 'package:qissat_hirfati/features/pages/settings/ui/page/settings_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -44,7 +46,12 @@ class HomePage extends StatelessWidget {
               title: 'تراثنا',
               useChild: true,
               useButton: true,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(builder: (context) => OurHistory()),
+                );
+              },
               description:
                   'التراث السعودي هو لوحة فنية تمتزج فيها أصالة الماضي بعراقة الحضارات القديمة التي ازدهرت على هذه الأرض. من شمال المملكة إلى جنوبها، ومن شرقها إلى غربها، تزخر السعودية بمواقع تاريخية وأثرية تحكي قصص أجيال مضت وتركت بصمتها في صفحات التاريخ.',
               child: Column(
@@ -126,7 +133,9 @@ class HomePage extends StatelessWidget {
 
                   SizedBox(height: 8),
                   CupertinoButtonFilledComponent(
-                    onPressed: () {},
+                    onPressed: () {
+                      CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+                    },
                     child: Text('المزيد'),
                   ),
                   Row(

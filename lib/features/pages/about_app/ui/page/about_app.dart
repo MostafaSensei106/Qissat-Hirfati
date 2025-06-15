@@ -12,6 +12,7 @@ class AboutApp extends StatelessWidget {
         middle: const Text('نبذة عنا'),
         enableBackgroundFilterBlur: true,
       ),
+
       child: SingleChildScrollView(
         child: Column(
           children: [
