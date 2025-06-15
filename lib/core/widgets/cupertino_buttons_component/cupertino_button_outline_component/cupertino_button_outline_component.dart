@@ -22,7 +22,7 @@ class CupertinoButtonOutlineComponent extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         decoration: BoxDecoration(
           border: Border.all(width: 2.0),
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

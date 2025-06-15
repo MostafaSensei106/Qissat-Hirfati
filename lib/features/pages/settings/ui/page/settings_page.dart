@@ -4,6 +4,7 @@ import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_feature_will_be_available_later_dilog/cupertino_feature_will_be_available_later_dilog.dart';
 import 'package:qissat_hirfati/features/pages/about_app/ui/page/about_app.dart';
+import 'package:qissat_hirfati/features/pages/contact/ui/page/contact_us.dart';
 import 'package:qissat_hirfati/features/pages/login_page/ui/page/login_page.dart';
 import 'package:qissat_hirfati/features/pages/our_history/ui/page/our_history.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
@@ -30,7 +31,7 @@ class SettingsPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: CupertinoColors.systemGroupedBackground,
                   borderRadius: BorderRadius.circular(
-                    AppConstants.outBorderRadius,
+                    AppConstants.inBorderRadius,
                   ),
                 ),
                 child: Column(
@@ -64,7 +65,7 @@ class SettingsPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: CupertinoColors.systemGroupedBackground,
                   borderRadius: BorderRadius.circular(
-                    AppConstants.outBorderRadius,
+                    AppConstants.inBorderRadius,
                   ),
                 ),
                 child: Column(
@@ -106,6 +107,22 @@ class SettingsPage extends StatelessWidget {
                         UrlRunServices.launchURL(AppConstants.appStroreUrl);
                       },
                     ),
+                    SettingsTile(
+                      title: 'تواصل معنا',
+                      subtitle: 'نسعد بخدمتك في أي وقت',
+                      icon: CupertinoIcons.phone,
+                      trailingIcon: CupertinoIcons.forward,
+                      onPressed: () {
+                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => ContactUs(),
+                          ),
+                        );
+                      },
+                    ),
+
                     SizedBox(height: 8),
                   ],
                 ),
@@ -142,7 +159,7 @@ class SettingsTile extends StatelessWidget {
         onPressed();
       },
       child: CupertinoListTile(
-        leading: Icon(icon),
+        leading: Icon(icon, size: AppConstants.iconSize),
         trailing: Icon(trailingIcon),
         subtitle: Text(subtitle),
         title: Text(title),
