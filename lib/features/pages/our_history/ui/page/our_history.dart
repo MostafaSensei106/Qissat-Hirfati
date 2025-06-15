@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
-import 'package:qissat_hirfati/core/widgets/cupertino_feature_will_be_available_later_dilog/cupertino_feature_will_be_available_later_dilog.dart';
 import 'package:qissat_hirfati/features/pages/our_history/data/model/product_model.dart';
+import 'package:qissat_hirfati/features/pages/our_history/logic/take_image/take_image.dart';
 import 'package:qissat_hirfati/features/pages/place_page/ui/page/place_page.dart';
 
 class OurHistory extends StatelessWidget {
@@ -71,7 +72,7 @@ class OurHistory extends StatelessWidget {
             'مدائن صالح، أحد أهم المواقع التراثية في السعودية، يعود تاريخه إلى القرن الأول الميلادي، ويضم مجموعة من النقوش والمنحوتات النبطية. يعد الموقع أحد أهم مواقع التراث العالمي لليونسكو ويُعد رمزًا للثقافة والتراث النبطي.',
         rating: 4.6,
         reviewCount: 10131,
-      )
+      ),
     ];
 
     return CupertinoPageScaffold(
@@ -83,7 +84,56 @@ class OurHistory extends StatelessWidget {
         trailing: CupertinoButtonComponent(
           child: const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
           onPressed: () {
-            CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+            showCupertinoModalPopup(
+              context: context,
+              builder: (context) => CupertinoActionSheet(
+                actions: [
+                  CupertinoActionSheetAction(
+                    onPressed: () {
+                      HapticFeedback.vibrate();
+                      Navigator.of(context).pop();
+                      TakeImageBy.pickFromCamera();
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      spacing: 8,
+                      children: [
+                        const Icon(
+                          CupertinoIcons.camera,
+                          size: AppConstants.iconSize,
+                        ),
+                        const Text('صورة من الكاميرا'),
+                      ],
+                    ),
+                  ),
+                  CupertinoActionSheetAction(
+                    onPressed: () {
+                      HapticFeedback.vibrate();
+                      Navigator.of(context).pop();
+                      TakeImageBy.pickFromGallery();
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          CupertinoIcons.photo,
+                          size: AppConstants.iconSize,
+                        ),
+                        const SizedBox(width: 8),
+                        const Text('الصور من المعرض'),
+                      ],
+                    ),
+                  ),
+                ],
+                cancelButton: CupertinoActionSheetAction(
+                  onPressed: () {
+                    HapticFeedback.vibrate();
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('اغلاق'),
+                ),
+              ),
+            );
           },
         ),
         backgroundColor: CupertinoColors.systemGroupedBackground,
