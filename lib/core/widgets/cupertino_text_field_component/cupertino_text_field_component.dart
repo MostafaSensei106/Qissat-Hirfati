@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:qissat_hirfati/core/config/const/app_const.dart';
 
 class CupertinoTextFieldComponent extends StatelessWidget {
   final String placeholder;
@@ -67,6 +68,11 @@ class CupertinoTextFieldComponent extends StatelessWidget {
       autofocus: autofocus,
       enabled: enabled,
       padding: const EdgeInsets.all(16),
+
+      decoration: BoxDecoration(
+        color: CupertinoColors.systemGroupedBackground,
+        borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
+      ),
     );
   }
 }

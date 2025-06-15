@@ -44,6 +44,10 @@
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<key>NSCameraUsageDescription</key>
+	<string>نحتاج لاستخدام الكاميرا لالتقاط الصور</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>نحتاج للوصول للصور لحفظ الصور التي تلتقطها</string>
 	<true/>
 </dict>
 </plist>
