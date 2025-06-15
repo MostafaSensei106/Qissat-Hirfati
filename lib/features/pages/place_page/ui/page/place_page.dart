@@ -9,10 +9,10 @@ class PlacePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text(place.name),
-        backgroundColor: CupertinoColors.systemGroupedBackground,
-      ),
+      // navigationBar: CupertinoNavigationBar(
+      //   middle: Text(place.name),
+      //   backgroundColor: CupertinoColors.systemGroupedBackground,
+      // ),
       child:SingleChildScrollView(
         child: Column(
           children: [

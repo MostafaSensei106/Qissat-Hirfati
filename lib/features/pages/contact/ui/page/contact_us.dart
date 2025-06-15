@@ -18,9 +18,7 @@ class _ContactUsState extends State<ContactUs> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      final name = _nameController.text;
-      final email = _emailController.text;
-      final message = _messageController.text;
+
 
       showCupertinoDialog(
         context: context,
@@ -87,5 +85,12 @@ class _ContactUsState extends State<ContactUs> {
         ),
       ),
     );
+  }
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    _messageController.dispose();
+    super.dispose();
   }
 }
