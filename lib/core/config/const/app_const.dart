@@ -29,6 +29,7 @@ class AppConstants {
 
   static const String smallTreePNG = "assets/images/smallTree.png";
   static const String mohammedbinSalmanAlSaudPNG = "assets/images/mohammedbinSalmanAlSaud.png";
+  static const String mohammedbinSalmanAlSaudLink = "https://www.alarabiya.net/saudi-today/2025/01/15/%D9%87%D8%B0%D9%87-%D9%82%D8%B5%D8%A9-%D8%A7%D9%84%D8%A8%D8%B4%D8%AA-%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A-%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%B1-%D9%84%D9%88%D9%84%D9%8A-%D8%A7%D9%84%D8%B9%D9%87%D8%AF-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-";
 
   static const String greenOrbPNG = "assets/images/greenOrb.png";
   static const String lampPNG = "assets/images/lamp.png";

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
+import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_filled_component/cupertino_button_filled_component.dart';
@@ -63,11 +64,21 @@ class HomePage extends StatelessWidget {
                     'يُعد البشت رمز للفخامة والهوية السعودية، يزين القادة والملوك في المناسبات الرسمية، ويجسده ولي العهد الأمير محمد بن سلمان بأسلوب يجمع بين الأصالة والتحديث. لمعرفة قصته، اضغط على البشت في الصورة.',
                   ),
                   SizedBox(height: 4),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                      AppConstants.outBorderRadius,
+                  CupertinoButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {
+                      UrlRunServices.launchURL(
+                        AppConstants.mohammedbinSalmanAlSaudLink,
+                      );
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                        AppConstants.outBorderRadius,
+                      ),
+                      child: Image.asset(
+                        AppConstants.mohammedbinSalmanAlSaudPNG,
+                      ),
                     ),
-                    child: Image.asset(AppConstants.mohammedbinSalmanAlSaudPNG),
                   ),
                 ],
               ),
