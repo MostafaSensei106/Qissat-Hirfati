@@ -11,7 +11,7 @@ class OurHistory extends StatelessWidget {
       navigationBar: CupertinoNavigationBar(
         middle: SizedBox(
           height: 36,
-          child: CupertinoSearchTextField(placeholder: 'Search'),
+          child: CupertinoSearchTextField(placeholder: 'بحث'),
         ),
         trailing: CupertinoButtonComponent(
           child: const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
