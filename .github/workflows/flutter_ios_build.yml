@@ -1,0 +1,34 @@
+name: Build Flutter iOS App
+
+on:
+  pull_request:
+
+jobs:
+  build-ios:
+    name: Build iOS
+    runs-on: macos-latest
+
+    steps:
+      - name: Check PR title
+        if: contains(github.event.pull_request.title, 'build ios')
+        run: echo "✅ Title contains 'build ios', proceeding with build."
+
+      - name: Stop if title does not contain 'build ios'
+        if: ${{ !contains(github.event.pull_request.title, 'build ios') }}
+        run: |
+          echo "❌ PR title does not contain 'build ios'. Skipping build."
+          exit 1
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.4'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build iOS (no codesign)
+        run: flutter build ios --release --no-codesign
