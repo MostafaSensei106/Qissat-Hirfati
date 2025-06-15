@@ -6,6 +6,7 @@ import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_filled_component/cupertino_button_filled_component.dart';
+import 'package:qissat_hirfati/features/pages/about_app/ui/page/about_app.dart';
 import 'package:qissat_hirfati/features/pages/settings/ui/page/settings_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -253,7 +254,12 @@ class OverviewSection extends StatelessWidget {
               ),
               const SizedBox(height: 35),
               CupertinoButtonFilledComponent(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(builder: (context) => AboutApp()),
+                  );
+                },
                 text: 'نبذة عن قصة حرفتي',
               ),
               const SizedBox(height: 16),
