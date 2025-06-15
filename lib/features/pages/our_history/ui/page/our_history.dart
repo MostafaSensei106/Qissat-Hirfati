@@ -22,26 +22,86 @@ class OurHistory extends StatelessWidget {
       ),
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppConstants.paddingHalf),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppConstants.paddingHalf,
+          ),
           child: Column(
             children: [
-              Row(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(AppConstants.outBorderRadius),
-                    child: Image.asset(
-                      AppConstants.mohammedbinSalmanAlSaudPNG,
-                      height: 200,
-                      width: 200,
-                    ),
-                  ),
-                  Spacer(),
-                  Text('Qissat Hirfati'),
-                ],
+              ProductCard(
+                imagePath: AppConstants.handPNG,
+                title: 'محمد بن سلمان السعودي',
+                description:
+                    'قصة حرفيون سعوديون يبدعون المستقبل بعبق التراث وعراقة الأصالة',
+                onPressed: () {},
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ProductCard extends StatelessWidget {
+  final String imagePath;
+  final String title;
+  final String description;
+  final VoidCallback onPressed;
+
+  const ProductCard({
+    super.key,
+    required this.imagePath,
+    required this.title,
+    required this.description,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      onPressed: onPressed,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Hero(
+            tag: imagePath,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(
+                imagePath,
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  description,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: CupertinoColors.systemGrey,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
