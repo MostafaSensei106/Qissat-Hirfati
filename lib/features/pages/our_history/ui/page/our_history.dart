@@ -84,56 +84,7 @@ class OurHistory extends StatelessWidget {
         trailing: CupertinoButtonComponent(
           child: const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
           onPressed: () {
-            showCupertinoModalPopup(
-              context: context,
-              builder: (context) => CupertinoActionSheet(
-                actions: [
-                  CupertinoActionSheetAction(
-                    onPressed: () {
-                      HapticFeedback.vibrate();
-                      Navigator.of(context).pop();
-                      TakeImageBy.pickFromCamera();
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      spacing: 8,
-                      children: [
-                        const Icon(
-                          CupertinoIcons.camera,
-                          size: AppConstants.iconSize,
-                        ),
-                        const Text('صورة من الكاميرا'),
-                      ],
-                    ),
-                  ),
-                  CupertinoActionSheetAction(
-                    onPressed: () {
-                      HapticFeedback.vibrate();
-                      Navigator.of(context).pop();
-                      TakeImageBy.pickFromGallery();
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          CupertinoIcons.photo,
-                          size: AppConstants.iconSize,
-                        ),
-                        const SizedBox(width: 8),
-                        const Text('الصور من المعرض'),
-                      ],
-                    ),
-                  ),
-                ],
-                cancelButton: CupertinoActionSheetAction(
-                  onPressed: () {
-                    HapticFeedback.vibrate();
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text('اغلاق'),
-                ),
-              ),
-            );
+            runCam(context);
           },
         ),
         backgroundColor: CupertinoColors.systemGroupedBackground,
@@ -168,6 +119,103 @@ class OurHistory extends StatelessWidget {
               itemCount: places.length,
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Future<dynamic> runCam(BuildContext context) {
+    return showCupertinoModalPopup(
+      context: context,
+      builder: (context) => CupertinoActionSheet(
+        actions: [
+          CupertinoActionSheetAction(
+            onPressed: () {
+              HapticFeedback.vibrate();
+              Navigator.of(context).pop();
+              runImageGet(context);
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: 8,
+              children: [
+                const Icon(
+                  CupertinoIcons.cube_box,
+                  size: AppConstants.iconSize,
+                ),
+                const Text('صور منتجات'),
+              ],
+            ),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              HapticFeedback.vibrate();
+              Navigator.of(context).pop();
+              runImageGet(context);
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(CupertinoIcons.map, size: AppConstants.iconSize),
+                const SizedBox(width: 8),
+                const Text('صور تراث'),
+              ],
+            ),
+          ),
+        ],
+        cancelButton: CupertinoActionSheetAction(
+          onPressed: () {
+            HapticFeedback.vibrate();
+            Navigator.of(context).pop();
+          },
+          child: const Text('اغلاق'),
+        ),
+      ),
+    );
+  }
+
+  Future<dynamic> runImageGet(BuildContext context) {
+    return showCupertinoModalPopup(
+      context: context,
+      builder: (context) => CupertinoActionSheet(
+        actions: [
+          CupertinoActionSheetAction(
+            onPressed: () {
+              HapticFeedback.vibrate();
+              Navigator.of(context).pop();
+              TakeImageBy.pickFromCamera();
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: 8,
+              children: [
+                const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
+                const Text('صورة من الكاميرا'),
+              ],
+            ),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              HapticFeedback.vibrate();
+              Navigator.of(context).pop();
+              TakeImageBy.pickFromGallery();
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(CupertinoIcons.photo, size: AppConstants.iconSize),
+                const SizedBox(width: 8),
+                const Text('الصور من المعرض'),
+              ],
+            ),
+          ),
+        ],
+        cancelButton: CupertinoActionSheetAction(
+          onPressed: () {
+            HapticFeedback.vibrate();
+            Navigator.of(context).pop();
+          },
+          child: const Text('اغلاق'),
         ),
       ),
     );

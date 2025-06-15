@@ -46,7 +46,6 @@ class _RegisterPageState extends State<RegisterPage> {
       context,
       CupertinoPageRoute(builder: (context) => HomePage()),
     );
-
   }
 
   @override
@@ -129,7 +128,8 @@ class _RegisterPageState extends State<RegisterPage> {
           CupertinoTextFieldComponent(
             controller: _confirmPasswordController,
             placeholder: tr.confirmPassword,
-            obscureText: true,
+            obscureText: !_showPassword,
+            keyboardType: TextInputType.visiblePassword,
           ),
           const SizedBox(height: 8),
 
