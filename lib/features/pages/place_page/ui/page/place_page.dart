@@ -28,9 +28,8 @@ class PlacePage extends StatelessWidget {
             starsWidget(),
             CloseOpenWidget(place: place),
             Text(place.location),
-            const SizedBox(height: 12),
             SizedBox(
-              height: 260,
+              height: 250,
               child: PageView.builder(
                 controller: controller,
                 itemCount: place.imagePaths.length,
@@ -48,8 +47,13 @@ class PlacePage extends StatelessWidget {
                     },
                     child: Hero(
                       tag: imagePath,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.inBorderRadius,
+                          ),
+                        ),
                         child: Image.asset(
                           imagePath,
                           fit: BoxFit.cover,
@@ -128,8 +132,6 @@ class FullImageScreen extends StatelessWidget {
             child: Image.asset(
               imagePath,
               fit: BoxFit.cover,
-              width: double.infinity,
-              height: double.infinity,
             ),
           ),
         ),

@@ -42,15 +42,15 @@ class QissatHirfatiApp extends StatelessWidget {
               (locale) => supportedLocales.contains(locale),
               orElse: () => const Locale('ar', 'SA'),
             ),
-        // builder: (context, child) {
-        //   return SafeArea(
-        //     top: false,
-        //     bottom: true,
-        //     left: false,
-        //     right: false,
-        //     child: child!,
-        //   );
-        // },
+        builder: (context, child) {
+          return SafeArea(
+            top: false,
+            bottom: true,
+            left: false,
+            right: false,
+            child: child!,
+          );
+        },
       ),
     );
   }
