@@ -31,11 +31,11 @@ class PlacePage extends StatelessWidget {
             SizedBox(
               height: 250,
               child: CarouselView.weighted(
-                flexWeights: const [7, 1],
+                flexWeights: const [1,7],
                 itemSnapping: true,
                 scrollDirection: Axis.horizontal,
                 controller: CarouselController(
-                  initialItem: place.imagePaths.length,
+                  initialItem: 1,
                 ),
                 onTap: (index) => Navigator.push(
                   context,

@@ -71,9 +71,14 @@ class HomePage extends StatelessWidget {
                         AppConstants.mohammedbinSalmanAlSaudLink,
                       );
                     },
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(
-                        AppConstants.outBorderRadius,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        boxShadow: const [
+                          BoxShadow(
+                            color: CupertinoColors.darkBackgroundGray,
+                            blurRadius: 4,
+                          ),
+                        ],
                       ),
                       child: Image.asset(
                         AppConstants.mohammedbinSalmanAlSaudPNG,
