@@ -16,7 +16,7 @@ class OurHistory extends StatelessWidget {
       PlaceModel(
         imagePaths: [
           {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
-          {'path': 'assets/images/waha.png ', 'time': 'Week ago'},
+          {'path': 'assets/images/maka.png ', 'time': 'Week ago'},
           {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
         ],
         name: 'قلعة تاروت',

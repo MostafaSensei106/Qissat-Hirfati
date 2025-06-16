@@ -70,8 +70,6 @@ class PlacePage extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                       ),
-
-                      // الكتابة فوق الصورة
                       Positioned(
                         top: 7,
                         left: 7,
@@ -84,7 +82,7 @@ class PlacePage extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            path['time'] ?? '',
+                            place.imagePaths.last['time'] ?? 'لا يوجد تاريخ',
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               color: CupertinoColors.white,
