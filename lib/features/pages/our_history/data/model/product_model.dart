@@ -1,6 +1,6 @@
 
 class PlaceModel {
-  final List<String> imagePaths;
+  final List<Map<String, String>> imagePaths;
   final String name;
   final String openInfoTime;
   final String description;

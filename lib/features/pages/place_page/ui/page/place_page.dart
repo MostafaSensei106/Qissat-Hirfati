@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
-import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/features/pages/our_history/data/model/product_model.dart';
 
 class PlacePage extends StatelessWidget {
@@ -13,7 +13,7 @@ class PlacePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final tr = AppLocalizations.of(context)!;
-    final PageController controller = PageController();
+
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(place.name),
@@ -30,43 +30,73 @@ class PlacePage extends StatelessWidget {
             Text(place.location),
             SizedBox(
               height: 250,
-              child: PageView.builder(
-                controller: controller,
-                itemCount: place.imagePaths.length,
-                itemBuilder: (context, index) {
-                  final imagePath = place.imagePaths[index];
-
-                  return CupertinoButtonComponent(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        CupertinoSheetRoute(
-                          builder: (_) => FullImageScreen(imagePath: imagePath),
-                        ),
-                      );
-                    },
-                    child: Hero(
-                      tag: imagePath,
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                            AppConstants.inBorderRadius,
-                          ),
-                        ),
+              child: CarouselView.weighted(
+                flexWeights: const [7, 1],
+                itemSnapping: true,
+                scrollDirection: Axis.horizontal,
+                controller: CarouselController(
+                  initialItem: place.imagePaths.length,
+                ),
+                onTap: (index) => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ImageViewPage(
+                      imagePath: place.imagePaths[index]['path'] ?? '',
+                    ),
+                  ),
+                ),
+                shape: ShapeBorder.lerp(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.inBorderRadius,
+                    ),
+                  ),
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.inBorderRadius,
+                    ),
+                  ),
+                  0.5,
+                ),
+                children: place.imagePaths.map((path) {
+                  return Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      SizedBox(
+                        width: double.infinity,
+                        height: 250,
                         child: Image.asset(
-                          imagePath,
+                          path['path'] ?? '',
                           fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: 250,
                         ),
                       ),
-                    ),
+
+                      // الكتابة فوق الصورة
+                      Positioned(
+                        top: 7,
+                        left: 7,
+                        child: Container(
+                          padding: const EdgeInsets.all(4),
+                          decoration: BoxDecoration(
+                            color: CupertinoColors.darkBackgroundGray.withAlpha(0x80),
+                            borderRadius: BorderRadius.circular(
+                              AppConstants.inBorderRadius,
+                            ),
+                          ),
+                          child: Text(
+                            path['time'] ?? '',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: CupertinoColors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   );
-                },
+                }).toList(),
               ),
             ),
-
             Text(
               'نبذة تعريفية عن التراث - ${place.name}',
               style: TextStyle(fontWeight: FontWeight.bold),
@@ -115,27 +145,16 @@ class PlacePage extends StatelessWidget {
   }
 }
 
-class FullImageScreen extends StatelessWidget {
+class ImageViewPage extends StatelessWidget {
   final String imagePath;
 
-  const FullImageScreen({super.key, required this.imagePath});
+  const ImageViewPage({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(middle: Text('عرض الصورة')),
-      child: Center(
-        child: Hero(
-          tag: imagePath,
-          child: InteractiveViewer(
-            constrained: false,
-            child: Image.asset(
-              imagePath,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-      ),
+      child: Center(child: Image.asset(imagePath, fit: BoxFit.fill)),
     );
   }
 }

@@ -14,7 +14,11 @@ class OurHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     List<PlaceModel> places = [
       PlaceModel(
-        imagePaths: ['assets/images/tarot.png', 'assets/images/waha.png'],
+        imagePaths: [
+          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+          {'path': 'assets/images/waha.png ', 'time': 'Week ago'},
+          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+        ],
         name: 'قلعة تاروت',
         openInfoTime: '6:00 مساءً',
         description:
@@ -26,7 +30,11 @@ class OurHistory extends StatelessWidget {
         reviewCount: 6651,
       ),
       PlaceModel(
-        imagePaths: ['assets/images/waha.png'],
+        imagePaths: [
+          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+          {'path': 'assets/images/waha.png ', 'time': 'Week ago'},
+          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+        ],
         name: 'واحة الاحساء',
         openInfoTime: '6:00 مساءً',
         subTitleDescription:
@@ -38,7 +46,11 @@ class OurHistory extends StatelessWidget {
         reviewCount: 6651,
       ),
       PlaceModel(
-        imagePaths: ['assets/images/amd.png'],
+        imagePaths: [
+          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+          {'path': 'assets/images/waha.png ', 'time': 'Week ago'},
+          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+        ],
         name: 'باب مكة',
         openInfoTime: '10:30 مساءً',
         subTitleDescription:
@@ -50,7 +62,11 @@ class OurHistory extends StatelessWidget {
         reviewCount: 3995,
       ),
       PlaceModel(
-        imagePaths: ['assets/images/masr.png'],
+        imagePaths: [
+          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+          {'path': 'assets/images/waha.png ', 'time': 'Week ago'},
+          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+        ],
         name: 'قلعة المسهر',
         openInfoTime: '5:00 مساءً',
         subTitleDescription:
@@ -62,7 +78,11 @@ class OurHistory extends StatelessWidget {
         reviewCount: 6651,
       ),
       PlaceModel(
-        imagePaths: ['assets/images/madain_salih.png'],
+        imagePaths: [
+          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+          {'path': 'assets/images/waha.png ', 'time': 'Week ago'},
+          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+        ],
         name: 'مدائن صالح',
         openInfoTime: '10:00 ص',
         subTitleDescription:
@@ -236,16 +256,13 @@ class PlaceCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Hero(
-            tag: place.imagePaths,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
-              child: Image.asset(
-                place.imagePaths.first,
-                width: 170,
-                height: 120,
-                fit: BoxFit.cover,
-              ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
+            child: Image.asset(
+              place.imagePaths.first['path']!.trim(),
+              width: 170,
+              height: 120,
+              fit: BoxFit.cover,
             ),
           ),
           const SizedBox(width: 8),
