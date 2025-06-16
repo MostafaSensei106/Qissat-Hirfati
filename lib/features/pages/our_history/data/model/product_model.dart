@@ -1,6 +1,6 @@
 
 class PlaceModel {
-  final String imagePath;
+  final List<String> imagePaths;
   final String name;
   final String openInfoTime;
   final String description;
@@ -10,7 +10,7 @@ class PlaceModel {
   final double reviewCount;
 
   PlaceModel({
-    required this.imagePath,
+    required this.imagePaths,
     required this.name,
     required this.openInfoTime,
     required this.description,
@@ -22,7 +22,7 @@ class PlaceModel {
 
   Map<String, dynamic> toMap() {
     return {
-      'imagePath': imagePath,
+      'imagePath': imagePaths,
       'name': name,
       'openInfo': openInfoTime,
       'description': description,
@@ -35,7 +35,7 @@ class PlaceModel {
 
   factory PlaceModel.fromJson(Map<String, dynamic> json) {
     return PlaceModel(
-      imagePath: json['imagePath'],
+      imagePaths: json['imagePath'],
       name: json['name'],
       openInfoTime: json['openInfo'],
       description: json['description'],

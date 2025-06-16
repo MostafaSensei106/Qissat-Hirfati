@@ -14,7 +14,7 @@ class OurHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     List<PlaceModel> places = [
       PlaceModel(
-        imagePath: 'assets/images/tarot.png',
+        imagePaths: ['assets/images/tarot.png', 'assets/images/waha.png'],
         name: 'قلعة تاروت',
         openInfoTime: '6:00 مساءً',
         description:
@@ -26,7 +26,7 @@ class OurHistory extends StatelessWidget {
         reviewCount: 6651,
       ),
       PlaceModel(
-        imagePath: 'assets/images/waha.png',
+        imagePaths: ['assets/images/waha.png'],
         name: 'واحة الاحساء',
         openInfoTime: '6:00 مساءً',
         subTitleDescription:
@@ -38,7 +38,7 @@ class OurHistory extends StatelessWidget {
         reviewCount: 6651,
       ),
       PlaceModel(
-        imagePath: 'assets/images/amd.png',
+        imagePaths: ['assets/images/amd.png'],
         name: 'باب مكة',
         openInfoTime: '10:30 مساءً',
         subTitleDescription:
@@ -50,7 +50,7 @@ class OurHistory extends StatelessWidget {
         reviewCount: 3995,
       ),
       PlaceModel(
-        imagePath: 'assets/images/masr.png',
+        imagePaths: ['assets/images/masr.png'],
         name: 'قلعة المسهر',
         openInfoTime: '5:00 مساءً',
         subTitleDescription:
@@ -62,7 +62,7 @@ class OurHistory extends StatelessWidget {
         reviewCount: 6651,
       ),
       PlaceModel(
-        imagePath: 'assets/images/madain_salih.png',
+        imagePaths: ['assets/images/madain_salih.png'],
         name: 'مدائن صالح',
         openInfoTime: '10:00 ص',
         subTitleDescription:
@@ -237,11 +237,11 @@ class PlaceCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Hero(
-            tag: place.imagePath,
+            tag: place.imagePaths,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
               child: Image.asset(
-                place.imagePath,
+                place.imagePaths.first,
                 width: 170,
                 height: 120,
                 fit: BoxFit.cover,
