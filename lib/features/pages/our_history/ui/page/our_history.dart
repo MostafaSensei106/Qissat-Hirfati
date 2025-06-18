@@ -278,6 +278,7 @@ class _OurHistoryState extends State<OurHistory> {
           onPressed: () {
             HapticFeedback.vibrate();
             Navigator.of(context).pop();
+            Future.delayed(const Duration(seconds: 20));
             Navigator.push(
               context,
               CupertinoPageRoute(builder: (context) => ProductPage()),
