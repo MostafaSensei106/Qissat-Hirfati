@@ -171,7 +171,7 @@ class HomePage extends StatelessWidget {
                         Image.asset(
                           AppConstants.trs2PNG,
                           filterQuality: FilterQuality.high,
-                          fit: BoxFit.cover,
+                         // fit: BoxFit.cover,
                         ),
                         Image.asset(
                           AppConstants.trsPNG,

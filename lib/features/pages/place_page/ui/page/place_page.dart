@@ -35,7 +35,7 @@ class PlacePage extends StatelessWidget {
                 itemSnapping: true,
                 scrollDirection: Axis.horizontal,
                 controller: CarouselController(
-                  initialItem: 1,
+                  initialItem: 0,
                 ),
                 onTap: (index) => Navigator.push(
                   context,

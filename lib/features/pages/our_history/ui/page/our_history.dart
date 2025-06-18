@@ -15,9 +15,11 @@ class OurHistory extends StatelessWidget {
     List<PlaceModel> places = [
       PlaceModel(
         imagePaths: [
-          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
-          {'path': 'assets/images/maka.png ', 'time': 'Week ago'},
-          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+          {'path': 'assets/images/Tarout_Castle_1.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Tarout_Castle_2.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Tarout_Castle_3.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Tarout_Castle_4.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Tarout_Castle_5.webp', 'time': 'Week ago'},
         ],
         name: 'قلعة تاروت',
         openInfoTime: '6:00 مساءً',
@@ -31,9 +33,11 @@ class OurHistory extends StatelessWidget {
       ),
       PlaceModel(
         imagePaths: [
-          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
-          {'path': 'assets/images/waha.png ', 'time': 'Week ago'},
-          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+          {'path': 'assets/images/Al-Hasa_1.avif', 'time': 'Week ago'},
+          {'path': 'assets/images/Al-Hasa_2.avif', 'time': 'Week ago'},
+          {'path': 'assets/images/Al-Hasa_3.avif', 'time': 'Week ago'},
+          {'path': 'assets/images/Al-Hasa_4.avif', 'time': 'Week ago'},
+          {'path': 'assets/images/Al-Hasa_5.avif', 'time': 'Week ago'},
         ],
         name: 'واحة الاحساء',
         openInfoTime: '6:00 مساءً',
@@ -47,9 +51,9 @@ class OurHistory extends StatelessWidget {
       ),
       PlaceModel(
         imagePaths: [
-          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
-          {'path': 'assets/images/waha.png ', 'time': 'Week ago'},
-          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+          {'path': 'assets/images/Makkah_Gate_1.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Makkah_Gate_2.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Makkah_Gate_3.webp', 'time': 'Week ago'},
         ],
         name: 'باب مكة',
         openInfoTime: '10:30 مساءً',
@@ -63,9 +67,11 @@ class OurHistory extends StatelessWidget {
       ),
       PlaceModel(
         imagePaths: [
-          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
-          {'path': 'assets/images/waha.png ', 'time': 'Week ago'},
-          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+          {'path': 'assets/images/Al-Mashar_Castle_1.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Al-Mashar_Castle_2.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Al-Mashar_Castle_3.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Al-Mashar_Castle_4.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Al-Mashar_Castle_5.webp', 'time': 'Week ago'},
         ],
         name: 'قلعة المسهر',
         openInfoTime: '5:00 مساءً',
@@ -79,9 +85,11 @@ class OurHistory extends StatelessWidget {
       ),
       PlaceModel(
         imagePaths: [
-          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
-          {'path': 'assets/images/waha.png ', 'time': 'Week ago'},
-          {'path': 'assets/images/tarot.png', 'time': 'Week ago'},
+          {'path': 'assets/images/Hegra_1.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Hegra_2.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Hegra_3.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Hegra_4.webp', 'time': 'Week ago'},
+          {'path': 'assets/images/Hegra_5.webp', 'time': 'Week ago'},
         ],
         name: 'مدائن صالح',
         openInfoTime: '10:00 ص',
