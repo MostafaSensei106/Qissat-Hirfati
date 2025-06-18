@@ -1,16 +1,18 @@
 
 class PlaceModel {
-  final String imagePath;
+  final List<Map<String, String>> imagePaths;
   final String name;
   final String openInfoTime;
   final String description;
   final String subTitleDescription;
   final String location;
+  final String mapLink;
+  final String mapImagePath;
   final double rating;
   final double reviewCount;
 
   PlaceModel({
-    required this.imagePath,
+    required this.imagePaths,
     required this.name,
     required this.openInfoTime,
     required this.description,
@@ -18,11 +20,13 @@ class PlaceModel {
     required this.location,
     required this.rating,
     required this.reviewCount,
+    required this.mapLink,
+    required this.mapImagePath
   });
 
   Map<String, dynamic> toMap() {
     return {
-      'imagePath': imagePath,
+      'imagePath': imagePaths,
       'name': name,
       'openInfo': openInfoTime,
       'description': description,
@@ -30,12 +34,14 @@ class PlaceModel {
       'location': location,
       'rating': rating,
       'reviewCount': reviewCount,
+      'mapLink': mapLink,
+      'mapImagePath': mapImagePath
     };
   }
 
   factory PlaceModel.fromJson(Map<String, dynamic> json) {
     return PlaceModel(
-      imagePath: json['imagePath'],
+      imagePaths: json['imagePath'],
       name: json['name'],
       openInfoTime: json['openInfo'],
       description: json['description'],
@@ -43,6 +49,8 @@ class PlaceModel {
       location: json['location'],
       rating: json['rating'],
       reviewCount: json['reviewCount'],
+      mapLink: json['mapLink'],
+      mapImagePath: json['mapImagePath'],
     );
   }
 }
