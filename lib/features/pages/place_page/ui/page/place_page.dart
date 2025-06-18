@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
+import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
+import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/features/pages/our_history/data/model/product_model.dart';
 
 class PlacePage extends StatelessWidget {
@@ -102,22 +104,20 @@ class PlacePage extends StatelessWidget {
             Text(place.description),
             SizedBox(height: 8),
             AppDivider(),
-            SizedBox(height: 8),
-
             Text('الخريطة', style: TextStyle(fontWeight: FontWeight.bold)),
-            Container(
-              width: double.infinity,
-              height: 250,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  AppConstants.inBorderRadius,
+            CupertinoButtonComponent(
+              onPressed: () {
+                UrlRunServices.launchURL(place.mapLink);
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
+                child: Image.asset(
+                  place.mapImagePath,
+                  fit: BoxFit.fill,
                 ),
               ),
-              child: Image.asset(
-                place.mapImagePath,
-                fit: BoxFit.fill,
-              ),
             ),
+            SizedBox(height: 8),
           ],
         ),
       ),
