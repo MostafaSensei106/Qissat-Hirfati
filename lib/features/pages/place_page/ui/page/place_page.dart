@@ -105,6 +105,19 @@ class PlacePage extends StatelessWidget {
             SizedBox(height: 8),
 
             Text('الخريطة', style: TextStyle(fontWeight: FontWeight.bold)),
+            Container(
+              width: double.infinity,
+              height: 250,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  AppConstants.inBorderRadius,
+                ),
+              ),
+              child: Image.asset(
+                place.mapImagePath,
+                fit: BoxFit.fill,
+              ),
+            ),
           ],
         ),
       ),

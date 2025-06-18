@@ -6,6 +6,8 @@ class PlaceModel {
   final String description;
   final String subTitleDescription;
   final String location;
+  final String mapLink;
+  final String mapImagePath;
   final double rating;
   final double reviewCount;
 
@@ -18,6 +20,8 @@ class PlaceModel {
     required this.location,
     required this.rating,
     required this.reviewCount,
+    required this.mapLink,
+    required this.mapImagePath
   });
 
   Map<String, dynamic> toMap() {
@@ -30,6 +34,8 @@ class PlaceModel {
       'location': location,
       'rating': rating,
       'reviewCount': reviewCount,
+      'mapLink': mapLink,
+      'mapImagePath': mapImagePath
     };
   }
 
@@ -43,6 +49,8 @@ class PlaceModel {
       location: json['location'],
       rating: json['rating'],
       reviewCount: json['reviewCount'],
+      mapLink: json['mapLink'],
+      mapImagePath: json['mapImagePath'],
     );
   }
 }
