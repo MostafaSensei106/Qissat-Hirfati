@@ -25,7 +25,7 @@ class _OurHistoryState extends State<OurHistory> {
         {'path': 'assets/images/Tarout_Castle_5.webp', 'time': 'Week ago'},
       ],
       mapImagePath: 'assets/images/maps/Tarout_Castle_map.webp',
-      mapLink: '',
+      mapLink: 'https://www.google.com/maps/place/Tarout+Castle,+District,+Rahma+Street,+Alzomorod,+Tarout+32615/data=!4m2!3m1!1s0x3e4a01f0b22b0421:0x821937e5e57841e9?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBjI1LjIuNBgAINeCAyp1LDk0MjQyNTUzLDk0MjIzMjk5LDk0MjE2NDEzLDk0MjEyNDk2LDk0MjA3Mzk0LDk0MjA3NTA2LDk0MjA4NTA2LDk0MjE3NTIzLDk0MjE4NjUzLDk0MjI5ODM5LDQ3MDg0MzkzLDk0MjEzMjAwLDk0MjEzMzExQgJTQQ%3D%3D',
       name: 'قلعة تاروت',
       openInfoTime: '6:00 مساءً',
       description:
@@ -45,7 +45,7 @@ class _OurHistoryState extends State<OurHistory> {
         {'path': 'assets/images/Al-Hasa_5.avif', 'time': 'Week ago'},
       ],
       mapImagePath: 'assets/images/maps/Al-Hasa_map.webp',
-      mapLink: '',
+      mapLink: 'https://www.google.com/maps/place/Tarout+Castle,+District,+Rahma+Street,+Alzomorod,+Tarout+32615/data=!4m2!3m1!1s0x3e4a01f0b22b0421:0x821937e5e57841e9?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBjI1LjIuNBgAINeCAyp1LDk0MjQyNTUzLDk0MjIzMjk5LDk0MjE2NDEzLDk0MjEyNDk2LDk0MjA3Mzk0LDk0MjA3NTA2LDk0MjA4NTA2LDk0MjE3NTIzLDk0MjE4NjUzLDk0MjI5ODM5LDQ3MDg0MzkzLDk0MjEzMjAwLDk0MjEzMzExQgJTQQ%3D%3D',
       name: 'واحة الاحساء',
       openInfoTime: '6:00 مساءً',
       subTitleDescription:
@@ -63,7 +63,7 @@ class _OurHistoryState extends State<OurHistory> {
         {'path': 'assets/images/Makkah_Gate_3.webp', 'time': 'Week ago'},
       ],
       mapImagePath: 'assets/images/maps/Makkah_Gate_map.webp',
-      mapLink: '',
+      mapLink: 'https://www.google.com/maps/place/Makkah+Gate,+Old+Mecca+Al+Moukarramah+Rd,+Al-Balad,+Jeddah+22236/data=!4m2!3m1!1s0x15c3cf1ce87929d1:0xe1b7553a16f6026a?sa=X&ved=1t:242&ictx=111',
       name: 'باب مكة',
       openInfoTime: '10:30 مساءً',
       subTitleDescription:
@@ -83,7 +83,7 @@ class _OurHistoryState extends State<OurHistory> {
         {'path': 'assets/images/Al-Mashar_Castle_5.webp', 'time': 'Week ago'},
       ],
       mapImagePath: 'assets/images/maps/Al-Mashar_Castle.webp',
-      mapLink: '',
+      mapLink: 'https://www.google.com/maps/place/HVJF%2BQ3M+%D9%82%D9%84%D8%B9%D8%A9+%D8%A7%D9%84%D9%85%D8%B3%D9%87%D8%B1,+Al+Gharith+29557%E2%80%AD/data=!4m2!3m1!1s0x15ecfefb831bc889:0xf8db65f91a52f053?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBjI1LjIuNBgAINeCAyp1LDk0MjQyNTUzLDk0MjIzMjk5LDk0MjE2NDEzLDk0MjEyNDk2LDk0MjA3Mzk0LDk0MjA3NTA2LDk0MjA4NTA2LDk0MjE3NTIzLDk0MjE4NjUzLDk0MjI5ODM5LDQ3MDg0MzkzLDk0MjEzMjAwLDk0MjEzMzExQgJTQQ%3D%3D',
       name: 'قلعة المسهر',
       openInfoTime: '5:00 مساءً',
       subTitleDescription:
@@ -103,7 +103,7 @@ class _OurHistoryState extends State<OurHistory> {
         {'path': 'assets/images/Hegra_5.webp', 'time': 'Week ago'},
       ],
       mapImagePath: 'assets/images/maps/Hegra_map.webp',
-      mapLink: '',
+      mapLink: 'https://www.google.com/maps/place/HVJF%2BQ3M+%D9%82%D9%84%D8%B9%D8%A9+%D8%A7%D9%84%D9%85%D8%B3%D9%87%D8%B1,+Al+Gharith+29557%E2%80%AD/data=!4m2!3m1!1s0x15ecfefb831bc889:0xf8db65f91a52f053?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBjI1LjIuNBgAINeCAyp1LDk0MjQyNTUzLDk0MjIzMjk5LDk0MjE2NDEzLDk0MjEyNDk2LDk0MjA3Mzk0LDk0MjA3NTA2LDk0MjA4NTA2LDk0MjE3NTIzLDk0MjE4NjUzLDk0MjI5ODM5LDQ3MDg0MzkzLDk0MjEzMjAwLDk0MjEzMzExQgJTQQ%3D%3D',
       name: 'مدائن صالح',
       openInfoTime: '10:00 ص',
       subTitleDescription:
