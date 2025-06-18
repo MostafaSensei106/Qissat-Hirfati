@@ -6,20 +6,39 @@ import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/features/pages/our_history/data/model/product_model.dart';
+import 'package:qissat_hirfati/features/pages/our_history/logic/take_image/take_image.dart';
 
-class PlacePage extends StatelessWidget {
+class PlacePage extends StatefulWidget {
   final PlaceModel place;
 
   const PlacePage({super.key, required this.place});
 
+  @override
+  State<PlacePage> createState() => _PlacePageState();
+}
+
+class _PlacePageState extends State<PlacePage> {
   @override
   Widget build(BuildContext context) {
     // final tr = AppLocalizations.of(context)!;
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text(place.name),
+        middle: Text(widget.place.name),
         backgroundColor: CupertinoColors.systemGroupedBackground,
+        trailing: CupertinoButtonComponent(
+          onPressed: ()  {
+           TakeImageBy.pickFromCamera().then((file) {
+             if (file != null) {
+               setState(() {
+                 widget.place.imagePaths.add({'path': file.path});
+               });
+             }
+           }
+           );
+          },
+          child: const Icon(CupertinoIcons.add_circled,size: AppConstants.iconSize,),
+        ),
       ),
       child: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: AppConstants.padding),
@@ -28,8 +47,8 @@ class PlacePage extends StatelessWidget {
           spacing: 8,
           children: [
             starsWidget(),
-            CloseOpenWidget(place: place),
-            Text(place.location),
+            CloseOpenWidget(place: widget.place),
+            Text(widget.place.location),
             SizedBox(
               height: 250,
               child: CarouselView.weighted(
@@ -43,7 +62,7 @@ class PlacePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ImageViewPage(
-                      imagePath: place.imagePaths[index]['path'] ?? '',
+                      imagePath: widget.place.imagePaths[index]['path'] ?? '',
                     ),
                   ),
                 ),
@@ -60,7 +79,7 @@ class PlacePage extends StatelessWidget {
                   ),
                   0.5,
                 ),
-                children: place.imagePaths.map((path) {
+                children: widget.place.imagePaths.map((path) {
                   return Stack(
                     clipBehavior: Clip.none,
                     children: [
@@ -84,7 +103,7 @@ class PlacePage extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            place.imagePaths.last['time'] ?? 'لا يوجد تاريخ',
+                            widget.place.imagePaths.last['time'] ?? 'لا يوجد تاريخ',
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               color: CupertinoColors.white,
@@ -98,21 +117,21 @@ class PlacePage extends StatelessWidget {
               ),
             ),
             Text(
-              'نبذة تعريفية عن التراث - ${place.name}',
+              'نبذة تعريفية عن التراث - ${widget.place.name}',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            Text(place.description),
+            Text(widget.place.description),
             SizedBox(height: 8),
             AppDivider(),
             Text('الخريطة', style: TextStyle(fontWeight: FontWeight.bold)),
             CupertinoButtonComponent(
               onPressed: () {
-                UrlRunServices.launchURL(place.mapLink);
+                UrlRunServices.launchURL(widget.place.mapLink);
               },
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
                 child: Image.asset(
-                  place.mapImagePath,
+                  widget.place.mapImagePath,
                   fit: BoxFit.fill,
                 ),
               ),
@@ -128,7 +147,7 @@ class PlacePage extends StatelessWidget {
     return Row(
       spacing: 8,
       children: [
-        Text(place.rating.toString()),
+        Text(widget.place.rating.toString()),
         RatingBar(
           ratingWidget: RatingWidget(
             full: Icon(
@@ -142,7 +161,7 @@ class PlacePage extends StatelessWidget {
             empty: Icon(CupertinoIcons.star, color: CupertinoColors.systemGrey),
           ),
           onRatingUpdate: (_) {},
-          initialRating: place.rating,
+          initialRating: widget.place.rating,
           minRating: 0,
           direction: Axis.horizontal,
           allowHalfRating: true,
@@ -150,7 +169,7 @@ class PlacePage extends StatelessWidget {
           ignoreGestures: true,
           itemSize: 20,
         ),
-        Text('(${place.reviewCount})'),
+        Text('(${widget.place.reviewCount})'),
       ],
     );
   }
