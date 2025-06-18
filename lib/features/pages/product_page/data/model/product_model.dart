@@ -5,7 +5,7 @@ class ProductModel {
   final String productWhatsappNumber;
   final String productionFamilyWebsiteUrl;
   final String productPrice;
-  final String productRating;
+  final double productRating;
   final int productReviweCount;
 
   ProductModel({

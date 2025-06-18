@@ -150,10 +150,6 @@ class _OurHistoryState extends State<OurHistory> {
           child: const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
           onPressed: () {
             runCam(context);
-            Navigator.push(
-              context,
-              CupertinoPageRoute(builder: (context) => ProductPage()),
-            );
           },
         ),
         backgroundColor: CupertinoColors.systemGroupedBackground,
@@ -248,6 +244,10 @@ class _OurHistoryState extends State<OurHistory> {
               HapticFeedback.vibrate();
               Navigator.of(context).pop();
               TakeImageBy.pickFromCamera();
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => ProductPage()),
+              );
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -278,6 +278,10 @@ class _OurHistoryState extends State<OurHistory> {
           onPressed: () {
             HapticFeedback.vibrate();
             Navigator.of(context).pop();
+            Navigator.push(
+              context,
+              CupertinoPageRoute(builder: (context) => ProductPage()),
+            );
           },
           child: const Text('اغلاق'),
         ),

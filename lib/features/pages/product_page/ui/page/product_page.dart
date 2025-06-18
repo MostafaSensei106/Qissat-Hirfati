@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
+import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
+import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_feature_will_be_available_later_dilog/cupertino_feature_will_be_available_later_dilog.dart';
 import 'package:qissat_hirfati/features/pages/our_history/logic/take_image/take_image.dart';
 import 'package:qissat_hirfati/features/pages/product_page/data/model/product_model.dart';
@@ -16,14 +19,54 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   List<ProductModel> products = [
     ProductModel(
-      productName: 'Product 1',
-      imagePaths: ['assets/images/Al-Mashar_Castle_1.webp'],
-      productionFamilyName: '',
-      productWhatsappNumber: '',
-      productionFamilyWebsiteUrl: '',
-      productPrice: '',
-      productRating: '',
+      productName: 'سيف سعودي أحدب',
+      imagePaths: ['assets/images/sword1.png'],
+      productionFamilyName: 'عائلة السيوفي',
+      productWhatsappNumber: '+966123456789',
+      productionFamilyWebsiteUrl: 'https://swordsfamily.com',
+      productPrice: '\$500',
+      productRating: 4.5,
       productReviweCount: 120,
+    ),
+    ProductModel(
+      productName: 'سيف سعودي مستقيم',
+      imagePaths: ['assets/images/sword1.png'],
+      productionFamilyName: 'عائلة السيوفي',
+      productWhatsappNumber: '+966987654321',
+      productionFamilyWebsiteUrl: 'https://swordsfamily.com',
+      productPrice: '\$550',
+      productRating: 4.7,
+      productReviweCount: 85,
+    ),
+    ProductModel(
+      productName: 'سيف سعودي منقوش',
+      imagePaths: ['assets/images/sword1.png'],
+      productionFamilyName: 'عائلة السيوفي',
+      productWhatsappNumber: '+966123123123',
+      productionFamilyWebsiteUrl: 'https://swordsfamily.com',
+      productPrice: '\$600',
+      productRating: 4.8,
+      productReviweCount: 95,
+    ),
+    ProductModel(
+      productName: 'سيف سعودي ذهبي',
+      imagePaths: ['assets/images/sword1.png'],
+      productionFamilyName: 'عائلة السيوفي',
+      productWhatsappNumber: '+966321321321',
+      productionFamilyWebsiteUrl: 'https://swordsfamily.com',
+      productPrice: '\$700',
+      productRating: 4.9,
+      productReviweCount: 150,
+    ),
+    ProductModel(
+      productName: 'سيف سعودي فضي',
+      imagePaths: ['assets/images/sword1.png'],
+      productionFamilyName: 'عائلة السيوفي',
+      productWhatsappNumber: '+966456456456',
+      productionFamilyWebsiteUrl: 'https://swordsfamily.com',
+      productPrice: '\$650',
+      productRating: 4.6,
+      productReviweCount: 110,
     ),
   ];
 
@@ -214,6 +257,46 @@ class ProductCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 4),
+                Text('اسم الاسرة المنتجة: ${product.productionFamilyName}'),
+                CupertinoButtonComponent(
+                  onPressed: () {
+                    UrlRunServices.launchURL(
+                      product.productionFamilyWebsiteUrl,
+                    );
+                  },
+                  text: 'موقعهم الالكتروني',
+                ),
+                Text('سعر المنتج: ${product.productPrice}'),
+                Row(
+                  children: [
+                    Text('تقييم المنتج:'),
+                    RatingBar(
+                      ratingWidget: RatingWidget(
+                        full: Icon(
+                          CupertinoIcons.star_fill,
+                          color: CupertinoColors.activeOrange,
+                        ),
+                        half: Icon(
+                          CupertinoIcons.star_lefthalf_fill,
+                          color: CupertinoColors.activeOrange,
+                        ),
+                        empty: Icon(
+                          CupertinoIcons.star,
+                          color: CupertinoColors.systemGrey,
+                        ),
+                      ),
+                      onRatingUpdate: (_) {},
+                      initialRating: product.productRating,
+                      minRating: 0,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      tapOnlyMode: false,
+                      ignoreGestures: true,
+                      itemSize: 20,
+                    ),
+                    Text('(${product.productReviweCount})'),
+                  ],
+                ),
               ],
             ),
           ),
