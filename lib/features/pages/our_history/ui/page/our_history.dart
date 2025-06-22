@@ -211,7 +211,7 @@ class _OurHistoryState extends State<OurHistory> {
             onPressed: () {
               HapticFeedback.vibrate();
               Navigator.of(context).pop();
-              runImageGet(context);
+              runImageGet2(context);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -233,6 +233,8 @@ class _OurHistoryState extends State<OurHistory> {
       ),
     );
   }
+
+  
 
   Future<dynamic> runImageGet(BuildContext context) {
     return showCupertinoModalPopup(
@@ -263,6 +265,64 @@ class _OurHistoryState extends State<OurHistory> {
               HapticFeedback.vibrate();
               Navigator.of(context).pop();
               TakeImageBy.pickFromGallery();
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => ProductPage()),
+              );
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(CupertinoIcons.photo, size: AppConstants.iconSize),
+                const SizedBox(width: 8),
+                const Text('الصور من المعرض'),
+              ],
+            ),
+          ),
+        ],
+        cancelButton: CupertinoActionSheetAction(
+          onPressed: () {
+            HapticFeedback.vibrate();
+            Navigator.of(context).pop();
+          },
+          child: const Text('اغلاق'),
+        ),
+      ),
+    );
+  }
+    Future<dynamic> runImageGet2(BuildContext context) {
+    return showCupertinoModalPopup(
+      context: context,
+      builder: (context) => CupertinoActionSheet(
+        actions: [
+          CupertinoActionSheetAction(
+            onPressed: () {
+              HapticFeedback.vibrate();
+              Navigator.of(context).pop();
+              TakeImageBy.pickFromCamera();
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => PlacePage(place: places.first,)),
+              );
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: 8,
+              children: [
+                const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
+                const Text('صورة من الكاميرا'),
+              ],
+            ),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              HapticFeedback.vibrate();
+              Navigator.of(context).pop();
+              TakeImageBy.pickFromGallery();
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => PlacePage(place: places.first,)),
+              );
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
