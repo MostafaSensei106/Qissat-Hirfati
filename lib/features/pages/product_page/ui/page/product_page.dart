@@ -21,7 +21,7 @@ class _ProductPageState extends State<ProductPage> {
       productionFamilyName: 'عائلة السيوفي',
       productWhatsappNumber: '201014414536',
       productionFamilyWebsiteUrl: 'https://swordsfamily.com',
-      productPrice: '\$500',
+      productPrice: '500',
       productRating: 4.0,
       productReviweCount: 120,
     ),
@@ -31,7 +31,7 @@ class _ProductPageState extends State<ProductPage> {
       productionFamilyName: 'عائلة السيوفي',
       productWhatsappNumber: '201014414536',
       productionFamilyWebsiteUrl: 'https://swordsfamily.com',
-      productPrice: '\$550',
+      productPrice: '550',
       productRating: 3,
       productReviweCount: 85,
     ),
@@ -41,7 +41,7 @@ class _ProductPageState extends State<ProductPage> {
       productionFamilyName: 'عائلة السيوفي',
       productWhatsappNumber: '201014414536',
       productionFamilyWebsiteUrl: 'https://swordsfamily.com',
-      productPrice: '\$600',
+      productPrice: '600',
       productRating: 5,
       productReviweCount: 95,
     ),
@@ -51,7 +51,7 @@ class _ProductPageState extends State<ProductPage> {
       productionFamilyName: 'عائلة السيوفي',
       productWhatsappNumber: '201014414536',
       productionFamilyWebsiteUrl: 'https://swordsfamily.com',
-      productPrice: '\$700',
+      productPrice: '700',
       productRating: 4.9,
       productReviweCount: 150,
     ),
@@ -61,7 +61,7 @@ class _ProductPageState extends State<ProductPage> {
       productionFamilyName: 'عائلة السيوفي',
       productWhatsappNumber: '201014414536',
       productionFamilyWebsiteUrl: 'https://swordsfamily.com',
-      productPrice: '\$650',
+      productPrice: '650',
       productRating: 4.6,
       productReviweCount: 110,
     ),
@@ -124,6 +124,7 @@ class ProductCard extends StatelessWidget {
   const ProductCard({
     super.key,
     required this.product,
+
     ///required this.onPressed,
   });
 
@@ -168,7 +169,6 @@ class ProductCard extends StatelessWidget {
               ),
               Text('الاسرة المنتجة: ${product.productionFamilyName}'),
               Row(
-              
                 children: [
                   Text('موقعهم الالكتروني: '),
                   CupertinoButtonComponent(
@@ -181,10 +181,10 @@ class ProductCard extends StatelessWidget {
                   ),
                 ],
               ),
-              Text('سعر المنتج: ${product.productPrice}'),
+              Row(children: [Text('سعر المنتج: ${product.productPrice} ريال')]),
               Row(
                 children: [
-                  Text('تقييم المنتج:'),
+                  Text('تقييم المنتج: '),
                   RatingBar(
                     ratingWidget: RatingWidget(
                       full: Icon(

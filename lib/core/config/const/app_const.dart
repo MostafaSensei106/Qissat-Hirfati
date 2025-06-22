@@ -38,7 +38,7 @@ class AppConstants {
   static const String trsPNG = "assets/images/trs.png";
   static const String trs2PNG = "assets/images/trs2.webp";
   static const String trs3PNG = "assets/images/trs3.png";
-  static const String trs4PNG = "assets/images/trs4.png";
+  static const String trs4PNG = "assets/images/trs4.webp";
   static const String handPNG = "assets/images/hand.webp";
 
 
