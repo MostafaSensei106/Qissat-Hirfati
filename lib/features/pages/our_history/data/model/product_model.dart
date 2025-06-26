@@ -9,10 +9,8 @@ class PlaceModel {
   final String mapImagePath;
   final double rating;
   final double reviewCount;
-  final String? id;
 
-  PlaceModel(
-    this.id, {
+  PlaceModel({
     required this.imagePaths,
     required this.name,
     required this.openInfoTime,
