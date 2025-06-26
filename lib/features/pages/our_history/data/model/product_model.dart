@@ -1,4 +1,3 @@
-
 class PlaceModel {
   final List<Map<String, String>> imagePaths;
   final String name;
@@ -10,8 +9,10 @@ class PlaceModel {
   final String mapImagePath;
   final double rating;
   final double reviewCount;
+  final String? id;
 
-  PlaceModel({
+  PlaceModel(
+    this.id, {
     required this.imagePaths,
     required this.name,
     required this.openInfoTime,
@@ -21,7 +22,7 @@ class PlaceModel {
     required this.rating,
     required this.reviewCount,
     required this.mapLink,
-    required this.mapImagePath
+    required this.mapImagePath,
   });
 
   Map<String, dynamic> toMap() {
@@ -35,7 +36,7 @@ class PlaceModel {
       'rating': rating,
       'reviewCount': reviewCount,
       'mapLink': mapLink,
-      'mapImagePath': mapImagePath
+      'mapImagePath': mapImagePath,
     };
   }
 

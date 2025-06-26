@@ -41,8 +41,8 @@ flutter:
     - assets/images/
     - assets/images/maps/
     - assets/gif/
-    - assets/animations/lottie/
-    - assets/icons/icon/
+    # - assets/animations/lottie/
+    - assets/icons/svg/
     - assets/icons/svg/
     - assets/icons/app_icons/android/
     - assets/icons/app_icons/ios/
