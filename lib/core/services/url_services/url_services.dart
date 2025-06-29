@@ -11,7 +11,7 @@ class UrlRunServices {
   /// If the launch fails, it will throw an [Exception].
   ///
   /// If an [Exception] is thrown, it will show a toast with the error message.
-static Future<void> launchURL(String url) async {
+  static Future<void> launchURL(String url) async {
     try {
       final uri = Uri.parse(url.trim());
       if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
@@ -37,21 +37,20 @@ static Future<void> launchURL(String url) async {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
       path: toEmail,
-      query: '${Uri.encodeQueryComponent('subject')}$subject&${Uri.encodeQueryComponent('body')}=$body',
+      query:
+          '${Uri.encodeQueryComponent('subject')}$subject&${Uri.encodeQueryComponent('body')}=$body',
     );
     if (!await launchUrl(emailLaunchUri)) {
       throw Exception('Could not launch $emailLaunchUri');
     }
   }
 
-
-    static Future<void> makePhoneCall(String phoneNumber) async {
+  static Future<void> makePhoneCall(String phoneNumber) async {
     final Uri phoneUri = Uri(scheme: 'tel', path: phoneNumber);
     if (await canLaunchUrl(phoneUri)) {
-      await launchUrl(phoneUri);  // Launch the phone call
+      await launchUrl(phoneUri); // Launch the phone call
     } else {
       throw 'Could not launch phone call';
     }
   }
-
 }

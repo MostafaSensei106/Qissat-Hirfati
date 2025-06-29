@@ -116,9 +116,7 @@ class SettingsPage extends StatelessWidget {
                         Navigator.pop(context);
                         Navigator.push(
                           context,
-                          CupertinoPageRoute(
-                            builder: (context) => ContactUs(),
-                          ),
+                          CupertinoPageRoute(builder: (context) => ContactUs()),
                         );
                       },
                     ),

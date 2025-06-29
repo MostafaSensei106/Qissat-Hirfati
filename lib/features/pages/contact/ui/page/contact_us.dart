@@ -18,8 +18,6 @@ class _ContactUsState extends State<ContactUs> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-
-
       showCupertinoDialog(
         context: context,
         builder: (context) => CupertinoAlertDialog(
@@ -86,6 +84,7 @@ class _ContactUsState extends State<ContactUs> {
       ),
     );
   }
+
   @override
   void dispose() {
     _nameController.dispose();
