@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart' show StatelessWidget, BuildContext, Widget, TextStyle, Text, CupertinoNavigationBar, Alignment, Image, BoxFit, TextAlign, FontWeight, CupertinoColors, Stack, Column, SingleChildScrollView, CupertinoPageScaffold;
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/features/pages/home/ui/page/home_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart' show AppLocalizations;
@@ -9,12 +10,12 @@ class AboutApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
+
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: const Text('نبذة عنا'),
+        middle: Text(tr.infoAboutUs),
         enableBackgroundFilterBlur: true,
       ),
-
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -27,8 +28,9 @@ class AboutApp extends StatelessWidget {
                   width: double.infinity,
                 ),
                 Text(
-                  'قصة حرفيون سعوديون\n يبدعون المستقبل بعبق التراث وعراقة الأصالة.',
-                  style: TextStyle(
+                  tr.aboutUs_description,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: CupertinoColors.white,
@@ -37,26 +39,20 @@ class AboutApp extends StatelessWidget {
               ],
             ),
             ArticleSectionComponent(
-              title: 'اهدافنا',
-              description:
-                  '''نمهد الطريق نحو مستقبل مزدهر ومشرق، يجمع بين إبداع الحرف اليدوية السعودية وعبق التراث الأصيل وعراقة الأصالة التي نفتخر بها.
-            
-تركيزنا لا يقتصر على تقديم منتجات حرفية ذات جودة عالية، بل يمتد ليشمل توثيق الثقافة السعودية والاحتفاء بتفاصيلها الغنية. نسعى إلى الارتقاء بالحرف اليدوية وجعلها جسراً يعبر بها الإرث الثقافي السعودي إلى العالم، من خلال تبنّي نموذج عمل مبتكر يدعم تطوير هذا القطاع ويعزز حضوره العالمي
-            ''',
+              title: tr.ourGoals,
+              description: tr.ourGoals_description,
               useButton: false,
               color: AppConstants.primarySectionColor,
               onPressed: () {},
             ),
             ArticleSectionComponent(
-              title: 'رؤيتنا',
-              description:
-                  'نسعى لأن نصبح الواجهة الأولى والرائدة للحرف اليدوية السعودية، التي تجمع بين الأصالة والجودة العالية، لتتألق في الأسواق المحلية وتصل إلى العالمية.',
+              title: tr.ourVision,
+              description: tr.ourVision_description,
               onPressed: () {},
             ),
             ArticleSectionComponent(
-              title: 'رسالتنا',
-              description:
-                  'نهدف إلى تقديم أرقى الحرف اليدوية السعودية بجودة استثنائية، مع تعزيز مكانتها كجزء أصيل من التراث السعودي. كما نسعى لتحفيز قطاع الحرف اليدوية من خلال دعم أعمال الحرفيين بأسلوب عادل ومستدام يضمن استمرارية هذا الإرث الثقافي',
+              title: tr.ourMessage,
+              description: tr.ourMessage_description,
               onPressed: () {},
               color: AppConstants.primarySectionColor,
             ),
@@ -66,4 +62,3 @@ class AboutApp extends StatelessWidget {
     );
   }
 }
-

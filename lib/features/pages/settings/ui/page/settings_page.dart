@@ -9,7 +9,6 @@ import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
 import 'package:qissat_hirfati/features/pages/about_app/ui/page/about_app.dart';
 import 'package:qissat_hirfati/features/pages/contact/ui/page/contact_us.dart';
 import 'package:qissat_hirfati/features/pages/login_page/ui/page/login_page.dart';
-import 'package:qissat_hirfati/features/pages/our_history/ui/page/our_history.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -40,8 +39,8 @@ class SettingsPage extends StatelessWidget {
                 child: Column(
                   children: [
                     SettingsTile(
-                      title: 'تسجيل الدخول',
-                      subtitle: 'سجّل دخولك للوصول إلى كل الميزات',
+                      title: tr.login,
+                      subtitle: tr.loginSuptitle,
                       icon: CupertinoIcons.person_crop_circle,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
@@ -79,8 +78,8 @@ class SettingsPage extends StatelessWidget {
                 child: Column(
                   children: [
                     SettingsTile(
-                      title: 'نبذة عن قصة حرفتي',
-                      subtitle: 'تعرف علي قصتنا',
+                      title: tr.infoAboutQissatHirfati,
+                      subtitle: tr.infoAboutQissatHirfatiSuptitle,
                       icon: CupertinoIcons.info,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
@@ -92,23 +91,23 @@ class SettingsPage extends StatelessWidget {
                       },
                     ),
                     SettingsTile(
-                      title: 'تراثنا',
-                      subtitle: 'تعرف علي قصتنا',
+                      title: tr.ourHistory,
+                      subtitle: tr.ourHistorySuptitle,
                       icon: CupertinoIcons.book,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
                         Navigator.pop(context);
-                        Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                            builder: (context) => OurHistory(),
-                          ),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   CupertinoPageRoute(
+                        //     builder: (context) => OurHistory(),
+                        //   ),
+                        // );
                       },
                     ),
                     SettingsTile(
-                      title: 'متجرنا الالكتروني',
-                      subtitle: 'اكتشف عروضنا الحصرية الآن',
+                      title: tr.ourOnLineStore,
+                      subtitle: tr.ourOnLineStoreSuptitle,
                       icon: CupertinoIcons.shopping_cart,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
@@ -116,8 +115,8 @@ class SettingsPage extends StatelessWidget {
                       },
                     ),
                     SettingsTile(
-                      title: 'تواصل معنا',
-                      subtitle: 'نسعد بخدمتك في أي وقت',
+                      title: tr.contactUs,
+                      subtitle: tr.contactUsSuptitle,
                       icon: CupertinoIcons.phone,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
@@ -179,6 +178,7 @@ class ChangeLocals extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!;
     final localeCubit = context.watch<LocaleCubit>();
 
     final locales = <String, Locale>{
@@ -193,7 +193,7 @@ class ChangeLocals extends StatelessWidget {
     };
 
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(middle: Text('تغيير اللغة')),
+      navigationBar:  CupertinoNavigationBar(middle: Text(tr.changeLanguage)),
       child: CupertinoListSection.insetGrouped(
         margin: const EdgeInsets.only(top: 8, left: 16, right: 16),
         children: locales.entries.map((entry) {

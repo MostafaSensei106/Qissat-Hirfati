@@ -31,76 +31,66 @@ class HomePage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              CupertinoSheetRoute(builder: (context) => SettingsPage()),
+              CupertinoSheetRoute(builder: (context) => const SettingsPage()),
             );
           },
         ),
       ),
-
       child: SingleChildScrollView(
         physics: const ScrollPhysics(),
         child: Column(
           children: [
-            Landing(),
-            OverviewSection(),
+            const Landing(),
+            const OverviewSection(),
             ArticleSectionComponent(
-              title: 'تراثنا',
+              title: tr.heritage,
               useChild: true,
               useButton: true,
               onPressed: () {
                 Navigator.push(
                   context,
-                  CupertinoPageRoute(builder: (context) => OurHistory()),
+                  CupertinoPageRoute(builder: (context) => const OurHistory()),
                 );
               },
-              description:
-                  'التراث السعودي هو لوحة فنية تمتزج فيها أصالة الماضي بعراقة الحضارات القديمة التي ازدهرت على هذه الأرض. من شمال المملكة إلى جنوبها، ومن شرقها إلى غربها، تزخر السعودية بمواقع تاريخية وأثرية تحكي قصص أجيال مضت وتركت بصمتها في صفحات التاريخ.',
+              description: tr.heritage_description,
               child: Column(
                 spacing: 8,
                 children: [
-                  SizedBox(height: 8),
-                  AppDivider(),
-                  Text(
-                    'يُعد البشت رمز للفخامة والهوية السعودية، يزين القادة والملوك في المناسبات الرسمية، ويجسده ولي العهد الأمير محمد بن سلمان بأسلوب يجمع بين الأصالة والتحديث. لمعرفة قصته، اضغط على البشت في الصورة.',
-                  ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 8),
+                  const AppDivider(),
+                  Text(tr.bisht_description),
+                  const SizedBox(height: 4),
                   CupertinoButton(
                     padding: EdgeInsets.zero,
                     onPressed: () {
-                      UrlRunServices.launchURL(
-                        AppConstants.mohammedbinSalmanAlSaudLink,
-                      );
+                      UrlRunServices.launchURL(AppConstants.mohammedbinSalmanAlSaudLink);
                     },
                     child: Container(
-                      decoration: BoxDecoration(
-                        boxShadow: const [
+                      decoration: const BoxDecoration(
+                        boxShadow: [
                           BoxShadow(
                             color: CupertinoColors.darkBackgroundGray,
                             blurRadius: 4,
                           ),
                         ],
                       ),
-                      child: Image.asset(
-                        AppConstants.mohammedbinSalmanAlSaudPNG,
-                      ),
+                      child: Image.asset(AppConstants.mohammedbinSalmanAlSaudPNG),
                     ),
                   ),
                 ],
               ),
             ),
-
             ArticleSectionComponent(
+              title: tr.ourWork,
               useChild: true,
-              color: AppConstants.primarySectionColor,
-              title: 'اعمالنا',
               useButton: false,
-              onPressed: () => {},
-              description:
-                  'نصمم منتجات تنبض بعراقة التراث المتجذر في هويتنا، نستلهم منها ملامح الحاضر ونرسم بها ملامح المستقبل',
+              onPressed: () {},
+              color: AppConstants.primarySectionColor,
+              description: tr.ourWork_description,
               child: Column(
                 spacing: 8,
                 children: [
-                  SizedBox(width: 0.5.sw, child: AppDivider()),
+                  SizedBox(width: 0.5.sw, child: const AppDivider()),
                   SizedBox(
                     height: 280,
                     child: PageView(
@@ -111,34 +101,33 @@ class HomePage extends StatelessWidget {
                           spacing: 8,
                           children: [
                             Image.asset(AppConstants.greenOrbPNG),
-                            Text('Qissat Hirfati'),
+                            const Text('Qissat Hirfati'),
                           ],
                         ),
                         Column(
                           spacing: 8,
                           children: [
                             Image.asset(AppConstants.treesPNG),
-                            Text('Mohammed bin Salman Al Saud'),
+                            const Text('Mohammed bin Salman Al Saud'),
                           ],
                         ),
                         Column(
                           spacing: 8,
                           children: [
                             Image.asset(AppConstants.pathPNG),
-                            Text('Small Tree'),
+                            const Text('Small Tree'),
                           ],
                         ),
                         Column(
                           spacing: 8,
                           children: [
                             Image.asset(AppConstants.lampPNG),
-                            Text('Qissat Hirfati'),
+                            const Text('Qissat Hirfati'),
                           ],
                         ),
                       ],
                     ),
                   ),
-
                   SmoothPageIndicator(
                     controller: pageController,
                     count: 4,
@@ -146,19 +135,18 @@ class HomePage extends StatelessWidget {
                       activeDotColor: Theme.of(context).primaryColor,
                     ),
                   ),
-
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   CupertinoButtonFilledComponent(
                     onPressed: () {
                       CupertinoFeatureWillBeAvailableLaterDilog.show(context);
                     },
-                    child: Text('المزيد'),
+                    child: Text(tr.more),
                   ),
                   Row(
                     spacing: 8,
                     children: [
                       Text(
-                        'شركاء النجاح',
+                        tr.successPartners,
                         style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
                       const Expanded(child: AppDivider()),
@@ -168,26 +156,10 @@ class HomePage extends StatelessWidget {
                     height: 80,
                     child: PageView(
                       children: [
-                        Image.asset(
-                          AppConstants.trs2PNG,
-                          filterQuality: FilterQuality.high,
-                          // fit: BoxFit.cover,
-                        ),
-                        Image.asset(
-                          AppConstants.trsPNG,
-                          filterQuality: FilterQuality.high,
-                          fit: BoxFit.cover,
-                        ),
-                        Image.asset(
-                          AppConstants.trs3PNG,
-                          filterQuality: FilterQuality.high,
-                          fit: BoxFit.cover,
-                        ),
-                        Image.asset(
-                          AppConstants.trs4PNG,
-                          filterQuality: FilterQuality.high,
-                          fit: BoxFit.contain,
-                        ),
+                        Image.asset(AppConstants.trs2PNG, filterQuality: FilterQuality.high),
+                        Image.asset(AppConstants.trsPNG, filterQuality: FilterQuality.high, fit: BoxFit.cover),
+                        Image.asset(AppConstants.trs3PNG, filterQuality: FilterQuality.high, fit: BoxFit.cover),
+                        Image.asset(AppConstants.trs4PNG, filterQuality: FilterQuality.high, fit: BoxFit.contain),
                       ],
                     ),
                   ),
@@ -223,6 +195,8 @@ class ArticleSectionComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!;
+
     return Container(
       color: color ?? CupertinoColors.white,
       child: Padding(
@@ -241,7 +215,7 @@ class ArticleSectionComponent extends StatelessWidget {
                 const Expanded(child: AppDivider()),
               ],
             ),
-            Text(description ?? ''),
+            if (description != null) Text(description!),
             const SizedBox(height: 8),
             useButton
                 ? CupertinoButtonFilledComponent(
@@ -249,7 +223,7 @@ class ArticleSectionComponent extends StatelessWidget {
                       HapticFeedback.vibrate();
                       onPressed();
                     },
-                    text: 'تعرف على المزيد',
+                    text: tr.seeMore,
                   )
                 : const SizedBox.shrink(),
             if (useChild && child != null) child!,
@@ -265,37 +239,33 @@ class OverviewSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!;
+
     return Stack(
       clipBehavior: Clip.none,
       children: [
         Container(
-          padding: EdgeInsets.all(AppConstants.padding),
+          padding: const EdgeInsets.all(AppConstants.padding),
           color: AppConstants.primarySectionColor,
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'أيادٍ سعودية مبدعة،\nتنسج المستقبل بلمسات مستوحاة من التراث وعراقة الأصالة.',
-                style: TextStyle(fontSize: 20),
-              ),
+              Text(tr.creativeHands, style: const TextStyle(fontSize: 20)),
               const SizedBox(height: 16),
               SizedBox(
                 width: 0.90.sw,
-                child: Text(
-                  'نسعى للارتقاء بمستقبل الحرف اليدوية السعودية، لتقديم إبداعات عصرية تنبض بروح التراث الأصيل.',
-                  style: TextStyle(fontSize: 16),
-                ),
+                child: Text(tr.overviewDescription, style: const TextStyle(fontSize: 16)),
               ),
               const SizedBox(height: 35),
               CupertinoButtonFilledComponent(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    CupertinoPageRoute(builder: (context) => AboutApp()),
+                    CupertinoPageRoute(builder: (context) => const AboutApp()),
                   );
                 },
-                text: 'نبذة عن قصة حرفتي',
+                text: tr.aboutQissatHirfati,
               ),
               const SizedBox(height: 16),
             ],
@@ -322,6 +292,7 @@ class Landing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!;
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -331,8 +302,8 @@ class Landing extends StatelessWidget {
           width: double.infinity,
         ),
         Text(
-          'أيدٍ سعودية مبدعة.',
-          style: TextStyle(
+          tr.creativeSaudiHands,
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
             color: CupertinoColors.white,
