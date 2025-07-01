@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_filled_component/cupertino_button_filled_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_text_field_component/cupertino_text_field_component.dart';
+import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
 class ContactUs extends StatefulWidget {
   const ContactUs({super.key});
@@ -17,17 +18,16 @@ class _ContactUsState extends State<ContactUs> {
   final TextEditingController _messageController = TextEditingController();
 
   void _submitForm() {
+    final tr = AppLocalizations.of(context)!;
     if (_formKey.currentState!.validate()) {
-
-
       showCupertinoDialog(
         context: context,
         builder: (context) => CupertinoAlertDialog(
-          title: const Text('تم الإرسال'),
-          content: const Text('شكرًا لتواصلك معنا!'),
+          title: Text(tr.sentSuccessfully),
+          content: Text(tr.thankYouForContactingUs),
           actions: [
             CupertinoDialogAction(
-              child: const Text('حسنًا'),
+              child: Text(tr.ok),
               onPressed: () => Navigator.of(context).pop(),
             ),
           ],
@@ -42,42 +42,48 @@ class _ContactUsState extends State<ContactUs> {
 
   @override
   Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!;
+
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(middle: Text('تواصل معنا')),
+      navigationBar: CupertinoNavigationBar(
+        middle: Text(tr.contactUs),
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding),
         child: Form(
           key: _formKey,
           child: Column(
-            spacing: 8,
             children: [
               CupertinoTextFieldComponent(
                 controller: _nameController,
-                placeholder: 'الاسم الكامل',
+                placeholder: tr.fullName,
                 // validator: (value) =>
-                //     value == null || value.isEmpty ? 'أدخل الاسم' : null,
+                //     value == null || value.isEmpty ? tr.enterYourName : null,
               ),
               CupertinoTextFieldComponent(
                 controller: _emailController,
-                placeholder: 'البريد الإلكتروني',
+                placeholder: tr.email,
                 keyboardType: TextInputType.emailAddress,
+                // validator: (value) =>
+                //     value == null || value.isEmpty ? tr.enterYourEmail : null,
               ),
+              const SizedBox(height: 8),
               CupertinoTextField(
                 controller: _messageController,
-                placeholder: 'رسالتك',
+                placeholder: tr.yourMessage,
                 maxLines: 5,
                 decoration: BoxDecoration(
                   color: CupertinoColors.systemGrey6,
-                  borderRadius: BorderRadius.circular(
-                    AppConstants.inBorderRadius,
-                  ),
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.inBorderRadius),
                 ),
               ),
+              const SizedBox(height: 12),
               SizedBox(
                 width: double.infinity,
                 child: CupertinoButtonFilledComponent(
                   onPressed: _submitForm,
-                  text: 'ارسال',
+                  text: tr.send,
                 ),
               ),
             ],
@@ -86,6 +92,7 @@ class _ContactUsState extends State<ContactUs> {
       ),
     );
   }
+
   @override
   void dispose() {
     _nameController.dispose();

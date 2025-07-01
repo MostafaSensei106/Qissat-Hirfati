@@ -234,8 +234,6 @@ class _OurHistoryState extends State<OurHistory> {
     );
   }
 
-  
-
   Future<dynamic> runImageGet(BuildContext context) {
     return showCupertinoModalPopup(
       context: context,
@@ -290,7 +288,8 @@ class _OurHistoryState extends State<OurHistory> {
       ),
     );
   }
-    Future<dynamic> runImageGet2(BuildContext context) {
+
+  Future<dynamic> runImageGet2(BuildContext context) {
     return showCupertinoModalPopup(
       context: context,
       builder: (context) => CupertinoActionSheet(
@@ -302,7 +301,9 @@ class _OurHistoryState extends State<OurHistory> {
               TakeImageBy.pickFromCamera();
               Navigator.push(
                 context,
-                CupertinoPageRoute(builder: (context) => PlacePage(place: places.first,)),
+                CupertinoPageRoute(
+                  builder: (context) => PlacePage(place: places.first),
+                ),
               );
             },
             child: Row(
@@ -321,7 +322,9 @@ class _OurHistoryState extends State<OurHistory> {
               TakeImageBy.pickFromGallery();
               Navigator.push(
                 context,
-                CupertinoPageRoute(builder: (context) => PlacePage(place: places.first,)),
+                CupertinoPageRoute(
+                  builder: (context) => PlacePage(place: places.first),
+                ),
               );
             },
             child: Row(

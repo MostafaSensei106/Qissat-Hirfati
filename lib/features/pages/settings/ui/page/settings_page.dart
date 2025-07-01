@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
+import 'package:qissat_hirfati/core/locals/logic/cubit/local_cubit.dart'
+    show LocaleCubit;
 import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
-import 'package:qissat_hirfati/core/widgets/cupertino_feature_will_be_available_later_dilog/cupertino_feature_will_be_available_later_dilog.dart';
 import 'package:qissat_hirfati/features/pages/about_app/ui/page/about_app.dart';
 import 'package:qissat_hirfati/features/pages/contact/ui/page/contact_us.dart';
 import 'package:qissat_hirfati/features/pages/login_page/ui/page/login_page.dart';
-import 'package:qissat_hirfati/features/pages/our_history/ui/page/our_history.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -37,8 +39,8 @@ class SettingsPage extends StatelessWidget {
                 child: Column(
                   children: [
                     SettingsTile(
-                      title: 'تسجيل الدخول',
-                      subtitle: 'سجّل دخولك للوصول إلى كل الميزات',
+                      title: tr.login,
+                      subtitle: tr.loginSuptitle,
                       icon: CupertinoIcons.person_crop_circle,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
@@ -55,7 +57,12 @@ class SettingsPage extends StatelessWidget {
                       icon: CupertinoIcons.globe,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
-                        CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => ChangeLocals(),
+                          ),
+                        );
                       },
                     ),
                   ],
@@ -71,8 +78,8 @@ class SettingsPage extends StatelessWidget {
                 child: Column(
                   children: [
                     SettingsTile(
-                      title: 'نبذة عن قصة حرفتي',
-                      subtitle: 'تعرف علي قصتنا',
+                      title: tr.infoAboutQissatHirfati,
+                      subtitle: tr.infoAboutQissatHirfatiSuptitle,
                       icon: CupertinoIcons.info,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
@@ -84,23 +91,23 @@ class SettingsPage extends StatelessWidget {
                       },
                     ),
                     SettingsTile(
-                      title: 'تراثنا',
-                      subtitle: 'تعرف علي قصتنا',
+                      title: tr.ourHistory,
+                      subtitle: tr.ourHistorySuptitle,
                       icon: CupertinoIcons.book,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
                         Navigator.pop(context);
-                        Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                            builder: (context) => OurHistory(),
-                          ),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   CupertinoPageRoute(
+                        //     builder: (context) => OurHistory(),
+                        //   ),
+                        // );
                       },
                     ),
                     SettingsTile(
-                      title: 'متجرنا الالكتروني',
-                      subtitle: 'اكتشف عروضنا الحصرية الآن',
+                      title: tr.ourOnLineStore,
+                      subtitle: tr.ourOnLineStoreSuptitle,
                       icon: CupertinoIcons.shopping_cart,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
@@ -108,17 +115,15 @@ class SettingsPage extends StatelessWidget {
                       },
                     ),
                     SettingsTile(
-                      title: 'تواصل معنا',
-                      subtitle: 'نسعد بخدمتك في أي وقت',
+                      title: tr.contactUs,
+                      subtitle: tr.contactUsSuptitle,
                       icon: CupertinoIcons.phone,
                       trailingIcon: CupertinoIcons.forward,
                       onPressed: () {
                         Navigator.pop(context);
                         Navigator.push(
                           context,
-                          CupertinoPageRoute(
-                            builder: (context) => ContactUs(),
-                          ),
+                          CupertinoPageRoute(builder: (context) => ContactUs()),
                         );
                       },
                     ),
@@ -163,6 +168,52 @@ class SettingsTile extends StatelessWidget {
         trailing: Icon(trailingIcon),
         subtitle: Text(subtitle),
         title: Text(title),
+      ),
+    );
+  }
+}
+
+class ChangeLocals extends StatelessWidget {
+  const ChangeLocals({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!;
+    final localeCubit = context.watch<LocaleCubit>();
+
+    final locales = <String, Locale>{
+      'العربية': const Locale('ar', 'SA'),
+      'English': const Locale('en', 'US'),
+      'Français': const Locale('fr', 'FR'),
+      'Español': const Locale('es', 'ES'),
+      'Deutsch': const Locale('de', 'DE'),
+      '中文': const Locale('zh', 'CN'),
+      '日本語': const Locale('ja', 'JP'),
+      'Русский': const Locale('ru', 'RU'),
+    };
+
+    return CupertinoPageScaffold(
+      navigationBar:  CupertinoNavigationBar(middle: Text(tr.changeLanguage)),
+      child: CupertinoListSection.insetGrouped(
+        margin: const EdgeInsets.only(top: 8, left: 16, right: 16),
+        children: locales.entries.map((entry) {
+          final selected = localeCubit.state == entry.value;
+          return CupertinoListTile(
+            //leading: const Icon(CupertinoIcons.globe),
+            title: Text(entry.key, style: const TextStyle(fontSize: 16)),
+            subtitle: Text(entry.value.countryCode!),
+            trailing: selected
+                ? Icon(
+                    CupertinoIcons.check_mark_circled,
+                    color: Theme.of(context).primaryColor,
+                  )
+                : null,
+            onTap: () => {
+              HapticFeedback.vibrate(),
+              localeCubit.changeLocale(entry.value),
+            },
+          );
+        }).toList(),
       ),
     );
   }

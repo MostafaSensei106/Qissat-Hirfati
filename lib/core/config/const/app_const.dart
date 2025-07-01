@@ -13,23 +13,23 @@ class AppConstants {
 
   static const String appEmail = "Example@gmail.com";
   static const String appPhoneNumber = "+201014414536";
-  static const String appStroreUrl =
-      "https://heylink.me/atheraalhrfah";
-
+  static const String appStroreUrl = "https://heylink.me/atheraalhrfah";
 
   static const String appLogoSvg = "assets/icons/svg/hirfatiLogo.svg";
-  static const String appLogoPng = "assets/icons/app_icons/android/play_store_512.png";
+  static const String appLogoPng =
+      "assets/icons/app_icons/android/play_store_512.png";
   static const String facebookLogo = "assets/icons/svg/facebook.svg";
   static const String instagramLogo = "assets/icons/svg/instagram.svg";
   static const String twitterLogo = "assets/icons/svg/twitter.svg";
   static const String whatsappLogo = "assets/icons/svg/whatsApp.svg";
 
-  static const String landHomeGif =  "assets/gif/landHome.gif";
-
+  static const String landHomeGif = "assets/gif/landHome.gif";
 
   static const String smallTreePNG = "assets/images/smallTree.webp";
-  static const String mohammedbinSalmanAlSaudPNG = "assets/images/mohammedbinSalmanAlSaud.webp";
-  static const String mohammedbinSalmanAlSaudLink = "https://www.alarabiya.net/saudi-today/2025/01/15/%D9%87%D8%B0%D9%87-%D9%82%D8%B5%D8%A9-%D8%A7%D9%84%D8%A8%D8%B4%D8%AA-%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A-%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%B1-%D9%84%D9%88%D9%84%D9%8A-%D8%A7%D9%84%D8%B9%D9%87%D8%AF-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-";
+  static const String mohammedbinSalmanAlSaudPNG =
+      "assets/images/mohammedbinSalmanAlSaud.webp";
+  static const String mohammedbinSalmanAlSaudLink =
+      "https://www.alarabiya.net/saudi-today/2025/01/15/%D9%87%D8%B0%D9%87-%D9%82%D8%B5%D8%A9-%D8%A7%D9%84%D8%A8%D8%B4%D8%AA-%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A-%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%B1-%D9%84%D9%88%D9%84%D9%8A-%D8%A7%D9%84%D8%B9%D9%87%D8%AF-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-";
 
   static const String greenOrbPNG = "assets/images/greenOrb.webp";
   static const String lampPNG = "assets/images/lamp.webp";
@@ -41,7 +41,6 @@ class AppConstants {
   static const String trs4PNG = "assets/images/trs4.webp";
   static const String handPNG = "assets/images/hand.webp";
 
-
   static const double padding = 16.0;
   static const double paddingHalf = padding / 2;
   static const double iconSize = 27.0;
@@ -51,5 +50,4 @@ class AppConstants {
   static const double outBorderRadius = inBorderRadius + padding;
 
   static const Color primarySectionColor = Color(0xFFEFE7DE);
-  
 }

@@ -12,7 +12,7 @@ final CupertinoThemeData lightTheme = CupertinoThemeData(
     textStyle: TextStyle(
       color: const Color(0xFF333333),
       fontSize: 16,
-      fontFamily: 'Rubik', 
+      fontFamily: 'Rubik',
     ),
     navTitleTextStyle: TextStyle(
       fontSize: 20,

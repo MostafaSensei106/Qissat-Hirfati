@@ -112,12 +112,6 @@ abstract class AppLocalizations {
     Locale('zh'),
   ];
 
-  /// No description provided for @appTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'The Tale of My Craft'**
-  String get appTitle;
-
   /// No description provided for @email.
   ///
   /// In en, this message translates to:
@@ -448,23 +442,245 @@ abstract class AppLocalizations {
   /// **'Logout'**
   String get logout;
 
+  /// No description provided for @changeLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Language'**
+  String get changeLanguage;
+
+  /// No description provided for @ourOnLineStore.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Online Store'**
+  String get ourOnLineStore;
+
+  /// No description provided for @ourOnLineStoreSuptitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover our exclusive offers now'**
+  String get ourOnLineStoreSuptitle;
+
+  /// No description provided for @loginSuptitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Login to access all features'**
+  String get loginSuptitle;
+
   /// No description provided for @logoutConfirmation.
   ///
   /// In en, this message translates to:
   /// **'Are you sure you want to log out?'**
   String get logoutConfirmation;
 
-  /// No description provided for @logoutSuccess.
+  /// No description provided for @infoAboutUs.
   ///
   /// In en, this message translates to:
-  /// **'Logged out successfully'**
-  String get logoutSuccess;
+  /// **'Info about us'**
+  String get infoAboutUs;
+
+  /// No description provided for @infoAboutQissatHirfati.
+  ///
+  /// In en, this message translates to:
+  /// **'Info about Qissat Hirfati'**
+  String get infoAboutQissatHirfati;
+
+  /// No description provided for @infoAboutQissatHirfatiSuptitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn more about Our Story'**
+  String get infoAboutQissatHirfatiSuptitle;
+
+  /// No description provided for @ourHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Our History'**
+  String get ourHistory;
+
+  /// No description provided for @ourHistorySuptitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn more about Our History'**
+  String get ourHistorySuptitle;
+
+  /// No description provided for @contactUsSuptitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We are happy to serve you at any time'**
+  String get contactUsSuptitle;
+
+  /// No description provided for @aboutUs_description.
+  ///
+  /// In en, this message translates to:
+  /// **'A story of Saudi artisans crafting the future with the spirit of heritage and authenticity.'**
+  String get aboutUs_description;
+
+  /// No description provided for @ourGoals.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Goals'**
+  String get ourGoals;
+
+  /// No description provided for @ourGoals_description.
+  ///
+  /// In en, this message translates to:
+  /// **'We pave the way towards a prosperous and bright future, blending the creativity of Saudi handicrafts with the deep heritage and proud authenticity we cherish.\n\nOur focus is not only on offering high-quality handcrafted products, but also on documenting and celebrating the rich details of Saudi culture. We aim to elevate traditional crafts and make them a bridge through which Saudi cultural heritage reaches the world, by adopting an innovative business model that supports and promotes this sector globally.'**
+  String get ourGoals_description;
+
+  /// No description provided for @ourVision.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Vision'**
+  String get ourVision;
+
+  /// No description provided for @ourVision_description.
+  ///
+  /// In en, this message translates to:
+  /// **'We strive to become the leading and primary destination for Saudi handicrafts, combining authenticity with high quality to shine in local markets and reach global recognition.'**
+  String get ourVision_description;
+
+  /// No description provided for @ourMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Mission'**
+  String get ourMessage;
+
+  /// No description provided for @ourMessage_description.
+  ///
+  /// In en, this message translates to:
+  /// **'We aim to present the finest Saudi handicrafts with exceptional quality, while enhancing their value as an essential part of Saudi heritage. We also seek to empower the handicraft sector by supporting artisans in a fair and sustainable way that ensures the continuation of this cultural legacy.'**
+  String get ourMessage_description;
+
+  /// No description provided for @contactUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Us'**
+  String get contactUs;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @appTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Qissat Hirfati'**
+  String get appTitle;
+
+  /// No description provided for @heritage.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Heritage'**
+  String get heritage;
+
+  /// No description provided for @heritage_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Saudi heritage is an artistic canvas blending the authenticity of the past with the civilizations that flourished on this land. From north to south, east to west, Saudi Arabia is rich in historical and archaeological sites that tell the stories of past generations.'**
+  String get heritage_description;
+
+  /// No description provided for @bisht_description.
+  ///
+  /// In en, this message translates to:
+  /// **'The bisht is a symbol of Saudi identity and luxury, worn by kings and leaders on formal occasions. Crown Prince Mohammed bin Salman embodies it in a style that merges tradition and modernity. Click the bisht in the image to learn more.'**
+  String get bisht_description;
+
+  /// No description provided for @ourWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Work'**
+  String get ourWork;
+
+  /// No description provided for @ourWork_description.
+  ///
+  /// In en, this message translates to:
+  /// **'We design products inspired by the deep-rooted heritage of our identity, drawing features of the present and shaping the future.'**
+  String get ourWork_description;
+
+  /// No description provided for @seeMore.
+  ///
+  /// In en, this message translates to:
+  /// **'See more'**
+  String get seeMore;
+
+  /// No description provided for @more.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get more;
+
+  /// No description provided for @successPartners.
+  ///
+  /// In en, this message translates to:
+  /// **'Success Partners'**
+  String get successPartners;
+
+  /// No description provided for @creativeHands.
+  ///
+  /// In en, this message translates to:
+  /// **'Creative Saudi hands,\nweave the future with touches inspired by heritage and authenticity.'**
+  String get creativeHands;
+
+  /// No description provided for @overviewDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'We aim to elevate the future of Saudi handicrafts, offering modern creations infused with the spirit of authentic heritage.'**
+  String get overviewDescription;
+
+  /// No description provided for @aboutQissatHirfati.
+  ///
+  /// In en, this message translates to:
+  /// **'About Qissat Hirfati'**
+  String get aboutQissatHirfati;
+
+  /// No description provided for @creativeSaudiHands.
+  ///
+  /// In en, this message translates to:
+  /// **'Creative Saudi hands.'**
+  String get creativeSaudiHands;
+
+  /// No description provided for @send.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get send;
+
+  /// No description provided for @enterYourName.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your name'**
+  String get enterYourName;
+
+  /// No description provided for @enterYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email'**
+  String get enterYourEmail;
+
+  /// No description provided for @sentSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent Successfully'**
+  String get sentSuccessfully;
+
+  /// No description provided for @thankYouForContactingUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you for contacting us!'**
+  String get thankYouForContactingUs;
 
   /// No description provided for @featureWillBeAvailableLater.
   ///
   /// In en, this message translates to:
   /// **'This feature will be available later'**
   String get featureWillBeAvailableLater;
+
+  /// No description provided for @yourMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Message'**
+  String get yourMessage;
 }
 
 class _AppLocalizationsDelegate

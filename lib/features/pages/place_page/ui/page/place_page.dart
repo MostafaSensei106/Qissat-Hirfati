@@ -27,17 +27,19 @@ class _PlacePageState extends State<PlacePage> {
         middle: Text(widget.place.name),
         backgroundColor: CupertinoColors.systemGroupedBackground,
         trailing: CupertinoButtonComponent(
-          onPressed: ()  {
-           TakeImageBy.pickFromCamera().then((file) {
-             if (file != null) {
-               setState(() {
-                 widget.place.imagePaths.add({'path': file.path});
-               });
-             }
-           }
-           );
+          onPressed: () {
+            TakeImageBy.pickFromCamera().then((file) {
+              if (file != null) {
+                setState(() {
+                  widget.place.imagePaths.add({'path': file.path});
+                });
+              }
+            });
           },
-          child: const Icon(CupertinoIcons.add_circled,size: AppConstants.iconSize,),
+          child: const Icon(
+            CupertinoIcons.add_circled,
+            size: AppConstants.iconSize,
+          ),
         ),
       ),
       child: SingleChildScrollView(
@@ -52,12 +54,10 @@ class _PlacePageState extends State<PlacePage> {
             SizedBox(
               height: 250,
               child: CarouselView.weighted(
-                flexWeights: const [1,7],
+                flexWeights: const [1, 7],
                 itemSnapping: true,
                 scrollDirection: Axis.horizontal,
-                controller: CarouselController(
-                  initialItem: 0,
-                ),
+                controller: CarouselController(initialItem: 0),
                 onTap: (index) => Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -97,13 +97,16 @@ class _PlacePageState extends State<PlacePage> {
                         child: Container(
                           padding: const EdgeInsets.all(4),
                           decoration: BoxDecoration(
-                            color: CupertinoColors.darkBackgroundGray.withAlpha(0x80),
+                            color: CupertinoColors.darkBackgroundGray.withAlpha(
+                              0x80,
+                            ),
                             borderRadius: BorderRadius.circular(
                               AppConstants.inBorderRadius,
                             ),
                           ),
                           child: Text(
-                            widget.place.imagePaths.last['time'] ?? 'لا يوجد تاريخ',
+                            widget.place.imagePaths.last['time'] ??
+                                'لا يوجد تاريخ',
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               color: CupertinoColors.white,
@@ -129,11 +132,10 @@ class _PlacePageState extends State<PlacePage> {
                 UrlRunServices.launchURL(widget.place.mapLink);
               },
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
-                child: Image.asset(
-                  widget.place.mapImagePath,
-                  fit: BoxFit.fill,
+                borderRadius: BorderRadius.circular(
+                  AppConstants.inBorderRadius,
                 ),
+                child: Image.asset(widget.place.mapImagePath, fit: BoxFit.fill),
               ),
             ),
             SizedBox(height: 8),
