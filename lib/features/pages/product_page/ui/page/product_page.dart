@@ -71,7 +71,7 @@ class _ProductPageState extends State<ProductPage> {
 
   @override
   Widget build(BuildContext context) {
-    List<ProductModel> filteredPlaces = products.where((product) {
+    final filteredPlaces = products.where((product) {
       return product.productName.contains(searchQuery);
     }).toList();
 
@@ -118,15 +118,14 @@ class _ProductPageState extends State<ProductPage> {
 }
 
 class ProductCard extends StatelessWidget {
-  final ProductModel product;
   //final VoidCallback onPressed;
 
   const ProductCard({
-    super.key,
-    required this.product,
+    required this.product, super.key,
 
     ///required this.onPressed,
   });
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -170,7 +169,7 @@ class ProductCard extends StatelessWidget {
               Text('الاسرة المنتجة: ${product.productionFamilyName}'),
               Row(
                 children: [
-                  Text('موقعهم الالكتروني: '),
+                  const Text('موقعهم الالكتروني: '),
                   CupertinoButtonComponent(
                     onPressed: () {
                       UrlRunServices.launchURL(
@@ -184,18 +183,18 @@ class ProductCard extends StatelessWidget {
               Row(children: [Text('سعر المنتج: ${product.productPrice} ريال')]),
               Row(
                 children: [
-                  Text('تقييم المنتج: '),
+                  const Text('تقييم المنتج: '),
                   RatingBar(
                     ratingWidget: RatingWidget(
-                      full: Icon(
+                      full: const Icon(
                         CupertinoIcons.star_fill,
                         color: CupertinoColors.activeOrange,
                       ),
-                      half: Icon(
+                      half: const Icon(
                         CupertinoIcons.star_lefthalf_fill,
                         color: CupertinoColors.activeOrange,
                       ),
-                      empty: Icon(
+                      empty: const Icon(
                         CupertinoIcons.star,
                         color: CupertinoColors.systemGrey,
                       ),

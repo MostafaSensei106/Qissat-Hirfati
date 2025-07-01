@@ -9,9 +9,9 @@ import 'package:qissat_hirfati/features/pages/our_history/data/model/product_mod
 import 'package:qissat_hirfati/features/pages/our_history/logic/take_image/take_image.dart';
 
 class PlacePage extends StatefulWidget {
-  final PlaceModel place;
 
-  const PlacePage({super.key, required this.place});
+  const PlacePage({required this.place, super.key});
+  final PlaceModel place;
 
   @override
   State<PlacePage> createState() => _PlacePageState();
@@ -43,7 +43,7 @@ class _PlacePageState extends State<PlacePage> {
         ),
       ),
       child: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: AppConstants.padding),
+        padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 8,
@@ -121,12 +121,12 @@ class _PlacePageState extends State<PlacePage> {
             ),
             Text(
               'نبذة تعريفية عن التراث - ${widget.place.name}',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             Text(widget.place.description),
-            SizedBox(height: 8),
-            AppDivider(),
-            Text('الخريطة', style: TextStyle(fontWeight: FontWeight.bold)),
+            const SizedBox(height: 8),
+            const AppDivider(),
+            const Text('الخريطة', style: TextStyle(fontWeight: FontWeight.bold)),
             CupertinoButtonComponent(
               onPressed: () {
                 UrlRunServices.launchURL(widget.place.mapLink);
@@ -138,7 +138,7 @@ class _PlacePageState extends State<PlacePage> {
                 child: Image.asset(widget.place.mapImagePath, fit: BoxFit.fill),
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
           ],
         ),
       ),
@@ -152,15 +152,15 @@ class _PlacePageState extends State<PlacePage> {
         Text(widget.place.rating.toString()),
         RatingBar(
           ratingWidget: RatingWidget(
-            full: Icon(
+            full: const Icon(
               CupertinoIcons.star_fill,
               color: CupertinoColors.activeOrange,
             ),
-            half: Icon(
+            half: const Icon(
               CupertinoIcons.star_lefthalf_fill,
               color: CupertinoColors.activeOrange,
             ),
-            empty: Icon(CupertinoIcons.star, color: CupertinoColors.systemGrey),
+            empty: const Icon(CupertinoIcons.star, color: CupertinoColors.systemGrey),
           ),
           onRatingUpdate: (_) {},
           initialRating: widget.place.rating,
@@ -178,9 +178,9 @@ class _PlacePageState extends State<PlacePage> {
 }
 
 class ImageViewPage extends StatelessWidget {
-  final String imagePath;
 
-  const ImageViewPage({super.key, required this.imagePath});
+  const ImageViewPage({required this.imagePath, super.key});
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -192,7 +192,7 @@ class ImageViewPage extends StatelessWidget {
 }
 
 class CloseOpenWidget extends StatelessWidget {
-  const CloseOpenWidget({super.key, required this.place});
+  const CloseOpenWidget({required this.place, super.key});
 
   final PlaceModel place;
 
@@ -201,15 +201,15 @@ class CloseOpenWidget extends StatelessWidget {
     return Row(
       spacing: 8,
       children: [
-        Text(
+        const Text(
           ' مفتوح',
           style: TextStyle(
             color: CupertinoColors.activeGreen,
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text('-'),
-        Text(
+        const Text('-'),
+        const Text(
           'يغلق',
           style: TextStyle(
             color: CupertinoColors.destructiveRed,

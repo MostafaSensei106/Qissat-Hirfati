@@ -60,7 +60,7 @@ class SettingsPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           CupertinoPageRoute(
-                            builder: (context) => ChangeLocals(),
+                            builder: (context) => const ChangeLocals(),
                           ),
                         );
                       },
@@ -86,7 +86,7 @@ class SettingsPage extends StatelessWidget {
                         Navigator.pop(context);
                         Navigator.push(
                           context,
-                          CupertinoPageRoute(builder: (context) => AboutApp()),
+                          CupertinoPageRoute(builder: (context) => const AboutApp()),
                         );
                       },
                     ),
@@ -123,12 +123,12 @@ class SettingsPage extends StatelessWidget {
                         Navigator.pop(context);
                         Navigator.push(
                           context,
-                          CupertinoPageRoute(builder: (context) => ContactUs()),
+                          CupertinoPageRoute(builder: (context) => const ContactUs()),
                         );
                       },
                     ),
 
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                   ],
                 ),
               ),
@@ -141,19 +141,14 @@ class SettingsPage extends StatelessWidget {
 }
 
 class SettingsTile extends StatelessWidget {
+  const SettingsTile({
+    required this.title, required this.subtitle, required this.icon, required this.trailingIcon, required this.onPressed, super.key,
+  });
   final String title;
   final String subtitle;
   final IconData icon;
   final IconData trailingIcon;
   final VoidCallback onPressed;
-  const SettingsTile({
-    super.key,
-    required this.title,
-    required this.subtitle,
-    required this.icon,
-    required this.trailingIcon,
-    required this.onPressed,
-  });
 
   @override
   Widget build(BuildContext context) {

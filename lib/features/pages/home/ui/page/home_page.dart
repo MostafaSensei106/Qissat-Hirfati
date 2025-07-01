@@ -20,14 +20,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
-    final PageController pageController = PageController();
+    final pageController = PageController();
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(tr.appTitle),
         enableBackgroundFilterBlur: true,
         leading: CupertinoButtonComponent(
-          icon: Icon(CupertinoIcons.bars, size: AppConstants.iconSize),
+          icon: const Icon(CupertinoIcons.bars, size: AppConstants.iconSize),
           onPressed: () {
             Navigator.push(
               context,
@@ -174,6 +174,15 @@ class HomePage extends StatelessWidget {
 }
 
 class ArticleSectionComponent extends StatelessWidget {
+
+  const ArticleSectionComponent({
+    required this.title, required this.onPressed, super.key,
+    this.description,
+    this.child,
+    this.useChild = false,
+    this.useButton = false,
+    this.color,
+  });
   final String title;
   final String? description;
   final bool useChild;
@@ -181,17 +190,6 @@ class ArticleSectionComponent extends StatelessWidget {
   final Widget? child;
   final Color? color;
   final VoidCallback onPressed;
-
-  const ArticleSectionComponent({
-    super.key,
-    required this.title,
-    this.description,
-    this.child,
-    this.useChild = false,
-    this.useButton = false,
-    this.color,
-    required this.onPressed,
-  });
 
   @override
   Widget build(BuildContext context) {

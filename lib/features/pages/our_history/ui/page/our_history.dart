@@ -10,7 +10,7 @@ import 'package:qissat_hirfati/features/pages/product_page/ui/page/product_page.
 
 class OurHistory extends StatefulWidget {
   const OurHistory({super.key});
-
+  
   @override
   State<OurHistory> createState() => _OurHistoryState();
 }
@@ -126,7 +126,7 @@ class _OurHistoryState extends State<OurHistory> {
 
   @override
   Widget build(BuildContext context) {
-    List<PlaceModel> filteredPlaces = places.where((place) {
+    final filteredPlaces = places.where((place) {
       return place.name.contains(searchQuery) ||
           place.description.contains(searchQuery) ||
           place.subTitleDescription.contains(searchQuery) ||
@@ -195,15 +195,15 @@ class _OurHistoryState extends State<OurHistory> {
               Navigator.of(context).pop();
               runImageGet(context);
             },
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 8,
               children: [
-                const Icon(
+                Icon(
                   CupertinoIcons.cube_box,
                   size: AppConstants.iconSize,
                 ),
-                const Text('صور منتجات'),
+                Text('صور منتجات'),
               ],
             ),
           ),
@@ -213,12 +213,12 @@ class _OurHistoryState extends State<OurHistory> {
               Navigator.of(context).pop();
               runImageGet2(context);
             },
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(CupertinoIcons.map, size: AppConstants.iconSize),
-                const SizedBox(width: 8),
-                const Text('صور تراث'),
+                Icon(CupertinoIcons.map, size: AppConstants.iconSize),
+                SizedBox(width: 8),
+                Text('صور تراث'),
               ],
             ),
           ),
@@ -246,15 +246,15 @@ class _OurHistoryState extends State<OurHistory> {
               TakeImageBy.pickFromCamera();
               Navigator.push(
                 context,
-                CupertinoPageRoute(builder: (context) => ProductPage()),
+                CupertinoPageRoute(builder: (context) => const ProductPage()),
               );
             },
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 8,
               children: [
-                const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
-                const Text('صورة من الكاميرا'),
+                Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
+                Text('صورة من الكاميرا'),
               ],
             ),
           ),
@@ -265,15 +265,15 @@ class _OurHistoryState extends State<OurHistory> {
               TakeImageBy.pickFromGallery();
               Navigator.push(
                 context,
-                CupertinoPageRoute(builder: (context) => ProductPage()),
+                CupertinoPageRoute(builder: (context) => const ProductPage()),
               );
             },
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(CupertinoIcons.photo, size: AppConstants.iconSize),
-                const SizedBox(width: 8),
-                const Text('الصور من المعرض'),
+                Icon(CupertinoIcons.photo, size: AppConstants.iconSize),
+                SizedBox(width: 8),
+                Text('الصور من المعرض'),
               ],
             ),
           ),
@@ -306,12 +306,12 @@ class _OurHistoryState extends State<OurHistory> {
                 ),
               );
             },
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 8,
               children: [
-                const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
-                const Text('صورة من الكاميرا'),
+                Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
+                Text('صورة من الكاميرا'),
               ],
             ),
           ),
@@ -327,12 +327,12 @@ class _OurHistoryState extends State<OurHistory> {
                 ),
               );
             },
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(CupertinoIcons.photo, size: AppConstants.iconSize),
-                const SizedBox(width: 8),
-                const Text('الصور من المعرض'),
+                Icon(CupertinoIcons.photo, size: AppConstants.iconSize),
+                SizedBox(width: 8),
+                Text('الصور من المعرض'),
               ],
             ),
           ),
@@ -344,7 +344,7 @@ class _OurHistoryState extends State<OurHistory> {
             Future.delayed(const Duration(seconds: 20));
             Navigator.push(
               context,
-              CupertinoPageRoute(builder: (context) => ProductPage()),
+              CupertinoPageRoute(builder: (context) => const ProductPage()),
             );
           },
           child: const Text('اغلاق'),
@@ -355,10 +355,10 @@ class _OurHistoryState extends State<OurHistory> {
 }
 
 class PlaceCard extends StatelessWidget {
+
+  const PlaceCard({required this.place, required this.onPressed, super.key});
   final PlaceModel place;
   final VoidCallback onPressed;
-
-  const PlaceCard({super.key, required this.place, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

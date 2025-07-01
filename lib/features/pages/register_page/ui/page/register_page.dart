@@ -44,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     Navigator.pushReplacement(
       context,
-      CupertinoPageRoute(builder: (context) => HomePage()),
+      CupertinoPageRoute(builder: (context) => const HomePage()),
     );
   }
 
@@ -70,7 +70,7 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
       child: ListView(
         physics: const ScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: AppConstants.padding),
+        padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding),
         semanticChildCount: 8,
 
         children: [

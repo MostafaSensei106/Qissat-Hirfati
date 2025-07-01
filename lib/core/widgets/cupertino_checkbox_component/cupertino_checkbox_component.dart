@@ -5,10 +5,7 @@ import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertin
 
 class CupertinoCheckboxComponent extends StatelessWidget {
   const CupertinoCheckboxComponent({
-    super.key,
-    required this.value,
-    required this.text,
-    required this.onChanged,
+    required this.value, required this.text, required this.onChanged, super.key,
   });
   final bool value;
   final String text;

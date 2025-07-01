@@ -3,21 +3,20 @@ import 'package:flutter/services.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 
 class CupertinoButtonComponent extends StatelessWidget {
+  const CupertinoButtonComponent({
+    required this.onPressed, super.key,
+    this.text,
+    this.usePadding = false,
+    this.padding = AppConstants.padding,
+    this.child,
+    this.icon,
+  });
   final String? text;
   final Widget? child;
   final Widget? icon;
   final VoidCallback onPressed;
   final bool usePadding;
   final double padding;
-  const CupertinoButtonComponent({
-    super.key,
-    this.text,
-    required this.onPressed,
-    this.usePadding = false,
-    this.padding = AppConstants.padding,
-    this.child,
-    this.icon,
-  });
 
   @override
   /// Builds a [CupertinoButton] with the given [text], [child], and [icon].

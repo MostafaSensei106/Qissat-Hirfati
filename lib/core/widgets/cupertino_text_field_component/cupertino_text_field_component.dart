@@ -3,6 +3,19 @@ import 'package:flutter/services.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 
 class CupertinoTextFieldComponent extends StatelessWidget {
+
+  const CupertinoTextFieldComponent({
+    required this.placeholder, required this.controller, super.key,
+    this.obscureText = false,
+    this.keyboardType,
+    this.textInputAction,
+    this.inputFormatters,
+    this.autofocus = false,
+    this.enabled = true,
+    this.prefix,
+    this.suffix,
+    this.useInBorderRadius = false,
+  });
   final String placeholder;
   final Widget? prefix;
   final Widget? suffix;
@@ -14,21 +27,6 @@ class CupertinoTextFieldComponent extends StatelessWidget {
   final bool autofocus;
   final bool enabled;
   final bool useInBorderRadius;
-
-  const CupertinoTextFieldComponent({
-    super.key,
-    required this.placeholder,
-    this.obscureText = false,
-    required this.controller,
-    this.keyboardType,
-    this.textInputAction,
-    this.inputFormatters,
-    this.autofocus = false,
-    this.enabled = true,
-    this.prefix,
-    this.suffix,
-    this.useInBorderRadius = false,
-  });
 
   @override
   /// Builds a [CupertinoTextField].

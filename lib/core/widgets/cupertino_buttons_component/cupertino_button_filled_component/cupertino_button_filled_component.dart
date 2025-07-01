@@ -3,19 +3,18 @@ import 'package:flutter/services.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 
 class CupertinoButtonFilledComponent extends StatelessWidget {
+  //final bool useInBorderRadius;
+  const CupertinoButtonFilledComponent({
+    required this.onPressed, super.key,
+    this.text,
+    this.child,
+    this.icon,
+    //this.useInBorderRadius = false,
+  });
   final String? text;
   final Widget? child;
   final Widget? icon;
   final VoidCallback onPressed;
-  //final bool useInBorderRadius;
-  const CupertinoButtonFilledComponent({
-    super.key,
-    this.text,
-    this.child,
-    this.icon,
-    required this.onPressed,
-    //this.useInBorderRadius = false,
-  });
 
   @override
   /// Build a [CupertinoButton] with a filled background and an optional border
