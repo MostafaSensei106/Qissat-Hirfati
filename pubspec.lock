@@ -773,6 +773,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.10"
+  shared_preferences_dtx:
+    dependency: "direct main"
+    description:
+      name: shared_preferences_dtx
+      sha256: "33ceaed669eed9ece0fa790d75fea4edbe7d439e8bf0ca99c795136c5604e192"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.4"
   shared_preferences_foundation:
     dependency: transitive
     description:
