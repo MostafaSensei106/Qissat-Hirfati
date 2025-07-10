@@ -11,7 +11,7 @@ class TakeImageBy {
         return File(photo.path);
       }
     } catch (e) {
-      print('خطأ أثناء استخدام الكاميرا: $e');
+     Exception('خطاء اثناء اختيار صورة من الكاميرا: $e');
     }
     return null;
   }
@@ -23,7 +23,7 @@ class TakeImageBy {
         return File(image.path);
       }
     } catch (e) {
-      print('خطأ أثناء اختيار صورة من الجالري: $e');
+      Exception('خطاء اثناء اختيار صورة من المعرض: $e');
     }
     return null;
   }
