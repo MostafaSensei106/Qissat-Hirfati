@@ -1,5 +1,4 @@
 class PlaceModel {
-
   PlaceModel({
     required this.imagePaths,
     required this.name,

@@ -302,4 +302,150 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get yourMessage => 'Your Message';
+
+  @override
+  String get photoFromCamera => 'Photo from Camera';
+
+  @override
+  String get photoFromGallery => 'Photo from Gallery';
+
+  @override
+  String get productPhotos => 'Product Photos';
+
+  @override
+  String get heritagePhotos => 'Heritage Photos';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get imageFromCamera => 'Image from Camera';
+
+  @override
+  String get imageFromGallery => 'Image from Gallery';
+
+  @override
+  String get taroutCastleName => 'Tarout Castle';
+
+  @override
+  String get taroutCastleOpenInfoTime => '6:00 PM';
+
+  @override
+  String get taroutCastleDescription =>
+      'One of the oldest historical landmarks on Tarout Island in Qatif Governorate, dating back more than 5,000 years. It was built on the ruins of a settlement from the Dilmun civilization, and is characterized by its defensive design and strategic elevated location, which made it a center for protecting the island throughout the ages. Today, the castle is a cultural and heritage symbol that reflects the depth and beauty of Saudi history.';
+
+  @override
+  String get taroutCastleSubTitleDescription =>
+      'Tarout Castle, a historical landmark on Tarout Island in Qatif, Eastern Province, Saudi Arabia. Built on a hill southwest of the old town, on an archaeological site dating back to 4300 BC. It is 30 km from Dammam and is connected to the mainland by bridges.';
+
+  @override
+  String get taroutCastleLocation =>
+      'Al-Mantiqah, Al-Rahmah Street, Al-Zumurrud, Tarout 32615';
+
+  @override
+  String get alHasaOasisName => 'Al-Ahsa Oasis';
+
+  @override
+  String get alHasaOasisOpenInfoTime => '6:00 PM';
+
+  @override
+  String get alHasaOasisSubTitleDescription =>
+      'Al-Ahsa Oasis, inscribed on the UNESCO World Heritage List in 2018, is one of the largest natural oases in the world, famous for its dates, historical springs, and ancient archaeological sites.';
+
+  @override
+  String get alHasaOasisDescription =>
+      'Al-Ahsa Oasis, located in the Eastern Province of Saudi Arabia, is one of the largest natural oases in the world and was inscribed on the UNESCO World Heritage List in 2018. It is characterized by its fertile lands and millions of palm trees, in addition to prominent historical landmarks such as Ibrahim Palace and Al-Qaisariyah Souq, making it a symbol of history, environment, and cultural diversity.';
+
+  @override
+  String get alHasaOasisLocation => 'Old Makkah Road, Al-Balad, Jeddah 22236';
+
+  @override
+  String get makkahGateName => 'Makkah Gate';
+
+  @override
+  String get makkahGateOpenInfoTime => '10:30 PM';
+
+  @override
+  String get makkahGateSubTitleDescription =>
+      'Makkah Gate, one of the most famous landmarks of historic Jeddah, dates back to the 14th century AD. It was used as a main gate for pilgrims and goods entering and exiting the city. It is characterized by its ancient architectural design and is a symbol of the cultural and civilizational heritage of old Jeddah.';
+
+  @override
+  String get makkahGateDescription =>
+      'Makkah Gate is one of the eight gates of Jeddah\'s wall, located in the historic Jeddah area in the center of Jeddah, western Saudi Arabia. Makkah Gate is Jeddah\'s eastern gate, located in front of the Bedouin market and leading to the Al-Haraj and Al-Halaqat markets outside the wall. The gate was also a passage for funerals heading to Sheikh Al-Asad Cemetery located in that area outside the wall.';
+
+  @override
+  String get makkahGateLocation => 'Old Makkah Road, Al-Balad, Jeddah 22236';
+
+  @override
+  String get alMasharCastleName => 'Al-Mashar Castle';
+
+  @override
+  String get alMasharCastleOpenInfoTime => '5:00 PM';
+
+  @override
+  String get alMasharCastleSubTitleDescription =>
+      'Al-Mashar Castle in Asir, a historical fortress dating back centuries, built of stone and wood to protect caravans and monitor roads, reflecting the beauty of architectural heritage.';
+
+  @override
+  String get alMasharCastleDescription =>
+      'A historical landmark in the Asir region of southern Saudi Arabia, built hundreds of years ago as a defensive and monitoring site. It is characterized by its traditional design of stone and clay and its elevated location that provides wide views. Today, the castle is a symbol of Asiri heritage and a prominent tourist destination.';
+
+  @override
+  String get alMasharCastleLocation => 'Al-Ghareef, Saudi Arabia 29557';
+
+  @override
+  String get hegraName => 'Hegra (Madain Saleh)';
+
+  @override
+  String get hegraOpenInfoTime => '10:00 AM';
+
+  @override
+  String get hegraSubTitleDescription =>
+      'Hegra (Madain Saleh), one of the most famous heritage sites in Saudi Arabia, located in the Al-Madinah Al-Munawwarah region. It dates back to the 1st century AD, and includes a collection of Nabataean inscriptions and carvings.';
+
+  @override
+  String get hegraDescription =>
+      'Hegra (Madain Saleh), one of the most important heritage sites in Saudi Arabia, dates back to the 1st century AD, and includes a collection of Nabataean inscriptions and carvings. The site is one of the most important UNESCO World Heritage sites and is a symbol of Nabataean culture and heritage.';
+
+  @override
+  String get hegraLocation => 'Al-Hijr, Saudi Arabia';
+
+  @override
+  String get map => 'Map';
+
+  @override
+  String get viewImage => 'View Image';
+
+  @override
+  String get open => 'Open';
+
+  @override
+  String get closes => 'C';
+
+  @override
+  String get noDateAvailable => 'No date available';
+
+  @override
+  String get aboutHeritage => 'About the heritage';
+
+  @override
+  String get productionFamily => 'Production Family:';
+
+  @override
+  String get theSwordsFamily => 'The Swords Family';
+
+  @override
+  String get theirWebsite => 'Their website:';
+
+  @override
+  String get clickHere => 'Click here';
+
+  @override
+  String get productPrice => 'Product Price:';
+
+  @override
+  String get sar => 'SAR';
+
+  @override
+  String get productRating => 'Product Rating:';
 }

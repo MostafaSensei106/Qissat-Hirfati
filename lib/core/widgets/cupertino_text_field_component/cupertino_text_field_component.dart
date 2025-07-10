@@ -3,9 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 
 class CupertinoTextFieldComponent extends StatelessWidget {
-
   const CupertinoTextFieldComponent({
-    required this.placeholder, required this.controller, super.key,
+    required this.placeholder,
+    required this.controller,
+    super.key,
     this.obscureText = false,
     this.keyboardType,
     this.textInputAction,

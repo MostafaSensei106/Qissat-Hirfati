@@ -86,7 +86,9 @@ class SettingsPage extends StatelessWidget {
                         Navigator.pop(context);
                         Navigator.push(
                           context,
-                          CupertinoPageRoute(builder: (context) => const AboutApp()),
+                          CupertinoPageRoute(
+                            builder: (context) => const AboutApp(),
+                          ),
                         );
                       },
                     ),
@@ -123,7 +125,9 @@ class SettingsPage extends StatelessWidget {
                         Navigator.pop(context);
                         Navigator.push(
                           context,
-                          CupertinoPageRoute(builder: (context) => const ContactUs()),
+                          CupertinoPageRoute(
+                            builder: (context) => const ContactUs(),
+                          ),
                         );
                       },
                     ),
@@ -142,7 +146,12 @@ class SettingsPage extends StatelessWidget {
 
 class SettingsTile extends StatelessWidget {
   const SettingsTile({
-    required this.title, required this.subtitle, required this.icon, required this.trailingIcon, required this.onPressed, super.key,
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.trailingIcon,
+    required this.onPressed,
+    super.key,
   });
   final String title;
   final String subtitle;
@@ -188,7 +197,7 @@ class ChangeLocals extends StatelessWidget {
     };
 
     return CupertinoPageScaffold(
-      navigationBar:  CupertinoNavigationBar(middle: Text(tr.changeLanguage)),
+      navigationBar: CupertinoNavigationBar(middle: Text(tr.changeLanguage)),
       child: CupertinoListSection.insetGrouped(
         margin: const EdgeInsets.only(top: 8, left: 16, right: 16),
         children: locales.entries.map((entry) {

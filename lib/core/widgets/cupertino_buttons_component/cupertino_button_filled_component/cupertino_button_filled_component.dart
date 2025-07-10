@@ -5,7 +5,8 @@ import 'package:qissat_hirfati/core/config/const/app_const.dart';
 class CupertinoButtonFilledComponent extends StatelessWidget {
   //final bool useInBorderRadius;
   const CupertinoButtonFilledComponent({
-    required this.onPressed, super.key,
+    required this.onPressed,
+    super.key,
     this.text,
     this.child,
     this.icon,

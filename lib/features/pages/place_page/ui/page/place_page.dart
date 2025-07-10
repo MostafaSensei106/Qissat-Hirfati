@@ -7,9 +7,10 @@ import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/features/pages/our_history/data/model/product_model.dart';
 import 'package:qissat_hirfati/features/pages/our_history/logic/take_image/take_image.dart';
+import 'package:qissat_hirfati/l10n/app_localizations.dart'
+    show AppLocalizations;
 
 class PlacePage extends StatefulWidget {
-
   const PlacePage({required this.place, super.key});
   final PlaceModel place;
 
@@ -20,11 +21,13 @@ class PlacePage extends StatefulWidget {
 class _PlacePageState extends State<PlacePage> {
   @override
   Widget build(BuildContext context) {
-    // final tr = AppLocalizations.of(context)!;
+    final tr = AppLocalizations.of(context)!;
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text(widget.place.name),
+        middle: Text(
+          widget.place.name,
+        ), // Name is already in English from PlaceModel
         backgroundColor: CupertinoColors.systemGroupedBackground,
         trailing: CupertinoButtonComponent(
           onPressed: () {
@@ -50,14 +53,19 @@ class _PlacePageState extends State<PlacePage> {
           children: [
             starsWidget(),
             CloseOpenWidget(place: widget.place),
-            Text(widget.place.location),
+            Text(
+              widget.place.location,
+            ), // Location is already in English from PlaceModel
             SizedBox(
               height: 250,
               child: CarouselView.weighted(
+                // Assuming CarouselView is a custom widget
                 flexWeights: const [1, 7],
                 itemSnapping: true,
                 scrollDirection: Axis.horizontal,
-                controller: CarouselController(initialItem: 0),
+                controller: CarouselController(
+                  initialItem: 0,
+                ), // Assuming CarouselController
                 onTap: (index) => Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -106,7 +114,7 @@ class _PlacePageState extends State<PlacePage> {
                           ),
                           child: Text(
                             widget.place.imagePaths.last['time'] ??
-                                'لا يوجد تاريخ',
+                                tr.noDateAvailable, // Translated "No date available"
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               color: CupertinoColors.white,
@@ -120,13 +128,18 @@ class _PlacePageState extends State<PlacePage> {
               ),
             ),
             Text(
-              'نبذة تعريفية عن التراث - ${widget.place.name}',
+              '${tr.aboutHeritage} - ${widget.place.name}', // Translated "About the heritage"
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            Text(widget.place.description),
+            Text(
+              widget.place.description,
+            ), // Description is already in English from PlaceModel
             const SizedBox(height: 8),
             const AppDivider(),
-            const Text('الخريطة', style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(
+              tr.map,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ), // Translated "Map"
             CupertinoButtonComponent(
               onPressed: () {
                 UrlRunServices.launchURL(widget.place.mapLink);
@@ -160,7 +173,10 @@ class _PlacePageState extends State<PlacePage> {
               CupertinoIcons.star_lefthalf_fill,
               color: CupertinoColors.activeOrange,
             ),
-            empty: const Icon(CupertinoIcons.star, color: CupertinoColors.systemGrey),
+            empty: const Icon(
+              CupertinoIcons.star,
+              color: CupertinoColors.systemGrey,
+            ),
           ),
           onRatingUpdate: (_) {},
           initialRating: widget.place.rating,
@@ -178,14 +194,16 @@ class _PlacePageState extends State<PlacePage> {
 }
 
 class ImageViewPage extends StatelessWidget {
-
   const ImageViewPage({required this.imagePath, super.key});
   final String imagePath;
 
   @override
   Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(middle: Text('عرض الصورة')),
+      navigationBar: CupertinoNavigationBar(
+        middle: Text(tr.viewImage),
+      ), // Translated "View Image"
       child: Center(child: Image.asset(imagePath, fit: BoxFit.fill)),
     );
   }
@@ -198,26 +216,26 @@ class CloseOpenWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
     return Row(
       spacing: 8,
       children: [
-        const Text(
-          ' مفتوح',
-          style: TextStyle(
+        Text(
+          tr.open, // Translated "Open"
+          style: const TextStyle(
             color: CupertinoColors.activeGreen,
             fontWeight: FontWeight.bold,
           ),
         ),
         const Text('-'),
-        const Text(
-          'يغلق',
-          style: TextStyle(
+        Text(
+          tr.closes, // Translated "Closes"
+          style: const TextStyle(
             color: CupertinoColors.destructiveRed,
             fontWeight: FontWeight.bold,
           ),
         ),
-
-        Text(place.openInfoTime),
+        Text(place.openInfoTime), // Time is already in English from PlaceModel
       ],
     );
   }

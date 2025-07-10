@@ -1,5 +1,4 @@
 class ProductModel {
-
   ProductModel({
     required this.productName,
     required this.imagePaths,

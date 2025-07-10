@@ -4,7 +4,8 @@ import 'package:qissat_hirfati/core/config/const/app_const.dart';
 
 class CupertinoButtonComponent extends StatelessWidget {
   const CupertinoButtonComponent({
-    required this.onPressed, super.key,
+    required this.onPressed,
+    super.key,
     this.text,
     this.usePadding = false,
     this.padding = AppConstants.padding,

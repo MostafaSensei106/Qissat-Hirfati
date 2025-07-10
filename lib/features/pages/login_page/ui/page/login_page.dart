@@ -13,7 +13,6 @@ import 'package:qissat_hirfati/features/pages/register_page/ui/page/register_pag
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
 class LoginPage extends StatefulWidget {
-
   LoginPage({super.key});
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();

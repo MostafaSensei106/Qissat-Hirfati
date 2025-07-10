@@ -11,7 +11,7 @@ class TakeImageBy {
         return File(photo.path);
       }
     } catch (e) {
-     Exception('خطاء اثناء اختيار صورة من الكاميرا: $e');
+      Exception('خطاء اثناء اختيار صورة من الكاميرا: $e');
     }
     return null;
   }

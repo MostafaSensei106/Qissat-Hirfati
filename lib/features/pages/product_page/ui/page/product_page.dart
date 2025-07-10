@@ -5,6 +5,8 @@ import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/features/pages/product_page/data/model/product_model.dart';
+import 'package:qissat_hirfati/l10n/app_localizations.dart'
+    show AppLocalizations;
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -71,8 +73,11 @@ class _ProductPageState extends State<ProductPage> {
 
   @override
   Widget build(BuildContext context) {
-    final filteredPlaces = products.where((product) {
-      return product.productName.contains(searchQuery);
+    final tr = AppLocalizations.of(context)!;
+    final filteredProducts = products.where((product) {
+      return product.productName.toLowerCase().contains(
+        searchQuery.toLowerCase(),
+      );
     }).toList();
 
     return CupertinoPageScaffold(
@@ -80,7 +85,7 @@ class _ProductPageState extends State<ProductPage> {
         middle: SizedBox(
           height: 36,
           child: CupertinoSearchTextField(
-            placeholder: 'بحث',
+            placeholder: tr.search, // Translated "بحث" to "Search"
             onChanged: (value) {
               setState(() {
                 searchQuery = value;
@@ -99,17 +104,17 @@ class _ProductPageState extends State<ProductPage> {
             physics: const NeverScrollableScrollPhysics(),
             separatorBuilder: (context, index) => const AppDivider(),
             itemBuilder: (context, index) {
-              final place = filteredPlaces[index];
+              final product = filteredProducts[index];
               return Container(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: ProductCard(
-                  product: place,
+                  product: product,
                   // onPressed: () =>
                   //     CupertinoFeatureWillBeAvailableLaterDilog.show(context),
                 ),
               );
             },
-            itemCount: filteredPlaces.length,
+            itemCount: filteredProducts.length,
           ),
         ),
       ),
@@ -121,7 +126,8 @@ class ProductCard extends StatelessWidget {
   //final VoidCallback onPressed;
 
   const ProductCard({
-    required this.product, super.key,
+    required this.product,
+    super.key,
 
     ///required this.onPressed,
   });
@@ -129,6 +135,7 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -149,7 +156,8 @@ class ProductCard extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    product.productName,
+                    product
+                        .productName, // Name is already in English from ProductModel
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -166,24 +174,34 @@ class ProductCard extends StatelessWidget {
                   ),
                 ],
               ),
-              Text('الاسرة المنتجة: ${product.productionFamilyName}'),
+              Text(
+                '${tr.productionFamily} ${product.productionFamilyName}',
+              ), // Translated "الاسرة المنتجة:"
               Row(
                 children: [
-                  const Text('موقعهم الالكتروني: '),
+                  Text(
+                    '${tr.theirWebsite} ',
+                  ), // Translated "موقعهم الالكتروني:"
                   CupertinoButtonComponent(
                     onPressed: () {
                       UrlRunServices.launchURL(
                         product.productionFamilyWebsiteUrl,
                       );
                     },
-                    text: 'اضغط هنا',
+                    text: tr.clickHere, // Translated "اضغط هنا"
                   ),
                 ],
               ),
-              Row(children: [Text('سعر المنتج: ${product.productPrice} ريال')]),
               Row(
                 children: [
-                  const Text('تقييم المنتج: '),
+                  Text(
+                    '${tr.productPrice} ${product.productPrice} ${tr.sar}',
+                  ), // Translated "سعر المنتج: ... ريال"
+                ],
+              ),
+              Row(
+                children: [
+                  Text('${tr.productRating} '), // Translated "تقييم المنتج:"
                   RatingBar(
                     ratingWidget: RatingWidget(
                       full: const Icon(

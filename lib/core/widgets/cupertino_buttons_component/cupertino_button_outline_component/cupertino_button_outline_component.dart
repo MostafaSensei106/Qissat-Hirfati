@@ -3,9 +3,9 @@ import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 
 class CupertinoButtonOutlineComponent extends StatelessWidget {
-
   const CupertinoButtonOutlineComponent({
-    required this.onPressed, super.key,
+    required this.onPressed,
+    super.key,
     this.text,
     this.icon,
   });

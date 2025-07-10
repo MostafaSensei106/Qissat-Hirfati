@@ -12,7 +12,6 @@ import 'app_localizations_es.dart';
 import 'app_localizations_fr.dart';
 import 'app_localizations_ja.dart';
 import 'app_localizations_ru.dart';
-import 'app_localizations_ur.dart';
 import 'app_localizations_zh.dart';
 
 // ignore_for_file: type=lint
@@ -108,7 +107,6 @@ abstract class AppLocalizations {
     Locale('fr'),
     Locale('ja'),
     Locale('ru'),
-    Locale('ur'),
     Locale('zh'),
   ];
 
@@ -681,6 +679,276 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your Message'**
   String get yourMessage;
+
+  /// No description provided for @photoFromCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo from Camera'**
+  String get photoFromCamera;
+
+  /// No description provided for @photoFromGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo from Gallery'**
+  String get photoFromGallery;
+
+  /// No description provided for @productPhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Product Photos'**
+  String get productPhotos;
+
+  /// No description provided for @heritagePhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Heritage Photos'**
+  String get heritagePhotos;
+
+  /// No description provided for @close.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get close;
+
+  /// No description provided for @imageFromCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Image from Camera'**
+  String get imageFromCamera;
+
+  /// No description provided for @imageFromGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Image from Gallery'**
+  String get imageFromGallery;
+
+  /// No description provided for @taroutCastleName.
+  ///
+  /// In en, this message translates to:
+  /// **'Tarout Castle'**
+  String get taroutCastleName;
+
+  /// No description provided for @taroutCastleOpenInfoTime.
+  ///
+  /// In en, this message translates to:
+  /// **'6:00 PM'**
+  String get taroutCastleOpenInfoTime;
+
+  /// No description provided for @taroutCastleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'One of the oldest historical landmarks on Tarout Island in Qatif Governorate, dating back more than 5,000 years. It was built on the ruins of a settlement from the Dilmun civilization, and is characterized by its defensive design and strategic elevated location, which made it a center for protecting the island throughout the ages. Today, the castle is a cultural and heritage symbol that reflects the depth and beauty of Saudi history.'**
+  String get taroutCastleDescription;
+
+  /// No description provided for @taroutCastleSubTitleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Tarout Castle, a historical landmark on Tarout Island in Qatif, Eastern Province, Saudi Arabia. Built on a hill southwest of the old town, on an archaeological site dating back to 4300 BC. It is 30 km from Dammam and is connected to the mainland by bridges.'**
+  String get taroutCastleSubTitleDescription;
+
+  /// No description provided for @taroutCastleLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Al-Mantiqah, Al-Rahmah Street, Al-Zumurrud, Tarout 32615'**
+  String get taroutCastleLocation;
+
+  /// No description provided for @alHasaOasisName.
+  ///
+  /// In en, this message translates to:
+  /// **'Al-Ahsa Oasis'**
+  String get alHasaOasisName;
+
+  /// No description provided for @alHasaOasisOpenInfoTime.
+  ///
+  /// In en, this message translates to:
+  /// **'6:00 PM'**
+  String get alHasaOasisOpenInfoTime;
+
+  /// No description provided for @alHasaOasisSubTitleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Al-Ahsa Oasis, inscribed on the UNESCO World Heritage List in 2018, is one of the largest natural oases in the world, famous for its dates, historical springs, and ancient archaeological sites.'**
+  String get alHasaOasisSubTitleDescription;
+
+  /// No description provided for @alHasaOasisDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Al-Ahsa Oasis, located in the Eastern Province of Saudi Arabia, is one of the largest natural oases in the world and was inscribed on the UNESCO World Heritage List in 2018. It is characterized by its fertile lands and millions of palm trees, in addition to prominent historical landmarks such as Ibrahim Palace and Al-Qaisariyah Souq, making it a symbol of history, environment, and cultural diversity.'**
+  String get alHasaOasisDescription;
+
+  /// No description provided for @alHasaOasisLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Old Makkah Road, Al-Balad, Jeddah 22236'**
+  String get alHasaOasisLocation;
+
+  /// No description provided for @makkahGateName.
+  ///
+  /// In en, this message translates to:
+  /// **'Makkah Gate'**
+  String get makkahGateName;
+
+  /// No description provided for @makkahGateOpenInfoTime.
+  ///
+  /// In en, this message translates to:
+  /// **'10:30 PM'**
+  String get makkahGateOpenInfoTime;
+
+  /// No description provided for @makkahGateSubTitleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Makkah Gate, one of the most famous landmarks of historic Jeddah, dates back to the 14th century AD. It was used as a main gate for pilgrims and goods entering and exiting the city. It is characterized by its ancient architectural design and is a symbol of the cultural and civilizational heritage of old Jeddah.'**
+  String get makkahGateSubTitleDescription;
+
+  /// No description provided for @makkahGateDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Makkah Gate is one of the eight gates of Jeddah\'s wall, located in the historic Jeddah area in the center of Jeddah, western Saudi Arabia. Makkah Gate is Jeddah\'s eastern gate, located in front of the Bedouin market and leading to the Al-Haraj and Al-Halaqat markets outside the wall. The gate was also a passage for funerals heading to Sheikh Al-Asad Cemetery located in that area outside the wall.'**
+  String get makkahGateDescription;
+
+  /// No description provided for @makkahGateLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Old Makkah Road, Al-Balad, Jeddah 22236'**
+  String get makkahGateLocation;
+
+  /// No description provided for @alMasharCastleName.
+  ///
+  /// In en, this message translates to:
+  /// **'Al-Mashar Castle'**
+  String get alMasharCastleName;
+
+  /// No description provided for @alMasharCastleOpenInfoTime.
+  ///
+  /// In en, this message translates to:
+  /// **'5:00 PM'**
+  String get alMasharCastleOpenInfoTime;
+
+  /// No description provided for @alMasharCastleSubTitleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Al-Mashar Castle in Asir, a historical fortress dating back centuries, built of stone and wood to protect caravans and monitor roads, reflecting the beauty of architectural heritage.'**
+  String get alMasharCastleSubTitleDescription;
+
+  /// No description provided for @alMasharCastleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A historical landmark in the Asir region of southern Saudi Arabia, built hundreds of years ago as a defensive and monitoring site. It is characterized by its traditional design of stone and clay and its elevated location that provides wide views. Today, the castle is a symbol of Asiri heritage and a prominent tourist destination.'**
+  String get alMasharCastleDescription;
+
+  /// No description provided for @alMasharCastleLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Al-Ghareef, Saudi Arabia 29557'**
+  String get alMasharCastleLocation;
+
+  /// No description provided for @hegraName.
+  ///
+  /// In en, this message translates to:
+  /// **'Hegra (Madain Saleh)'**
+  String get hegraName;
+
+  /// No description provided for @hegraOpenInfoTime.
+  ///
+  /// In en, this message translates to:
+  /// **'10:00 AM'**
+  String get hegraOpenInfoTime;
+
+  /// No description provided for @hegraSubTitleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Hegra (Madain Saleh), one of the most famous heritage sites in Saudi Arabia, located in the Al-Madinah Al-Munawwarah region. It dates back to the 1st century AD, and includes a collection of Nabataean inscriptions and carvings.'**
+  String get hegraSubTitleDescription;
+
+  /// No description provided for @hegraDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Hegra (Madain Saleh), one of the most important heritage sites in Saudi Arabia, dates back to the 1st century AD, and includes a collection of Nabataean inscriptions and carvings. The site is one of the most important UNESCO World Heritage sites and is a symbol of Nabataean culture and heritage.'**
+  String get hegraDescription;
+
+  /// No description provided for @hegraLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Al-Hijr, Saudi Arabia'**
+  String get hegraLocation;
+
+  /// No description provided for @map.
+  ///
+  /// In en, this message translates to:
+  /// **'Map'**
+  String get map;
+
+  /// No description provided for @viewImage.
+  ///
+  /// In en, this message translates to:
+  /// **'View Image'**
+  String get viewImage;
+
+  /// No description provided for @open.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get open;
+
+  /// No description provided for @closes.
+  ///
+  /// In en, this message translates to:
+  /// **'C'**
+  String get closes;
+
+  /// No description provided for @noDateAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No date available'**
+  String get noDateAvailable;
+
+  /// No description provided for @aboutHeritage.
+  ///
+  /// In en, this message translates to:
+  /// **'About the heritage'**
+  String get aboutHeritage;
+
+  /// No description provided for @productionFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'Production Family:'**
+  String get productionFamily;
+
+  /// No description provided for @theSwordsFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'The Swords Family'**
+  String get theSwordsFamily;
+
+  /// No description provided for @theirWebsite.
+  ///
+  /// In en, this message translates to:
+  /// **'Their website:'**
+  String get theirWebsite;
+
+  /// No description provided for @clickHere.
+  ///
+  /// In en, this message translates to:
+  /// **'Click here'**
+  String get clickHere;
+
+  /// No description provided for @productPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Product Price:'**
+  String get productPrice;
+
+  /// No description provided for @sar.
+  ///
+  /// In en, this message translates to:
+  /// **'SAR'**
+  String get sar;
+
+  /// No description provided for @productRating.
+  ///
+  /// In en, this message translates to:
+  /// **'Product Rating:'**
+  String get productRating;
 }
 
 class _AppLocalizationsDelegate
@@ -701,7 +969,6 @@ class _AppLocalizationsDelegate
     'fr',
     'ja',
     'ru',
-    'ur',
     'zh',
   ].contains(locale.languageCode);
 
@@ -726,8 +993,6 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsJa();
     case 'ru':
       return AppLocalizationsRu();
-    case 'ur':
-      return AppLocalizationsUr();
     case 'zh':
       return AppLocalizationsZh();
   }

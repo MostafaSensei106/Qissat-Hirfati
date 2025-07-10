@@ -1,8 +1,26 @@
 // import 'package:flutter/cupertino.dart';
-import 'package:flutter/cupertino.dart' show StatelessWidget, BuildContext, Widget, TextStyle, Text, CupertinoNavigationBar, Alignment, Image, BoxFit, TextAlign, FontWeight, CupertinoColors, Stack, Column, SingleChildScrollView, CupertinoPageScaffold;
+import 'package:flutter/cupertino.dart'
+    show
+        StatelessWidget,
+        BuildContext,
+        Widget,
+        TextStyle,
+        Text,
+        CupertinoNavigationBar,
+        Alignment,
+        Image,
+        BoxFit,
+        TextAlign,
+        FontWeight,
+        CupertinoColors,
+        Stack,
+        Column,
+        SingleChildScrollView,
+        CupertinoPageScaffold;
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/features/pages/home/ui/page/home_page.dart';
-import 'package:qissat_hirfati/l10n/app_localizations.dart' show AppLocalizations;
+import 'package:qissat_hirfati/l10n/app_localizations.dart'
+    show AppLocalizations;
 
 class AboutApp extends StatelessWidget {
   const AboutApp({super.key});
