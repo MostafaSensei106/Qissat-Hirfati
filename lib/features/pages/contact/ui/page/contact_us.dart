@@ -58,6 +58,7 @@ class _ContactUsState extends State<ContactUs> {
                 // validator: (value) =>
                 //     value == null || value.isEmpty ? tr.enterYourName : null,
               ),
+              const SizedBox(height: 8),
               CupertinoTextFieldComponent(
                 controller: _emailController,
                 placeholder: tr.email,

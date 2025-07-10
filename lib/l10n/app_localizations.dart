@@ -893,7 +893,7 @@ abstract class AppLocalizations {
   /// No description provided for @closes.
   ///
   /// In en, this message translates to:
-  /// **'C'**
+  /// **'Closes'**
   String get closes;
 
   /// No description provided for @noDateAvailable.

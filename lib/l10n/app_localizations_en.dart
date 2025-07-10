@@ -420,7 +420,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get open => 'Open';
 
   @override
-  String get closes => 'C';
+  String get closes => 'Closes';
 
   @override
   String get noDateAvailable => 'No date available';
