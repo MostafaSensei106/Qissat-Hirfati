@@ -1,13 +1,4 @@
 class ProductModel {
-  final String productName;
-  final List<String> imagePaths;
-  final String productionFamilyName;
-  final String productWhatsappNumber;
-  final String productionFamilyWebsiteUrl;
-  final String productPrice;
-  final double productRating;
-  final int productReviweCount;
-
   ProductModel({
     required this.productName,
     required this.imagePaths,
@@ -31,6 +22,14 @@ class ProductModel {
       productReviweCount: map['productReviweCount'],
     );
   }
+  final String productName;
+  final List<String> imagePaths;
+  final String productionFamilyName;
+  final String productWhatsappNumber;
+  final String productionFamilyWebsiteUrl;
+  final String productPrice;
+  final double productRating;
+  final int productReviweCount;
 
   Map<String, dynamic> toMap() {
     return {

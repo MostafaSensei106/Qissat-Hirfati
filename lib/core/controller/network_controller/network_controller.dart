@@ -22,8 +22,7 @@ class NetworkController {
   /// or not. If the device is connected to the internet, the method returns
   /// [true], otherwise it returns [false].
   Future<bool> checkConnection() async {
-    final List<ConnectivityResult> connectivityResult = await (Connectivity()
-        .checkConnectivity());
+    final connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult.contains(ConnectivityResult.none)) {
       return false;
     }

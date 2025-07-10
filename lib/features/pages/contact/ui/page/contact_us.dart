@@ -45,9 +45,7 @@ class _ContactUsState extends State<ContactUs> {
     final tr = AppLocalizations.of(context)!;
 
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text(tr.contactUs),
-      ),
+      navigationBar: CupertinoNavigationBar(middle: Text(tr.contactUs)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding),
         child: Form(
@@ -74,8 +72,9 @@ class _ContactUsState extends State<ContactUs> {
                 maxLines: 5,
                 decoration: BoxDecoration(
                   color: CupertinoColors.systemGrey6,
-                  borderRadius:
-                      BorderRadius.circular(AppConstants.inBorderRadius),
+                  borderRadius: BorderRadius.circular(
+                    AppConstants.inBorderRadius,
+                  ),
                 ),
               ),
               const SizedBox(height: 12),

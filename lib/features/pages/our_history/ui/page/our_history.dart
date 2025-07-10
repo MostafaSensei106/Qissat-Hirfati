@@ -7,6 +7,8 @@ import 'package:qissat_hirfati/features/pages/our_history/data/model/product_mod
 import 'package:qissat_hirfati/features/pages/our_history/logic/take_image/take_image.dart';
 import 'package:qissat_hirfati/features/pages/place_page/ui/page/place_page.dart';
 import 'package:qissat_hirfati/features/pages/product_page/ui/page/product_page.dart';
+import 'package:qissat_hirfati/l10n/app_localizations.dart'
+    show AppLocalizations;
 
 class OurHistory extends StatefulWidget {
   const OurHistory({super.key});
@@ -126,11 +128,16 @@ class _OurHistoryState extends State<OurHistory> {
 
   @override
   Widget build(BuildContext context) {
-    List<PlaceModel> filteredPlaces = places.where((place) {
-      return place.name.contains(searchQuery) ||
-          place.description.contains(searchQuery) ||
-          place.subTitleDescription.contains(searchQuery) ||
-          place.location.contains(searchQuery);
+    // Get the AppLocalizations instance for translation
+    final tr = AppLocalizations.of(context)!;
+
+    final filteredPlaces = places.where((place) {
+      return place.name.toLowerCase().contains(searchQuery.toLowerCase()) ||
+          place.description.toLowerCase().contains(searchQuery.toLowerCase()) ||
+          place.subTitleDescription.toLowerCase().contains(
+            searchQuery.toLowerCase(),
+          ) ||
+          place.location.toLowerCase().contains(searchQuery.toLowerCase());
     }).toList();
 
     return CupertinoPageScaffold(
@@ -138,7 +145,7 @@ class _OurHistoryState extends State<OurHistory> {
         middle: SizedBox(
           height: 36,
           child: CupertinoSearchTextField(
-            placeholder: 'بحث',
+            placeholder: tr.search, // Translated "Search"
             onChanged: (value) {
               setState(() {
                 searchQuery = value;
@@ -185,6 +192,7 @@ class _OurHistoryState extends State<OurHistory> {
   }
 
   Future<dynamic> runCam(BuildContext context) {
+    final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
     return showCupertinoModalPopup(
       context: context,
       builder: (context) => CupertinoActionSheet(
@@ -197,13 +205,13 @@ class _OurHistoryState extends State<OurHistory> {
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 8,
               children: [
                 const Icon(
                   CupertinoIcons.cube_box,
                   size: AppConstants.iconSize,
                 ),
-                const Text('صور منتجات'),
+                const SizedBox(width: 8), // Added spacing for consistency
+                Text(tr.productPhotos), // Translated "Product Photos"
               ],
             ),
           ),
@@ -218,7 +226,7 @@ class _OurHistoryState extends State<OurHistory> {
               children: [
                 const Icon(CupertinoIcons.map, size: AppConstants.iconSize),
                 const SizedBox(width: 8),
-                const Text('صور تراث'),
+                Text(tr.heritagePhotos), // Translated "Heritage Photos"
               ],
             ),
           ),
@@ -228,13 +236,14 @@ class _OurHistoryState extends State<OurHistory> {
             HapticFeedback.vibrate();
             Navigator.of(context).pop();
           },
-          child: const Text('اغلاق'),
+          child: Text(tr.close), // Translated "Close"
         ),
       ),
     );
   }
 
   Future<dynamic> runImageGet(BuildContext context) {
+    final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
     return showCupertinoModalPopup(
       context: context,
       builder: (context) => CupertinoActionSheet(
@@ -246,15 +255,15 @@ class _OurHistoryState extends State<OurHistory> {
               TakeImageBy.pickFromCamera();
               Navigator.push(
                 context,
-                CupertinoPageRoute(builder: (context) => ProductPage()),
+                CupertinoPageRoute(builder: (context) => const ProductPage()),
               );
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 8,
               children: [
                 const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
-                const Text('صورة من الكاميرا'),
+                const SizedBox(width: 8), // Added spacing for consistency
+                Text(tr.imageFromCamera), // Translated "Image from Camera"
               ],
             ),
           ),
@@ -265,7 +274,7 @@ class _OurHistoryState extends State<OurHistory> {
               TakeImageBy.pickFromGallery();
               Navigator.push(
                 context,
-                CupertinoPageRoute(builder: (context) => ProductPage()),
+                CupertinoPageRoute(builder: (context) => const ProductPage()),
               );
             },
             child: Row(
@@ -273,7 +282,7 @@ class _OurHistoryState extends State<OurHistory> {
               children: [
                 const Icon(CupertinoIcons.photo, size: AppConstants.iconSize),
                 const SizedBox(width: 8),
-                const Text('الصور من المعرض'),
+                Text(tr.imageFromGallery), // Translated "Image from Gallery"
               ],
             ),
           ),
@@ -283,13 +292,14 @@ class _OurHistoryState extends State<OurHistory> {
             HapticFeedback.vibrate();
             Navigator.of(context).pop();
           },
-          child: const Text('اغلاق'),
+          child: Text(tr.close), // Translated "Close"
         ),
       ),
     );
   }
 
   Future<dynamic> runImageGet2(BuildContext context) {
+    final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
     return showCupertinoModalPopup(
       context: context,
       builder: (context) => CupertinoActionSheet(
@@ -308,10 +318,10 @@ class _OurHistoryState extends State<OurHistory> {
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 8,
               children: [
                 const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
-                const Text('صورة من الكاميرا'),
+                const SizedBox(width: 8), // Added spacing for consistency
+                Text(tr.imageFromCamera), // Translated "Image from Camera"
               ],
             ),
           ),
@@ -332,7 +342,7 @@ class _OurHistoryState extends State<OurHistory> {
               children: [
                 const Icon(CupertinoIcons.photo, size: AppConstants.iconSize),
                 const SizedBox(width: 8),
-                const Text('الصور من المعرض'),
+                Text(tr.imageFromGallery), // Translated "Image from Gallery"
               ],
             ),
           ),
@@ -344,10 +354,10 @@ class _OurHistoryState extends State<OurHistory> {
             Future.delayed(const Duration(seconds: 20));
             Navigator.push(
               context,
-              CupertinoPageRoute(builder: (context) => ProductPage()),
+              CupertinoPageRoute(builder: (context) => const ProductPage()),
             );
           },
-          child: const Text('اغلاق'),
+          child: Text(tr.close), // Translated "Close"
         ),
       ),
     );
@@ -355,10 +365,9 @@ class _OurHistoryState extends State<OurHistory> {
 }
 
 class PlaceCard extends StatelessWidget {
+  const PlaceCard({required this.place, required this.onPressed, super.key});
   final PlaceModel place;
   final VoidCallback onPressed;
-
-  const PlaceCard({super.key, required this.place, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -383,7 +392,8 @@ class PlaceCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  place.name,
+                  place
+                      .name, // Now directly using the English name from the model
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
@@ -391,7 +401,8 @@ class PlaceCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  place.subTitleDescription,
+                  place
+                      .subTitleDescription, // Now directly using the English description from the model
                   style: const TextStyle(color: CupertinoColors.systemGrey),
                   maxLines: 4,
                   overflow: TextOverflow.ellipsis,

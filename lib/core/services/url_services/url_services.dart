@@ -34,7 +34,7 @@ class UrlRunServices {
     required String subject,
     required String body,
   }) async {
-    final Uri emailLaunchUri = Uri(
+    final emailLaunchUri = Uri(
       scheme: 'mailto',
       path: toEmail,
       query:
@@ -46,7 +46,7 @@ class UrlRunServices {
   }
 
   static Future<void> makePhoneCall(String phoneNumber) async {
-    final Uri phoneUri = Uri(scheme: 'tel', path: phoneNumber);
+    final phoneUri = Uri(scheme: 'tel', path: phoneNumber);
     if (await canLaunchUrl(phoneUri)) {
       await launchUrl(phoneUri); // Launch the phone call
     } else {

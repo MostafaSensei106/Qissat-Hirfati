@@ -2,21 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
+import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_filled_component/cupertino_button_filled_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_outline_component/cupertino_button_outline_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_checkbox_component/cupertino_checkbox_component.dart';
-import 'package:qissat_hirfati/core/widgets/cupertino_text_field_component/cupertino_text_field_component.dart';
-import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_feature_will_be_available_later_dilog/cupertino_feature_will_be_available_later_dilog.dart';
+import 'package:qissat_hirfati/core/widgets/cupertino_text_field_component/cupertino_text_field_component.dart';
 import 'package:qissat_hirfati/features/pages/register_page/ui/page/register_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
 class LoginPage extends StatefulWidget {
+  LoginPage({super.key});
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
-  LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -44,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: ListView(
         physics: const ScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: AppConstants.padding),
+        padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding),
         semanticChildCount: 8,
         children: [
           Image.asset(AppConstants.appLogoPng, width: 150.w, height: 150.h),
@@ -138,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
           onPressed: () {
             Navigator.pushReplacement(
               context,
-              CupertinoPageRoute(builder: (context) => RegisterPage()),
+              CupertinoPageRoute(builder: (context) => const RegisterPage()),
             );
           },
         ),
@@ -148,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class SocialMediaLoginForm extends StatelessWidget {
-  const SocialMediaLoginForm({super.key, required this.tr});
+  const SocialMediaLoginForm({required this.tr, super.key});
 
   final AppLocalizations tr;
 
@@ -177,7 +176,7 @@ class SocialMediaLoginForm extends StatelessWidget {
 }
 
 class LoginOption extends StatelessWidget {
-  const LoginOption({super.key, required this.tr});
+  const LoginOption({required this.tr, super.key});
 
   final AppLocalizations tr;
 
@@ -185,9 +184,9 @@ class LoginOption extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: AppDivider()),
+        const Expanded(child: AppDivider()),
         Text(tr.orLoginWith, style: const TextStyle(fontSize: 14)),
-        Expanded(child: AppDivider()),
+        const Expanded(child: AppDivider()),
       ],
     );
   }

@@ -20,14 +20,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
-    final PageController pageController = PageController();
+    final pageController = PageController();
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(tr.appTitle),
         enableBackgroundFilterBlur: true,
         leading: CupertinoButtonComponent(
-          icon: Icon(CupertinoIcons.bars, size: AppConstants.iconSize),
+          icon: const Icon(CupertinoIcons.bars, size: AppConstants.iconSize),
           onPressed: () {
             Navigator.push(
               context,
@@ -63,7 +63,9 @@ class HomePage extends StatelessWidget {
                   CupertinoButton(
                     padding: EdgeInsets.zero,
                     onPressed: () {
-                      UrlRunServices.launchURL(AppConstants.mohammedbinSalmanAlSaudLink);
+                      UrlRunServices.launchURL(
+                        AppConstants.mohammedbinSalmanAlSaudLink,
+                      );
                     },
                     child: Container(
                       decoration: const BoxDecoration(
@@ -74,7 +76,9 @@ class HomePage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: Image.asset(AppConstants.mohammedbinSalmanAlSaudPNG),
+                      child: Image.asset(
+                        AppConstants.mohammedbinSalmanAlSaudPNG,
+                      ),
                     ),
                   ),
                 ],
@@ -156,10 +160,25 @@ class HomePage extends StatelessWidget {
                     height: 80,
                     child: PageView(
                       children: [
-                        Image.asset(AppConstants.trs2PNG, filterQuality: FilterQuality.high),
-                        Image.asset(AppConstants.trsPNG, filterQuality: FilterQuality.high, fit: BoxFit.cover),
-                        Image.asset(AppConstants.trs3PNG, filterQuality: FilterQuality.high, fit: BoxFit.cover),
-                        Image.asset(AppConstants.trs4PNG, filterQuality: FilterQuality.high, fit: BoxFit.contain),
+                        Image.asset(
+                          AppConstants.trs2PNG,
+                          filterQuality: FilterQuality.high,
+                        ),
+                        Image.asset(
+                          AppConstants.trsPNG,
+                          filterQuality: FilterQuality.high,
+                          fit: BoxFit.cover,
+                        ),
+                        Image.asset(
+                          AppConstants.trs3PNG,
+                          filterQuality: FilterQuality.high,
+                          fit: BoxFit.cover,
+                        ),
+                        Image.asset(
+                          AppConstants.trs4PNG,
+                          filterQuality: FilterQuality.high,
+                          fit: BoxFit.contain,
+                        ),
                       ],
                     ),
                   ),
@@ -174,6 +193,16 @@ class HomePage extends StatelessWidget {
 }
 
 class ArticleSectionComponent extends StatelessWidget {
+  const ArticleSectionComponent({
+    required this.title,
+    required this.onPressed,
+    super.key,
+    this.description,
+    this.child,
+    this.useChild = false,
+    this.useButton = false,
+    this.color,
+  });
   final String title;
   final String? description;
   final bool useChild;
@@ -181,17 +210,6 @@ class ArticleSectionComponent extends StatelessWidget {
   final Widget? child;
   final Color? color;
   final VoidCallback onPressed;
-
-  const ArticleSectionComponent({
-    super.key,
-    required this.title,
-    this.description,
-    this.child,
-    this.useChild = false,
-    this.useButton = false,
-    this.color,
-    required this.onPressed,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -255,7 +273,10 @@ class OverviewSection extends StatelessWidget {
               const SizedBox(height: 16),
               SizedBox(
                 width: 0.90.sw,
-                child: Text(tr.overviewDescription, style: const TextStyle(fontSize: 16)),
+                child: Text(
+                  tr.overviewDescription,
+                  style: const TextStyle(fontSize: 16),
+                ),
               ),
               const SizedBox(height: 35),
               CupertinoButtonFilledComponent(

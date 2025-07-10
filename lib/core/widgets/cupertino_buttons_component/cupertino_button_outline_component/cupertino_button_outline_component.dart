@@ -3,16 +3,15 @@ import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 
 class CupertinoButtonOutlineComponent extends StatelessWidget {
-  final String? text;
-  final IconData? icon;
-  final VoidCallback onPressed;
-
   const CupertinoButtonOutlineComponent({
+    required this.onPressed,
     super.key,
     this.text,
     this.icon,
-    required this.onPressed,
   });
+  final String? text;
+  final IconData? icon;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {

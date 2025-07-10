@@ -6,20 +6,24 @@ class TakeImageBy {
 
   static Future<File?> pickFromCamera() async {
     try {
-      final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
-      if (photo != null) return File(photo.path);
+      final photo = await _picker.pickImage(source: ImageSource.camera);
+      if (photo != null) {
+        return File(photo.path);
+      }
     } catch (e) {
-      print('خطأ أثناء استخدام الكاميرا: $e');
+      Exception('خطاء اثناء اختيار صورة من الكاميرا: $e');
     }
     return null;
   }
 
   static Future<File?> pickFromGallery() async {
     try {
-      final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-      if (image != null) return File(image.path);
+      final image = await _picker.pickImage(source: ImageSource.gallery);
+      if (image != null) {
+        return File(image.path);
+      }
     } catch (e) {
-      print('خطأ أثناء اختيار صورة من الجالري: $e');
+      Exception('خطاء اثناء اختيار صورة من المعرض: $e');
     }
     return null;
   }
