@@ -252,6 +252,15 @@ class ArticleSectionComponent extends StatelessWidget {
   }
 }
 
+TextDirection _getTextDirection(BuildContext context) {
+  final locale = Localizations.localeOf(context);
+  if (locale.languageCode == 'ar') {
+    return TextDirection.rtl;
+  } else {
+    return TextDirection.ltr;
+  }
+}
+
 class OverviewSection extends StatelessWidget {
   const OverviewSection({super.key});
 
@@ -293,14 +302,20 @@ class OverviewSection extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: 0,
+          left: _getTextDirection(context) == TextDirection.rtl ? null : 0,
+          right: _getTextDirection(context) == TextDirection.ltr ? null : 0,
           top: 0,
           bottom: 0,
-          child: Image.asset(
-            AppConstants.smallTreePNG,
-            fit: BoxFit.contain,
-            filterQuality: FilterQuality.high,
-            opacity: const AlwaysStoppedAnimation(.5),
+          child: Transform(
+            alignment: Alignment.center,
+            transform: Matrix4.identity()
+              ..scale(_getTextDirection(context) == TextDirection.rtl ? -1 : 1, 1),
+            child: Image.asset(
+              AppConstants.smallTreePNG,
+              fit: BoxFit.contain,
+              filterQuality: FilterQuality.high,
+              opacity: const AlwaysStoppedAnimation(.5),
+            ),
           ),
         ),
       ],
