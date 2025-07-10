@@ -105,28 +105,28 @@ class HomePage extends StatelessWidget {
                           spacing: 8,
                           children: [
                             Image.asset(AppConstants.greenOrbPNG),
-                            const Text('Qissat Hirfati'),
+                            Text(tr.creativeSaudiHands),
                           ],
                         ),
                         Column(
                           spacing: 8,
                           children: [
                             Image.asset(AppConstants.treesPNG),
-                            const Text('Mohammed bin Salman Al Saud'),
+                            Text(tr.creativeSaudiHands),
                           ],
                         ),
                         Column(
                           spacing: 8,
                           children: [
                             Image.asset(AppConstants.pathPNG),
-                            const Text('Small Tree'),
+                            Text(tr.creativeSaudiHands),
                           ],
                         ),
                         Column(
                           spacing: 8,
                           children: [
                             Image.asset(AppConstants.lampPNG),
-                            const Text('Qissat Hirfati'),
+                            Text(tr.creativeSaudiHands),
                           ],
                         ),
                       ],
@@ -302,14 +302,17 @@ class OverviewSection extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: _getTextDirection(context) == TextDirection.rtl ? null : 0,
-          right: _getTextDirection(context) == TextDirection.ltr ? null : 0,
+          left: _getTextDirection(context) == TextDirection.rtl ? 0 : null,
+          right: _getTextDirection(context) == TextDirection.ltr ? 0 : null,
           top: 0,
           bottom: 0,
           child: Transform(
             alignment: Alignment.center,
             transform: Matrix4.identity()
-              ..scale(_getTextDirection(context) == TextDirection.rtl ? -1 : 1, 1),
+              ..scale(
+                _getTextDirection(context) == TextDirection.ltr ? -1.0 : 1.0,
+                1.0,
+              ),
             child: Image.asset(
               AppConstants.smallTreePNG,
               fit: BoxFit.contain,
