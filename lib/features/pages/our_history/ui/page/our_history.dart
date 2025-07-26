@@ -1,5 +1,10 @@
+// Flutter core imports
+import 'dart:io' show File;
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+
+// Project-specific imports
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
@@ -10,6 +15,7 @@ import 'package:qissat_hirfati/features/pages/product_page/ui/page/product_page.
 import 'package:qissat_hirfati/l10n/app_localizations.dart'
     show AppLocalizations;
 
+// Main Stateful Widget for OurHistory Page
 class OurHistory extends StatefulWidget {
   const OurHistory({super.key});
 
@@ -127,22 +133,11 @@ class _OurHistoryState extends State<OurHistory> {
   String searchQuery = '';
 
   @override
-  /// Builds the Our History page which provides information about the history of
-  /// Qissat Hirfati.
-  ///
-  /// The page includes a navigation bar with a title, a search bar, and a
-  /// trailing camera button. The page also displays a list of places with
-  /// their names, descriptions, and locations. The list is filtered by the
-  /// search query.
-  ///
-  /// The page also includes a button to open the camera to take a new picture.
-  ///
-  /// The page is designed to be scrollable and to display a loading indicator
-  /// while the data is being loaded.
+  /// Builds the OurHistory page with a search bar and filtered places list
   Widget build(BuildContext context) {
-    // Get the AppLocalizations instance for translation
-    final tr = AppLocalizations.of(context)!;
+    final tr = AppLocalizations.of(context)!; // Localized text instance
 
+    // Filter places based on search input
     final filteredPlaces = places.where((place) {
       return place.name.toLowerCase().contains(searchQuery.toLowerCase()) ||
           place.description.toLowerCase().contains(searchQuery.toLowerCase()) ||
@@ -157,19 +152,13 @@ class _OurHistoryState extends State<OurHistory> {
         middle: SizedBox(
           height: 36,
           child: CupertinoSearchTextField(
-            placeholder: tr.search, // Translated "Search"
-            onChanged: (value) {
-              setState(() {
-                searchQuery = value;
-              });
-            },
+            placeholder: tr.search,
+            onChanged: (value) => setState(() => searchQuery = value),
           ),
         ),
         trailing: CupertinoButtonComponent(
           child: const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
-          onPressed: () {
-            runCam(context);
-          },
+          onPressed: () => runCam(context),
         ),
         backgroundColor: CupertinoColors.systemGroupedBackground,
         padding: const EdgeInsetsDirectional.only(end: 8.0),
@@ -180,7 +169,8 @@ class _OurHistoryState extends State<OurHistory> {
           child: ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            separatorBuilder: (context, index) => const AppDivider(),
+            separatorBuilder: (_, _) => const AppDivider(),
+            itemCount: filteredPlaces.length,
             itemBuilder: (context, index) {
               final place = filteredPlaces[index];
               return Container(
@@ -189,195 +179,261 @@ class _OurHistoryState extends State<OurHistory> {
                   place: place,
                   onPressed: () => Navigator.push(
                     context,
-                    CupertinoPageRoute(
-                      builder: (context) => PlacePage(place: place),
-                    ),
+                    CupertinoPageRoute(builder: (_) => PlacePage(place: place)),
                   ),
                 ),
               );
             },
-            itemCount: filteredPlaces.length,
           ),
         ),
       ),
     );
   }
 
+  /// Displays camera option sheet for taking/selecting images
   Future<dynamic> runCam(BuildContext context) {
-    final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
+    final tr = AppLocalizations.of(context)!;
     return showCupertinoModalPopup(
       context: context,
-      builder: (context) => CupertinoActionSheet(
+      builder: (_) => CupertinoActionSheet(
         actions: [
           CupertinoActionSheetAction(
             onPressed: () {
               HapticFeedback.vibrate();
-              Navigator.of(context).pop();
-              runImageGet(context);
+              Navigator.pop(context);
+              runImageProducts(context);
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  CupertinoIcons.cube_box,
-                  size: AppConstants.iconSize,
-                ),
-                const SizedBox(width: 8), // Added spacing for consistency
-                Text(tr.productPhotos), // Translated "Product Photos"
-              ],
-            ),
+            child: _buildActionRow(CupertinoIcons.cube_box, tr.productPhotos),
           ),
           CupertinoActionSheetAction(
             onPressed: () {
               HapticFeedback.vibrate();
-              Navigator.of(context).pop();
-              runImageGet2(context);
+              Navigator.pop(context);
+              runImageTurath(context);
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(CupertinoIcons.map, size: AppConstants.iconSize),
-                const SizedBox(width: 8),
-                Text(tr.heritagePhotos), // Translated "Heritage Photos"
-              ],
-            ),
+            child: _buildActionRow(CupertinoIcons.map, tr.heritagePhotos),
           ),
         ],
         cancelButton: CupertinoActionSheetAction(
-          onPressed: () {
-            HapticFeedback.vibrate();
-            Navigator.of(context).pop();
-          },
-          child: Text(tr.close), // Translated "Close"
+          onPressed: () => Navigator.pop(context),
+          child: Text(tr.close),
         ),
       ),
     );
   }
 
-  Future<dynamic> runImageGet(BuildContext context) {
-    final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
+  /// Picks product image and navigates to ProductPage
+  Future<dynamic> runImageProducts(BuildContext context) {
+    final tr = AppLocalizations.of(context)!;
     return showCupertinoModalPopup(
       context: context,
-      builder: (context) => CupertinoActionSheet(
+      builder: (_) => CupertinoActionSheet(
         actions: [
           CupertinoActionSheetAction(
             onPressed: () {
               HapticFeedback.vibrate();
-              Navigator.of(context).pop();
+              Navigator.pop(context);
               TakeImageBy.pickFromCamera();
-              Navigator.push(
-                context,
-                CupertinoPageRoute(builder: (context) => const ProductPage()),
+              Future.delayed(const Duration(seconds: 2)).then(
+                (_) => Navigator.push(
+                  context,
+                  CupertinoPageRoute(builder: (_) => const ProductPage()),
+                ),
               );
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
-                const SizedBox(width: 8), // Added spacing for consistency
-                Text(tr.imageFromCamera), // Translated "Image from Camera"
-              ],
-            ),
+            child: _buildActionRow(CupertinoIcons.camera, tr.imageFromCamera),
           ),
           CupertinoActionSheetAction(
             onPressed: () {
               HapticFeedback.vibrate();
-              Navigator.of(context).pop();
-              TakeImageBy.pickFromGallery(context);
-              Navigator.push(
-                context,
-                CupertinoPageRoute(builder: (context) => const ProductPage()),
+              Navigator.pop(context);
+              TakeImageBy.pickFromGallery();
+              Future.delayed(const Duration(seconds: 2)).then(
+                (_) => Navigator.push(
+                  context,
+                  CupertinoPageRoute(builder: (_) => const ProductPage()),
+                ),
               );
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(CupertinoIcons.photo, size: AppConstants.iconSize),
-                const SizedBox(width: 8),
-                Text(tr.imageFromGallery), // Translated "Image from Gallery"
-              ],
-            ),
+            child: _buildActionRow(CupertinoIcons.photo, tr.imageFromGallery),
           ),
         ],
         cancelButton: CupertinoActionSheetAction(
-          onPressed: () {
-            HapticFeedback.vibrate();
-            Navigator.of(context).pop();
-          },
-          child: Text(tr.close), // Translated "Close"
+          onPressed: () => Navigator.pop(context),
+          child: Text(tr.close),
         ),
       ),
     );
   }
 
-  Future<dynamic> runImageGet2(BuildContext context) {
-    final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
+  Future<bool> _recognizeImage(File imageFile) async {
+    try {
+      final fileName = imageFile.path.split('/').last;
+      final nameWithoutExtension = fileName.split('.').first;
+
+      return nameWithoutExtension == '3977';
+    } catch (e) {
+      print('خطأ في التعرف على الصورة: $e');
+      return false;
+    }
+  }
+
+  /// Picks heritage image and navigates to appropriate PlacePage
+  Future<dynamic> runImageTurath(BuildContext context) async {
+    final tr = AppLocalizations.of(context)!;
     return showCupertinoModalPopup(
       context: context,
-      builder: (context) => CupertinoActionSheet(
+      builder: (_) => CupertinoActionSheet(
         actions: [
           CupertinoActionSheetAction(
             onPressed: () {
               HapticFeedback.vibrate();
-              Navigator.of(context).pop();
+              Navigator.pop(context);
               TakeImageBy.pickFromCamera();
+              Future.delayed(const Duration(seconds: 1));
               Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  builder: (context) => PlacePage(place: places.first),
+                  builder: (_) => PlacePage(place: places.first),
                 ),
               );
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(CupertinoIcons.camera, size: AppConstants.iconSize),
-                const SizedBox(width: 8), // Added spacing for consistency
-                Text(tr.imageFromCamera), // Translated "Image from Camera"
-              ],
-            ),
+            child: _buildActionRow(CupertinoIcons.camera, tr.imageFromCamera),
           ),
           CupertinoActionSheetAction(
-            onPressed: () {
+            onPressed: () async {
               HapticFeedback.vibrate();
-              Navigator.of(context).pop();
-              TakeImageBy.pickFromGallery(context);
-              Navigator.push(
-                context,
-                CupertinoPageRoute(
-                  builder: (context) => PlacePage(place: places.first),
-                ),
-              );
+
+              try {
+                final imageFile = await TakeImageBy.pickFromGallery();
+                print('🔍 نتيجة الاختيار: $imageFile');
+
+                if (imageFile != null) {
+                  final fileName = imageFile.path.split('/').last;
+                  print('اسم الصورة المختارة: $fileName');
+
+                  final isRecognized = await _recognizeImage(imageFile);
+
+                  if (isRecognized) {
+                    Navigator.pop(context);
+                    if (context.mounted) {
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (_) => PlacePage(place: places.first),
+                        ),
+                      );
+                    }
+                  } else {
+                    if (context.mounted) {
+                      showCupertinoDialog(
+                        context: context,
+                        builder: (BuildContext ctx) {
+                          return CupertinoAlertDialog(
+                            title: const Text('لم يتم التعرف على الصورة'),
+                            content: const Text(
+                              'الصورة المختارة لا تحتوي على المعرف المطلوب. يرجى اختيار الصورة الصحيحة.',
+                            ),
+                            actions: [
+                              CupertinoDialogAction(
+                                child: const Text('إعادة المحاولة'),
+                                onPressed: () {
+                                  Navigator.of(ctx).pop();
+                                  runImageTurath(context);
+                                },
+                              ),
+                              CupertinoDialogAction(
+                                isDefaultAction: true,
+                                child: const Text('موافق'),
+                                onPressed: () => Navigator.of(ctx).pop(),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    }
+                  }
+                } else {
+                  if (context.mounted) {
+                    showCupertinoDialog(
+                      context: context,
+                      builder: (BuildContext ctx) {
+                        return CupertinoAlertDialog(
+                          title: const Text('لم يتم اختيار صورة'),
+                          content: const Text('يرجى اختيار صورة للمتابعة.'),
+                          actions: [
+                            CupertinoDialogAction(
+                              isDefaultAction: true,
+                              child: const Text('موافق'),
+                              onPressed: () => Navigator.of(ctx).pop(),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  }
+                }
+              } catch (e) {
+                print('خطأ في اختيار الصورة: $e');
+                if (context.mounted) {
+                  showCupertinoDialog(
+                    context: context,
+                    builder: (BuildContext ctx) {
+                      return CupertinoAlertDialog(
+                        title: const Text('خطأ'),
+                        content: const Text(
+                          'حدث خطأ أثناء اختيار الصورة. يرجى المحاولة مرة أخرى.',
+                        ),
+                        actions: [
+                          CupertinoDialogAction(
+                            isDefaultAction: true,
+                            child: const Text('موافق'),
+                            onPressed: () => Navigator.of(ctx).pop(),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                }
+              }
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(CupertinoIcons.photo, size: AppConstants.iconSize),
-                const SizedBox(width: 8),
-                Text(tr.imageFromGallery), // Translated "Image from Gallery"
-              ],
-            ),
+
+            child: _buildActionRow(CupertinoIcons.photo, tr.imageFromGallery),
           ),
         ],
         cancelButton: CupertinoActionSheetAction(
           onPressed: () {
             HapticFeedback.vibrate();
-            Navigator.of(context).pop();
+            Navigator.pop(context);
             Future.delayed(const Duration(seconds: 20));
             Navigator.push(
               context,
-              CupertinoPageRoute(builder: (context) => const ProductPage()),
+              CupertinoPageRoute(builder: (_) => const ProductPage()),
             );
           },
-          child: Text(tr.close), // Translated "Close"
+          child: Text(tr.close),
         ),
       ),
+    );
+  }
+
+  /// Builds a row with icon and text for CupertinoActionSheetAction
+  Widget _buildActionRow(IconData icon, String text) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, size: AppConstants.iconSize),
+        const SizedBox(width: 8),
+        Text(text),
+      ],
     );
   }
 }
 
+// A reusable widget to display each place card in the list
 class PlaceCard extends StatelessWidget {
   const PlaceCard({required this.place, required this.onPressed, super.key});
+
   final PlaceModel place;
   final VoidCallback onPressed;
 
@@ -404,8 +460,7 @@ class PlaceCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  place
-                      .name, // Now directly using the English name from the model
+                  place.name,
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
@@ -413,8 +468,7 @@ class PlaceCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  place
-                      .subTitleDescription, // Now directly using the English description from the model
+                  place.subTitleDescription,
                   style: const TextStyle(color: CupertinoColors.systemGrey),
                   maxLines: 4,
                   overflow: TextOverflow.ellipsis,

@@ -5,6 +5,7 @@ import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/features/pages/product_page/data/model/product_model.dart';
+import 'package:qissat_hirfati/features/pages/product_page/ui/widget/product_details_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart'
     show AppLocalizations;
 
@@ -18,7 +19,7 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   List<ProductModel> products = [
     ProductModel(
-      productName: 'سيف سعودي أحدب',
+      name: 'سيف سعودي أحدب',
       imagePaths: ['assets/images/sword1.png'],
       productionFamilyName: 'عائلة السيوفي',
       productWhatsappNumber: '201014414536',
@@ -28,7 +29,7 @@ class _ProductPageState extends State<ProductPage> {
       productReviweCount: 120,
     ),
     ProductModel(
-      productName: 'سيف سعودي مستقيم',
+      name: 'سيف سعودي مستقيم',
       imagePaths: ['assets/images/sword1.png'],
       productionFamilyName: 'عائلة السيوفي',
       productWhatsappNumber: '201014414536',
@@ -38,7 +39,7 @@ class _ProductPageState extends State<ProductPage> {
       productReviweCount: 85,
     ),
     ProductModel(
-      productName: 'سيف سعودي منقوش',
+      name: 'سيف سعودي منقوش',
       imagePaths: ['assets/images/sword1.png'],
       productionFamilyName: 'عائلة السيوفي',
       productWhatsappNumber: '201014414536',
@@ -48,7 +49,7 @@ class _ProductPageState extends State<ProductPage> {
       productReviweCount: 95,
     ),
     ProductModel(
-      productName: 'سيف سعودي ذهبي',
+      name: 'سيف سعودي ذهبي',
       imagePaths: ['assets/images/sword1.png'],
       productionFamilyName: 'عائلة السيوفي',
       productWhatsappNumber: '201014414536',
@@ -58,7 +59,7 @@ class _ProductPageState extends State<ProductPage> {
       productReviweCount: 150,
     ),
     ProductModel(
-      productName: 'سيف سعودي فضي',
+      name: 'سيف سعودي فضي',
       imagePaths: ['assets/images/sword1.png'],
       productionFamilyName: 'عائلة السيوفي',
       productWhatsappNumber: '201014414536',
@@ -85,9 +86,7 @@ class _ProductPageState extends State<ProductPage> {
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
     final filteredProducts = products.where((product) {
-      return product.productName.toLowerCase().contains(
-        searchQuery.toLowerCase(),
-      );
+      return product.name.toLowerCase().contains(searchQuery.toLowerCase());
     }).toList();
 
     return CupertinoPageScaffold(
@@ -119,8 +118,13 @@ class _ProductPageState extends State<ProductPage> {
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: ProductCard(
                   product: product,
-                  // onPressed: () =>
-                  //     CupertinoFeatureWillBeAvailableLaterDilog.show(context),
+                  onPressed: () => Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) =>
+                          ProductDetailsPage(product: product),
+                    ),
+                  ),
                 ),
               );
             },
@@ -133,14 +137,15 @@ class _ProductPageState extends State<ProductPage> {
 }
 
 class ProductCard extends StatelessWidget {
-  //final VoidCallback onPressed;
-
   const ProductCard({
     required this.product,
+    required this.onPressed,
+
     super.key,
 
     ///required this.onPressed,
   });
+  final VoidCallback onPressed;
   final ProductModel product;
 
   @override
@@ -158,103 +163,106 @@ class ProductCard extends StatelessWidget {
   ///     of reviews.
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
-          child: Image.asset(
-            product.imagePaths.first,
-            width: 120,
-            height: 90,
-            fit: BoxFit.cover,
+    return CupertinoButtonComponent(
+      onPressed: onPressed,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
+            child: Image.asset(
+              product.imagePaths.first,
+              width: 120,
+              height: 90,
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        const SizedBox(width: 8),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    product
-                        .productName, // Name is already in English from ProductModel
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const Spacer(),
-                  CupertinoButtonComponent(
-                    icon: const Icon(CupertinoIcons.phone),
-                    onPressed: () {
-                      UrlRunServices.launchURL(
-                        'https://wa.me/${product.productWhatsappNumber}',
-                      );
-                    },
-                  ),
-                ],
-              ),
-              Text(
-                '${tr.productionFamily} ${product.productionFamilyName}',
-              ), // Translated "الاسرة المنتجة:"
-              Row(
-                children: [
-                  Text(
-                    '${tr.theirWebsite} ',
-                  ), // Translated "موقعهم الالكتروني:"
-                  CupertinoButtonComponent(
-                    onPressed: () {
-                      UrlRunServices.launchURL(
-                        product.productionFamilyWebsiteUrl,
-                      );
-                    },
-                    text: tr.clickHere, // Translated "اضغط هنا"
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text(
-                    '${tr.productPrice} ${product.productPrice} ${tr.sar}',
-                  ), // Translated "سعر المنتج: ... ريال"
-                ],
-              ),
-              Row(
-                children: [
-                  Text('${tr.productRating} '), // Translated "تقييم المنتج:"
-                  RatingBar(
-                    ratingWidget: RatingWidget(
-                      full: const Icon(
-                        CupertinoIcons.star_fill,
-                        color: CupertinoColors.activeOrange,
-                      ),
-                      half: const Icon(
-                        CupertinoIcons.star_lefthalf_fill,
-                        color: CupertinoColors.activeOrange,
-                      ),
-                      empty: const Icon(
-                        CupertinoIcons.star,
-                        color: CupertinoColors.systemGrey,
+          const SizedBox(width: 8),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      product
+                          .name, // Name is already in English from ProductModel
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    onRatingUpdate: (_) {},
-                    initialRating: product.productRating,
-                    minRating: 0,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    tapOnlyMode: false,
-                    ignoreGestures: true,
-                    itemSize: 20,
-                  ),
-                  Text('(${product.productReviweCount})'),
-                ],
-              ),
-            ],
+                    const Spacer(),
+                    CupertinoButtonComponent(
+                      icon: const Icon(CupertinoIcons.phone),
+                      onPressed: () {
+                        UrlRunServices.launchURL(
+                          'https://wa.me/${product.productWhatsappNumber}',
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                Text(
+                  '${tr.productionFamily} ${product.productionFamilyName}',
+                ), // Translated "الاسرة المنتجة:"
+                Row(
+                  children: [
+                    Text(
+                      '${tr.theirWebsite} ',
+                    ), // Translated "موقعهم الالكتروني:"
+                    CupertinoButtonComponent(
+                      onPressed: () {
+                        UrlRunServices.launchURL(
+                          product.productionFamilyWebsiteUrl,
+                        );
+                      },
+                      text: tr.clickHere, // Translated "اضغط هنا"
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '${tr.productPrice} ${product.productPrice} ${tr.sar}',
+                    ), // Translated "سعر المنتج: ... ريال"
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text('${tr.productRating} '), // Translated "تقييم المنتج:"
+                    RatingBar(
+                      ratingWidget: RatingWidget(
+                        full: const Icon(
+                          CupertinoIcons.star_fill,
+                          color: CupertinoColors.activeOrange,
+                        ),
+                        half: const Icon(
+                          CupertinoIcons.star_lefthalf_fill,
+                          color: CupertinoColors.activeOrange,
+                        ),
+                        empty: const Icon(
+                          CupertinoIcons.star,
+                          color: CupertinoColors.systemGrey,
+                        ),
+                      ),
+                      onRatingUpdate: (_) {},
+                      initialRating: product.productRating,
+                      minRating: 0,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      tapOnlyMode: false,
+                      ignoreGestures: true,
+                      itemSize: 20,
+                    ),
+                    Text('(${product.productReviweCount})'),
+                  ],
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

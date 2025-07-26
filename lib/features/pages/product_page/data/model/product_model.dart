@@ -1,6 +1,6 @@
 class ProductModel {
   ProductModel({
-    required this.productName,
+    required this.name,
     required this.imagePaths,
     required this.productionFamilyName,
     required this.productWhatsappNumber,
@@ -12,7 +12,7 @@ class ProductModel {
 
   factory ProductModel.fromMap(Map<String, dynamic> map) {
     return ProductModel(
-      productName: map['productName'],
+      name: map['productName'],
       imagePaths: List<String>.from(map['imagePaths']),
       productionFamilyName: map['productionFamilyName'],
       productWhatsappNumber: map['productWhatsappNumber'],
@@ -22,7 +22,7 @@ class ProductModel {
       productReviweCount: map['productReviweCount'],
     );
   }
-  final String productName;
+  final String name;
   final List<String> imagePaths;
   final String productionFamilyName;
   final String productWhatsappNumber;
@@ -36,7 +36,7 @@ class ProductModel {
   ///
   /// The map contains the following keys:
   ///
-  /// * `productName`: [productName]
+  /// * `productName`: [name]
   /// * `imagePaths`: [imagePaths]
   /// * `productionFamilyName`: [productionFamilyName]
   /// * `productWhatsappNumber`: [productWhatsappNumber]
@@ -48,7 +48,7 @@ class ProductModel {
   /// The values of the map are the corresponding values of the object.
   Map<String, dynamic> toMap() {
     return {
-      'productName': productName,
+      'productName': name,
       'imagePaths': imagePaths,
       'productionFamilyName': productionFamilyName,
       'productWhatsappNumber': productWhatsappNumber,
