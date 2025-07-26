@@ -283,7 +283,7 @@ class _OurHistoryState extends State<OurHistory> {
             onPressed: () {
               HapticFeedback.vibrate();
               Navigator.of(context).pop();
-              TakeImageBy.pickFromGallery();
+              TakeImageBy.pickFromGallery(context);
               Navigator.push(
                 context,
                 CupertinoPageRoute(builder: (context) => const ProductPage()),
@@ -341,7 +341,7 @@ class _OurHistoryState extends State<OurHistory> {
             onPressed: () {
               HapticFeedback.vibrate();
               Navigator.of(context).pop();
-              TakeImageBy.pickFromGallery();
+              TakeImageBy.pickFromGallery(context);
               Navigator.push(
                 context,
                 CupertinoPageRoute(
