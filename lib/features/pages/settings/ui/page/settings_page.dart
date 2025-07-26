@@ -15,6 +15,22 @@ class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
   @override
+  /// Builds the settings page.
+  ///
+  /// The page contains the following widgets, from top to bottom:
+  ///
+  /// 1. A [CupertinoNavigationBar] with the title "Settings".
+  /// 2. A [SettingsTile] for the user to select their login method.
+  /// 3. A [SettingsTile] for the user to select the app language.
+  /// 4. A [SettingsTile] for the user to view app information.
+  /// 5. A [SettingsTile] for the user to view the app's history.
+  /// 6. A [SettingsTile] for the user to view the app's online store.
+  /// 7. A [SettingsTile] for the user to contact the app developers.
+  ///
+  /// The page is wrapped in a [CupertinoPageScaffold] and a [ListView].
+  ///
+  /// The page is a [StatelessWidget].
+  ///
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
     return CupertinoPageScaffold(
@@ -181,6 +197,15 @@ class ChangeLocals extends StatelessWidget {
   const ChangeLocals({super.key});
 
   @override
+  /// Builds a widget to allow users to change the application's language.
+  ///
+  /// This widget is a [CupertinoPageScaffold] containing a [CupertinoListSection]
+  /// that displays a list of available languages. Each language is represented
+  /// by its name and country code. The currently selected language is indicated
+  /// with a check mark icon.
+  ///
+  /// When a language is selected, the [LocaleCubit] updates the application's
+  /// locale accordingly. The widget also provides haptic feedback upon selection.
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
     final localeCubit = context.watch<LocaleCubit>();

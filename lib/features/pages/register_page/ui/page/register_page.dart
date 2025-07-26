@@ -28,6 +28,11 @@ class _RegisterPageState extends State<RegisterPage> {
 
   String? _errorText;
 
+  /// Handles the registration process.
+  ///
+  /// Checks if the password and confirm password are the same, and if not,
+  /// shows an error message. If the passwords are the same, it navigates to
+  /// the home page.
   void _register() {
     final tr = AppLocalizations.of(context)!;
 

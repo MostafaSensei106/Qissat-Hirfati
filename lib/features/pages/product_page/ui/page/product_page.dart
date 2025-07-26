@@ -72,6 +72,16 @@ class _ProductPageState extends State<ProductPage> {
   String searchQuery = '';
 
   @override
+  /// The main build method of the product page.
+  ///
+  /// This page displays a list of products, with a search bar at the top.
+  /// The list is scrollable, and the products are separated by a divider.
+  /// The search query is stored in the [searchQuery] state variable,
+  /// and it is used to filter the products displayed in the list.
+  ///
+  /// The [ProductCard] widget is used to display each product.
+  /// The [onPressed] callback of the [ProductCard] is currently a placeholder,
+  /// and it will be replaced with the actual implementation later.
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
     final filteredProducts = products.where((product) {
@@ -134,6 +144,18 @@ class ProductCard extends StatelessWidget {
   final ProductModel product;
 
   @override
+  /// Builds a [Row] widget that displays detailed information about a product.
+  ///
+  /// This widget includes the following components:
+  /// - A [ClipRRect] that displays the product's image with rounded corners.
+  /// - A [Column] containing:
+  ///   - A [Row] with the product name and a [CupertinoButtonComponent] to contact
+  ///     the producer via WhatsApp.
+  ///   - A [Text] displaying the production family name.
+  ///   - A [Row] with the production family's website and a button to visit the URL.
+  ///   - A [Row] showing the product price in Saudi Riyals (SAR).
+  ///   - A [Row] displaying the product's rating using a [RatingBar] and the number
+  ///     of reviews.
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
     return Row(

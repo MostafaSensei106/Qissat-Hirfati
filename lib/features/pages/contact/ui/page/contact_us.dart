@@ -17,6 +17,12 @@ class _ContactUsState extends State<ContactUs> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
 
+  /// Submits the contact form.
+  ///
+  /// If the form is valid, shows a dialog informing the user that the message
+  /// has been sent successfully, and then clears all the form fields.
+  ///
+  /// If the form is not valid, does nothing.
   void _submitForm() {
     final tr = AppLocalizations.of(context)!;
     if (_formKey.currentState!.validate()) {
@@ -41,6 +47,15 @@ class _ContactUsState extends State<ContactUs> {
   }
 
   @override
+  /// Builds a contact form.
+  ///
+  /// The form has a name, email, and message field, and a send button.
+  ///
+  /// When the form is submitted, if the form is valid, shows a dialog
+  /// informing the user that the message has been sent successfully, and
+  /// then clears all the form fields.
+  ///
+  /// If the form is not valid, does nothing.
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
 
@@ -93,6 +108,9 @@ class _ContactUsState extends State<ContactUs> {
   }
 
   @override
+  /// Disposes the [_nameController], [_emailController], and [_messageController].
+  ///
+  /// This is called when the widget is removed from the tree.
   void dispose() {
     _nameController.dispose();
     _emailController.dispose();

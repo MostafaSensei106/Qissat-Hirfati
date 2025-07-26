@@ -31,6 +31,21 @@ class ProductModel {
   final double productRating;
   final int productReviweCount;
 
+  /// Converts this object into a [Map] that can be used
+  /// to encode it to JSON.
+  ///
+  /// The map contains the following keys:
+  ///
+  /// * `productName`: [productName]
+  /// * `imagePaths`: [imagePaths]
+  /// * `productionFamilyName`: [productionFamilyName]
+  /// * `productWhatsappNumber`: [productWhatsappNumber]
+  /// * `productionFamilyWebsiteUrl`: [productionFamilyWebsiteUrl]
+  /// * `productPrice`: [productPrice]
+  /// * `productRating`: [productRating]
+  /// * `productReviweCount`: [productReviweCount]
+  ///
+  /// The values of the map are the corresponding values of the object.
   Map<String, dynamic> toMap() {
     return {
       'productName': productName,

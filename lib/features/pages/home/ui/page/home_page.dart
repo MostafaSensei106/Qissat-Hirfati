@@ -18,6 +18,16 @@ class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
+  /// Builds the home page widget tree.
+  ///
+  /// This widget displays a scrollable page with a navigation bar,
+  /// several article sections, and interactive elements. The navigation
+  /// bar contains a button to navigate to the settings page. The page
+  /// includes an introduction section, a heritage section with a
+  /// clickable image, and a work section with a horizontally scrollable
+  /// image gallery. Smooth page indicators and buttons are included for
+  /// interaction and navigation. The layout uses a column within a
+  /// scroll view to organize its content.
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
     final pageController = PageController();
@@ -212,6 +222,17 @@ class ArticleSectionComponent extends StatelessWidget {
   final VoidCallback onPressed;
 
   @override
+  /// Build a [Container] with a [Column] containing:
+  ///
+  /// - a [Row] with a bold [Text] of [title] and an [AppDivider]
+  /// - an optional [Text] with the given [description]
+  /// - an optional [CupertinoButtonFilledComponent] with the text
+  ///   [AppLocalizations.seeMore]
+  /// - the given [child] widget if [useChild] is true
+  ///
+  /// The [color] property is used to set the background color of the
+  /// [Container]. If [color] is null, the default color is
+  /// [CupertinoColors.white].
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
 

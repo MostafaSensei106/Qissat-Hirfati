@@ -20,6 +20,31 @@ class PlacePage extends StatefulWidget {
 
 class _PlacePageState extends State<PlacePage> {
   @override
+  /// Build method for [PlacePage].
+  ///
+  /// This method creates the UI for the [PlacePage].
+  ///
+  /// It uses a [CupertinoPageScaffold] to create the navigation bar and the
+  /// content of the page. The navigation bar has a title and a trailing button
+  /// to add a photo. The content is a [SingleChildScrollView] with a
+  /// [Column] containing the place's stars, a [CloseOpenWidget], the place's
+  /// location, a [CarouselView] with the photos, a description, a [CupertinoButtonComponent]
+  /// to open the map, and a [CupertinoButtonComponent] to see the map.
+  ///
+  /// The [CarouselView] is a custom widget that displays the photos in a
+  /// carousel. Each photo is displayed in a [Stack] with a [Container] on top
+  /// of it. The [Container] has a [Text] with the date of the photo and a
+  /// [CupertinoColors.darkBackgroundGray] background with an alpha of 0.5.
+  /// The [Text] is styled with a bold font and a white color. The [Container]
+  /// is positioned at the top left of the photo with a margin of 7.
+  ///
+  /// The [CloseOpenWidget] is a custom widget that displays the place's status
+  /// (open or closed). It is a [Row] with a [Text] and a [CupertinoSwitch].
+  /// The [Text] displays the status of the place and the [CupertinoSwitch]
+  /// is used to toggle the status.
+  ///
+  /// The [CupertinoButtonComponent] to open the map is a custom widget that
+  /// launches the map link of the place when pressed.
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
 

@@ -33,6 +33,22 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   @override
+  /// Builds the login page.
+  ///
+  /// The page contains the following widgets, from top to bottom:
+  ///
+  /// 1. A [CupertinoNavigationBar] with the title "Login".
+  /// 2. An [Image] displaying the app logo.
+  /// 3. A [CupertinoTextFieldComponent] for the user to enter their email.
+  /// 4. A [CupertinoTextFieldComponent] for the user to enter their password.
+  /// 5. A [Row] containing a [CupertinoButtonComponent] to login, and a
+  ///    [CupertinoButtonComponent] to reset the password.
+  /// 6. A [CupertinoButtonComponent] to login with an alternative method.
+  /// 7. A [SocialMediaLoginForm] to login with social media.
+  /// 8. A [Row] containing a [CupertinoButtonComponent] to register an account.
+  ///
+  /// The page is wrapped in a [CupertinoPageScaffold] and a [ListView].
+  ///
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
 

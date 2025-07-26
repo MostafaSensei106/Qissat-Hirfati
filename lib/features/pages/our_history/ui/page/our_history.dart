@@ -127,6 +127,18 @@ class _OurHistoryState extends State<OurHistory> {
   String searchQuery = '';
 
   @override
+  /// Builds the Our History page which provides information about the history of
+  /// Qissat Hirfati.
+  ///
+  /// The page includes a navigation bar with a title, a search bar, and a
+  /// trailing camera button. The page also displays a list of places with
+  /// their names, descriptions, and locations. The list is filtered by the
+  /// search query.
+  ///
+  /// The page also includes a button to open the camera to take a new picture.
+  ///
+  /// The page is designed to be scrollable and to display a loading indicator
+  /// while the data is being loaded.
   Widget build(BuildContext context) {
     // Get the AppLocalizations instance for translation
     final tr = AppLocalizations.of(context)!;

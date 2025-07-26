@@ -26,6 +26,12 @@ class AboutApp extends StatelessWidget {
   const AboutApp({super.key});
 
   @override
+  /// Builds the About App page which provides information about the application.
+  ///
+  /// The page includes a navigation bar with a title, a background image with
+  /// a description text overlaid, and multiple sections describing the app's
+  /// goals, vision, and message. Each section is displayed in a column layout
+  /// within a scrollable view.
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
 
