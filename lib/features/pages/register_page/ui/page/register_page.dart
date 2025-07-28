@@ -9,23 +9,71 @@ import 'package:qissat_hirfati/features/pages/home/ui/page/home_page.dart';
 import 'package:qissat_hirfati/features/pages/login_page/ui/page/login_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
+/// A widget that represents the registration page of the application.
+///
+/// The registration page includes input fields for the user's first name,
+/// last name, phone number, email, and password. The user must also confirm
+/// their password. The page also includes buttons for registering and logging
+/// in.
+///
+/// The page is built with a [CupertinoPageScaffold] and a [ListView] to
+/// organize its content.
+///
+/// The [build] method is the main entry point for building the page. It
+/// creates the widgets and layouts the page according to the application's
+/// design.
+///
+/// The page's state is managed by the [_RegisterPageState] class.
 class RegisterPage extends StatefulWidget {
+  /// Creates a new [RegisterPage].
+  ///
+  /// The [key] argument is used to identify this widget in the widget tree.
   const RegisterPage({super.key});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }
 
+/// A stateful widget that represents the registration page of the application.
+///
+/// The registration page includes input fields for the user's first name,
+/// last name, phone number, email, and password. The user must also confirm
+/// their password. The page also includes buttons for registering and logging
+/// in.
+///
+/// The page is built with a [CupertinoPageScaffold] and a [ListView] to
+/// organize its content.
+///
+/// The [build] method is the main entry point for building the page. It
+/// creates the widgets and layouts the page according to the application's
+/// design.
+///
+/// The page's state is managed by the [_RegisterPageState] class.
 class _RegisterPageState extends State<RegisterPage> {
+  /// A [TextEditingController] that manages the first name input field.
   final _firstNameController = TextEditingController();
+
+  /// A [TextEditingController] that manages the last name input field.
   final _lastNameController = TextEditingController();
+
+  /// A [TextEditingController] that manages the phone number input field.
   final _phoneController = TextEditingController();
+
+  /// A [TextEditingController] that manages the email input field.
   final _emailController = TextEditingController();
+
+  /// A [TextEditingController] that manages the password input field.
   final _passwordController = TextEditingController();
+
+  /// A [TextEditingController] that manages the confirm password input field.
   final _confirmPasswordController = TextEditingController();
 
+  /// A boolean that determines whether the password and confirm password input
+  /// fields are obscured or not.
   bool _showPassword = false;
 
+  /// An error message that is displayed if the password and confirm password
+  /// are not the same.
   String? _errorText;
 
   /// Handles the registration process.
@@ -53,6 +101,7 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
+  /// Disposes of the [TextEditingController]s when the widget is disposed.
   @override
   void dispose() {
     _firstNameController.dispose();
@@ -64,6 +113,10 @@ class _RegisterPageState extends State<RegisterPage> {
     super.dispose();
   }
 
+  /// The main entry point for building the page.
+  ///
+  /// Creates the widgets and layouts the page according to the application's
+  /// design.
   @override
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;

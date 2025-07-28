@@ -11,6 +11,17 @@ import 'package:qissat_hirfati/features/pages/contact/ui/page/contact_us.dart';
 import 'package:qissat_hirfati/features/pages/login_page/ui/page/login_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
+/*************  ✨ Windsurf Command 🌟  *************/
+/// A stateless widget that builds the settings page of the application.
+///
+/// This page provides various settings options for the user, including:
+/// - Login method selection
+/// - Language selection
+/// - Viewing app information
+/// - Viewing app history
+/// - Accessing the app's online store
+/// - Contacting the app developers
+///
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
@@ -159,6 +170,8 @@ class SettingsPage extends StatelessWidget {
     );
   }
 }
+
+/// *****  b1dd7cb5-6983-42da-b414-63d21c714e46  ******
 
 class SettingsTile extends StatelessWidget {
   const SettingsTile({

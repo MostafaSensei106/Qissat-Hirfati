@@ -3,15 +3,37 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 
+/// A widget that displays a [CupertinoCheckbox] and a [CupertinoButton]
+/// side-by-side.
+///
+/// The [CupertinoCheckbox] is used to display a boolean value, and the
+/// [CupertinoButton] is used to toggle this value.
 class CupertinoCheckboxComponent extends StatelessWidget {
+  /// Creates a [CupertinoCheckboxComponent].
+  ///
+  /// The [value] parameter is the boolean value to be displayed by the
+  /// [CupertinoCheckbox].
+  ///
+  /// The [text] parameter is the text to be displayed by the
+  /// [CupertinoButton].
+  ///
+  /// The [onChanged] parameter is a callback that is called when the value of
+  /// the [CupertinoCheckbox] changes.
   const CupertinoCheckboxComponent({
     required this.value,
     required this.text,
     required this.onChanged,
     super.key,
   });
+
+  /// The boolean value to be displayed by the [CupertinoCheckbox].
   final bool value;
+
+  /// The text to be displayed by the [CupertinoButton].
   final String text;
+
+  /// A callback that is called when the value of the [CupertinoCheckbox]
+  /// changes.
   final ValueChanged<bool> onChanged;
 
   @override
