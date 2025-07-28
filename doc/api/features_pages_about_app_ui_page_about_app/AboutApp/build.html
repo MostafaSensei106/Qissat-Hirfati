@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the build method from the AboutApp class, for the Dart programming language.">
+  <title>build method - AboutApp class - about_app library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">qissat_hirfati</a></li>
+    <li><a href="../../features_pages_about_app_ui_page_about_app/">features&#47;pages&#47;about_app&#47;ui&#47;page&#47;about_app.dart</a></li>
+    <li><a href="../../features_pages_about_app_ui_page_about_app/AboutApp-class.html">AboutApp</a></li>
+    <li class="self-crumb">build method</li>
+  </ol>
+  <div class="self-name">build</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="features_pages_about_app_ui_page_about_app&#47;AboutApp-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
+<h1><span class="kind-method">build</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+<span class="name ">build</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Builds the About App page which provides information about the application.</p>
+<p>The page includes a navigation bar with a title, a background image with a
+description text overlaid, and multiple sections describing the app's
+goals, vision, and message. Each section is displayed in a column layout
+within a scrollable view.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+&#47;&#47;&#47; Builds the About App page which provides information about the application.
+&#47;&#47;&#47;
+&#47;&#47;&#47; The page includes a navigation bar with a title, a background image with a
+&#47;&#47;&#47; description text overlaid, and multiple sections describing the app&#39;s
+&#47;&#47;&#47; goals, vision, and message. Each section is displayed in a column layout
+&#47;&#47;&#47; within a scrollable view.
+Widget build(BuildContext context) {
+  final tr = AppLocalizations.of(context)!;
+
+  return CupertinoPageScaffold(
+    &#47;&#47;&#47; The navigation bar shows the title and provides a back button to
+    &#47;&#47;&#47; return to the home page.
+    navigationBar: CupertinoNavigationBar(
+      middle: Text(tr.infoAboutUs),
+      enableBackgroundFilterBlur: true,
+    ),
+
+    &#47;&#47;&#47; The main content of the page is a scrollable view containing a
+    &#47;&#47;&#47; background image with a description text overlaid, and multiple
+    &#47;&#47;&#47; sections describing the app&#39;s goals, vision, and message.
+    child: SingleChildScrollView(
+      child: Column(
+        children: [
+          &#47;&#47;&#47; The background image with a description text overlaid.
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              &#47;&#47;&#47; The background image is a PNG asset loaded from the
+              &#47;&#47;&#47; project&#39;s assets directory.
+              Image.asset(
+                AppConstants.handPNG,
+                fit: BoxFit.cover,
+                width: double.infinity,
+              ),
+
+              &#47;&#47;&#47; The description text is displayed centered and bold.
+              Text(
+                tr.aboutUs_description,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: CupertinoColors.white,
+                ),
+              ),
+            ],
+          ),
+
+          &#47;&#47;&#47; The section describing the app&#39;s goals.
+          ArticleSectionComponent(
+            title: tr.ourGoals,
+            description: tr.ourGoals_description,
+            useButton: false,
+            color: AppConstants.primarySectionColor,
+            onPressed: () {},
+          ),
+
+          &#47;&#47;&#47; The section describing the app&#39;s vision.
+          ArticleSectionComponent(
+            title: tr.ourVision,
+            description: tr.ourVision_description,
+            onPressed: () {},
+          ),
+
+          &#47;&#47;&#47; The section describing the app&#39;s message.
+          ArticleSectionComponent(
+            title: tr.ourMessage,
+            description: tr.ourMessage_description,
+            onPressed: () {},
+            color: AppConstants.primarySectionColor,
+          ),
+        ],
+      ),
+    ),
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">qissat_hirfati</a></li>
+    <li><a href="../../features_pages_about_app_ui_page_about_app/">about_app</a></li>
+    <li><a href="../../features_pages_about_app_ui_page_about_app/AboutApp-class.html">AboutApp</a></li>
+    <li class="self-crumb">build method</li>
+</ol>
+
+    <h5>AboutApp class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    qissat_hirfati
+      1.0.1
+  </span>
+  
+</footer>
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

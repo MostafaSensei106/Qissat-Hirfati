@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the build method from the ProductCard class, for the Dart programming language.">
+  <title>build method - ProductCard class - product_page library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">qissat_hirfati</a></li>
+    <li><a href="../../features_pages_product_page_ui_page_product_page/">features&#47;pages&#47;product_page&#47;ui&#47;page&#47;product_page.dart</a></li>
+    <li><a href="../../features_pages_product_page_ui_page_product_page/ProductCard-class.html">ProductCard</a></li>
+    <li class="self-crumb">build method</li>
+  </ol>
+  <div class="self-name">build</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="features_pages_product_page_ui_page_product_page&#47;ProductCard-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
+<h1><span class="kind-method">build</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+<span class="name ">build</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Builds a <a href="https://api.flutter.dev/flutter/widgets/Row-class.html">Row</a> widget that displays detailed information about a product.</p>
+<p>This widget includes the following components:</p>
+<ul>
+<li>A <a href="https://api.flutter.dev/flutter/widgets/ClipRRect-class.html">ClipRRect</a> that displays the product's image with rounded corners.</li>
+<li>A <a href="https://api.flutter.dev/flutter/widgets/Column-class.html">Column</a> containing:
+<ul>
+<li>A <a href="https://api.flutter.dev/flutter/widgets/Row-class.html">Row</a> with the product name and a <a href="../../core_widgets_cupertino_buttons_component_cupertino_button_component_cupertino_button_component/CupertinoButtonComponent-class.html">CupertinoButtonComponent</a> to contact
+the producer via WhatsApp.</li>
+<li>A <a href="https://api.flutter.dev/flutter/widgets/Text-class.html">Text</a> displaying the production family name.</li>
+<li>A <a href="https://api.flutter.dev/flutter/widgets/Row-class.html">Row</a> with the production family's website and a button to visit the URL.</li>
+<li>A <a href="https://api.flutter.dev/flutter/widgets/Row-class.html">Row</a> showing the product price in Saudi Riyals (SAR).</li>
+<li>A <a href="https://api.flutter.dev/flutter/widgets/Row-class.html">Row</a> displaying the product's rating using a <a href="https://pub.dev/documentation/flutter_rating_bar/4.0.1/flutter_rating_bar/RatingBar-class.html">RatingBar</a> and the number
+of reviews.</li>
+</ul>
+</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+&#47;&#47;&#47; Builds a [Row] widget that displays detailed information about a product.
+&#47;&#47;&#47;
+&#47;&#47;&#47; This widget includes the following components:
+&#47;&#47;&#47; - A [ClipRRect] that displays the product&#39;s image with rounded corners.
+&#47;&#47;&#47; - A [Column] containing:
+&#47;&#47;&#47;   - A [Row] with the product name and a [CupertinoButtonComponent] to contact
+&#47;&#47;&#47;     the producer via WhatsApp.
+&#47;&#47;&#47;   - A [Text] displaying the production family name.
+&#47;&#47;&#47;   - A [Row] with the production family&#39;s website and a button to visit the URL.
+&#47;&#47;&#47;   - A [Row] showing the product price in Saudi Riyals (SAR).
+&#47;&#47;&#47;   - A [Row] displaying the product&#39;s rating using a [RatingBar] and the number
+&#47;&#47;&#47;     of reviews.
+Widget build(BuildContext context) {
+  final tr = AppLocalizations.of(context)!; &#47;&#47; Get AppLocalizations instance
+  return CupertinoButtonComponent(
+    onPressed: onPressed,
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
+          child: Image.asset(
+            product.imagePaths.first,
+            width: 120,
+            height: 90,
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    product
+                        .name, &#47;&#47; Name is already in English from ProductModel
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const Spacer(),
+                  CupertinoButtonComponent(
+                    icon: const Icon(CupertinoIcons.phone),
+                    onPressed: () {
+                      UrlRunServices.launchURL(
+                        &#39;https:&#47;&#47;wa.me&#47;${product.productWhatsappNumber}&#39;,
+                      );
+                    },
+                  ),
+                ],
+              ),
+              Text(
+                &#39;${tr.productionFamily} ${product.productionFamilyName}&#39;,
+              ), &#47;&#47; Translated &quot;الاسرة المنتجة:&quot;
+              Row(
+                children: [
+                  Text(
+                    &#39;${tr.theirWebsite} &#39;,
+                  ), &#47;&#47; Translated &quot;موقعهم الالكتروني:&quot;
+                  CupertinoButtonComponent(
+                    onPressed: () {
+                      UrlRunServices.launchURL(
+                        product.productionFamilyWebsiteUrl,
+                      );
+                    },
+                    text: tr.clickHere, &#47;&#47; Translated &quot;اضغط هنا&quot;
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Text(
+                    &#39;${tr.productPrice} ${product.productPrice} ${tr.sar}&#39;,
+                  ), &#47;&#47; Translated &quot;سعر المنتج: ... ريال&quot;
+                ],
+              ),
+              Row(
+                children: [
+                  Text(&#39;${tr.productRating} &#39;), &#47;&#47; Translated &quot;تقييم المنتج:&quot;
+                  RatingBar(
+                    ratingWidget: RatingWidget(
+                      full: const Icon(
+                        CupertinoIcons.star_fill,
+                        color: CupertinoColors.activeOrange,
+                      ),
+                      half: const Icon(
+                        CupertinoIcons.star_lefthalf_fill,
+                        color: CupertinoColors.activeOrange,
+                      ),
+                      empty: const Icon(
+                        CupertinoIcons.star,
+                        color: CupertinoColors.systemGrey,
+                      ),
+                    ),
+                    onRatingUpdate: (_) {},
+                    initialRating: product.productRating,
+                    minRating: 0,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    tapOnlyMode: false,
+                    ignoreGestures: true,
+                    itemSize: 20,
+                  ),
+                  Text(&#39;(${product.productReviweCount})&#39;),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">qissat_hirfati</a></li>
+    <li><a href="../../features_pages_product_page_ui_page_product_page/">product_page</a></li>
+    <li><a href="../../features_pages_product_page_ui_page_product_page/ProductCard-class.html">ProductCard</a></li>
+    <li class="self-crumb">build method</li>
+</ol>
+
+    <h5>ProductCard class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    qissat_hirfati
+      1.0.1
+  </span>
+  
+</footer>
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

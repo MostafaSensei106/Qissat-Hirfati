@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the build method from the HomePage class, for the Dart programming language.">
+  <title>build method - HomePage class - home_page library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">qissat_hirfati</a></li>
+    <li><a href="../../features_pages_home_ui_page_home_page/">features&#47;pages&#47;home&#47;ui&#47;page&#47;home_page.dart</a></li>
+    <li><a href="../../features_pages_home_ui_page_home_page/HomePage-class.html">HomePage</a></li>
+    <li class="self-crumb">build method</li>
+  </ol>
+  <div class="self-name">build</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="features_pages_home_ui_page_home_page&#47;HomePage-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
+<h1><span class="kind-method">build</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+<span class="name ">build</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Builds the home page widget tree.</p>
+<p>This method returns a <a href="https://api.flutter.dev/flutter/cupertino/CupertinoPageScaffold-class.html">CupertinoPageScaffold</a> widget that contains:</p>
+<ul>
+<li>A <a href="https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBar-class.html">CupertinoNavigationBar</a> with a title and a button to navigate to the settings page.</li>
+<li>A <a href="https://api.flutter.dev/flutter/widgets/SingleChildScrollView-class.html">SingleChildScrollView</a> that contains a <a href="https://api.flutter.dev/flutter/widgets/Column-class.html">Column</a> with various sections and interactive elements.</li>
+</ul>
+<p>The <a href="https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBar-class.html">CupertinoNavigationBar</a> uses a leading <a href="../../core_widgets_cupertino_buttons_component_cupertino_button_component_cupertino_button_component/CupertinoButtonComponent-class.html">CupertinoButtonComponent</a> to navigate to the <a href="../../features_pages_settings_ui_page_settings_page/SettingsPage-class.html">SettingsPage</a>.
+The main content is arranged in a column with multiple <a href="../../features_pages_home_ui_page_home_page/ArticleSectionComponent-class.html">ArticleSectionComponent</a> widgets.</p>
+<p><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a> is the context in which the widget is built.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+Widget build(BuildContext context) {
+  &#47;&#47; Localized text instance for the current build context.
+  final tr = AppLocalizations.of(context)!;
+
+  &#47;&#47; Controller for managing the horizontal scrolling of the PageView.
+  final pageController = PageController();
+
+  return CupertinoPageScaffold(
+    &#47;&#47; Navigation bar with the app title and a button to open settings.
+    navigationBar: CupertinoNavigationBar(
+      middle: Text(tr.appTitle),
+      enableBackgroundFilterBlur: true,
+      leading: CupertinoButtonComponent(
+        icon: const Icon(CupertinoIcons.bars, size: AppConstants.iconSize),
+        onPressed: () {
+          &#47;&#47; Navigate to the SettingsPage when the button is pressed.
+          Navigator.push(
+            context,
+            CupertinoSheetRoute(builder: (context) =&gt; const SettingsPage()),
+          );
+        },
+      ),
+    ),
+    &#47;&#47; Main content of the home page within a scroll view.
+    child: SingleChildScrollView(
+      physics: const ScrollPhysics(),
+      child: Column(
+        children: [
+          &#47;&#47; Introduction section at the top of the page.
+          const Landing(),
+
+          &#47;&#47; Overview section providing a brief description of the app.
+          const OverviewSection(),
+
+          &#47;&#47; Heritage section with a description and clickable image.
+          ArticleSectionComponent(
+            title: tr.heritage,
+            useChild: true,
+            useButton: true,
+            onPressed: () {
+              &#47;&#47; Navigate to the OurHistory page when pressed.
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) =&gt; const OurHistory()),
+              );
+            },
+            description: tr.heritage_description,
+            child: Column(
+              spacing: 8,
+              children: [
+                const SizedBox(height: 8),
+                const AppDivider(),
+                Text(tr.bisht_description),
+                const SizedBox(height: 4),
+                CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {
+                    &#47;&#47; Launch URL when the image is clicked.
+                    UrlRunServices.launchURL(
+                      AppConstants.mohammedbinSalmanAlSaudLink,
+                    );
+                  },
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: CupertinoColors.darkBackgroundGray,
+                          blurRadius: 4,
+                        ),
+                      ],
+                    ),
+                    child: Image.asset(
+                      AppConstants.mohammedbinSalmanAlSaudPNG,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          &#47;&#47; Work section with horizontally scrollable image gallery.
+          ArticleSectionComponent(
+            title: tr.ourWork,
+            useChild: true,
+            useButton: false,
+            onPressed: () {},
+            color: AppConstants.primarySectionColor,
+            description: tr.ourWork_description,
+            child: Column(
+              spacing: 8,
+              children: [
+                SizedBox(width: 0.5.sw, child: const AppDivider()),
+                SizedBox(
+                  height: 280,
+                  child: PageView(
+                    controller: pageController,
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Column(
+                        spacing: 8,
+                        children: [
+                          Image.asset(AppConstants.greenOrbPNG),
+                          const Text(&#39;Qissat Hirfati&#39;),
+                        ],
+                      ),
+                      Column(
+                        spacing: 8,
+                        children: [
+                          Image.asset(AppConstants.treesPNG),
+                          const Text(&#39;Mohammed bin Salman Al Saud&#39;),
+                        ],
+                      ),
+                      Column(
+                        spacing: 8,
+                        children: [
+                          Image.asset(AppConstants.pathPNG),
+                          const Text(&#39;Small Tree&#39;),
+                        ],
+                      ),
+                      Column(
+                        spacing: 8,
+                        children: [
+                          Image.asset(AppConstants.lampPNG),
+                          const Text(&#39;Qissat Hirfati&#39;),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                SmoothPageIndicator(
+                  controller: pageController,
+                  count: 4,
+                  effect: WormEffect(
+                    activeDotColor: Theme.of(context).primaryColor,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                CupertinoButtonFilledComponent(
+                  onPressed: () {
+                    &#47;&#47; Show dialog when the button is pressed.
+                    CupertinoFeatureWillBeAvailableLaterDilog.show(context);
+                  },
+                  child: Text(tr.more),
+                ),
+                Row(
+                  spacing: 8,
+                  children: [
+                    Text(
+                      tr.successPartners,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const Expanded(child: AppDivider()),
+                  ],
+                ),
+                SizedBox(
+                  height: 80,
+                  child: PageView(
+                    children: [
+                      Image.asset(
+                        AppConstants.trs2PNG,
+                        filterQuality: FilterQuality.high,
+                      ),
+                      Image.asset(
+                        AppConstants.trsPNG,
+                        filterQuality: FilterQuality.high,
+                        fit: BoxFit.cover,
+                      ),
+                      Image.asset(
+                        AppConstants.trs3PNG,
+                        filterQuality: FilterQuality.high,
+                        fit: BoxFit.cover,
+                      ),
+                      Image.asset(
+                        AppConstants.trs4PNG,
+                        filterQuality: FilterQuality.high,
+                        fit: BoxFit.contain,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">qissat_hirfati</a></li>
+    <li><a href="../../features_pages_home_ui_page_home_page/">home_page</a></li>
+    <li><a href="../../features_pages_home_ui_page_home_page/HomePage-class.html">HomePage</a></li>
+    <li class="self-crumb">build method</li>
+</ol>
+
+    <h5>HomePage class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    qissat_hirfati
+      1.0.1
+  </span>
+  
+</footer>
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the build method from the SettingsPage class, for the Dart programming language.">
+  <title>build method - SettingsPage class - settings_page library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">qissat_hirfati</a></li>
+    <li><a href="../../features_pages_settings_ui_page_settings_page/">features&#47;pages&#47;settings&#47;ui&#47;page&#47;settings_page.dart</a></li>
+    <li><a href="../../features_pages_settings_ui_page_settings_page/SettingsPage-class.html">SettingsPage</a></li>
+    <li class="self-crumb">build method</li>
+  </ol>
+  <div class="self-name">build</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="features_pages_settings_ui_page_settings_page&#47;SettingsPage-class-sidebar.html"
+    data-below-sidebar="">
+    <div>
+<h1><span class="kind-method">build</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+  <div>
+    <ol class="annotation-list">
+        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
+    </ol>
+  </div>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+<span class="name ">build</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+      <div class="features"><span class="feature">override</span></div>
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Builds the settings page.</p>
+<p>The page contains the following widgets, from top to bottom:</p>
+<ol>
+<li>A <a href="https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBar-class.html">CupertinoNavigationBar</a> with the title "Settings".</li>
+<li>A <a href="../../features_pages_settings_ui_page_settings_page/SettingsTile-class.html">SettingsTile</a> for the user to select their login method.</li>
+<li>A <a href="../../features_pages_settings_ui_page_settings_page/SettingsTile-class.html">SettingsTile</a> for the user to select the app language.</li>
+<li>A <a href="../../features_pages_settings_ui_page_settings_page/SettingsTile-class.html">SettingsTile</a> for the user to view app information.</li>
+<li>A <a href="../../features_pages_settings_ui_page_settings_page/SettingsTile-class.html">SettingsTile</a> for the user to view the app's history.</li>
+<li>A <a href="../../features_pages_settings_ui_page_settings_page/SettingsTile-class.html">SettingsTile</a> for the user to view the app's online store.</li>
+<li>A <a href="../../features_pages_settings_ui_page_settings_page/SettingsTile-class.html">SettingsTile</a> for the user to contact the app developers.</li>
+</ol>
+<p>The page is wrapped in a <a href="https://api.flutter.dev/flutter/cupertino/CupertinoPageScaffold-class.html">CupertinoPageScaffold</a> and a <a href="https://api.flutter.dev/flutter/widgets/ListView-class.html">ListView</a>.</p>
+<p>The page is a <a href="https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html">StatelessWidget</a>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">@override
+&#47;&#47;&#47; Builds the settings page.
+&#47;&#47;&#47;
+&#47;&#47;&#47; The page contains the following widgets, from top to bottom:
+&#47;&#47;&#47;
+&#47;&#47;&#47; 1. A [CupertinoNavigationBar] with the title &quot;Settings&quot;.
+&#47;&#47;&#47; 2. A [SettingsTile] for the user to select their login method.
+&#47;&#47;&#47; 3. A [SettingsTile] for the user to select the app language.
+&#47;&#47;&#47; 4. A [SettingsTile] for the user to view app information.
+&#47;&#47;&#47; 5. A [SettingsTile] for the user to view the app&#39;s history.
+&#47;&#47;&#47; 6. A [SettingsTile] for the user to view the app&#39;s online store.
+&#47;&#47;&#47; 7. A [SettingsTile] for the user to contact the app developers.
+&#47;&#47;&#47;
+&#47;&#47;&#47; The page is wrapped in a [CupertinoPageScaffold] and a [ListView].
+&#47;&#47;&#47;
+&#47;&#47;&#47; The page is a [StatelessWidget].
+&#47;&#47;&#47;
+Widget build(BuildContext context) {
+  final tr = AppLocalizations.of(context)!;
+  return CupertinoPageScaffold(
+    navigationBar: CupertinoNavigationBar(
+      middle: Text(tr.settings),
+      enableBackgroundFilterBlur: true,
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SingleChildScrollView(
+        physics: const ScrollPhysics(),
+        child: Column(
+          spacing: 8,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: CupertinoColors.systemGroupedBackground,
+                borderRadius: BorderRadius.circular(
+                  AppConstants.inBorderRadius,
+                ),
+              ),
+              child: Column(
+                children: [
+                  SettingsTile(
+                    title: tr.login,
+                    subtitle: tr.loginSuptitle,
+                    icon: CupertinoIcons.person_crop_circle,
+                    trailingIcon: CupertinoIcons.forward,
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.pushReplacement(
+                        context,
+                        CupertinoPageRoute(builder: (context) =&gt; LoginPage()),
+                      );
+                    },
+                  ),
+                  SettingsTile(
+                    title: tr.language,
+                    subtitle: tr.selectLanguage,
+                    icon: CupertinoIcons.globe,
+                    trailingIcon: CupertinoIcons.forward,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) =&gt; const ChangeLocals(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: CupertinoColors.systemGroupedBackground,
+                borderRadius: BorderRadius.circular(
+                  AppConstants.inBorderRadius,
+                ),
+              ),
+              child: Column(
+                children: [
+                  SettingsTile(
+                    title: tr.infoAboutQissatHirfati,
+                    subtitle: tr.infoAboutQissatHirfatiSuptitle,
+                    icon: CupertinoIcons.info,
+                    trailingIcon: CupertinoIcons.forward,
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) =&gt; const AboutApp(),
+                        ),
+                      );
+                    },
+                  ),
+                  SettingsTile(
+                    title: tr.ourHistory,
+                    subtitle: tr.ourHistorySuptitle,
+                    icon: CupertinoIcons.book,
+                    trailingIcon: CupertinoIcons.forward,
+                    onPressed: () {
+                      Navigator.pop(context);
+                      &#47;&#47; Navigator.push(
+                      &#47;&#47;   context,
+                      &#47;&#47;   CupertinoPageRoute(
+                      &#47;&#47;     builder: (context) =&gt; OurHistory(),
+                      &#47;&#47;   ),
+                      &#47;&#47; );
+                    },
+                  ),
+                  SettingsTile(
+                    title: tr.ourOnLineStore,
+                    subtitle: tr.ourOnLineStoreSuptitle,
+                    icon: CupertinoIcons.shopping_cart,
+                    trailingIcon: CupertinoIcons.forward,
+                    onPressed: () {
+                      UrlRunServices.launchURL(AppConstants.appStroreUrl);
+                    },
+                  ),
+                  SettingsTile(
+                    title: tr.contactUs,
+                    subtitle: tr.contactUsSuptitle,
+                    icon: CupertinoIcons.phone,
+                    trailingIcon: CupertinoIcons.forward,
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) =&gt; const ContactUs(),
+                        ),
+                      );
+                    },
+                  ),
+
+                  const SizedBox(height: 8),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">qissat_hirfati</a></li>
+    <li><a href="../../features_pages_settings_ui_page_settings_page/">settings_page</a></li>
+    <li><a href="../../features_pages_settings_ui_page_settings_page/SettingsPage-class.html">SettingsPage</a></li>
+    <li class="self-crumb">build method</li>
+</ol>
+
+    <h5>SettingsPage class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    qissat_hirfati
+      1.0.1
+  </span>
+  
+</footer>
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
