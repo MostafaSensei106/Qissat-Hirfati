@@ -72,6 +72,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final tr = AppLocalizations.of(context)!;
 
     return CupertinoPageScaffold(
@@ -625,6 +626,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     );
   }
 
+  // ignore: unused_element
   void _showAddToCartDialog(BuildContext context) {
     showCupertinoDialog(
       context: context,

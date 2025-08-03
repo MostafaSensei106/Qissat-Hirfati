@@ -11,7 +11,9 @@ import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertin
 import 'package:qissat_hirfati/features/pages/our_history/data/model/product_model.dart';
 import 'package:qissat_hirfati/features/pages/our_history/logic/take_image/take_image.dart';
 import 'package:qissat_hirfati/features/pages/place_page/ui/page/place_page.dart';
+import 'package:qissat_hirfati/features/pages/product_page/data/model/product_model.dart';
 import 'package:qissat_hirfati/features/pages/product_page/ui/page/product_page.dart';
+import 'package:qissat_hirfati/features/pages/product_page/ui/widget/product_details_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart'
     show AppLocalizations;
 
@@ -234,26 +236,137 @@ class _OurHistoryState extends State<OurHistory> {
               HapticFeedback.vibrate();
               Navigator.pop(context);
               TakeImageBy.pickFromCamera();
-              Future.delayed(const Duration(seconds: 2)).then(
+              Future.delayed(const Duration(seconds: 1)).then(
                 (_) => Navigator.push(
+                  // ignore: use_build_context_synchronously
                   context,
-                  CupertinoPageRoute(builder: (_) => const ProductPage()),
+                  CupertinoPageRoute(
+                    builder: (_) => ProductDetailsPage(
+                      product: ProductModel(
+                        name: '',
+                        imagePaths: const [],
+                        productionFamilyName: '',
+                        productWhatsappNumber: '',
+                        productionFamilyWebsiteUrl: '',
+                        productPrice: '',
+                        productRating: 5,
+                        productReviweCount: 3,
+                      ),
+                    ),
+                  ),
                 ),
               );
             },
             child: _buildActionRow(CupertinoIcons.camera, tr.imageFromCamera),
           ),
           CupertinoActionSheetAction(
-            onPressed: () {
+            onPressed: () async {
               HapticFeedback.vibrate();
-              Navigator.pop(context);
-              TakeImageBy.pickFromGallery();
-              Future.delayed(const Duration(seconds: 2)).then(
-                (_) => Navigator.push(
-                  context,
-                  CupertinoPageRoute(builder: (_) => const ProductPage()),
-                ),
-              );
+
+              try {
+                final imageFile = await TakeImageBy.pickFromGallery();
+                print('🔍 نتيجة الاختيار: $imageFile');
+
+                if (imageFile != null) {
+                  final fileName = imageFile.path.split('/').last;
+                  print('اسم الصورة المختارة: $fileName');
+
+                  final isRecognized = await _recognizeImage(imageFile, 'png');
+
+                  if (isRecognized) {
+                    Navigator.pop(context);
+                    if (context.mounted) {
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (_) => ProductDetailsPage(
+                            product: ProductModel(
+                              name: 'سيف سعودي أحدب',
+                              imagePaths: ['assets/images/sword1.png'],
+                              productionFamilyName: 'عائلة السيوفي',
+                              productWhatsappNumber: '201014414536',
+                              productionFamilyWebsiteUrl:
+                                  'https://swordsfamily.com',
+                              productPrice: '500',
+                              productRating: 4.0,
+                              productReviweCount: 120,
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                  } else {
+                    if (context.mounted) {
+                      showCupertinoDialog(
+                        context: context,
+                        builder: (BuildContext ctx) {
+                          return CupertinoAlertDialog(
+                            title: const Text('لم يتم التعرف على الصورة'),
+                            content: const Text(
+                              'الصورة المختارة لا تحتوي على المعرف المطلوب. يرجى اختيار الصورة الصحيحة.',
+                            ),
+                            actions: [
+                              CupertinoDialogAction(
+                                child: const Text('إعادة المحاولة'),
+                                onPressed: () {
+                                  Navigator.of(ctx).pop();
+                                  runImageTurath(context);
+                                },
+                              ),
+                              CupertinoDialogAction(
+                                isDefaultAction: true,
+                                child: const Text('موافق'),
+                                onPressed: () => Navigator.of(ctx).pop(),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    }
+                  }
+                } else {
+                  if (context.mounted) {
+                    showCupertinoDialog(
+                      context: context,
+                      builder: (BuildContext ctx) {
+                        return CupertinoAlertDialog(
+                          title: const Text('لم يتم اختيار صورة'),
+                          content: const Text('يرجى اختيار صورة للمتابعة.'),
+                          actions: [
+                            CupertinoDialogAction(
+                              isDefaultAction: true,
+                              child: const Text('موافق'),
+                              onPressed: () => Navigator.of(ctx).pop(),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  }
+                }
+              } catch (e) {
+                print('خطأ في اختيار الصورة: $e');
+                if (context.mounted) {
+                  showCupertinoDialog(
+                    context: context,
+                    builder: (BuildContext ctx) {
+                      return CupertinoAlertDialog(
+                        title: const Text('خطأ'),
+                        content: const Text(
+                          'حدث خطأ أثناء اختيار الصورة. يرجى المحاولة مرة أخرى.',
+                        ),
+                        actions: [
+                          CupertinoDialogAction(
+                            isDefaultAction: true,
+                            child: const Text('موافق'),
+                            onPressed: () => Navigator.of(ctx).pop(),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                }
+              }
             },
             child: _buildActionRow(CupertinoIcons.photo, tr.imageFromGallery),
           ),
@@ -266,14 +379,15 @@ class _OurHistoryState extends State<OurHistory> {
     );
   }
 
-  Future<bool> _recognizeImage(File imageFile) async {
+  Future<bool> _recognizeImage(File imageFile, String format) async {
     try {
       final fileName = imageFile.path.split('/').last;
-      final nameWithoutExtension = fileName.split('.').first;
+      final extension = fileName.split('.').last.toLowerCase();
 
-      return nameWithoutExtension == '3977';
+      return extension == format;
     } catch (e) {
-      print('خطأ في التعرف على الصورة: $e');
+      // ignore: avoid_print
+      print('خطأ في التعرف على امتداد الصورة: $e');
       return false;
     }
   }
@@ -312,7 +426,7 @@ class _OurHistoryState extends State<OurHistory> {
                   final fileName = imageFile.path.split('/').last;
                   print('اسم الصورة المختارة: $fileName');
 
-                  final isRecognized = await _recognizeImage(imageFile);
+                  final isRecognized = await _recognizeImage(imageFile, 'jpg');
 
                   if (isRecognized) {
                     Navigator.pop(context);

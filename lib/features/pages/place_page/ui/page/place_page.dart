@@ -239,6 +239,7 @@ class _ImageViewPageState extends State<ImageViewPage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final tr = AppLocalizations.of(context)!;
 
     return CupertinoPageScaffold(
