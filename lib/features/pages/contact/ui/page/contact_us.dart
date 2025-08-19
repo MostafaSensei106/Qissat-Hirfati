@@ -124,6 +124,7 @@ class _ContactUsState extends State<ContactUs> {
         child: Form(
           key: _formKey,
           child: Column(
+            spacing: 8,
             children: [
               CupertinoTextFieldComponent(
                 controller: _nameController,
@@ -135,10 +136,10 @@ class _ContactUsState extends State<ContactUs> {
                 controller: _emailController,
                 placeholder: tr.email,
                 keyboardType: TextInputType.emailAddress,
+
                 // validator: (value) =>
                 //     value == null || value.isEmpty ? tr.enterYourEmail : null,
               ),
-              const SizedBox(height: 8),
               CupertinoTextField(
                 controller: _messageController,
                 placeholder: tr.yourMessage,

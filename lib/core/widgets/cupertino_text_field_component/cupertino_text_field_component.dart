@@ -118,7 +118,9 @@ class CupertinoTextFieldComponent extends StatelessWidget {
       decoration: BoxDecoration(
         color: CupertinoColors.systemGroupedBackground,
         borderRadius: BorderRadius.circular(
-          useInBorderRadius ? AppConstants.inBorderRadius : 0,
+          useInBorderRadius
+              ? AppConstants.inBorderRadius
+              : AppConstants.inBorderRadius,
         ),
       ),
     );
