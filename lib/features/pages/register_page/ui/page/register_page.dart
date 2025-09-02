@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
+import 'package:qissat_hirfati/core/config/const/shared_preferences_keys.dart';
+import 'package:qissat_hirfati/core/shared_preferences_global/shared_preferences_global.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_filled_component/cupertino_button_filled_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_text_field_component/cupertino_text_field_component.dart';
@@ -41,6 +43,8 @@ class _RegisterPageState extends State<RegisterPage> {
     setState(() {
       _errorText = null;
     });
+
+    SharedPreferencesGlobal.setValue<bool>(SharedPreferencesKeys.isLogin, true);
 
     Navigator.pushReplacement(
       context,

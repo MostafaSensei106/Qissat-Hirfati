@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
+import 'package:qissat_hirfati/core/config/const/shared_preferences_keys.dart';
+import 'package:qissat_hirfati/core/shared_preferences_global/shared_preferences_global.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_filled_component/cupertino_button_filled_component.dart';
@@ -9,6 +11,7 @@ import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertin
 import 'package:qissat_hirfati/core/widgets/cupertino_checkbox_component/cupertino_checkbox_component.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_feature_will_be_available_later_dilog/cupertino_feature_will_be_available_later_dilog.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_text_field_component/cupertino_text_field_component.dart';
+import 'package:qissat_hirfati/features/pages/home/ui/page/home_page.dart';
 import 'package:qissat_hirfati/features/pages/register_page/ui/page/register_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart';
 
@@ -24,6 +27,22 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   bool rememberMe = false;
   bool showPassword = false;
+
+  Future<bool> cheakLogin() async {
+    final isLogin = SharedPreferencesGlobal.getValue<bool>(
+      SharedPreferencesKeys.isLogin,
+    );
+
+    return isLogin;
+  }
+
+  @override
+  Future<void> initState() async {
+    if (await cheakLogin()) {
+      CupertinoPageRoute(builder: (context) => const HomePage());
+    }
+    super.initState();
+  }
 
   @override
   void dispose() {
