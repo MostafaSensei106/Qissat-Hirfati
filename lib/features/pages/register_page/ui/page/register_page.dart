@@ -30,7 +30,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   String? _errorText;
 
-  void _register() {
+  void _register() async {
     final tr = AppLocalizations.of(context)!;
 
     if (_passwordController.text != _confirmPasswordController.text) {
@@ -44,7 +44,10 @@ class _RegisterPageState extends State<RegisterPage> {
       _errorText = null;
     });
 
-    SharedPreferencesGlobal.setValue<bool>(SharedPreferencesKeys.isLogin, true);
+    await SharedPreferencesGlobal.setValue<bool>(
+      SharedPreferencesKeys.isLogin,
+      true,
+    );
 
     Navigator.pushReplacement(
       context,
