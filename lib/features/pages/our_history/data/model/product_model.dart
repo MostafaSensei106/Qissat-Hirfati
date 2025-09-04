@@ -37,6 +37,11 @@ class PlaceModel {
   final double rating;
   final double reviewCount;
 
+  /// Converts the PlaceModel instance into a map representation,
+  /// where the keys are string identifiers corresponding to the
+  /// instance's properties, and the values are the respective
+  /// property values.
+
   Map<String, dynamic> toMap() {
     return {
       'imagePath': imagePaths,

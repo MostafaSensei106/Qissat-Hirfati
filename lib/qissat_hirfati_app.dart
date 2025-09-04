@@ -12,6 +12,23 @@ class QissatHirfatiApp extends StatelessWidget {
   const QissatHirfatiApp({super.key});
 
   @override
+  /// The main widget of the application.
+  ///
+  /// The widget is a [ScreenUtilInit] which is used to initialize the screen
+  /// size and font size scaling.
+  ///
+  /// The [BlocBuilder] is used to listen to the [LocaleCubit] and get the
+  /// current locale.
+  ///
+  /// The [CupertinoApp] is the root widget of the application. It is used to
+  /// configure the app's theme, home page, and locale.
+  ///
+  /// The [CupertinoApp] also includes a [SafeArea] widget to ensure that the
+  /// app's content is not obscured by the notch or other screen features.
+  ///
+  /// The [localizationsDelegates] is used to configure the app's supported
+  /// locales and the [localeListResolutionCallback] is used to determine the
+  /// app's locale based on the user's device settings.
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),

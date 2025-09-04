@@ -66,14 +66,7 @@ class _PlacePageState extends State<PlacePage> {
                 controller: CarouselController(
                   initialItem: 0,
                 ), // Assuming CarouselController
-                onTap: (index) => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ImageViewPage(
-                      imagePath: widget.place.imagePaths[index]['path'] ?? '',
-                    ),
-                  ),
-                ),
+                onTap: (index) => _showImageViewer(context, index),
                 shape: ShapeBorder.lerp(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
@@ -94,9 +87,13 @@ class _PlacePageState extends State<PlacePage> {
                       SizedBox(
                         width: double.infinity,
                         height: 250,
-                        child: Image.asset(
-                          path['path'] ?? '',
-                          fit: BoxFit.cover,
+                        child: Hero(
+                          tag:
+                              'place_image_${widget.place.imagePaths.indexOf(path)}',
+                          child: Image.asset(
+                            path['path'] ?? '',
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       Positioned(
@@ -158,6 +155,22 @@ class _PlacePageState extends State<PlacePage> {
     );
   }
 
+  void _showImageViewer(BuildContext context, int initialIndex) {
+    // Extract image paths from the place data
+    final imagePaths = widget.place.imagePaths
+        .map((pathData) => pathData['path'] ?? '')
+        .where((path) => path.isNotEmpty)
+        .toList();
+
+    Navigator.push(
+      context,
+      CupertinoPageRoute(
+        builder: (context) =>
+            ImageViewPage(imagePaths: imagePaths, initialIndex: initialIndex),
+      ),
+    );
+  }
+
   Row starsWidget() {
     return Row(
       spacing: 8,
@@ -193,18 +206,80 @@ class _PlacePageState extends State<PlacePage> {
   }
 }
 
-class ImageViewPage extends StatelessWidget {
-  const ImageViewPage({required this.imagePath, super.key});
-  final String imagePath;
+class ImageViewPage extends StatefulWidget {
+  const ImageViewPage({
+    required this.imagePaths,
+    this.initialIndex = 0,
+    super.key,
+  });
+
+  final List<String> imagePaths;
+  final int initialIndex;
+
+  @override
+  State<ImageViewPage> createState() => _ImageViewPageState();
+}
+
+class _ImageViewPageState extends State<ImageViewPage> {
+  late PageController _pageController;
+  late int currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    currentIndex = widget.initialIndex;
+    _pageController = PageController(initialPage: widget.initialIndex);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final tr = AppLocalizations.of(context)!; // Get AppLocalizations instance
+    // ignore: unused_local_variable
+    final tr = AppLocalizations.of(context)!;
+
     return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.black,
       navigationBar: CupertinoNavigationBar(
-        middle: Text(tr.viewImage),
-      ), // Translated "View Image"
-      child: Center(child: Image.asset(imagePath, fit: BoxFit.fill)),
+        backgroundColor: CupertinoColors.black,
+        middle: Text(
+          '${currentIndex + 1} /  ${widget.imagePaths.length}',
+          style: const TextStyle(color: CupertinoColors.white),
+        ),
+        leading: CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () => Navigator.pop(context),
+          child: const Icon(CupertinoIcons.xmark, color: CupertinoColors.white),
+        ),
+      ),
+      child: PageView.builder(
+        controller: _pageController,
+        onPageChanged: (index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+        itemCount: widget.imagePaths.length,
+        itemBuilder: (context, index) {
+          return InteractiveViewer(
+            minScale: 0.5,
+            maxScale: 3.0,
+            child: Center(
+              child: Hero(
+                tag: 'place_image_$index',
+                child: Image.asset(
+                  widget.imagePaths[index],
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

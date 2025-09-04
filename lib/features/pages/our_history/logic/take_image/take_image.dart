@@ -4,6 +4,10 @@ import 'package:image_picker/image_picker.dart';
 class TakeImageBy {
   static final ImagePicker _picker = ImagePicker();
 
+  /// Take a photo from the camera.
+  ///
+  /// Returns the path of the saved image in a [File] object.
+
   static Future<File?> pickFromCamera() async {
     try {
       final photo = await _picker.pickImage(source: ImageSource.camera);
@@ -17,13 +21,11 @@ class TakeImageBy {
   }
 
   static Future<File?> pickFromGallery() async {
-    try {
-      final image = await _picker.pickImage(source: ImageSource.gallery);
-      if (image != null) {
-        return File(image.path);
-      }
-    } catch (e) {
-      Exception('خطاء اثناء اختيار صورة من المعرض: $e');
+    final pickedFile = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+    );
+    if (pickedFile != null) {
+      return File(pickedFile.path);
     }
     return null;
   }

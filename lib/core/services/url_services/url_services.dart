@@ -24,6 +24,7 @@ class UrlRunServices {
 
   /// A function to send an email.
   ///
+  ///
   /// It takes a [String] for [toEmail], [subject], and [body].
   ///
   /// It will try to launch the email with [LaunchMode.externalApplication].
@@ -45,6 +46,13 @@ class UrlRunServices {
     }
   }
 
+  /// A function to make a phone call.
+  ///
+  /// It takes a [String] which is the phone number to be called.
+  ///
+  /// It will try to launch the phone call with [LaunchMode.externalApplication].
+  ///
+  /// If the launch fails, it will throw an [Exception].
   static Future<void> makePhoneCall(String phoneNumber) async {
     final phoneUri = Uri(scheme: 'tel', path: phoneNumber);
     if (await canLaunchUrl(phoneUri)) {
