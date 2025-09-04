@@ -7,4 +7,11 @@ import 'package:qissat_hirfati/qissat_hirfati_app.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferencesGlobal().initialize();
+
+  runApp(
+    BlocProvider<LocaleCubit>(
+      create: (context) => LocaleCubit(),
+      child: const QissatHirfatiApp(),
+    ),
+  );
 }
