@@ -20,7 +20,7 @@
   "confirmPassword": "Confirmer le mot de passe",
   "register": "S'inscrire",
   "haveAccount": "Vous avez un compte ?",
-  "loginNow": "Connectez-vous maintenant",
+  "loginNow": "Connexion",
   "loginWithGoogle": "Se connecter avec Google",
   "loginWithFacebook": "Se connecter avec Facebook",
   "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
