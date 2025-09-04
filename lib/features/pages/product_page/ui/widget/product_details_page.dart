@@ -654,49 +654,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
       },
     );
   }
-
-  void _showBuyNowDialog(BuildContext context) {
-    final totalPrice =
-        (double.parse(widget.product.productPrice.replaceAll(',', '')) *
-                quantity)
-            .toStringAsFixed(0);
-
-    showCupertinoDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return CupertinoAlertDialog(
-          title: const Text('تأكيد الطلب'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text('المنتج: ${widget.product.name}'),
-              Text('الكمية: $quantity'),
-              Text('المجموع: $totalPrice ريال سعودي'),
-              const SizedBox(height: 8),
-              const Text('هل تريد المتابعة للدفع؟'),
-            ],
-          ),
-          actions: [
-            CupertinoDialogAction(
-              child: const Text('إلغاء'),
-              onPressed: () => Navigator.of(context).pop(),
-            ),
-            CupertinoDialogAction(
-              isDefaultAction: true,
-              child: const Text('تأكيد الطلب'),
-              onPressed: () {
-                Navigator.of(context).pop();
-                // Navigate to checkout page
-                UrlRunServices.launchURL(
-                  'https://wa.me/${widget.product.productWhatsappNumber}?text=أريد طلب ${widget.product.name} بكمية $quantity - المجموع: $totalPrice ريال',
-                );
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
 }
 
 class ImageViewPage extends StatefulWidget {
