@@ -27,22 +27,17 @@ class _RegisterPageState extends State<RegisterPage> {
   final _confirmPasswordController = TextEditingController();
 
   bool _showPassword = false;
-
   String? _errorText;
 
   void _register() async {
     final tr = AppLocalizations.of(context)!;
 
     if (_passwordController.text != _confirmPasswordController.text) {
-      setState(() {
-        _errorText = tr.passwordsDoNotMatch;
-      });
+      setState(() => _errorText = tr.passwordsDoNotMatch);
       return;
     }
 
-    setState(() {
-      _errorText = null;
-    });
+    setState(() => _errorText = null);
 
     await SharedPreferencesGlobal.setValue<bool>(
       SharedPreferencesKeys.isLogin,
@@ -51,7 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     Navigator.pushReplacement(
       context,
-      CupertinoPageRoute(builder: (context) => const HomePage()),
+      CupertinoPageRoute(builder: (_) => const HomePage()),
     );
   }
 
@@ -76,10 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
         enableBackgroundFilterBlur: true,
       ),
       child: ListView(
-        physics: const ScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding),
-        semanticChildCount: 8,
-
         children: [
           Image.asset(AppConstants.appLogoPng, width: 150.w, height: 150.h),
           const SizedBox(height: 8),
@@ -117,11 +109,7 @@ class _RegisterPageState extends State<RegisterPage> {
             keyboardType: TextInputType.visiblePassword,
             suffix: CupertinoButtonComponent(
               usePadding: false,
-              onPressed: () {
-                setState(() {
-                  _showPassword = !_showPassword;
-                });
-              },
+              onPressed: () => setState(() => _showPassword = !_showPassword),
               child: Icon(
                 _showPassword ? CupertinoIcons.eye : CupertinoIcons.eye_slash,
                 color: _showPassword
@@ -146,12 +134,13 @@ class _RegisterPageState extends State<RegisterPage> {
               style: const TextStyle(color: CupertinoColors.systemRed),
             ),
 
-          const SizedBox(height: 8),
+          const SizedBox(height: 12),
+
           SizedBox(
             width: double.infinity,
             child: CupertinoButtonFilledComponent(
               onPressed: _register,
-              child: Text(tr.register),
+              text: tr.register,
             ),
           ),
 
@@ -162,11 +151,11 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               Text(tr.alreadyHaveAccount),
               CupertinoButtonComponent(
-                child: Text(tr.loginNow),
+                text: tr.loginNow,
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    CupertinoPageRoute(builder: (context) => LoginPage()),
+                    CupertinoPageRoute(builder: (_) => LoginPage()),
                   );
                 },
               ),

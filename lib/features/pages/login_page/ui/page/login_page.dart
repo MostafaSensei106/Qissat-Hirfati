@@ -27,29 +27,29 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   bool rememberMe = false;
   bool showPassword = false;
-  bool isLogin = false;
+  bool loading = false;
 
-  void cheakLogin() {
-    final isLoginCheck = SharedPreferencesGlobal.getValue<bool>(
+  Future<void> _cheakLogin() async {
+    final isLogin = SharedPreferencesGlobal.getValue<bool>(
       SharedPreferencesKeys.isLogin,
     );
-
-    setState(() {
-      isLogin = isLoginCheck;
-    });
 
     if (isLogin == true) {
       Navigator.pushReplacement(
         context,
         CupertinoPageRoute(builder: (context) => const HomePage()),
       );
+    } else {
+      setState(() {
+        loading = false;
+      });
     }
   }
 
   @override
   void initState() {
     super.initState();
-    cheakLogin();
+    _cheakLogin();
   }
 
   @override
@@ -62,6 +62,10 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final tr = AppLocalizations.of(context)!;
+
+    if (loading) {
+      return const Center(child: CupertinoActivityIndicator());
+    }
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
