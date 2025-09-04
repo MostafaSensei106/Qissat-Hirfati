@@ -283,7 +283,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
                                 ),
                               ),
                               Text(
-                                '${widget.product.productPrice} ريال سعودي',
+                                '${int.parse(widget.product.productPrice) * quantity} ريال سعودي',
                                 style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,

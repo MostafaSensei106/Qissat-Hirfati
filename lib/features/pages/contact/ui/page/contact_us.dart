@@ -40,7 +40,6 @@ class _ContactUsState extends State<ContactUs> {
   /// A [GlobalKey] used to validate the form.
   ///
   /// This is used to validate the form when the user submits it.
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   /// A [TextEditingController] used to manage the name field.
   ///
@@ -73,7 +72,7 @@ class _ContactUsState extends State<ContactUs> {
   /// The [CupertinoDialogAction] is used to create the actions of the dialog.
   void _submitForm() {
     final tr = AppLocalizations.of(context)!;
-    if (_formKey.currentState!.validate()) {
+    if (isFormValid()) {
       showCupertinoDialog(
         context: context,
         builder: (context) => CupertinoAlertDialog(
@@ -91,7 +90,27 @@ class _ContactUsState extends State<ContactUs> {
       _nameController.clear();
       _emailController.clear();
       _messageController.clear();
+    } else {
+      showCupertinoDialog(
+        context: context,
+        builder: (context) => CupertinoAlertDialog(
+          title: Text(tr.error),
+          content: Text(tr.pleaseFillAllFields),
+          actions: [
+            CupertinoDialogAction(
+              child: Text(tr.ok),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+          ],
+        ),
+      );
     }
+  }
+
+  bool isFormValid() {
+    return _emailController.text.isNotEmpty &&
+        _messageController.text.isNotEmpty &&
+        _nameController.text.isNotEmpty;
   }
 
   @override
@@ -122,7 +141,6 @@ class _ContactUsState extends State<ContactUs> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding),
         child: Form(
-          key: _formKey,
           child: Column(
             spacing: 8,
             children: [
@@ -132,7 +150,6 @@ class _ContactUsState extends State<ContactUs> {
                 // validator: (value) =>
                 //     value == null || value.isEmpty ? tr.enterYourName : null,
               ),
-              const SizedBox(height: 8),
               CupertinoTextFieldComponent(
                 controller: _emailController,
                 placeholder: tr.email,

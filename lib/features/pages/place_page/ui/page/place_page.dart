@@ -7,6 +7,9 @@ import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
 import 'package:qissat_hirfati/core/widgets/cupertino_buttons_component/cupertino_button_component/cupertino_button_component.dart';
 import 'package:qissat_hirfati/features/pages/our_history/data/model/product_model.dart';
 import 'package:qissat_hirfati/features/pages/our_history/logic/take_image/take_image.dart';
+import 'package:qissat_hirfati/features/pages/product_page/data/model/product_model.dart';
+import 'package:qissat_hirfati/features/pages/product_page/ui/page/product_page.dart';
+import 'package:qissat_hirfati/features/pages/product_page/ui/widget/product_details_page.dart';
 import 'package:qissat_hirfati/l10n/app_localizations.dart'
     show AppLocalizations;
 
@@ -149,6 +152,14 @@ class _PlacePageState extends State<PlacePage> {
               ),
             ),
             const SizedBox(height: 8),
+            const AppDivider(),
+            Text(
+              tr.relatedProducts, // Translated "Related products"
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            const RelatedProductsWidget(),
+            const SizedBox(height: 8),
           ],
         ),
       ),
@@ -202,6 +213,118 @@ class _PlacePageState extends State<PlacePage> {
         ),
         Text('(${widget.place.reviewCount})'),
       ],
+    );
+  }
+}
+
+class RelatedProductsWidget extends StatelessWidget {
+  const RelatedProductsWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final products = [
+      ProductModel(
+        name: 'سيف سعودي أحدب',
+        imagePaths: ['assets/images/sword1.png'],
+        productionFamilyName: 'عائلة السيوفي',
+        productWhatsappNumber: '201014414536',
+        productionFamilyWebsiteUrl: 'https://swordsfamily.com',
+        productPrice: '500',
+        productRating: 4.0,
+        productReviweCount: 120,
+      ),
+      ProductModel(
+        name: 'سيف سعودي مستقيم',
+        imagePaths: ['assets/images/sword1.png'],
+        productionFamilyName: 'عائلة السيوفي',
+        productWhatsappNumber: '201014414536',
+        productionFamilyWebsiteUrl: 'https://swordsfamily.com',
+        productPrice: '550',
+        productRating: 3,
+        productReviweCount: 85,
+      ),
+      ProductModel(
+        name: 'سيف سعودي منقوش',
+        imagePaths: ['assets/images/sword1.png'],
+        productionFamilyName: 'عائلة السيوفي',
+        productWhatsappNumber: '201014414536',
+        productionFamilyWebsiteUrl: 'https://swordsfamily.com',
+        productPrice: '600',
+        productRating: 5,
+        productReviweCount: 95,
+      ),
+      ProductModel(
+        name: 'سيف سعودي ذهبي',
+        imagePaths: ['assets/images/sword1.png'],
+        productionFamilyName: 'عائلة السيوفي',
+        productWhatsappNumber: '201014414536',
+        productionFamilyWebsiteUrl: 'https://swordsfamily.com',
+        productPrice: '700',
+        productRating: 4.9,
+        productReviweCount: 150,
+      ),
+      ProductModel(
+        name: 'سيف سعودي فضي',
+        imagePaths: ['assets/images/sword1.png'],
+        productionFamilyName: 'عائلة السيوفي',
+        productWhatsappNumber: '201014414536',
+        productionFamilyWebsiteUrl: 'https://swordsfamily.com',
+        productPrice: '650',
+        productRating: 4.6,
+        productReviweCount: 110,
+      ),
+    ];
+
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        spacing: 16,
+        children: [
+          Expanded(
+            child: ProductCard(
+              product: products[0],
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) =>
+                        ProductDetailsPage(product: products[0]),
+                  ),
+                );
+              },
+            ),
+          ),
+          Expanded(
+            child: ProductCard(
+              product: products[1],
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) =>
+                        ProductDetailsPage(product: products[1]),
+                  ),
+                );
+              },
+            ),
+          ),
+          Expanded(
+            child: ProductCard(
+              product: products[2],
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) =>
+                        ProductDetailsPage(product: products[2]),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

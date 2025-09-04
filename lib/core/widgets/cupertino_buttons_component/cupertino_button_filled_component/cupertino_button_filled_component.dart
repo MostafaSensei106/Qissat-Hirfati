@@ -24,6 +24,7 @@ class CupertinoButtonFilledComponent extends StatelessWidget {
     this.text,
     this.child,
     this.icon,
+    this.isEnabled = true,
   });
 
   /// The text to display inside the button.
@@ -45,7 +46,10 @@ class CupertinoButtonFilledComponent extends StatelessWidget {
   /// The callback that is called when the button is tapped.
   ///
   /// This parameter is required and cannot be null.
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
+
+  //
+  final bool isEnabled;
 
   @override
   /// Builds the [CupertinoButton] with a filled background.
@@ -56,10 +60,14 @@ class CupertinoButtonFilledComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoButton.filled(
       borderRadius: BorderRadius.circular(AppConstants.inBorderRadius),
-      onPressed: () {
-        HapticFeedback.vibrate();
-        onPressed();
-      },
+      onPressed: isEnabled
+          ? () {
+              HapticFeedback.vibrate();
+
+              onPressed!();
+            }
+          : null,
+
       child:
           child ??
           (text != null ? Text(text!) : icon ?? const SizedBox.shrink()),

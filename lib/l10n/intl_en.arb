@@ -138,5 +138,7 @@
   "clickHere": "Click here",
   "productPrice": "Product Price:",
   "sar": "SAR",
-  "productRating": "Product Rating:"
+  "productRating": "Product Rating:",
+  "pleaseFillAllFields": "Please fill all fields",
+  "relatedProducts": "Related products"
 }

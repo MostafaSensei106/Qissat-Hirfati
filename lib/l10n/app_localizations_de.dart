@@ -33,7 +33,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get facebook => 'Facebook';
 
   @override
-  String get noAccount => 'Sie haben noch kein Konto?';
+  String get noAccount => 'Noch kein Konto?';
 
   @override
   String get signUpHere => 'Hier registrieren';
@@ -48,10 +48,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get accountCreated => 'Konto erfolgreich erstellt';
 
   @override
-  String get phoneNumberPlaceholder => 'Telefonnummer eingeben';
+  String get phoneNumberPlaceholder => 'Geben Sie Ihre Telefonnummer ein';
 
   @override
-  String get alreadyHaveAccount => 'Sie haben bereits ein Konto?';
+  String get alreadyHaveAccount => 'Haben Sie bereits ein Konto?';
 
   @override
   String get firstName => 'Vorname';
@@ -60,7 +60,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get lastName => 'Nachname';
 
   @override
-  String get phoneNumber => 'Saudi-Mobilnummer (+966...)';
+  String get phoneNumber => 'Saudi-Arabische Handynummer (+966...)';
 
   @override
   String get confirmPassword => 'Passwort bestätigen';
@@ -69,7 +69,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get register => 'Registrieren';
 
   @override
-  String get haveAccount => 'Sie haben ein Konto?';
+  String get haveAccount => 'Haben Sie ein Konto?';
 
   @override
   String get loginNow => 'Jetzt anmelden';
@@ -186,17 +186,17 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get loginSuptitle =>
-      'Melden Sie sich an, um auf alle Funktionen zuzugreifen';
+      'Melden Sie sich an, um alle Funktionen zu nutzen';
 
   @override
   String get logoutConfirmation =>
       'Sind Sie sicher, dass Sie sich abmelden möchten?';
 
   @override
-  String get infoAboutUs => 'Informationen über uns';
+  String get infoAboutUs => 'Über uns';
 
   @override
-  String get infoAboutQissatHirfati => 'Informationen über Qissat Hirfati';
+  String get infoAboutQissatHirfati => 'Über Qissat Hirfati';
 
   @override
   String get infoAboutQissatHirfatiSuptitle =>
@@ -213,28 +213,28 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get aboutUs_description =>
-      'Eine Geschichte saudischer Handwerker, die die Zukunft mit dem Geist des Erbes und der Authentizität gestalten.';
+      'Eine Geschichte saudischer Handwerker, die die Zukunft mit dem Geist von Tradition und Authentizität gestalten.';
 
   @override
   String get ourGoals => 'Unsere Ziele';
 
   @override
   String get ourGoals_description =>
-      'Wir ebnen den Weg in eine blühende und strahlende Zukunft, indem wir die Kreativität des saudischen Kunsthandwerks mit dem tiefen Erbe und der stolzen Authentizität, die wir schätzen, verbinden.\n\nUnser Fokus liegt nicht nur auf dem Angebot hochwertiger handgefertigter Produkte, sondern auch auf der Dokumentation und Feier der reichen Details der saudischen Kultur. Wir wollen traditionelles Handwerk fördern und es zu einer Brücke machen, über die das saudische Kulturerbe die Welt erreicht, indem wir ein innovatives Geschäftsmodell anwenden, das diesen Sektor weltweit unterstützt und fördert.';
+      'Wir ebnen den Weg in eine wohlhabende und helle Zukunft, indem wir die Kreativität saudischer Handwerkskunst mit dem tiefen Erbe und der stolzen Authentizität verbinden.\n\nUnser Fokus liegt nicht nur auf hochwertigen handgefertigten Produkten, sondern auch auf der Dokumentation und Feier der reichen Details der saudischen Kultur. Wir möchten traditionelles Handwerk aufwerten und es zu einer Brücke machen, durch die das saudische Kulturerbe die Welt erreicht, indem wir ein innovatives Geschäftsmodell übernehmen, das diesen Sektor weltweit unterstützt und fördert.';
 
   @override
   String get ourVision => 'Unsere Vision';
 
   @override
   String get ourVision_description =>
-      'Wir streben danach, das führende und primäre Ziel für saudisches Kunsthandwerk zu werden, Authentizität mit hoher Qualität zu verbinden, um auf lokalen Märkten zu glänzen und globale Anerkennung zu erreichen.';
+      'Wir streben danach, das führende und wichtigste Ziel für saudische Handwerkskunst zu werden, indem wir Authentizität mit hoher Qualität verbinden, um sowohl auf lokalen Märkten zu glänzen als auch weltweite Anerkennung zu erlangen.';
 
   @override
   String get ourMessage => 'Unsere Mission';
 
   @override
   String get ourMessage_description =>
-      'Wir wollen das beste saudische Kunsthandwerk in außergewöhnlicher Qualität präsentieren und gleichzeitig seinen Wert als wesentlichen Bestandteil des saudischen Erbes steigern. Wir bemühen uns auch, den Kunsthandwerkssektor zu stärken, indem wir Handwerker auf faire und nachhaltige Weise unterstützen, die die Fortsetzung dieses kulturellen Erbes gewährleistet.';
+      'Wir wollen die feinste saudische Handwerkskunst mit außergewöhnlicher Qualität präsentieren und gleichzeitig ihren Wert als wesentlichen Teil des saudischen Erbes stärken. Außerdem wollen wir den Handwerkssektor stärken, indem wir Handwerker fair und nachhaltig unterstützen, um den Fortbestand dieses kulturellen Erbes zu sichern.';
 
   @override
   String get contactUs => 'Kontaktieren Sie uns';
@@ -254,14 +254,14 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get bisht_description =>
-      'Das Bisht ist ein Symbol saudischer Identität und Luxus, das von Königen und Führern zu formellen Anlässen getragen wird. Kronprinz Mohammed bin Salman verkörpert es in einem Stil, der Tradition und Moderne vereint. Klicken Sie auf das Bisht im Bild, um mehr zu erfahren.';
+      'Der Bischt ist ein Symbol der saudischen Identität und des Luxus, getragen von Königen und Führern bei offiziellen Anlässen. Kronprinz Mohammed bin Salman verkörpert ihn in einem Stil, der Tradition und Moderne vereint. Klicken Sie auf den Bischt im Bild, um mehr zu erfahren.';
 
   @override
   String get ourWork => 'Unsere Arbeit';
 
   @override
   String get ourWork_description =>
-      'Wir entwerfen Produkte, die vom tief verwurzelten Erbe unserer Identität inspiriert sind, Merkmale der Gegenwart aufgreifen und die Zukunft gestalten.';
+      'Wir entwerfen Produkte, die vom tief verwurzelten Erbe unserer Identität inspiriert sind, die Merkmale der Gegenwart zeichnen und die Zukunft gestalten.';
 
   @override
   String get seeMore => 'Mehr sehen';
@@ -274,11 +274,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get creativeHands =>
-      'Kreative saudische Hände,\nweben die Zukunft mit Berührungen, die vom Erbe und der Authentizität inspiriert sind.';
+      'Kreative saudische Hände,\nweben die Zukunft mit von Erbe und Authentizität inspirierten Berührungen.';
 
   @override
   String get overviewDescription =>
-      'Wir wollen die Zukunft des saudischen Kunsthandwerks fördern und moderne Kreationen anbieten, die vom Geist authentischen Erbes durchdrungen sind.';
+      'Wir wollen die Zukunft der saudischen Handwerkskunst fördern, indem wir moderne Kreationen anbieten, die vom Geist des authentischen Erbes durchdrungen sind.';
 
   @override
   String get aboutQissatHirfati => 'Über Qissat Hirfati';
@@ -299,7 +299,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get sentSuccessfully => 'Erfolgreich gesendet';
 
   @override
-  String get thankYouForContactingUs => 'Vielen Dank für Ihre Kontaktaufnahme!';
+  String get thankYouForContactingUs =>
+      'Danke, dass Sie uns kontaktiert haben!';
 
   @override
   String get featureWillBeAvailableLater =>
@@ -318,7 +319,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get productPhotos => 'Produktfotos';
 
   @override
-  String get heritagePhotos => 'Kulturerbe-Fotos';
+  String get heritagePhotos => 'Erbfotos';
 
   @override
   String get close => 'Schließen';
@@ -330,70 +331,72 @@ class AppLocalizationsDe extends AppLocalizations {
   String get imageFromGallery => 'Bild aus Galerie';
 
   @override
-  String get taroutCastleName => 'Burg Tarout';
+  String get taroutCastleName => 'Tarout-Schloss';
 
   @override
-  String get taroutCastleOpenInfoTime => '18:00 Uhr';
+  String get taroutCastleOpenInfoTime => '18:00';
 
   @override
   String get taroutCastleDescription =>
-      'Eines der ältesten historischen Wahrzeichen auf der Insel Tarout im Gouvernement Qatif, das mehr als 5.000 Jahre alt ist. Es wurde auf den Ruinen einer Siedlung der Dilmun-Zivilisation erbaut und zeichnet sich durch sein Verteidigungsdesign und seine strategische erhöhte Lage aus, die es zu einem Zentrum zum Schutz der Insel durch die Jahrhunderte machten. Heute ist die Burg ein kulturelles und historisches Symbol, das die Tiefe und Schönheit der saudischen Geschichte widerspiegelt.';
+      'Eine der ältesten historischen Stätten auf der Insel Tarout im Gouvernement Qatif, die mehr als 5000 Jahre zurückreicht. Sie wurde auf den Ruinen einer Siedlung der Dilmun-Zivilisation erbaut und zeichnet sich durch ihr Verteidigungsdesign und ihre strategische erhöhte Lage aus, die sie im Laufe der Zeit zu einem Schutzzentrum der Insel machte. Heute ist das Schloss ein kulturelles und ererbtes Symbol, das die Tiefe und Schönheit der saudischen Geschichte widerspiegelt.';
 
   @override
   String get taroutCastleSubTitleDescription =>
-      'Burg Tarout, ein historisches Wahrzeichen auf der Insel Tarout in Qatif, Ostprovinz, Saudi-Arabien. Erbaut auf einem Hügel südwestlich der Altstadt, auf einer archäologischen Stätte aus dem Jahr 4300 v. Chr. Sie ist 30 km von Dammam entfernt und durch Brücken mit dem Festland verbunden.';
+      'Das Tarout-Schloss, ein historisches Wahrzeichen auf der Insel Tarout in Qatif, Ostprovinz, Saudi-Arabien. Erbaut auf einem Hügel südwestlich der Altstadt, auf einer archäologischen Stätte, die bis 4300 v. Chr. zurückreicht. Es liegt 30 km von Dammam entfernt und ist durch Brücken mit dem Festland verbunden.';
 
   @override
   String get taroutCastleLocation =>
       'Al-Mantiqah, Al-Rahmah Straße, Al-Zumurrud, Tarout 32615';
 
   @override
-  String get alHasaOasisName => 'Al-Ahsa Oase';
+  String get alHasaOasisName => 'Al-Ahsa-Oase';
 
   @override
-  String get alHasaOasisOpenInfoTime => '18:00 Uhr';
+  String get alHasaOasisOpenInfoTime => '18:00';
 
   @override
   String get alHasaOasisSubTitleDescription =>
-      'Die Al-Ahsa-Oase, 2018 in die UNESCO-Welterbeliste aufgenommen, ist eine der größten natürlichen Oasen der Welt, berühmt für ihre Datteln, historischen Quellen und alten archäologischen Stätten.';
+      'Die Al-Ahsa-Oase, seit 2018 in die UNESCO-Welterbeliste eingetragen, ist eine der größten natürlichen Oasen der Welt, bekannt für ihre Datteln, historischen Quellen und antiken archäologischen Stätten.';
 
   @override
   String get alHasaOasisDescription =>
-      'Die Al-Ahsa-Oase, in der Ostprovinz Saudi-Arabiens gelegen, ist eine der größten natürlichen Oasen der Welt und wurde 2018 in die UNESCO-Welterbeliste aufgenommen. Sie zeichnet sich durch ihre fruchtbaren Böden und Millionen von Palmen sowie durch bedeutende historische Wahrzeichen wie den Ibrahim-Palast und den Al-Qaisariyah-Souk aus, was sie zu einem Symbol für Geschichte, Umwelt und kulturelle Vielfalt macht.';
+      'Die Al-Ahsa-Oase, in der Ostprovinz Saudi-Arabiens gelegen, ist eine der größten natürlichen Oasen der Welt und wurde 2018 in die UNESCO-Welterbeliste aufgenommen. Sie zeichnet sich durch fruchtbares Land und Millionen von Palmen aus, sowie durch bedeutende historische Wahrzeichen wie den Ibrahim-Palast und den Al-Qaisariyah-Souk, was sie zu einem Symbol für Geschichte, Umwelt und kulturelle Vielfalt macht.';
 
   @override
-  String get alHasaOasisLocation => 'Old Makkah Road, Al-Balad, Jeddah 22236';
+  String get alHasaOasisLocation =>
+      'Alte Mekka-Straße, Al-Balad, Dschidda 22236';
 
   @override
   String get makkahGateName => 'Mekka-Tor';
 
   @override
-  String get makkahGateOpenInfoTime => '22:30 Uhr';
+  String get makkahGateOpenInfoTime => '22:30';
 
   @override
   String get makkahGateSubTitleDescription =>
-      'Das Mekka-Tor, eines der berühmtesten Wahrzeichen des historischen Jeddah, stammt aus dem 14. Jahrhundert n. Chr. Es wurde als Haupttor für Pilger und Waren genutzt, die in die Stadt ein- und ausreisten. Es zeichnet sich durch seine alte architektonische Gestaltung aus und ist ein Symbol für das kulturelle und zivilisatorische Erbe des alten Jeddah.';
+      'Das Mekka-Tor, eines der bekanntesten Wahrzeichen des historischen Dschidda, stammt aus dem 14. Jahrhundert n. Chr. Es diente als Haupttor für Pilger und Waren, die die Stadt betraten oder verließen. Es zeichnet sich durch sein antikes architektonisches Design aus und ist ein Symbol des kulturellen und zivilisatorischen Erbes des alten Dschidda.';
 
   @override
   String get makkahGateDescription =>
-      'Das Mekka-Tor ist eines der acht Tore der Stadtmauer von Jeddah und befindet sich im historischen Jeddah im Zentrum von Jeddah, West-Saudi-Arabien. Das Mekka-Tor ist das östliche Tor von Jeddah und befindet sich gegenüber dem Beduinenmarkt und führt zu den Märkten Al-Haraj und Al-Halaqat außerhalb der Mauer. Das Tor war auch ein Durchgang für Beerdigungen, die zum Scheich-Al-Asad-Friedhof in diesem Gebiet außerhalb der Mauer gingen.';
+      'Das Mekka-Tor ist eines der acht Tore der Stadtmauer von Dschidda und befindet sich im historischen Viertel im Zentrum von Dschidda, im Westen Saudi-Arabiens. Es ist das östliche Tor von Dschidda, liegt vor dem Beduinenmarkt und führt zu den Märkten Al-Haraj und Al-Halaqat außerhalb der Mauer. Das Tor diente auch als Durchgang für Beerdigungen, die zum Sheikh-Al-Asad-Friedhof außerhalb der Mauer führten.';
 
   @override
-  String get makkahGateLocation => 'Old Makkah Road, Al-Balad, Jeddah 22236';
+  String get makkahGateLocation =>
+      'Alte Mekka-Straße, Al-Balad, Dschidda 22236';
 
   @override
-  String get alMasharCastleName => 'Al-Mashar-Burg';
+  String get alMasharCastleName => 'Al-Mashar-Schloss';
 
   @override
-  String get alMasharCastleOpenInfoTime => '17:00 Uhr';
+  String get alMasharCastleOpenInfoTime => '17:00';
 
   @override
   String get alMasharCastleSubTitleDescription =>
-      'Die Al-Mashar-Burg in Asir, eine Jahrhunderte alte historische Festung, aus Stein und Holz gebaut, um Karawanen zu schützen und Straßen zu überwachen, was die Schönheit des architektonischen Erbes widerspiegelt.';
+      'Das Al-Mashar-Schloss in Asir, eine jahrhundertealte Festung, aus Stein und Holz erbaut, um Karawanen zu schützen und Straßen zu überwachen, spiegelt die Schönheit des architektonischen Erbes wider.';
 
   @override
   String get alMasharCastleDescription =>
-      'Ein historisches Wahrzeichen in der Asir-Region im Süden Saudi-Arabiens, das vor Hunderten von Jahren als Verteidigungs- und Überwachungsstandort erbaut wurde. Es zeichnet sich durch sein traditionelles Design aus Stein und Lehm und seine erhöhte Lage aus, die weite Ausblicke bietet. Heute ist die Burg ein Symbol des Asiri-Erbes und ein herausragendes Touristenziel.';
+      'Ein historisches Wahrzeichen in der Region Asir im Süden Saudi-Arabiens, vor Hunderten von Jahren als Verteidigungs- und Überwachungsort erbaut. Es zeichnet sich durch sein traditionelles Design aus Stein und Lehm sowie durch seine erhöhte Lage mit weitem Ausblick aus. Heute ist das Schloss ein Symbol des Asiri-Erbes und ein bedeutendes Touristenziel.';
 
   @override
   String get alMasharCastleLocation => 'Al-Ghareef, Saudi-Arabien 29557';
@@ -402,15 +405,15 @@ class AppLocalizationsDe extends AppLocalizations {
   String get hegraName => 'Hegra (Madain Saleh)';
 
   @override
-  String get hegraOpenInfoTime => '10:00 Uhr';
+  String get hegraOpenInfoTime => '10:00';
 
   @override
   String get hegraSubTitleDescription =>
-      'Hegra (Madain Saleh), eine der berühmtesten Kulturstätten in Saudi-Arabien, liegt in der Region Al-Madinah Al-Munawwarah. Sie stammt aus dem 1. Jahrhundert n. Chr. und umfasst eine Sammlung nabatäischer Inschriften und Schnitzereien.';
+      'Hegra (Madain Saleh), eine der bekanntesten Kulturerbestätten Saudi-Arabiens, liegt in der Region Al-Madinah Al-Munawwarah. Sie stammt aus dem 1. Jahrhundert n. Chr. und enthält eine Sammlung nabatäischer Inschriften und Schnitzereien.';
 
   @override
   String get hegraDescription =>
-      'Hegra (Madain Saleh), eine der wichtigsten Kulturstätten in Saudi-Arabien, stammt aus dem 1. Jahrhundert n. Chr. und umfasst eine Sammlung nabatäischer Inschriften und Schnitzereien. Die Stätte ist eine der wichtigsten UNESCO-Welterbestätten und ein Symbol der nabatäischen Kultur und des Erbes.';
+      'Hegra (Madain Saleh), eine der wichtigsten Kulturerbestätten Saudi-Arabiens, stammt aus dem 1. Jahrhundert n. Chr. und enthält eine Sammlung nabatäischer Inschriften und Schnitzereien. Die Stätte gehört zu den wichtigsten UNESCO-Welterbestätten und ist ein Symbol der nabatäischen Kultur und des Erbes.';
 
   @override
   String get hegraLocation => 'Al-Hijr, Saudi-Arabien';
@@ -422,7 +425,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get viewImage => 'Bild ansehen';
 
   @override
-  String get open => 'Geöffnet';
+  String get open => 'Öffnen';
 
   @override
   String get closes => 'Schließt';
@@ -437,10 +440,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get productionFamily => 'Produktionsfamilie:';
 
   @override
-  String get theSwordsFamily => 'Die Familie der Schwerter';
+  String get theSwordsFamily => 'Die Swords-Familie';
 
   @override
-  String get theirWebsite => 'Ihre Webseite:';
+  String get theirWebsite => 'Ihre Website:';
 
   @override
   String get clickHere => 'Hier klicken';
@@ -453,4 +456,10 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get productRating => 'Produktbewertung:';
+
+  @override
+  String get pleaseFillAllFields => 'Bitte alle Felder ausfüllen';
+
+  @override
+  String get relatedProducts => 'Ähnliche Produkte';
 }

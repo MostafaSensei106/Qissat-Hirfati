@@ -18,7 +18,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get rememberMe => 'تذكرني';
 
   @override
-  String get forgotPassword => 'هل نسيت كلمة المرور؟';
+  String get forgotPassword => 'نسيت كلمة المرور؟';
 
   @override
   String get login => 'تسجيل الدخول';
@@ -57,7 +57,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get firstName => 'الاسم الأول';
 
   @override
-  String get lastName => 'الاسم الأخير';
+  String get lastName => 'اسم العائلة';
 
   @override
   String get phoneNumber => 'رقم الجوال السعودي (+966...)';
@@ -69,16 +69,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get register => 'تسجيل';
 
   @override
-  String get haveAccount => 'هل لديك حساب؟';
+  String get haveAccount => 'لديك حساب؟';
 
   @override
-  String get loginNow => 'سجل الدخول الآن';
+  String get loginNow => 'سجل دخول الآن';
 
   @override
-  String get loginWithGoogle => 'تسجيل الدخول باستخدام جوجل';
+  String get loginWithGoogle => 'تسجيل الدخول بجوجل';
 
   @override
-  String get loginWithFacebook => 'تسجيل الدخول باستخدام فيسبوك';
+  String get loginWithFacebook => 'تسجيل الدخول بفيسبوك';
 
   @override
   String get passwordsDoNotMatch => 'كلمات المرور غير متطابقة';
@@ -123,10 +123,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get somethingWentWrong => 'حدث خطأ ما';
 
   @override
-  String get networkError => 'خطأ في الشبكة، يرجى التحقق من اتصالك';
+  String get networkError => 'خطأ في الشبكة، يرجى التحقق من الاتصال';
 
   @override
-  String get ok => 'موافق';
+  String get ok => 'حسناً';
 
   @override
   String get settings => 'الإعدادات';
@@ -183,7 +183,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get ourOnLineStoreSuptitle => 'اكتشف عروضنا الحصرية الآن';
 
   @override
-  String get loginSuptitle => 'سجل الدخول للوصول إلى جميع الميزات';
+  String get loginSuptitle => 'قم بتسجيل الدخول للوصول إلى جميع المزايا';
 
   @override
   String get logoutConfirmation => 'هل أنت متأكد أنك تريد تسجيل الخروج؟';
@@ -195,41 +195,41 @@ class AppLocalizationsAr extends AppLocalizations {
   String get infoAboutQissatHirfati => 'معلومات عن قصة حرفتي';
 
   @override
-  String get infoAboutQissatHirfatiSuptitle => 'تعرف على المزيد عن قصتنا';
+  String get infoAboutQissatHirfatiSuptitle => 'تعرف أكثر على قصتنا';
 
   @override
   String get ourHistory => 'تاريخنا';
 
   @override
-  String get ourHistorySuptitle => 'تعرف على المزيد عن تاريخنا';
+  String get ourHistorySuptitle => 'تعرف أكثر على تاريخنا';
 
   @override
   String get contactUsSuptitle => 'يسعدنا خدمتك في أي وقت';
 
   @override
   String get aboutUs_description =>
-      'قصة حرفيين سعوديين يصوغون المستقبل بروح التراث والأصالة.';
+      'قصة حرفيين سعوديين يصنعون المستقبل بروح التراث والأصالة.';
 
   @override
   String get ourGoals => 'أهدافنا';
 
   @override
   String get ourGoals_description =>
-      'نمهد الطريق نحو مستقبل مزدهر ومشرق، مُزجًا إبداع الحرف اليدوية السعودية مع التراث العميق والأصالة الفاخرة التي نعتز بها.\n\nلا ينصب تركيزنا فقط على تقديم منتجات يدوية عالية الجودة، بل يتعداه لتوثيق والاحتفاء بالتفاصيل الغنية للثقافة السعودية. نطمح إلى الارتقاء بالحرف التقليدية وجعلها جسرًا يصل من خلاله التراث الثقافي السعودي إلى العالم، وذلك بتبني نموذج عمل مبتكر يدعم ويروج لهذا القطاع عالميًا.';
+      'نمهد الطريق نحو مستقبل مزدهر ومشرق، نمزج فيه إبداع الحرف السعودية مع عمق التراث والأصالة التي نعتز بها.\n\nتركيزنا لا يقتصر على تقديم منتجات عالية الجودة، بل أيضًا على توثيق والاحتفاء بتفاصيل الثقافة السعودية الغنية. نهدف إلى الارتقاء بالحرف التقليدية وجعلها جسرًا يصل من خلاله التراث الثقافي السعودي إلى العالم، عبر تبني نموذج عمل مبتكر يدعم هذا القطاع عالميًا.';
 
   @override
   String get ourVision => 'رؤيتنا';
 
   @override
   String get ourVision_description =>
-      'نسعى لأن نكون الوجهة الرائدة والأولى للحرف اليدوية السعودية، جامعين بين الأصالة والجودة العالية لنضيء في الأسواق المحلية ونصل إلى الاعتراف العالمي.';
+      'نسعى لأن نصبح الوجهة الرائدة الأولى للحرف السعودية، نجمع بين الأصالة والجودة العالية لنبرز في الأسواق المحلية ونصل إلى الاعتراف العالمي.';
 
   @override
   String get ourMessage => 'رسالتنا';
 
   @override
   String get ourMessage_description =>
-      'نهدف إلى تقديم أجود الحرف اليدوية السعودية بجودة استثنائية، مع تعزيز قيمتها كجزء أساسي من التراث السعودي. كما نسعى إلى تمكين قطاع الحرف اليدوية بدعم الحرفيين بطريقة عادلة ومستدامة تضمن استمرارية هذا الإرث الثقافي.';
+      'نسعى لتقديم أرقى الحرف السعودية بجودة استثنائية، مع تعزيز قيمتها كجزء أساسي من التراث السعودي. كما نهدف إلى تمكين قطاع الحرف بدعم الحرفيين بطريقة عادلة ومستدامة تضمن استمرار هذا الإرث الثقافي.';
 
   @override
   String get contactUs => 'تواصل معنا';
@@ -245,21 +245,21 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get heritage_description =>
-      'التراث السعودي لوحة فنية تمزج أصالة الماضي بالحضارات التي ازدهرت على هذه الأرض. من الشمال للجنوب، ومن الشرق للغرب، تزخر المملكة بمواقع تاريخية وأثرية تروي حكايات الأجيال الماضية.';
+      'التراث السعودي لوحة فنية تمزج بين أصالة الماضي والحضارات التي ازدهرت على هذه الأرض. من الشمال إلى الجنوب، ومن الشرق إلى الغرب، تزخر السعودية بمواقع تاريخية وأثرية تروي قصص الأجيال الماضية.';
 
   @override
   String get bisht_description =>
-      'البشت رمز للهوية السعودية والفخامة، يرتديه الملوك والقادة في المناسبات الرسمية. الأمير محمد بن سلمان يجسده بأسلوب يمزج التقليد بالحداثة. اضغط على البشت في الصورة لمعرفة المزيد.';
+      'البشت رمز الهوية والفخامة السعودية، يرتديه الملوك والقادة في المناسبات الرسمية. يجسده ولي العهد محمد بن سلمان بأسلوب يجمع بين التقليد والحداثة. اضغط على البشت في الصورة لمعرفة المزيد.';
 
   @override
   String get ourWork => 'أعمالنا';
 
   @override
   String get ourWork_description =>
-      'نصمم منتجات مستوحاة من الإرث المتجذر لهويتنا، ونستمد ملامح الحاضر ونشكل المستقبل.';
+      'نصمم منتجات مستوحاة من تراث هويتنا العريق، نرسم ملامح الحاضر ونصوغ المستقبل.';
 
   @override
-  String get seeMore => 'شاهد المزيد';
+  String get seeMore => 'عرض المزيد';
 
   @override
   String get more => 'المزيد';
@@ -273,7 +273,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get overviewDescription =>
-      'نهدف إلى الارتقاء بمستقبل الحرف اليدوية السعودية، وتقديم إبداعات حديثة ممزوجة بروح التراث الأصيل.';
+      'نهدف إلى الارتقاء بمستقبل الحرف السعودية، نقدم إبداعات حديثة بروح التراث الأصيل.';
 
   @override
   String get aboutQissatHirfati => 'عن قصة حرفتي';
@@ -285,19 +285,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get send => 'إرسال';
 
   @override
-  String get enterYourName => 'الرجاء إدخال اسمك';
+  String get enterYourName => 'يرجى إدخال اسمك';
 
   @override
-  String get enterYourEmail => 'الرجاء إدخال بريدك الإلكتروني';
+  String get enterYourEmail => 'يرجى إدخال بريدك الإلكتروني';
 
   @override
   String get sentSuccessfully => 'تم الإرسال بنجاح';
 
   @override
-  String get thankYouForContactingUs => 'شكرا لتواصلك معنا!';
+  String get thankYouForContactingUs => 'شكرًا لتواصلك معنا!';
 
   @override
-  String get featureWillBeAvailableLater => 'هذه الميزة ستكون متاحة لاحقا';
+  String get featureWillBeAvailableLater => 'هذه الميزة ستكون متاحة لاحقًا';
 
   @override
   String get yourMessage => 'رسالتك';
@@ -309,7 +309,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get photoFromGallery => 'صورة من المعرض';
 
   @override
-  String get productPhotos => 'صور المنتج';
+  String get productPhotos => 'صور المنتجات';
 
   @override
   String get heritagePhotos => 'صور التراث';
@@ -331,11 +331,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get taroutCastleDescription =>
-      'من أقدم المعالم التاريخية في جزيرة تاروت بمحافظة القطيف، ويعود تاريخها لأكثر من 5000 عام. بنيت على أنقاض مستوطنة من حضارة دلمون، وتتميز بتصميمها الدفاعي وموقعها الاستراتيجي المرتفع، مما جعلها مركزًا لحماية الجزيرة على مر العصور. اليوم، تعد القلعة رمزًا ثقافيًا وتراثيًا يعكس عمق وجمال التاريخ السعودي.';
+      'من أقدم المعالم التاريخية في جزيرة تاروت بمحافظة القطيف، يعود تاريخها إلى أكثر من 5000 عام. بنيت على أنقاض مستوطنة من حضارة دلمون، وتتميز بتصميمها الدفاعي وموقعها الاستراتيجي المرتفع الذي جعلها مركزًا لحماية الجزيرة عبر العصور. اليوم، القلعة رمز ثقافي وتراثي يعكس عمق وجمال التاريخ السعودي.';
 
   @override
   String get taroutCastleSubTitleDescription =>
-      'قلعة تاروت، معلم تاريخي في جزيرة تاروت بمحافظة القطيف، المنطقة الشرقية بالمملكة العربية السعودية. بنيت على تل جنوب غرب البلدة القديمة، في موقع أثري يعود تاريخه إلى 4300 قبل الميلاد. تبعد 30 كم عن الدمام وتتصل بالبر الرئيسي بواسطة الجسور.';
+      'قلعة تاروت، معلم تاريخي في جزيرة تاروت بالقطيف، المنطقة الشرقية بالسعودية. بنيت على تلة جنوب غرب البلدة القديمة، على موقع أثري يعود إلى 4300 قبل الميلاد. تبعد 30 كم عن الدمام وترتبط بالبر عبر جسور.';
 
   @override
   String get taroutCastleLocation =>
@@ -349,11 +349,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get alHasaOasisSubTitleDescription =>
-      'واحة الأحساء، أُدرجت في قائمة اليونسكو للتراث العالمي عام 2018، وهي واحدة من أكبر الواحات الطبيعية في العالم، وتشتهر بتمورها وينابيعها التاريخية ومواقعها الأثرية القديمة.';
+      'واحة الأحساء، المدرجة ضمن قائمة التراث العالمي لليونسكو عام 2018، من أكبر الواحات الطبيعية في العالم، مشهورة بالتمور والينابيع التاريخية والمواقع الأثرية.';
 
   @override
   String get alHasaOasisDescription =>
-      'واحة الأحساء، تقع في المنطقة الشرقية بالمملكة العربية السعودية، وهي واحدة من أكبر الواحات الطبيعية في العالم وقد أُدرجت في قائمة اليونسكو للتراث العالمي عام 2018. تتميز بأراضيها الخصبة وملايين أشجار النخيل، بالإضافة إلى معالم تاريخية بارزة مثل قصر إبراهيم وسوق القيصرية، مما يجعلها رمزًا للتاريخ والبيئة والتنوع الثقافي.';
+      'واحة الأحساء، الواقعة بالمنطقة الشرقية في السعودية، من أكبر الواحات الطبيعية في العالم وأدرجت في قائمة التراث العالمي لليونسكو عام 2018. تتميز بأراضيها الخصبة وملايين أشجار النخيل، إضافة إلى معالم تاريخية بارزة مثل قصر إبراهيم وسوق القيصرية، مما يجعلها رمزًا للتاريخ والبيئة والتنوع الثقافي.';
 
   @override
   String get alHasaOasisLocation => 'طريق مكة القديم، البلد، جدة 22236';
@@ -366,48 +366,48 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get makkahGateSubTitleDescription =>
-      'بوابة مكة، من أشهر معالم جدة التاريخية، يعود تاريخها إلى القرن الرابع عشر الميلادي. كانت تستخدم كبوابة رئيسية لدخول وخروج الحجاج والبضائع من وإلى المدينة. تتميز بتصميمها المعماري العتيق وهي رمز للتراث الثقافي والحضاري لجدة القديمة.';
+      'بوابة مكة، من أشهر معالم جدة التاريخية، يعود تاريخها إلى القرن الرابع عشر الميلادي. استخدمت كبوابة رئيسية للحجاج والبضائع الداخلة والخارجة من المدينة. تتميز بتصميمها المعماري العريق وترمز لتراث جدة الحضاري.';
 
   @override
   String get makkahGateDescription =>
-      'بوابة مكة هي إحدى البوابات الثمانية لسور جدة، وتقع في منطقة جدة التاريخية وسط جدة غرب المملكة العربية السعودية. تعد بوابة مكة هي البوابة الشرقية لجدة، وتوجد قبالة سوق البدو وتؤدي إلى سوق الحراج وسوق الحلقات خارج السور. كما كانت البوابة ممرًا للجنائز المتجهة إلى مقبرة الشيخ الأسد التي تقع في تلك المنطقة خارج السور.';
+      'بوابة مكة واحدة من ثمانية أبواب لسور جدة، تقع في منطقة جدة التاريخية وسط المدينة. هي البوابة الشرقية لجدة، أمام سوق البدو، وتؤدي إلى أسواق الحراج والحلقات خارج السور. وكانت أيضًا ممرًا للجنائز المتجهة إلى مقبرة الشيخ الأسد في تلك المنطقة.';
 
   @override
   String get makkahGateLocation => 'طريق مكة القديم، البلد، جدة 22236';
 
   @override
-  String get alMasharCastleName => 'قلعة المشعر';
+  String get alMasharCastleName => 'قلعة المشهر';
 
   @override
   String get alMasharCastleOpenInfoTime => '5:00 مساءً';
 
   @override
   String get alMasharCastleSubTitleDescription =>
-      'قلعة المشعر في عسير، حصن تاريخي يعود لقرون، بني من الحجر والخشب لحماية القوافل ومراقبة الطرق، مما يعكس جمال التراث المعماري.';
+      'قلعة المشهر في عسير، حصن تاريخي يعود لقرون، بني من الحجر والخشب لحماية القوافل ومراقبة الطرق، ويعكس جمال العمارة التراثية.';
 
   @override
   String get alMasharCastleDescription =>
-      'معلم تاريخي في منطقة عسير جنوب المملكة العربية السعودية، بني قبل مئات السنين كموقع دفاعي ومراقبة. يتميز بتصميمه التقليدي من الحجر والطين وموقعه المرتفع الذي يوفر إطلالات واسعة. اليوم، القلعة رمز للتراث العسيري ووجهة سياحية بارزة.';
+      'معلم تاريخي في منطقة عسير بجنوب السعودية، بني قبل مئات السنين كموقع دفاعي ورقابي. يتميز بتصميمه التقليدي من الحجر والطين وموقعه المرتفع الذي يوفر إطلالات واسعة. اليوم، القلعة رمز للتراث العسيري ووجهة سياحية بارزة.';
 
   @override
-  String get alMasharCastleLocation => 'الغريف، المملكة العربية السعودية 29557';
+  String get alMasharCastleLocation => 'الغريف، السعودية 29557';
 
   @override
-  String get hegraName => 'مدائن صالح (الحِجر)';
+  String get hegraName => 'مدائن صالح';
 
   @override
   String get hegraOpenInfoTime => '10:00 صباحًا';
 
   @override
   String get hegraSubTitleDescription =>
-      'مدائن صالح (الحِجر)، من أشهر المواقع التراثية في المملكة العربية السعودية، تقع في منطقة المدينة المنورة. يعود تاريخها إلى القرن الأول الميلادي، وتضم مجموعة من النقوش والمنحوتات النبطية.';
+      'مدائن صالح، من أشهر المواقع التراثية في السعودية، تقع في منطقة المدينة المنورة. تعود للقرن الأول الميلادي، وتضم نقوشًا وزخارف نبطية.';
 
   @override
   String get hegraDescription =>
-      'مدائن صالح (الحِجر)، من أهم المواقع التراثية في المملكة العربية السعودية، يعود تاريخها إلى القرن الأول الميلادي، وتضم مجموعة من النقوش والمنحوتات النبطية. الموقع من أهم مواقع التراث العالمي لليونسكو وهو رمز للثقافة والتراث النبطي.';
+      'مدائن صالح، أحد أهم المواقع التراثية في السعودية، يعود تاريخها إلى القرن الأول الميلادي، وتضم نقوشًا وزخارف نبطية. الموقع من أبرز مواقع التراث العالمي لليونسكو ورمز للثقافة النبطية.';
 
   @override
-  String get hegraLocation => 'الحجر، المملكة العربية السعودية';
+  String get hegraLocation => 'الحجر، السعودية';
 
   @override
   String get map => 'الخريطة';
@@ -416,25 +416,25 @@ class AppLocalizationsAr extends AppLocalizations {
   String get viewImage => 'عرض الصورة';
 
   @override
-  String get open => 'مفتوح';
+  String get open => 'يفتح';
 
   @override
   String get closes => 'يغلق';
 
   @override
-  String get noDateAvailable => 'لا يوجد تاريخ متاح';
+  String get noDateAvailable => 'لا يوجد موعد متاح';
 
   @override
   String get aboutHeritage => 'عن التراث';
 
   @override
-  String get productionFamily => 'عائلة الإنتاج:';
+  String get productionFamily => 'أسرة الإنتاج:';
 
   @override
   String get theSwordsFamily => 'عائلة السيوف';
 
   @override
-  String get theirWebsite => 'موقعهم الإلكتروني:';
+  String get theirWebsite => 'موقعهم:';
 
   @override
   String get clickHere => 'اضغط هنا';
@@ -443,8 +443,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get productPrice => 'سعر المنتج:';
 
   @override
-  String get sar => 'ريال سعودي';
+  String get sar => 'ر.س';
 
   @override
   String get productRating => 'تقييم المنتج:';
+
+  @override
+  String get pleaseFillAllFields => 'يرجى ملء جميع الحقول';
+
+  @override
+  String get relatedProducts => 'منتجات ذات صلة';
 }

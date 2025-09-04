@@ -949,6 +949,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Product Rating:'**
   String get productRating;
+
+  /// No description provided for @pleaseFillAllFields.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill all fields'**
+  String get pleaseFillAllFields;
+
+  /// No description provided for @relatedProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Related products'**
+  String get relatedProducts;
 }
 
 class _AppLocalizationsDelegate

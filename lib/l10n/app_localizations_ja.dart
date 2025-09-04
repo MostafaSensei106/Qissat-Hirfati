@@ -444,4 +444,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get productRating => '商品評価:';
+
+  @override
+  String get pleaseFillAllFields => 'Please fill all fields';
+
+  @override
+  String get relatedProducts => 'Related products';
 }

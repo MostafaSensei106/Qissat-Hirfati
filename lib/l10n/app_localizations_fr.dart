@@ -36,13 +36,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get noAccount => 'Vous n\'avez pas de compte ?';
 
   @override
-  String get signUpHere => 'S\'inscrire ici';
+  String get signUpHere => 'Inscrivez-vous ici';
 
   @override
   String get registerTitle => 'Créer un compte';
 
   @override
-  String get registerHere => 'S\'inscrire ici';
+  String get registerHere => 'Inscrivez-vous ici';
 
   @override
   String get accountCreated => 'Compte créé avec succès';
@@ -72,19 +72,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get haveAccount => 'Vous avez un compte ?';
 
   @override
-  String get loginNow => 'Connexion';
+  String get loginNow => 'Connectez-vous maintenant';
 
   @override
-  String get loginWithGoogle => 'Se connecter avec Google';
+  String get loginWithGoogle => 'Connexion avec Google';
 
   @override
-  String get loginWithFacebook => 'Se connecter avec Facebook';
+  String get loginWithFacebook => 'Connexion avec Facebook';
 
   @override
   String get passwordsDoNotMatch => 'Les mots de passe ne correspondent pas';
 
   @override
-  String get info => 'Infos';
+  String get info => 'Info';
 
   @override
   String get error => 'Erreur';
@@ -120,7 +120,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get noResultsFound => 'Aucun résultat trouvé';
 
   @override
-  String get somethingWentWrong => 'Quelque chose s\'est mal passé';
+  String get somethingWentWrong => 'Une erreur s\'est produite';
 
   @override
   String get networkError => 'Erreur réseau, veuillez vérifier votre connexion';
@@ -171,7 +171,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get russian => 'Russe';
 
   @override
-  String get logout => 'Déconnexion';
+  String get logout => 'Se déconnecter';
 
   @override
   String get changeLanguage => 'Changer de langue';
@@ -195,7 +195,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get infoAboutUs => 'À propos de nous';
 
   @override
-  String get infoAboutQissatHirfati => 'Informations sur Qissat Hirfati';
+  String get infoAboutQissatHirfati => 'À propos de Qissat Hirfati';
 
   @override
   String get infoAboutQissatHirfatiSuptitle =>
@@ -213,28 +213,28 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutUs_description =>
-      'Une histoire d\'artisans saoudiens qui façonnent l\'avenir avec l\'esprit du patrimoine et de l\'authenticité.';
+      'Une histoire d\'artisans saoudiens façonnant l\'avenir avec l\'esprit du patrimoine et de l\'authenticité.';
 
   @override
   String get ourGoals => 'Nos objectifs';
 
   @override
   String get ourGoals_description =>
-      'Nous ouvrons la voie à un avenir prospère et lumineux, alliant la créativité de l\'artisanat saoudien à l\'héritage profond et à l\'authenticité dont nous sommes fiers.\n\nNotre objectif n\'est pas seulement d\'offrir des produits artisanaux de haute qualité, mais aussi de documenter et de célébrer les riches détails de la culture saoudienne. Nous visons à élever les métiers traditionnels et à en faire un pont à travers lequel le patrimoine culturel saoudien atteint le monde, en adoptant un modèle commercial innovant qui soutient et promeut ce secteur à l\'échelle mondiale.';
+      'Nous ouvrons la voie vers un avenir prospère et lumineux, en alliant la créativité de l\'artisanat saoudien avec l\'héritage profond et l\'authenticité que nous chérissons.\n\nNotre objectif n\'est pas seulement d\'offrir des produits artisanaux de haute qualité, mais aussi de documenter et de célébrer la richesse de la culture saoudienne. Nous visons à élever les métiers traditionnels et à en faire un pont par lequel le patrimoine culturel saoudien atteint le monde, en adoptant un modèle commercial innovant qui soutient et promeut ce secteur à l\'échelle mondiale.';
 
   @override
   String get ourVision => 'Notre vision';
 
   @override
   String get ourVision_description =>
-      'Nous nous efforçons de devenir la destination principale et de premier plan pour l\'artisanat saoudien, combinant authenticité et haute qualité pour briller sur les marchés locaux et atteindre une reconnaissance mondiale.';
+      'Nous aspirons à devenir la destination principale et leader de l\'artisanat saoudien, alliant authenticité et haute qualité pour briller sur les marchés locaux et obtenir une reconnaissance mondiale.';
 
   @override
   String get ourMessage => 'Notre mission';
 
   @override
   String get ourMessage_description =>
-      'Nous visons à présenter le meilleur de l\'artisanat saoudien avec une qualité exceptionnelle, tout en renforçant sa valeur en tant que partie essentielle du patrimoine saoudien. Nous cherchons également à autonomiser le secteur de l\'artisanat en soutenant les artisans de manière équitable et durable qui assure la continuité de cet héritage culturel.';
+      'Nous visons à présenter le meilleur de l\'artisanat saoudien avec une qualité exceptionnelle, tout en renforçant sa valeur en tant que partie essentielle du patrimoine saoudien. Nous cherchons également à autonomiser le secteur artisanal en soutenant les artisans de manière équitable et durable afin d\'assurer la continuité de cet héritage culturel.';
 
   @override
   String get contactUs => 'Contactez-nous';
@@ -246,7 +246,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get appTitle => 'Qissat Hirfati';
 
   @override
-  String get heritage => 'Notre héritage';
+  String get heritage => 'Notre patrimoine';
 
   @override
   String get heritage_description =>
@@ -254,14 +254,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get bisht_description =>
-      'Le bisht est un symbole de l\'identité et du luxe saoudiens, porté par les rois et les dirigeants lors des occasions officielles. Le prince héritier Mohammed ben Salmane l\'incarne dans un style qui fusionne tradition et modernité. Cliquez sur le bisht dans l\'image pour en savoir plus.';
+      'Le bisht est un symbole de l\'identité et du luxe saoudiens, porté par les rois et les dirigeants lors des occasions officielles. Le prince héritier Mohammed ben Salmane l\'incarne dans un style qui allie tradition et modernité. Cliquez sur le bisht dans l\'image pour en savoir plus.';
 
   @override
-  String get ourWork => 'Notre travail';
+  String get ourWork => 'Nos travaux';
 
   @override
   String get ourWork_description =>
-      'Nous concevons des produits inspirés de l\'héritage profond de notre identité, dessinant les caractéristiques du présent et façonnant l\'avenir.';
+      'Nous concevons des produits inspirés du patrimoine profondément enraciné de notre identité, en dessinant les contours du présent et en façonnant l\'avenir.';
 
   @override
   String get seeMore => 'Voir plus';
@@ -274,7 +274,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get creativeHands =>
-      'Mains saoudiennes créatives,\ntissent l\'avenir avec des touches inspirées du patrimoine et de l\'authenticité.';
+      'Des mains saoudiennes créatives,\ntissent l\'avenir avec des touches inspirées du patrimoine et de l\'authenticité.';
 
   @override
   String get overviewDescription =>
@@ -284,7 +284,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get aboutQissatHirfati => 'À propos de Qissat Hirfati';
 
   @override
-  String get creativeSaudiHands => 'Mains saoudiennes créatives.';
+  String get creativeSaudiHands => 'Des mains saoudiennes créatives.';
 
   @override
   String get send => 'Envoyer';
@@ -309,13 +309,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get yourMessage => 'Votre message';
 
   @override
-  String get photoFromCamera => 'Photo de l\'appareil photo';
+  String get photoFromCamera => 'Photo depuis la caméra';
 
   @override
-  String get photoFromGallery => 'Photo de la galerie';
+  String get photoFromGallery => 'Photo depuis la galerie';
 
   @override
-  String get productPhotos => 'Photos du produit';
+  String get productPhotos => 'Photos des produits';
 
   @override
   String get heritagePhotos => 'Photos du patrimoine';
@@ -324,10 +324,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get close => 'Fermer';
 
   @override
-  String get imageFromCamera => 'Image de l\'appareil photo';
+  String get imageFromCamera => 'Image depuis la caméra';
 
   @override
-  String get imageFromGallery => 'Image de la galerie';
+  String get imageFromGallery => 'Image depuis la galerie';
 
   @override
   String get taroutCastleName => 'Château de Tarout';
@@ -337,15 +337,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get taroutCastleDescription =>
-      'L\'un des plus anciens monuments historiques de l\'île de Tarout dans le gouvernorat de Qatif, datant de plus de 5 000 ans. Il a été construit sur les ruines d\'une colonie de la civilisation Dilmun, et se caractérise par sa conception défensive et son emplacement stratégique élevé, ce qui en a fait un centre de protection de l\'île à travers les âges. Aujourd\'hui, le château est un symbole culturel et patrimonial qui reflète la profondeur et la beauté de l\'histoire saoudienne.';
+      'L\'un des plus anciens sites historiques de l\'île de Tarout, dans le gouvernorat de Qatif, datant de plus de 5 000 ans. Construit sur les ruines d\'une colonie de la civilisation de Dilmun, il se distingue par son design défensif et son emplacement stratégique surélevé, qui en a fait un centre de protection de l\'île à travers les âges. Aujourd\'hui, le château est un symbole culturel et patrimonial qui reflète la profondeur et la beauté de l\'histoire saoudienne.';
 
   @override
   String get taroutCastleSubTitleDescription =>
-      'Château de Tarout, un monument historique sur l\'île de Tarout à Qatif, province orientale, Arabie saoudite. Construit sur une colline au sud-ouest de la vieille ville, sur un site archéologique datant de 4300 av. J.-C. Il est à 30 km de Dammam et est relié au continent par des ponts.';
+      'Le château de Tarout, un site historique sur l\'île de Tarout à Qatif, dans la province orientale de l\'Arabie saoudite. Construit sur une colline au sud-ouest de la vieille ville, sur un site archéologique datant de 4300 av. J.-C. Il est situé à 30 km de Dammam et relié au continent par des ponts.';
 
   @override
   String get taroutCastleLocation =>
-      'Al-Mantiqah, Rue Al-Rahmah, Al-Zumurrud, Tarout 32615';
+      'Al-Mantiqah, rue Al-Rahmah, Al-Zumurrud, Tarout 32615';
 
   @override
   String get alHasaOasisName => 'Oasis d\'Al-Ahsa';
@@ -355,11 +355,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get alHasaOasisSubTitleDescription =>
-      'L\'oasis d\'Al-Ahsa, inscrite sur la liste du patrimoine mondial de l\'UNESCO en 2018, est l\'une des plus grandes oasis naturelles du monde, célèbre pour ses dattes, ses sources historiques et ses anciens sites archéologiques.';
+      'L\'oasis d\'Al-Ahsa, inscrite sur la liste du patrimoine mondial de l\'UNESCO en 2018, est l\'une des plus grandes oasis naturelles du monde, célèbre pour ses dattes, ses sources historiques et ses sites archéologiques.';
 
   @override
   String get alHasaOasisDescription =>
-      'L\'oasis d\'Al-Ahsa, située dans la province orientale de l\'Arabie saoudite, est l\'une des plus grandes oasis naturelles du monde et a été inscrite sur la liste du patrimoine mondial de l\'UNESCO en 2018. Elle se caractérise par ses terres fertiles et ses millions de palmiers, en plus de monuments historiques importants tels que le palais d\'Ibrahim et le souk d\'Al-Qaisariyah, ce qui en fait un symbole de l\'histoire, de l\'environnement et de la diversité culturelle.';
+      'L\'oasis d\'Al-Ahsa, située dans la province orientale de l\'Arabie saoudite, est l\'une des plus grandes oasis naturelles du monde et a été inscrite sur la liste du patrimoine mondial de l\'UNESCO en 2018. Elle se caractérise par ses terres fertiles et ses millions de palmiers, ainsi que par des sites historiques remarquables tels que le palais d\'Ibrahim et le souk Al-Qaisariyah, ce qui en fait un symbole d\'histoire, d\'environnement et de diversité culturelle.';
 
   @override
   String get alHasaOasisLocation =>
@@ -373,11 +373,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get makkahGateSubTitleDescription =>
-      'La porte de La Mecque, l\'un des monuments les plus célèbres de Djeddah historique, date du 14ème siècle après J.-C. Elle était utilisée comme porte principale pour les pèlerins et les marchandises entrant et sortant de la ville. Elle se caractérise par son ancienne conception architecturale et est un symbole du patrimoine culturel et civilisationnel de l\'ancienne Djeddah.';
+      'La porte de La Mecque, l\'un des monuments les plus célèbres de Djeddah historique, remonte au XIVe siècle. Elle servait de porte principale pour les pèlerins et les marchandises entrant et sortant de la ville. Elle se distingue par son architecture ancienne et est un symbole du patrimoine culturel et civilisationnel de l\'ancienne Djeddah.';
 
   @override
   String get makkahGateDescription =>
-      'La porte de La Mecque est l\'une des huit portes du mur de Djeddah, située dans la zone historique de Djeddah au centre de Djeddah, dans l\'ouest de l\'Arabie saoudite. La porte de La Mecque est la porte est de Djeddah, située en face du marché bédouin et menant aux marchés d\'Al-Haraj et d\'Al-Halaqat à l\'extérieur du mur. La porte était également un passage pour les funérailles se dirigeant vers le cimetière de Cheikh Al-Asad situé dans cette zone à l\'extérieur du mur.';
+      'La porte de La Mecque est l\'une des huit portes du mur de Djeddah, située dans le quartier historique de Djeddah, au centre de la ville. Elle est la porte orientale de Djeddah, située devant le marché bédouin et menant aux marchés Al-Haraj et Al-Halaqat à l\'extérieur du mur. La porte servait également de passage pour les funérailles se dirigeant vers le cimetière de Sheikh Al-Asad situé dans cette zone.';
 
   @override
   String get makkahGateLocation =>
@@ -391,11 +391,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get alMasharCastleSubTitleDescription =>
-      'Le château d\'Al-Mashar à Asir, une forteresse historique datant de plusieurs siècles, construite en pierre et en bois pour protéger les caravanes et surveiller les routes, reflétant la beauté du patrimoine architectural.';
+      'Le château d\'Al-Mashar à Asir, une forteresse historique datant de plusieurs siècles, construite en pierre et en bois pour protéger les caravanes et surveiller les routes, reflétant la beauté de l\'architecture traditionnelle.';
 
   @override
   String get alMasharCastleDescription =>
-      'Un monument historique dans la région d\'Asir, au sud de l\'Arabie saoudite, construit il y a des centaines d\'années comme site défensif et de surveillance. Il se caractérise par sa conception traditionnelle en pierre et en argile et son emplacement élevé qui offre de larges vues. Aujourd\'hui, le château est un symbole du patrimoine d\'Asiri et une destination touristique de premier plan.';
+      'Un site historique dans la région d\'Asir, dans le sud de l\'Arabie saoudite, construit il y a plusieurs siècles comme site défensif et de surveillance. Il se caractérise par son design traditionnel en pierre et en argile et son emplacement surélevé offrant de larges vues. Aujourd\'hui, le château est un symbole du patrimoine asiri et une destination touristique importante.';
 
   @override
   String get alMasharCastleLocation => 'Al-Ghareef, Arabie Saoudite 29557';
@@ -408,11 +408,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hegraSubTitleDescription =>
-      'Hegra (Madain Saleh), l\'un des sites du patrimoine les plus célèbres d\'Arabie saoudite, situé dans la région d\'Al-Madinah Al-Munawwarah. Il date du 1er siècle après J.-C. et comprend une collection d\'inscriptions et de sculptures nabatéennes.';
+      'Hegra (Madain Saleh), l\'un des sites patrimoniaux les plus célèbres d\'Arabie Saoudite, situé dans la région d\'Al-Madinah Al-Munawwarah. Il remonte au Ier siècle après J.-C. et comprend une collection d\'inscriptions et de sculptures nabatéennes.';
 
   @override
   String get hegraDescription =>
-      'Hegra (Madain Saleh), l\'un des sites patrimoniaux les plus importants d\'Arabie saoudite, datant du 1er siècle après J.-C., et comprenant une collection d\'inscriptions et de sculptures nabatéennes. Le site est l\'un des sites du patrimoine mondial de l\'UNESCO les plus importants et est un symbole de la culture et du patrimoine nabatéen.';
+      'Hegra (Madain Saleh), l\'un des sites patrimoniaux les plus importants d\'Arabie Saoudite, remonte au Ier siècle après J.-C. et comprend une collection d\'inscriptions et de sculptures nabatéennes. Le site est l\'un des plus importants sites du patrimoine mondial de l\'UNESCO et un symbole de la culture et du patrimoine nabatéens.';
 
   @override
   String get hegraLocation => 'Al-Hijr, Arabie Saoudite';
@@ -424,7 +424,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get viewImage => 'Voir l\'image';
 
   @override
-  String get open => 'Ouvert';
+  String get open => 'Ouvrir';
 
   @override
   String get closes => 'Ferme';
@@ -439,7 +439,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get productionFamily => 'Famille de production :';
 
   @override
-  String get theSwordsFamily => 'La famille des épées';
+  String get theSwordsFamily => 'Famille Swords';
 
   @override
   String get theirWebsite => 'Leur site web :';
@@ -455,4 +455,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get productRating => 'Évaluation du produit :';
+
+  @override
+  String get pleaseFillAllFields => 'Veuillez remplir tous les champs';
+
+  @override
+  String get relatedProducts => 'Produits connexes';
 }

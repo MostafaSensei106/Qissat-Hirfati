@@ -451,4 +451,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get productRating => 'Рейтинг продукта:';
+
+  @override
+  String get pleaseFillAllFields => 'Please fill all fields';
+
+  @override
+  String get relatedProducts => 'Related products';
 }

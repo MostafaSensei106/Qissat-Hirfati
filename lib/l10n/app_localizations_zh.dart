@@ -443,4 +443,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get productRating => '产品评分：';
+
+  @override
+  String get pleaseFillAllFields => 'Please fill all fields';
+
+  @override
+  String get relatedProducts => 'Related products';
 }
