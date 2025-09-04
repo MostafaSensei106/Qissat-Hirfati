@@ -15,7 +15,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get password => 'パスワード';
 
   @override
-  String get rememberMe => '記憶する';
+  String get rememberMe => 'ログイン状態を保持する';
 
   @override
   String get forgotPassword => 'パスワードをお忘れですか？';
@@ -24,7 +24,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get login => 'ログイン';
 
   @override
-  String get orLoginWith => 'または';
+  String get orLoginWith => 'または次でログイン';
 
   @override
   String get google => 'Google';
@@ -33,10 +33,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get facebook => 'Facebook';
 
   @override
-  String get noAccount => 'アカウントをお持ちでないですか？';
+  String get noAccount => 'アカウントをお持ちではありませんか？';
 
   @override
-  String get signUpHere => 'こちらでサインアップ';
+  String get signUpHere => 'こちらで登録';
 
   @override
   String get registerTitle => 'アカウント作成';
@@ -60,10 +60,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get lastName => '姓';
 
   @override
-  String get phoneNumber => 'サウジアラビアの携帯電話番号 (+966...)';
+  String get phoneNumber => 'サウジ携帯番号 (+966...)';
 
   @override
-  String get confirmPassword => 'パスワードを認証する';
+  String get confirmPassword => 'パスワード確認';
 
   @override
   String get register => '登録';
@@ -117,13 +117,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get loading => '読み込み中...';
 
   @override
-  String get noResultsFound => '結果が見つかりませんでした';
+  String get noResultsFound => '結果が見つかりません';
 
   @override
-  String get somethingWentWrong => '何か問題が発生しました';
+  String get somethingWentWrong => '問題が発生しました';
 
   @override
-  String get networkError => 'ネットワークエラー、接続を確認してください';
+  String get networkError => 'ネットワークエラーです。接続をご確認ください';
 
   @override
   String get ok => 'OK';
@@ -177,58 +177,58 @@ class AppLocalizationsJa extends AppLocalizations {
   String get changeLanguage => '言語を変更';
 
   @override
-  String get ourOnLineStore => '私たちのオンラインストア';
+  String get ourOnLineStore => 'オンラインストア';
 
   @override
-  String get ourOnLineStoreSuptitle => '今すぐ限定オファーを発見';
+  String get ourOnLineStoreSuptitle => '今すぐ限定オファーをチェック';
 
   @override
-  String get loginSuptitle => 'ログインしてすべての機能にアクセス';
+  String get loginSuptitle => '全機能にアクセスするにはログインしてください';
 
   @override
-  String get logoutConfirmation => 'ログアウトしてもよろしいですか？';
+  String get logoutConfirmation => '本当にログアウトしますか？';
 
   @override
-  String get infoAboutUs => '会社情報';
+  String get infoAboutUs => '私たちについて';
 
   @override
-  String get infoAboutQissatHirfati => 'Qissat Hirfatiについて';
+  String get infoAboutQissatHirfati => 'Qissat Hirfati について';
 
   @override
-  String get infoAboutQissatHirfatiSuptitle => '私たちの物語について詳しく知る';
+  String get infoAboutQissatHirfatiSuptitle => '私たちの物語をもっと知る';
 
   @override
   String get ourHistory => '私たちの歴史';
 
   @override
-  String get ourHistorySuptitle => '私たちの歴史について詳しく知る';
+  String get ourHistorySuptitle => '歴史について詳しく知る';
 
   @override
-  String get contactUsSuptitle => 'いつでも喜んでサービスを提供いたします';
+  String get contactUsSuptitle => 'いつでもお気軽にお問い合わせください';
 
   @override
-  String get aboutUs_description => 'サウジアラビアの職人が、伝統と真正性の精神で未来を創造する物語。';
+  String get aboutUs_description => 'サウジの職人たちが、伝統と本物の精神で未来を築く物語。';
 
   @override
   String get ourGoals => '私たちの目標';
 
   @override
   String get ourGoals_description =>
-      '私たちは、サウジアラビアの手工芸品の創造性と、私たちが大切にする深い遺産と誇り高い真正性を融合させ、豊かで明るい未来への道を開きます。\n\n私たちの焦点は、高品質の手工芸品を提供するだけでなく、サウジアラビア文化の豊かな詳細を文書化し、祝うことにもあります。革新的なビジネスモデルを採用することで、伝統工芸品を高め、サウジアラビアの文化遺産が世界に届く架け橋となることを目指し、この分野を世界的に支援し促進します。';
+      'サウジの手工芸の創造性と深い遺産を融合させ、誇り高き伝統を大切にしながら繁栄した明るい未来への道を切り開きます。\n\n私たちは高品質の手作り製品を提供するだけでなく、サウジ文化の豊かな細部を記録し、称えることにも注力しています。革新的なビジネスモデルを採用し、この分野を世界的に支援・促進することで、伝統工芸を世界に届ける架け橋にすることを目指しています。';
 
   @override
   String get ourVision => '私たちのビジョン';
 
   @override
   String get ourVision_description =>
-      '私たちは、真正性と高品質を兼ね備え、国内市場で輝き、世界的な認知を得るために、サウジアラビアの手工芸品の主要かつ主要な目的地となることを目指しています。';
+      'サウジの手工芸において、真正性と高品質を兼ね備えた主要な目的地となり、国内市場で輝き、世界的に認知されることを目指します。';
 
   @override
   String get ourMessage => '私たちの使命';
 
   @override
   String get ourMessage_description =>
-      '私たちは、卓越した品質で最高のサウジアラビアの手工芸品を提供することを目指し、同時にサウジアラビアの遺産の不可欠な部分としての価値を高めます。また、この文化遺産の継続を確実にする公正かつ持続可能な方法で職人を支援することにより、手工芸部門を強化することも目指しています。';
+      '最高品質のサウジ手工芸を提供し、それをサウジ遺産の重要な一部としての価値を高めます。また、公平で持続可能な方法で職人を支援し、この文化的遺産が続くように努めます。';
 
   @override
   String get contactUs => 'お問い合わせ';
@@ -244,73 +244,73 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get heritage_description =>
-      'サウジアラビアの遺産は、過去の真正性とこの土地で栄えた文明が融合した芸術的なキャンバスです。北から南、東から西まで、サウジアラビアは過去の世代の物語を伝える歴史的・考古学的遺跡に富んでいます。';
+      'サウジの遺産は、過去の本物さとこの地で栄えた文明を融合させた芸術的なキャンバスです。南から北、東から西まで、サウジアラビアには豊かな歴史的・考古学的遺跡があり、世代を超えた物語を語っています。';
 
   @override
   String get bisht_description =>
-      'ビシュトはサウジアラビアのアイデンティティと豪華さの象徴であり、王や指導者が正式な場で着用します。ムハンマド・ビン・サルマン皇太子は、伝統と現代性を融合したスタイルでそれを体現しています。画像内のビシュトをクリックして詳細をご覧ください。';
+      'ビシュトはサウジのアイデンティティと贅沢の象徴であり、国王や指導者が公式行事で着用します。ムハンマド・ビン・サルマン皇太子は、伝統と現代を融合させたスタイルでそれを体現しています。画像のビシュトをクリックして詳細をご覧ください。';
 
   @override
   String get ourWork => '私たちの仕事';
 
   @override
   String get ourWork_description =>
-      '私たちは、私たちのアイデンティティの深く根ざした遺産に触発された製品をデザインし、現在の特徴を描き、未来を形作ります。';
+      '私たちは、アイデンティティの深い遺産に触発された製品をデザインし、現代を描き、未来を形作ります。';
 
   @override
   String get seeMore => 'もっと見る';
 
   @override
-  String get more => 'もっと';
+  String get more => 'さらに';
 
   @override
-  String get successPartners => '成功パートナー';
+  String get successPartners => '成功のパートナー';
 
   @override
-  String get creativeHands => 'サウジアラビアの創造的な手、\n遺産と真正性に触発されたタッチで未来を織りなす。';
+  String get creativeHands => '創造的なサウジの手が、\n遺産と本物から触発された感性で未来を紡ぐ。';
 
   @override
   String get overviewDescription =>
-      '私たちは、サウジアラビアの手工芸品の未来を高め、本格的な遺産の精神が吹き込まれたモダンな作品を提供することを目指しています。';
+      '本物の遺産の精神を取り入れた現代的な作品を提供し、サウジ手工芸の未来を高めることを目指します。';
 
   @override
-  String get aboutQissatHirfati => 'Qissat Hirfatiについて';
+  String get aboutQissatHirfati => 'Qissat Hirfati について';
 
   @override
-  String get creativeSaudiHands => 'サウジアラビアの創造的な手。';
+  String get creativeSaudiHands => '創造的なサウジの手。';
 
   @override
   String get send => '送信';
 
   @override
-  String get enterYourName => '氏名を入力してください';
+  String get enterYourName => '名前を入力してください';
 
   @override
   String get enterYourEmail => 'メールアドレスを入力してください';
 
   @override
-  String get sentSuccessfully => '正常に送信されました';
+  String get sentSuccessfully => '送信に成功しました';
 
   @override
-  String get thankYouForContactingUs => 'お問い合わせいたしました。';
+  String get thankYouForContactingUs => 'お問い合わせいただきありがとうございます！';
 
   @override
-  String get featureWillBeAvailableLater => 'この機能は後日利用可能になります';
+  String get featureWillBeAvailableLater => 'この機能は後で利用可能になります';
 
   @override
-  String get yourMessage => 'あなたのメッセージ';
+  String get yourMessage => 'メッセージ';
 
   @override
-  String get photoFromCamera => 'カメラからの写真';
+  String get photoFromCamera => 'カメラから写真';
 
   @override
-  String get photoFromGallery => 'ギャラリーからの写真';
+  String get photoFromGallery => 'ギャラリーから写真';
 
   @override
-  String get productPhotos => '製品写真';
+  String get productPhotos => '商品写真';
 
   @override
-  String get heritagePhotos => '遺産写真';
+  String get heritagePhotos => '遺産の写真';
 
   @override
   String get close => '閉じる';
@@ -322,89 +322,90 @@ class AppLocalizationsJa extends AppLocalizations {
   String get imageFromGallery => 'ギャラリーからの画像';
 
   @override
-  String get taroutCastleName => 'タルト城';
+  String get taroutCastleName => 'タルート城';
 
   @override
-  String get taroutCastleOpenInfoTime => '午後6:00';
+  String get taroutCastleOpenInfoTime => '18:00';
 
   @override
   String get taroutCastleDescription =>
-      'カティーフ州タルト島にある最も古い歴史的建造物の1つで、5,000年以上前のものです。ディルムン文明の集落の遺跡に建設され、その防御的なデザインと戦略的に高い場所に位置する特徴により、時代を通して島の保護の中心となりました。今日、城はサウジアラビアの歴史の深さと美しさを反映する文化的・遺産的なシンボルとなっています。';
+      'カティーフのタルート島にある最も古い歴史的建造物の一つで、5000年以上前に遡ります。ディルムン文明の遺跡の上に建てられ、防御設計と戦略的な高所により、長年にわたり島を守る中心となってきました。今日、この城はサウジの歴史の深さと美しさを反映する文化と遺産の象徴です。';
 
   @override
   String get taroutCastleSubTitleDescription =>
-      'タルト城は、サウジアラビア東部州カティーフのタルト島にある歴史的建造物です。旧市街の南西の丘に建設され、紀元前4300年にさかのぼる考古学的遺跡の上にあります。ダンマームから30km離れており、橋で本土とつながっています。';
+      'タルート城は、サウジアラビア東部のカティーフにあるタルート島の歴史的建造物です。紀元前4300年の考古学的遺跡の上に建てられ、旧市街の南西の丘に位置しています。ダンマームから30km離れ、橋で本土とつながっています。';
 
   @override
-  String get taroutCastleLocation => 'アル・マンティカ、アル・ラフマ通り、アル・ズムルド、タルト 32615';
+  String get taroutCastleLocation =>
+      'Al-Mantiqah, Al-Rahmah 通り, Al-Zumurrud, タルート 32615';
 
   @override
-  String get alHasaOasisName => 'アル・ハサオアシス';
+  String get alHasaOasisName => 'アル・アハサ・オアシス';
 
   @override
-  String get alHasaOasisOpenInfoTime => '午後6:00';
+  String get alHasaOasisOpenInfoTime => '18:00';
 
   @override
   String get alHasaOasisSubTitleDescription =>
-      'アル・ハサオアシスは、2018年にユネスコ世界遺産リストに登録された、世界最大の自然オアシスの1つであり、ナツメヤシ、歴史的な泉、古代の考古学遺跡で有名です。';
+      'アル・アハサ・オアシスは2018年にユネスコ世界遺産に登録され、世界最大級の天然オアシスの一つであり、デーツ、歴史的な泉、古代の考古遺跡で有名です。';
 
   @override
   String get alHasaOasisDescription =>
-      'サウジアラビア東部州に位置するアル・ハサオアシスは、世界最大の自然オアシスの1つであり、2018年にユネスコ世界遺産リストに登録されました。肥沃な土地と数百万本のヤシの木、さらにイブラヒム宮殿やアル・カイサリヤ市場などの著名な歴史的建造物が特徴であり、歴史、環境、文化的多様性の象徴となっています。';
+      'サウジアラビア東部にあるアル・アハサ・オアシスは世界最大級の天然オアシスの一つで、2018年にユネスコ世界遺産に登録されました。肥沃な土地と数百万本のナツメヤシに加え、イブラヒム宮殿やカイサリヤ市場などの重要な歴史的ランドマークを擁し、歴史、環境、文化的多様性の象徴となっています。';
 
   @override
-  String get alHasaOasisLocation => '旧マッカ通り、アル・バラード、ジッダ 22236';
+  String get alHasaOasisLocation => 'オールド・マッカ通り, ジェッダ旧市街 22236';
 
   @override
   String get makkahGateName => 'マッカ門';
 
   @override
-  String get makkahGateOpenInfoTime => '午後10:30';
+  String get makkahGateOpenInfoTime => '22:30';
 
   @override
   String get makkahGateSubTitleDescription =>
-      '歴史的なジェッダで最も有名なランドマークの1つであるマッカ門は、西暦14世紀にまでさかのぼります。巡礼者や物資が都市に出入りするための主要な門として使用されました。その古代の建築デザインが特徴であり、古いジェッダの文化的・文明的遺産の象徴です。';
+      'マッカ門はジェッダの歴史的な最も有名なランドマークの一つで、14世紀に遡ります。巡礼者や物資の主要な出入口として使われ、古代の建築デザインで知られ、古ジェッダの文化と文明遺産の象徴です。';
 
   @override
   String get makkahGateDescription =>
-      'マッカ門はジェッダの壁にある8つの門の1つで、サウジアラビア西部ジェッダ中心部の歴史的なジェッダ地域に位置しています。マッカ門はジェッダの東門であり、ベドウィンの市場の向かいにあり、壁の外にあるアル・ハラジ市場とアル・ハラカート市場につながっています。この門はまた、壁の外のその地域にあるシェイク・アル・アサド墓地に向かう葬儀の通路でもありました。';
+      'マッカ門は、サウジ西部のジェッダ中心部にある歴史的ジェッダ地区にある城壁の八つの門の一つです。ジェッダの東門であり、ベドウィン市場の前に位置し、城壁外のAl-Haraj市場やAl-Halaqat市場へ通じています。この門はまた、城壁外にあるシェイク・アル・アサド墓地へ向かう葬列の通路でもありました。';
 
   @override
-  String get makkahGateLocation => '旧マッカ通り、アル・バラード、ジッダ 22236';
+  String get makkahGateLocation => 'オールド・マッカ通り, ジェッダ旧市街 22236';
 
   @override
   String get alMasharCastleName => 'アル・マシャル城';
 
   @override
-  String get alMasharCastleOpenInfoTime => '午後5:00';
+  String get alMasharCastleOpenInfoTime => '17:00';
 
   @override
   String get alMasharCastleSubTitleDescription =>
-      'アシールにあるアル・マシャル城は、何世紀も前の歴史的な要塞で、キャラバンを保護し、道路を監視するために石と木で建てられ、建築遺産の美しさを反映しています。';
+      'アシール地方にあるアル・マシャル城は、数世紀前に石と木で建てられた歴史的な要塞で、隊商を守り道路を監視するために建設され、建築遺産の美しさを反映しています。';
 
   @override
   String get alMasharCastleDescription =>
-      'サウジアラビア南部のアシール地域にある歴史的なランドマークで、数百年前に対防御・監視拠点として建設されました。石と粘土の伝統的なデザインと、広大な景色を提供する高台の場所が特徴です。今日、この城はアシール地方の遺産の象徴であり、有名な観光地です。';
+      'サウジ南部アシール地方にある歴史的なランドマークで、数百年前に防御と監視のために建設されました。石と粘土を用いた伝統的なデザインと広大な景観を誇る高所に位置しています。今日、この城はアシール遺産の象徴であり、有名な観光地となっています。';
 
   @override
-  String get alMasharCastleLocation => 'アル・ガリーフ、サウジアラビア 29557';
+  String get alMasharCastleLocation => 'Al-Ghareef, サウジアラビア 29557';
 
   @override
   String get hegraName => 'ヘグラ（マダイン・サーレハ）';
 
   @override
-  String get hegraOpenInfoTime => '午前10:00';
+  String get hegraOpenInfoTime => '10:00';
 
   @override
   String get hegraSubTitleDescription =>
-      'ヘグラ（マダイン・サーレハ）は、サウジアラビアの最も有名な遺産地の1つで、マディーナ地方に位置しています。紀元1世紀にさかのぼり、ナバテア文字の碑文や彫刻のコレクションが含まれています。';
+      'ヘグラ（マダイン・サーレハ）は、サウジアラビアで最も有名な遺産の一つで、マディーナ地域にあります。紀元1世紀に遡り、多くのナバテア人の碑文や彫刻があります。';
 
   @override
   String get hegraDescription =>
-      'ヘグラ（マダイン・サーレハ）は、サウジアラビアの最も重要な遺産地の1つで、紀元1世紀にさかのぼり、ナバテア文字の碑文や彫刻のコレクションが含まれています。この場所は、ユネスコの世界遺産の中でも最も重要な場所の1つであり、ナバテア文化と遺産の象徴です。';
+      'ヘグラ（マダイン・サーレハ）はサウジで最も重要な遺産の一つで、紀元1世紀に遡り、ナバテア人の碑文や彫刻を含みます。この遺跡はユネスコ世界遺産の中でも最も重要なものの一つで、ナバテア文化と遺産の象徴です。';
 
   @override
-  String get hegraLocation => 'アル・ヒジュル、サウジアラビア';
+  String get hegraLocation => 'Al-Hijr, サウジアラビア';
 
   @override
   String get map => '地図';
@@ -413,41 +414,41 @@ class AppLocalizationsJa extends AppLocalizations {
   String get viewImage => '画像を見る';
 
   @override
-  String get open => '開館';
+  String get open => '開く';
 
   @override
-  String get closes => '閉館';
+  String get closes => '閉じる';
 
   @override
-  String get noDateAvailable => '利用可能な日付はありません';
+  String get noDateAvailable => '利用可能な日付なし';
 
   @override
   String get aboutHeritage => '遺産について';
 
   @override
-  String get productionFamily => '生産者ファミリー:';
+  String get productionFamily => '生産家族：';
 
   @override
-  String get theSwordsFamily => 'ザ・ソード・ファミリー';
+  String get theSwordsFamily => 'ソード家';
 
   @override
-  String get theirWebsite => '彼らのウェブサイト:';
+  String get theirWebsite => '彼らのウェブサイト：';
 
   @override
   String get clickHere => 'ここをクリック';
 
   @override
-  String get productPrice => '商品価格:';
+  String get productPrice => '商品価格：';
 
   @override
-  String get sar => 'SAR';
+  String get sar => 'サウジ・リヤル';
 
   @override
-  String get productRating => '商品評価:';
+  String get productRating => '商品評価：';
 
   @override
-  String get pleaseFillAllFields => 'Please fill all fields';
+  String get pleaseFillAllFields => 'すべての項目を入力してください';
 
   @override
-  String get relatedProducts => 'Related products';
+  String get relatedProducts => '関連商品';
 }

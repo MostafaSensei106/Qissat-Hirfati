@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
@@ -347,6 +350,8 @@ class _ImageViewPageState extends State<ImageViewPage> {
   late PageController _pageController;
   late int currentIndex;
 
+  File? overlayImage;
+
   @override
   void initState() {
     super.initState();
@@ -360,11 +365,19 @@ class _ImageViewPageState extends State<ImageViewPage> {
     super.dispose();
   }
 
+  Future<void> _pickOverlayImage() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      setState(() {
+        overlayImage = File(pickedFile.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
-    final tr = AppLocalizations.of(context)!;
-
     return CupertinoPageScaffold(
       backgroundColor: CupertinoColors.black,
       navigationBar: CupertinoNavigationBar(
@@ -378,6 +391,11 @@ class _ImageViewPageState extends State<ImageViewPage> {
           onPressed: () => Navigator.pop(context),
           child: const Icon(CupertinoIcons.xmark, color: CupertinoColors.white),
         ),
+        trailing: CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: _pickOverlayImage,
+          child: const Icon(CupertinoIcons.photo, color: CupertinoColors.white),
+        ),
       ),
       child: PageView.builder(
         controller: _pageController,
@@ -389,15 +407,29 @@ class _ImageViewPageState extends State<ImageViewPage> {
         itemCount: widget.imagePaths.length,
         itemBuilder: (context, index) {
           return InteractiveViewer(
-            minScale: 0.5,
+            minScale: 1,
             maxScale: 3.0,
             child: Center(
-              child: Hero(
-                tag: 'place_image_$index',
-                child: Image.asset(
-                  widget.imagePaths[index],
-                  fit: BoxFit.contain,
-                ),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Hero(
+                    tag: 'place_image_$index',
+                    child: Image.asset(
+                      widget.imagePaths[index],
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  if (overlayImage != null)
+                    Positioned(
+                      top: 50,
+                      child: Image.file(
+                        overlayImage!,
+                        width: 150,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                ],
               ),
             ),
           );

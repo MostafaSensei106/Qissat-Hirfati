@@ -36,19 +36,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get noAccount => 'Нет аккаунта?';
 
   @override
-  String get signUpHere => 'Зарегистрироваться здесь';
+  String get signUpHere => 'Зарегистрируйтесь здесь';
 
   @override
   String get registerTitle => 'Создать аккаунт';
 
   @override
-  String get registerHere => 'Зарегистрироваться здесь';
+  String get registerHere => 'Регистрация здесь';
 
   @override
   String get accountCreated => 'Аккаунт успешно создан';
 
   @override
-  String get phoneNumberPlaceholder => 'Введите номер телефона';
+  String get phoneNumberPlaceholder => 'Введите свой номер телефона';
 
   @override
   String get alreadyHaveAccount => 'Уже есть аккаунт?';
@@ -60,16 +60,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get lastName => 'Фамилия';
 
   @override
-  String get phoneNumber => 'Мобильный телефон Саудовской Аравии (+966...)';
+  String get phoneNumber => 'Саудовский номер (+966...)';
 
   @override
   String get confirmPassword => 'Подтвердите пароль';
 
   @override
-  String get register => 'Зарегистрироваться';
+  String get register => 'Регистрация';
 
   @override
-  String get haveAccount => 'Уже есть аккаунт?';
+  String get haveAccount => 'Есть аккаунт?';
 
   @override
   String get loginNow => 'Войти сейчас';
@@ -84,7 +84,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get passwordsDoNotMatch => 'Пароли не совпадают';
 
   @override
-  String get info => 'Информация';
+  String get info => 'Инфо';
 
   @override
   String get error => 'Ошибка';
@@ -117,14 +117,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get loading => 'Загрузка...';
 
   @override
-  String get noResultsFound => 'Результаты не найдены';
+  String get noResultsFound => 'Ничего не найдено';
 
   @override
   String get somethingWentWrong => 'Что-то пошло не так';
 
   @override
-  String get networkError =>
-      'Ошибка сети, пожалуйста, проверьте ваше соединение';
+  String get networkError => 'Ошибка сети, проверьте подключение';
 
   @override
   String get ok => 'ОК';
@@ -136,7 +135,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get language => 'Язык';
 
   @override
-  String get selectLanguage => 'Выбрать язык';
+  String get selectLanguage => 'Выберите язык';
 
   @override
   String get arabic => 'Арабский';
@@ -175,14 +174,14 @@ class AppLocalizationsRu extends AppLocalizations {
   String get logout => 'Выйти';
 
   @override
-  String get changeLanguage => 'Изменить язык';
+  String get changeLanguage => 'Сменить язык';
 
   @override
   String get ourOnLineStore => 'Наш интернет-магазин';
 
   @override
   String get ourOnLineStoreSuptitle =>
-      'Откройте для себя наши эксклюзивные предложения прямо сейчас';
+      'Откройте для себя наши эксклюзивные предложения';
 
   @override
   String get loginSuptitle => 'Войдите, чтобы получить доступ ко всем функциям';
@@ -194,7 +193,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get infoAboutUs => 'Информация о нас';
 
   @override
-  String get infoAboutQissatHirfati => 'Информация о Qissat Hirfati';
+  String get infoAboutQissatHirfati => 'О Qissat Hirfati';
 
   @override
   String get infoAboutQissatHirfatiSuptitle => 'Узнайте больше о нашей истории';
@@ -206,35 +205,35 @@ class AppLocalizationsRu extends AppLocalizations {
   String get ourHistorySuptitle => 'Узнайте больше о нашей истории';
 
   @override
-  String get contactUsSuptitle => 'Мы рады помочь вам в любое время';
+  String get contactUsSuptitle => 'Мы всегда рады вам помочь';
 
   @override
   String get aboutUs_description =>
-      'История саудовских ремесленников, создающих будущее в духе наследия и аутентичности.';
+      'История саудовских ремесленников, создающих будущее с духом наследия и подлинности.';
 
   @override
   String get ourGoals => 'Наши цели';
 
   @override
   String get ourGoals_description =>
-      'Мы прокладываем путь к процветающему и светлому будущему, сочетая креативность саудовских ремесел с глубоким наследием и гордой аутентичностью, которые мы ценим.\n\nНаше внимание сосредоточено не только на предложении высококачественных изделий ручной работы, но и на документировании и праздновании богатых деталей саудовской культуры. Мы стремимся поднять традиционные ремесла и сделать их мостом, через который саудовское культурное наследие достигает мира, принимая инновационную бизнес-модель, которая поддерживает и продвигает этот сектор по всему миру.';
+      'Мы прокладываем путь к процветающему будущему, объединяя творчество саудовских ремесел с глубоким наследием и гордой аутентичностью...';
 
   @override
   String get ourVision => 'Наше видение';
 
   @override
   String get ourVision_description =>
-      'Мы стремимся стать ведущим и основным направлением для саудовских ремесел, сочетая аутентичность с высоким качеством, чтобы сиять на местных рынках и получить мировое признание.';
+      'Мы стремимся стать главным направлением для саудовских ремесел, сочетая подлинность и качество для мирового признания.';
 
   @override
   String get ourMessage => 'Наша миссия';
 
   @override
   String get ourMessage_description =>
-      'Мы стремимся представить лучшие саудовские ремесла исключительного качества, одновременно повышая их ценность как неотъемлемой части саудовского наследия. Мы также стремимся расширить возможности сектора ремесел, поддерживая ремесленников справедливым и устойчивым способом, который обеспечивает сохранение этого культурного наследия.';
+      'Мы представляем лучшие саудовские ремесла исключительного качества и поддерживаем мастеров справедливым и устойчивым образом.';
 
   @override
-  String get contactUs => 'Связаться с нами';
+  String get contactUs => 'Свяжитесь с нами';
 
   @override
   String get fullName => 'Полное имя';
@@ -247,21 +246,21 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get heritage_description =>
-      'Саудовское наследие — это художественное полотно, сочетающее аутентичность прошлого с цивилизациями, процветавшими на этой земле. С севера на юг, с востока на запад, Саудовская Аравия богата историческими и археологическими памятниками, которые рассказывают истории прошлых поколений.';
+      'Саудовское наследие — это художественное полотно, сочетающее подлинность прошлого и величие цивилизаций...';
 
   @override
   String get bisht_description =>
-      'Бишт — символ саудовской идентичности и роскоши, его носят короли и лидеры по официальным случаям. Наследный принц Мухаммед бен Салман воплощает его в стиле, который сочетает традиции и современность. Нажмите на бишт на изображении, чтобы узнать больше.';
+      'Бишт — символ саудовской идентичности и роскоши, носимый королями и лидерами...';
 
   @override
   String get ourWork => 'Наша работа';
 
   @override
   String get ourWork_description =>
-      'Мы разрабатываем продукты, вдохновленные глубоко укоренившимся наследием нашей идентичности, черпая черты настоящего и формируя будущее.';
+      'Мы создаем продукты, вдохновленные глубоким наследием нашей идентичности.';
 
   @override
-  String get seeMore => 'Посмотреть больше';
+  String get seeMore => 'Смотреть больше';
 
   @override
   String get more => 'Больше';
@@ -271,11 +270,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get creativeHands =>
-      'Творческие саудовские руки,\nплетут будущее с штрихами, вдохновленными наследием и аутентичностью.';
+      'Творческие саудовские руки\nткущие будущее с вдохновением из наследия.';
 
   @override
   String get overviewDescription =>
-      'Мы стремимся поднять будущее саудовских ремесел, предлагая современные творения, наполненные духом подлинного наследия.';
+      'Мы стремимся поднять будущее саудовских ремесел...';
 
   @override
   String get aboutQissatHirfati => 'О Qissat Hirfati';
@@ -287,17 +286,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get send => 'Отправить';
 
   @override
-  String get enterYourName => 'Пожалуйста, введите ваше имя';
+  String get enterYourName => 'Введите ваше имя';
 
   @override
-  String get enterYourEmail =>
-      'Пожалуйста, введите ваш адрес электронной почты';
+  String get enterYourEmail => 'Введите ваш email';
 
   @override
-  String get sentSuccessfully => 'Успешно отправлено';
+  String get sentSuccessfully => 'Отправлено успешно';
 
   @override
-  String get thankYouForContactingUs => 'Спасибо, что связались с нами!';
+  String get thankYouForContactingUs => 'Спасибо за обращение!';
 
   @override
   String get featureWillBeAvailableLater => 'Эта функция будет доступна позже';
@@ -312,10 +310,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get photoFromGallery => 'Фото из галереи';
 
   @override
-  String get productPhotos => 'Фотографии продуктов';
+  String get productPhotos => 'Фото продукта';
 
   @override
-  String get heritagePhotos => 'Фотографии наследия';
+  String get heritagePhotos => 'Фото наследия';
 
   @override
   String get close => 'Закрыть';
@@ -334,50 +332,47 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get taroutCastleDescription =>
-      'Одна из старейших исторических достопримечательностей на острове Тарут в провинции Катиф, датируемая более чем 5000 лет. Она была построена на руинах поселения цивилизации Дилмун и характеризуется своим оборонительным дизайном и стратегическим возвышенным расположением, что сделало ее центром защиты острова на протяжении веков. Сегодня замок является культурным и историческим символом, отражающим глубину и красоту саудовской истории.';
+      'Одна из древнейших достопримечательностей острова Тарут...';
 
   @override
   String get taroutCastleSubTitleDescription =>
-      'Замок Тарут, историческая достопримечательность на острове Тарут в Катифе, Восточная провинция, Саудовская Аравия. Построен на холме к юго-западу от старого города, на археологическом объекте, датируемом 4300 годом до нашей эры. Он находится в 30 км от Даммама и соединен с материком мостами.';
+      'Замок Тарут в Катифе, Восточная провинция...';
 
   @override
-  String get taroutCastleLocation =>
-      'Аль-Мантика, улица Аль-Рахма, Аль-Зумурруд, Тарут 32615';
+  String get taroutCastleLocation => 'Эль-Мантиках, ул. Рахма, Тарут 32615';
 
   @override
-  String get alHasaOasisName => 'Оазис Аль-Хаса';
+  String get alHasaOasisName => 'Оазис Эль-Хаса';
 
   @override
   String get alHasaOasisOpenInfoTime => '18:00';
 
   @override
   String get alHasaOasisSubTitleDescription =>
-      'Оазис Аль-Хаса, включенный в Список всемирного наследия ЮНЕСКО в 2018 году, является одним из крупнейших природных оазисов в мире, известный своими финиками, историческими источниками и древними археологическими памятниками.';
+      'Оазис Эль-Хаса, внесенный в список ЮНЕСКО в 2018 году...';
 
   @override
   String get alHasaOasisDescription =>
-      'Оазис Аль-Хаса, расположенный в Восточной провинции Саудовской Аравии, является одним из крупнейших природных оазисов в мире и был включен в Список всемирного наследия ЮНЕСКО в 2018 году. Он характеризуется плодородными землями и миллионами пальм, а также выдающимися историческими достопримечательностями, такими как дворец Ибрагима и рынок Аль-Кайсария, что делает его символом истории, окружающей среды и культурного разнообразия.';
+      'Оазис Эль-Хаса в Восточной провинции Саудовской Аравии...';
 
   @override
-  String get alHasaOasisLocation =>
-      'Старая дорога в Мекку, Аль-Балад, Джидда 22236';
+  String get alHasaOasisLocation => 'Старая дорога в Мекку, Джидда 22236';
 
   @override
-  String get makkahGateName => 'Мекканские ворота';
+  String get makkahGateName => 'Ворота Мекки';
 
   @override
   String get makkahGateOpenInfoTime => '22:30';
 
   @override
   String get makkahGateSubTitleDescription =>
-      'Мекканские ворота, одна из самых известных достопримечательностей исторической Джидды, датируются 14 веком нашей эры. Они использовались в качестве главных ворот для паломников и товаров, въезжающих и выезжающих из города. Они характеризуются своим древним архитектурным дизайном и являются символом культурного и цивилизационного наследия старой Джидды.';
+      'Ворота Мекки — одна из самых известных достопримечательностей Джидды...';
 
   @override
-  String get makkahGateDescription =>
-      'Мекканские ворота - это одни из восьми ворот стены Джидды, расположенные в историческом районе Джидды в центре Джидды, на западе Саудовской Аравии. Мекканские ворота являются восточными воротами Джидды, расположенными напротив бедуинского рынка и ведущими к рынкам Аль-Харадж и Аль-Халакат за стеной. Ворота также служили проходом для похорон, направляющихся на кладбище Шейха Аль-Асада, расположенное в этом районе за стеной.';
+  String get makkahGateDescription => 'Одни из восьми ворот стены Джидды...';
 
   @override
-  String get makkahGateLocation => 'Мекка, Саудовская Аравия';
+  String get makkahGateLocation => 'Старая дорога в Мекку, Джидда 22236';
 
   @override
   String get alMasharCastleName => 'Замок Аль-Машар';
@@ -387,31 +382,31 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get alMasharCastleSubTitleDescription =>
-      'Замок Аль-Машар в Асире, историческая крепость, датирующаяся столетиями, построенная из камня и дерева для защиты караванов и наблюдения за дорогами, отражающая красоту архитектурного наследия.';
+      'Замок Аль-Машар в Асире, историческая крепость...';
 
   @override
   String get alMasharCastleDescription =>
-      'Историческая достопримечательность в регионе Асир на юге Саудовской Аравии, построенная сотни лет назад как оборонительный и наблюдательный пункт. Она характеризуется традиционным дизайном из камня и глины и возвышенным расположением, которое открывает широкий обзор. Сегодня замок является символом наследия Асири и выдающимся туристическим направлением.';
+      'Исторический памятник в регионе Асир...';
 
   @override
   String get alMasharCastleLocation => 'Аль-Гариф, Саудовская Аравия 29557';
 
   @override
-  String get hegraName => 'Хегра (Мадаин-Салих)';
+  String get hegraName => 'Хегра (Мадаин Салих)';
 
   @override
   String get hegraOpenInfoTime => '10:00';
 
   @override
   String get hegraSubTitleDescription =>
-      'Хегра (Мадаин-Салих), одно из самых известных объектов наследия в Саудовской Аравии, расположенное в регионе Аль-Мадина Аль-Мунаввара. Датируется 1 веком нашей эры и включает коллекцию набатейских надписей и резьбы.';
+      'Хегра (Мадаин Салих) — одно из самых известных мест наследия...';
 
   @override
   String get hegraDescription =>
-      'Хегра (Мадаин-Салих), одно из важнейших объектов наследия в Саудовской Аравии, датируется 1 веком нашей эры и включает коллекцию набатейских надписей и резьбы. Объект является одним из важнейших объектов Всемирного наследия ЮНЕСКО и символом набатейской культуры и наследия.';
+      'Хегра (Мадаин Салих) — важнейший объект наследия ЮНЕСКО...';
 
   @override
-  String get hegraLocation => 'Аль-Хиджр, Саудовская Аравия';
+  String get hegraLocation => 'Эль-Хиджр, Саудовская Аравия';
 
   @override
   String get map => 'Карта';
@@ -420,13 +415,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get viewImage => 'Посмотреть изображение';
 
   @override
-  String get open => 'Открыто';
+  String get open => 'Открыть';
 
   @override
   String get closes => 'Закрывается';
 
   @override
-  String get noDateAvailable => 'Данные о дате отсутствуют';
+  String get noDateAvailable => 'Дата недоступна';
 
   @override
   String get aboutHeritage => 'О наследии';
@@ -435,10 +430,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get productionFamily => 'Производственная семья:';
 
   @override
-  String get theSwordsFamily => 'Семья Мечей';
+  String get theSwordsFamily => 'Семья Свордс';
 
   @override
-  String get theirWebsite => 'Их веб-сайт:';
+  String get theirWebsite => 'Их сайт:';
 
   @override
   String get clickHere => 'Нажмите здесь';
@@ -453,8 +448,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get productRating => 'Рейтинг продукта:';
 
   @override
-  String get pleaseFillAllFields => 'Please fill all fields';
+  String get pleaseFillAllFields => 'Пожалуйста, заполните все поля';
 
   @override
-  String get relatedProducts => 'Related products';
+  String get relatedProducts => 'Похожие продукты';
 }
