@@ -292,7 +292,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get sentSuccessfully => '正常に送信されました';
 
   @override
-  String get thankYouForContactingUs => 'Thank you for contacting us!';
+  String get thankYouForContactingUs => 'お問い合わせいたしました。';
 
   @override
   String get featureWillBeAvailableLater => 'この機能は後日利用可能になります';

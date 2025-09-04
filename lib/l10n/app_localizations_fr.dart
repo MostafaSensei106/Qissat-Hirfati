@@ -72,7 +72,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get haveAccount => 'Vous avez un compte ?';
 
   @override
-  String get loginNow => 'Connectez-vous maintenant';
+  String get loginNow => 'Connexion';
 
   @override
   String get loginWithGoogle => 'Se connecter avec Google';
