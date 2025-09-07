@@ -452,5 +452,5 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pleaseFillAllFields => 'يرجى ملء جميع الحقول';
 
   @override
-  String get relatedProducts => 'منتجات ذات صلة';
+  String get relatedProducts => 'تفقد منتجات قريبة من الموقع';
 }
