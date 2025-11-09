@@ -1,9 +1,14 @@
 import 'dart:io';
+import 'dart:ui' as ui;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart' as painting;
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:image_background_remover/image_background_remover.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:qissat_hirfati/core/config/const/app_const.dart';
 import 'package:qissat_hirfati/core/services/url_services/url_services.dart';
 import 'package:qissat_hirfati/core/widgets/app_divider/app_divider.dart';
@@ -350,18 +355,24 @@ class _ImageViewPageState extends State<ImageViewPage> {
   late PageController _pageController;
   late int currentIndex;
 
-  File? overlayImage;
+  File? _removedBgImageFile;
+  Offset _offset = Offset.zero;
+  double _scale = 1.0;
 
   @override
   void initState() {
     super.initState();
     currentIndex = widget.initialIndex;
     _pageController = PageController(initialPage: widget.initialIndex);
+    _offset = Offset.zero;
+    _scale = 1.0;
+    BackgroundRemover.instance.initializeOrt();
   }
 
   @override
   void dispose() {
     _pageController.dispose();
+    BackgroundRemover.instance.dispose();
     super.dispose();
   }
 
@@ -370,8 +381,25 @@ class _ImageViewPageState extends State<ImageViewPage> {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
+      final image = File(pickedFile.path);
+      final imageBytes = await image.readAsBytes();
+      final removedBgImage = await BackgroundRemover.instance.removeBg(
+        imageBytes,
+      );
+
+      final directory = await getTemporaryDirectory();
+      final tempPath = directory.path;
+      final tempFile = File('$tempPath/removed_bg_image.png');
+      await tempFile.writeAsBytes(
+        (await removedBgImage.toByteData(
+          format: ui.ImageByteFormat.png,
+        ))!.buffer.asUint8List(),
+      );
+
       setState(() {
-        overlayImage = File(pickedFile.path);
+        _removedBgImageFile = tempFile;
+        _offset = Offset.zero;
+        _scale = 1.0;
       });
     }
   }
@@ -391,10 +419,24 @@ class _ImageViewPageState extends State<ImageViewPage> {
           onPressed: () => Navigator.pop(context),
           child: const Icon(CupertinoIcons.xmark, color: CupertinoColors.white),
         ),
-        trailing: CupertinoButton(
-          padding: EdgeInsets.zero,
-          onPressed: _pickOverlayImage,
-          child: const Icon(CupertinoIcons.photo, color: CupertinoColors.white),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            CupertinoButton(
+              padding: EdgeInsets.zero,
+              onPressed: _pickOverlayImage,
+              child: const Icon(
+                CupertinoIcons.photo,
+                color: CupertinoColors.white,
+              ),
+            ),
+            // if (_removedBgImageFile != null)
+            //   CupertinoButton(
+            //     padding: EdgeInsets.zero,
+            //     onPressed: () => _saveCombinedImage(context),
+            //     child: const Icon(CupertinoIcons.down_arrow, color: CupertinoColors.white),
+            //   ),
+          ],
         ),
       ),
       child: PageView.builder(
@@ -420,13 +462,33 @@ class _ImageViewPageState extends State<ImageViewPage> {
                       fit: BoxFit.contain,
                     ),
                   ),
-                  if (overlayImage != null)
-                    Positioned(
-                      top: 50,
-                      child: Image.file(
-                        overlayImage!,
-                        width: 150,
-                        fit: BoxFit.contain,
+                  if (_removedBgImageFile != null)
+                    Positioned.fill(
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          return GestureDetector(
+                            onPanUpdate: (details) {
+                              setState(() {
+                                _offset += details.delta;
+                              });
+                            },
+                            onScaleUpdate: (details) {
+                              setState(() {
+                                _scale = details.scale;
+                              });
+                            },
+                            child: Transform.translate(
+                              offset: _offset,
+                              child: Transform.scale(
+                                scale: _scale,
+                                child: Image.file(
+                                  _removedBgImageFile!,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     ),
                 ],
@@ -436,6 +498,78 @@ class _ImageViewPageState extends State<ImageViewPage> {
         },
       ),
     );
+  }
+
+  Future<void> _saveCombinedImage(BuildContext context) async {
+    final baseImage = await _loadImage(widget.imagePaths[currentIndex]);
+    final overlayImage = await _loadImageFile(_removedBgImageFile!);
+
+    final recorder = ui.PictureRecorder();
+    final canvas = Canvas(recorder);
+
+    // Draw base image
+    paintImage(
+      canvas: canvas,
+      rect: Rect.fromLTWH(
+        0,
+        0,
+        baseImage.width.toDouble(),
+        baseImage.height.toDouble(),
+      ),
+      image: baseImage,
+      fit: BoxFit.cover,
+    );
+
+    // Draw overlay image with current offset and scale
+    final overlayWidth = overlayImage.width * _scale;
+    final overlayHeight = overlayImage.height * _scale;
+
+    final offsetX = _offset.dx + (baseImage.width - overlayWidth) / 2;
+    final offsetY = _offset.dy + (baseImage.height - overlayHeight) / 2;
+
+    paintImage(
+      canvas: canvas,
+      rect: Rect.fromLTWH(offsetX, offsetY, overlayWidth, overlayHeight),
+      image: overlayImage,
+      fit: BoxFit.fill,
+    );
+
+    final img = await recorder.endRecording().toImage(
+      baseImage.width,
+      baseImage.height,
+    );
+    final byteData = await img.toByteData(format: ui.ImageByteFormat.png);
+    final pngBytes = byteData!.buffer.asUint8List();
+
+    final directory = await getApplicationDocumentsDirectory();
+    final path =
+        '${directory.path}/combined_image_${DateTime.now().millisecondsSinceEpoch}.png';
+    final file = File(path);
+    await file.writeAsBytes(pngBytes);
+
+    if (!mounted) {
+      return;
+    }
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Image saved to $path')));
+  }
+
+  Future<ui.Image> _loadImage(String path) async {
+    if (path.startsWith('assets/')) {
+      final data = await rootBundle.load(path);
+      final bytes = data.buffer.asUint8List();
+      return await painting.decodeImageFromList(bytes);
+    } else {
+      final file = File(path);
+      final bytes = await file.readAsBytes();
+      return await painting.decodeImageFromList(bytes);
+    }
+  }
+
+  Future<ui.Image> _loadImageFile(File file) async {
+    final bytes = await file.readAsBytes();
+    return await painting.decodeImageFromList(bytes);
   }
 }
 
